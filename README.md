@@ -12,7 +12,7 @@ Final project for database programming and windows programming courses
 
 
 
-Contributors             ID          GitHub  
+Contributors              
   1.Eyuel Solomon    
   2.Hamzah Abdo  
   3.Hawariaw Pawlos       
