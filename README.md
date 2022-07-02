@@ -13,8 +13,8 @@ Final project for database programming and windows programming courses
 
 
 Contributors             ID          GitHub
-  1.Eyuel Solomon  
-  2.Hamzah Abdo
-  3.Hawariaw Pawlos     IK5907      KidanekalM
-  4.Kidanekal Melkam
-  5.Kidus Paulos                    kida21
+--1.Eyuel Solomon  
+--2.Hamzah Abdo
+--3.Hawariaw Pawlos     IK5907      KidanekalM
+--4.Kidanekal Melkam
+--5.Kidus Paulos                    kida21
