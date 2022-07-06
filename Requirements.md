@@ -5,7 +5,7 @@
 2. Customers can rent a property  
 3. Customers can browse properties  
 4.Customers can put a property for sale  
-5.Customers can create an account    
+5.Customers can create an account 
 6. Customers can   
   
 ### Employee (Role ) Admin  
