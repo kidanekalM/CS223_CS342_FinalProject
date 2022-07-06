@@ -1,5 +1,5 @@
   
-#Customer   
+### Customer   
   
 1. Customers can buy a house/property  
 2. Customers can rent a property  
@@ -8,7 +8,7 @@
 5.Customers can create an account    
 6. Customers can   
   
-###Employee (Role ) Admin  
+### Employee (Role ) Admin  
   
 1. Can view sold properties  
 2. can view rent dates - due   
@@ -17,7 +17,7 @@
 5.    
 6.  
   
-###Employee (Role ) Agent  
+### Employee (Role ) Agent  
   
 1.  
 2.   
@@ -26,7 +26,7 @@
 5.    
 6.  
   
-###Employee (Role ) Contractor { if there are too many we can cut this one out }  
+### Employee (Role ) Contractor { if there are too many we can cut this one out }  
   
 1.  
 2.   
@@ -35,7 +35,7 @@
 5.    
 6.  
   
-###Property  
+### Property  
   
 1.  
 2.  
