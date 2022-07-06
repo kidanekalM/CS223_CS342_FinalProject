@@ -1,5 +1,5 @@
   
-###Customer   
+#Customer   
   
 1. Customers can buy a house/property  
 2. Customers can rent a property  
