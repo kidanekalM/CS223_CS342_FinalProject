@@ -11,8 +11,8 @@
 ### Employee (Role ) Admin  
   
 1. Can view sold properties  
-2. can view rent dates - due   
-3.   
+2. Can view rent dates - due   
+3. Manage agents information (like add, update and delete)
 4.  
 5.    
 6.  
