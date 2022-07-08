@@ -13,9 +13,8 @@ Final project for database programming and windows programming courses
 
 
 Contributors              
-  1.Eyuel Solomon    
-  2.Hamzah Abdo         LV0342      hamzahabdo01
-  
-  3.Hawariaw Pawlos       
+  1.Eyuel Solomon                   fineguy21  
+  2.Hamzah Abdo         LV0342      hamzahabdo01  
+  3.Hawariaw Paulos     TT5916      Hawa701  
   4.Kidanekal Melkam    IK5907      KidanekalM  
   5.Kidus Paulos                    kida21  
