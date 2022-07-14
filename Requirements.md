@@ -36,8 +36,8 @@
   
 ### Property  
   
-1.  
-2.  
-3.  
-4.  
-5.  
+1.  Can add/edit a property by selecting the owner for this property
+2.  Can search for a property
+3.  Can remove a property
+4.  Can view all properties
+5.  Each property can be assigned a type based on the combo box
