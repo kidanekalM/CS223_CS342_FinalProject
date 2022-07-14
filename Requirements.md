@@ -6,7 +6,7 @@
 3. Customers can browse properties  
 4. Customers can rate an agent   
 5. Customers can create an account 
-6. Customers can   
+6. Customers can remove an account
   
 ### Employee (Role ) Admin  
   
