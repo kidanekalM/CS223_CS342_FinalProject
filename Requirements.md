@@ -32,7 +32,7 @@
 7. Can view all properties for rent
 8. Can view all properties for sale and rent put by agent   
   
-### Employee (Role ) Contractor { if there are too many we can cut this one out }  
+###  Contractor { if there are too many we can cut this one out }  
   
 1. Can view all properties constructed by its company 
 2.   
