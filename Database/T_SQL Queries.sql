@@ -19,7 +19,7 @@ GO
 
 -- Creating functions
 
--- Creating Stored PRocedured
+-- Creating Stored Procedures
 
 -- Creating triggers
 
