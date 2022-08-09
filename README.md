@@ -13,7 +13,7 @@ Final project for database programming and windows programming courses
 
 
 **Contributors**              
-  1.**Eyuel Solomon**                   fineguy21  
+  1.**Eyuel Solomon**                   FineGuy2  
   2.**Hamzah Abdo**         _LV0342_      hamzahabdo01  
   3.**Hawariaw Paulos**     _TT5916_      Hawa701  
   4.**Kidanekal Melkam**    _IK5907_      KidanekalM  

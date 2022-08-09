@@ -7,6 +7,14 @@ GO
 
 -- Creating Tables 
 CREATE TABLE Employees(
+ID INT PRIMARY KEY IDENTITY,
+FirstName VARCHAR(MAX),
+LastName VARCHAR(MAX),
+PhoneNumber VARCHAR(11) UNIQUE,
+EmpType VARCHAR(MAX),
+EmpDate DATE,
+DepartementID INT
+CONSTRAINT 
 )
 CREATE TABLE Client(
 )
@@ -19,7 +27,7 @@ GO
 
 -- Creating functions
 
--- Creating Stored PRocedured
+-- Creating Stored Procedures
 
 -- Creating triggers
 
