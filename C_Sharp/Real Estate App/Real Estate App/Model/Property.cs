@@ -14,7 +14,6 @@ namespace Real_Estate_App.Model
         public Image Photo { get; set; }
         public string Type { get; set; }
         public string Status { get; set; }
-        public float RentPrice { get; set; }
         public float SellPrice { get; set; }
         /***
          * Update a property in the database table
@@ -54,9 +53,9 @@ namespace Real_Estate_App.Model
         /***
          * Filter properties by address
          * type
-         * sell price or rent price 
+         * sell price  
          */
-        public List<Property> FilterProperties(string address, string type,string status, float sellPrice, float rentPRice)
+        public List<Property> FilterProperties(string address, string type,string status, float sellPrice)
         {
 
         }
@@ -64,13 +63,6 @@ namespace Real_Estate_App.Model
          * Get all properties that were sold 
          */
         public List<Property> GetAllSoldProperties()
-        {
-
-        }
-        /***
-         * Get all properties that were rented
-         */
-        public List<Property> GetRentedProperties()
         {
 
         }
