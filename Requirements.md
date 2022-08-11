@@ -12,25 +12,22 @@
 ### Employee (Role ) Admin  
   
 1. Can view sold properties  
-2. Can view rent dates - due   
-3. Manage agents information (like add, update and delete)
-4. Manage any property submitted by an agent  
-5. View agent details   
-6. View customer details 
-7. Payment system(how do customers pay)
-8. Loan system in order to buy (if possible, it is real world scenario in real estate system)
-9. discount rate(as it is attraction for customers )
+2. Manage agents information (like add, update and delete)
+3. Manage any property submitted by an agent  
+4. View agent details   
+5. View customer details 
+6. Payment system(how do customers pay)
+7. Loan system in order to buy (if possible, it is real world scenario in real estate system)
+8. discount rate(as it is attraction for customers )
   
 ### Employee (Role ) Agent  
   
 1. Create an account 
 2. Put a property for sale  
-3. Put a property for rent  
-4. Can sell a property to a customer 
-5. Can rent a property for a customer    
-6. Can view all properties for sale
-7. Can view all properties for rent
-8. Can view all properties for sale and rent put by agent   
+3. Can sell a property to a customer 
+4. Can view all properties for sale
+5. Can view all properties for sale 
+6. can view sold proerties  
   
 ###  Contractor   
   
