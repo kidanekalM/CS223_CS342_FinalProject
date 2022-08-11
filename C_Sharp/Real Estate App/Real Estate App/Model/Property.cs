@@ -15,56 +15,76 @@ namespace Real_Estate_App.Model
         public string Type { get; set; }
         public string Status { get; set; }
         public float SellPrice { get; set; }
-        /***
-         * Update a property in the database table
-         */
+        
+
         public bool Update()
         {
-
+            throw new NotImplementedException();
         }
-        /***
-         * Delete a property from database table
-         */
+
         public bool Delete()
         {
-
+            throw new NotImplementedException();
         }
-        /***
-         * Add a property to the database table 
-         */
+
         public bool Add()
         {
-
+            throw new NotImplementedException();
         }
-        /***
-         * get all properties
-         */
-        public List<Property> GetAllProperties()
+        
+         /// <summary>
+         /// get all properties
+         /// </summary>
+         /// <returns>List of Property type</returns>
+         
+        public static List<Property> GetAllProperties()
         {
-
+            throw new NotImplementedException();
         }
-        /***
-           * get all available properties
-          */
-        public List<Property> GetAllAvailableProperties()
-        {
 
+        /// <summary>
+        /// get all available properties
+        /// </summary>
+        /// <returns>List of Property type</returns>
+        
+        public static List<Property> GetAllAvailableProperties()
+        {
+            throw new NotImplementedException();
         }
-        /***
-         * Filter properties by address
-         * type
-         * sell price  
-         */
-        public List<Property> FilterProperties(string address, string type,string status, float sellPrice)
-        {
 
+        /// <summary>
+        /// Filter properties by address type  sell price  
+        /// </summary>
+        /// <param name="address"></param>
+        /// <param name="type"></param>
+        /// <param name="status"></param>
+        /// <param name="sellPrice"></param>
+        /// <returns>List of Property type</returns>
+        
+        public static List<Property> FilterProperties(string address, string type,string status, float sellPrice)
+        {
+            throw new NotImplementedException();
         }
-        /***
-         * Get all properties that were sold 
-         */
-        public List<Property> GetAllSoldProperties()
-        {
 
+        /// <summary>
+        /// Get all properties that were sold 
+        /// </summary>
+        /// <returns>List of Property type</returns>
+        
+        public static List<Property> GetAllSoldProperties()
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// searches the database table for similar values with the attributes of the 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>List of Property type</returns>
+        
+        public static List<Property> SearchProperties(string value)
+        {
+            throw new NotSupportedException();
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Real_Estate_App.Model
 {
-    internal class Appointment
+    internal class Appointment : CommonDBOperations
     {
         public string ID { get; set; }
         public string ClientID { get; set; }
@@ -14,53 +14,76 @@ namespace Real_Estate_App.Model
         public DateTime AppointmentDate { get; set; }
         public List<string> PropertyID { get; set; }
         public string Comment { get; set; }
-        /***
-         * Add appointment to database
-         */
+
         public bool Add()
         {
-
+            throw new NotImplementedException();
         }
         public bool Update()
         {
-
+            throw new NotImplementedException();
         }
         public bool Delete()
         {
-
+            throw new NotImplementedException();
         }
         public static List<Appointment> GetAllAppointments()
         {
-
+            throw new NotImplementedException();
         }
-        /***
-         * Filters all appointements with the same client(id) 
-         */
+        
+         /// <summary>
+         /// Filters all appointements with the same client(id) 
+         /// </summary>
+         /// <param name="client"></param>
+         /// <returns>List of Appointment</returns>
+         
         public static List<Appointment> GetAllByClient(Client client)
         {
-
+            throw new NotImplementedException();
         }
-        /***
-        * Filters all appointements with the same Agent(id) 
-        */
-        public static List<Appointment> GetAllByAgent(Agent agent)
+        
+        /// <summary>
+        /// Filters all appointements with the same Agent(id) 
+        /// </summary>
+        /// <param name="employee"></param>
+        /// <returns>List of Applointment</returns>
+        public static List<Appointment> GetAllByAgent(Employee employee)
         {
-
+            throw new NotImplementedException();
         }
-        /***
-           * Filters all appointements with the same Property(id) 
-           */
+
+        /// <summary>
+        ///   Filters all appointements with the same Property(id) 
+        /// </summary>
+        /// <param name="property"></param>
+        /// <returns>List of Applointment</returns>
+
         public static List<Appointment> GetAllByProerty(Property property)
         {
-
+            throw new NotImplementedException();
         }
-        /***
-        * Filters all appointements with the same AppointmetDate(id) 
-        */
-        public static List<Appointment> GetAllByAppointment(DateTime Date)
+
+        /// <summary>
+        /// Filters all appointements with the same Date 
+        /// </summary>
+        /// <param name="date"></param>
+        /// <returns>List of Applointment</returns>
+
+        public static List<Appointment> GetAllByDate(DateTime date)
         {
-
+            throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// returns properties with similar id client id agentid appointmentdate propertyid or comment
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>List of Applointment</returns>
+
+        public static List<Appointment> SearchAppointment(string value)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
