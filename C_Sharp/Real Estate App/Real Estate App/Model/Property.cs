@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,11 +12,12 @@ namespace Real_Estate_App.Model
     {
         public string Id { get; set; }
         public string Address { get; set; }
-        public Image Photo { get; set; }
+        public List<Image> Photo { get; set; }
         public string Type { get; set; }
-        public string Status { get; set; }
+        public bool Status { get; set; }
         public float SellPrice { get; set; }
-        
+        public string Description { get; set; }
+        public string ContractorID { get; set; }
 
         public bool Update()
         {
@@ -85,6 +87,37 @@ namespace Real_Estate_App.Model
         public static List<Property> SearchProperties(string value)
         {
             throw new NotSupportedException();
+        }
+        static List<Property> ChangeToList(SqlDataReader dr)
+        {
+            List<Property> list = new List<Property>();
+            while (dr.Read())
+            {
+                Property property = new Property();
+                
+                property.Id = dr["ID"].ToString();
+                property.Address = dr["Address"].ToString();
+                property.SellPrice = (float)dr["Price"];
+                property.Type = dr["Type"].ToString();
+                property.Status = (bool)dr["Status"];
+                property.ContractorID = dr["ContractorID"].ToString();
+                property.Description = dr["Description"].ToString();
+                property.Photo = GetImages(property.Id);
+                list.Add(property);
+            }
+            return list;
+        }
+        static List<Image> GetImages(string id)
+        {
+            throw new NotImplementedException();
+        }
+        static List<Image> AddImages(string id)
+        {
+            throw new NotImplementedException();
+        }
+        static List<Image> DeleteImages(string id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

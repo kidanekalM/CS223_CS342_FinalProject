@@ -15,6 +15,7 @@ namespace Real_Estate_App
     {
         public Form1()
         {
+            
             InitializeComponent();
         }
 

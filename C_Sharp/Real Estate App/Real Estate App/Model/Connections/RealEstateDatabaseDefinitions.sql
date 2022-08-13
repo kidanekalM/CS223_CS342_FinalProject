@@ -1,27 +1,74 @@
 ﻿--Database creating
 
 CREATE DATABASE RealEstate
+
 --changeDatabase
 USE RealEstate
 
 -- Creating Tables 
+CREATE TABLE Contractor(
+ID INT PRIMARY KEY,
+Name VARCHAR(MAX),
+PhoneNumber VARCHAR(11) CONSTRAINT CHK_Phone_Num CHECK (PhoneNumber LIKE '[0-9]{10}')  UNIQUE,
+)
 CREATE TABLE Employees(
 ID INT PRIMARY KEY IDENTITY,
 FirstName VARCHAR(MAX),
 LastName VARCHAR(MAX),
 PhoneNumber VARCHAR(11) UNIQUE,
+Password VARCAAR(MAX),
+Photo IMAGE,
 EmpType VARCHAR(MAX),
 EmpDate DATE,
-DepartementID INT
-CONSTRAINT 
-)
-CREATE TABLE Client(
-)
-CREATE TABLE Departement(
-)
-CREATE TABLE Property(
+DepartementID INT /*CONSTRAINT FK_DepartmentId*/FOREIGN KEY REFERENCES Departement(ID)
 )
 
+CREATE TABLE Client(
+ID INT PRIMARY KEY IDENTITY,
+FirstName VARCHAR(MAX),
+LastName VARCHAR(MAX),
+PhoneNumber VARCHAR(11) CONSTRAINT CHK_Phone_Num CHECK (PhoneNumber LIKE '[0-9]{10}')  UNIQUE,
+Password VARCAAR(MAX) ,
+EmpId INT /*CONSTRAINT FK_EMPID*/ FOREIGN KEY REFERENCES Employees(ID)
+)
+CREATE TABLE Departement(
+ID INT PRIMARY KEY IDENTITY,
+Name VARCHAR(MAX),
+ManagerID INT /*CONSTRAINT FK_ManagerId*/ FOREIGN KEY REFERENCES Employees(id)
+)
+
+CREATE TABLE Property(
+ID INT PRIMARY KEY IDENTITY,
+Address VARCHAR(MAX),
+/*Photo IMAGE,*/
+Price FLOAT,
+Type VARCHAR(MAX),
+Status BIT,
+--AgentID INT /*CONSTRAINT FK_AGENTID*/ FOREIGN KEY REFERENCES EMPLOYEE(ID)
+ContractorID INT FOREIGN KEY REFERENCES Contractor(ID),
+Description VARCHAR(MAX)
+)
+CREATE TABLE PropertyPhoto(
+PropertyID INT FOREIGN KEY REFERENCES Property(ID),
+Photo IMAGE
+)
+CREATE TABLE Buy(
+PropertyID INT /*CONSTRAINT FK_PropertyId*/ FOREIGN KEY REFERENCES Property(ID),
+ClientID INT /*CONSTRAINT FK_ClientID*/ FOREIGN KEY REFERENCES Client(id),
+AgentID INT /*CONSTRAINT FK_AGENTID*/ FOREIGN KEY REFERENCES EMPLOYEE(ID),
+SellDate DATETIME,
+Comission MONEY
+)
+CREATE TABLE Appointment(
+ID INT PRIMARY KEY IDENTITY,
+AppointmentDate DATETIME,
+ClientID INT /*CONSTRAINT FK_ClientID*/ FOREIGN KEY REFERENCES Client(id),
+AgentID INT /*CONSTRAINT FK_AGENTID*/ FOREIGN KEY REFERENCES EMPLOYEE(ID)
+)
+CREATE TABLE ChoosenProperty(
+ID INT FOREIGN KEY REFERENCES Appointment(ID),
+PropertyID INT /*CONSTRAINT FK_PropertyId*/ FOREIGN KEY REFERENCES Property(ID)
+)
 GO
 
 -- Creating functions
@@ -29,5 +76,6 @@ GO
 -- Creating Stored Procedures
 
 -- Creating triggers
-
+-- INSERT TRIGGER -- cleaning the data trim, uppercase
+				  -- 
 

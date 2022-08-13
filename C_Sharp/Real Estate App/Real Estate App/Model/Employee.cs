@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -74,6 +75,26 @@ namespace Real_Estate_App.Model
         public static List<Employee> SearchEmployees(string value)
         {
             throw new NotSupportedException();
+        }
+        static List<Employee> ChangeToList(SqlDataReader dr)
+        {
+            List<Employee> employees = new List<Employee>();
+            while (dr.Read())
+            {
+                Employee employee = new Employee();
+
+                employee.ID = (int)dr["ID"];
+                employee.FirstName = dr["FirstName"].ToString();
+                employee.LastName = dr["LastName"].ToString();
+                employee.PhoneNumber = dr["PhoneNumber"].ToString();
+                employee.EmploymentDate = (DateTime)dr["EmpDate"];
+                employee.Password = dr["Password"].ToString();
+                employee.DepartmentID = dr["DepartementID"].ToString();
+                employee.EmployeeType = dr["EmpType"].ToString();
+                employee.Photo = (Image)dr["Photo"];
+                employees.Add(employee);
+            }    
+            return employees;
         }
     }
 }

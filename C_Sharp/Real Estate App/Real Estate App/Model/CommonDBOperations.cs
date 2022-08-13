@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +31,7 @@ namespace Real_Estate_App.Model
         /// <returns>bool</returns>
 
         bool Delete();
-       
+
+         List<Object> ChangeToList(SqlDataReader dr);
     }
 }
