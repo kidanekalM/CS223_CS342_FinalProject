@@ -39,7 +39,19 @@ namespace Real_Estate_App.Model
 
         static List<Client> ChangeToList(SqlDataReader dr)
         {
-            throw new NotImplementedException();
+            List<Client> list = new List<Client>();
+            while (dr.Read())
+            {
+                Client cl = new Client();
+                cl.ID = dr["ID"].ToString();
+                cl.FirstName = dr["FirstName"].ToString();
+                cl.LastName = dr["LastName"].ToString();
+                cl.PhoneNumber = dr["PhoneNumber"].ToString();
+                cl.Password = dr["Password"].ToString();
+                cl.EmployeeID = dr["EmpId"].ToString();
+                list.Add(cl);
+            }
+            return list;
         }
     }
 }

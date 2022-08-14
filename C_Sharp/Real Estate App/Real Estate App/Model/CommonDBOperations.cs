@@ -32,6 +32,5 @@ namespace Real_Estate_App.Model
 
         bool Delete();
 
-         List<Object> ChangeToList(SqlDataReader dr);
     }
 }

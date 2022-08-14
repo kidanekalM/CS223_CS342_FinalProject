@@ -15,6 +15,7 @@ namespace Real_Estate_App.Model
         public List<Image> Photo { get; set; }
         public string Type { get; set; }
         public bool Status { get; set; }
+        public float Area { get; set; }
         public float SellPrice { get; set; }
         public string Description { get; set; }
         public string ContractorID { get; set; }
@@ -99,6 +100,7 @@ namespace Real_Estate_App.Model
                 property.Address = dr["Address"].ToString();
                 property.SellPrice = (float)dr["Price"];
                 property.Type = dr["Type"].ToString();
+                property.Area = (float)dr["Area"];
                 property.Status = (bool)dr["Status"];
                 property.ContractorID = dr["ContractorID"].ToString();
                 property.Description = dr["Description"].ToString();

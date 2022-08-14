@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -84,6 +85,26 @@ namespace Real_Estate_App.Model
         public static List<Appointment> SearchAppointment(string value)
         {
             throw new NotImplementedException();
+        }
+        static List<Appointment> ChangeToList(SqlDataReader dr)
+        {
+            List<Appointment> list = new List<Appointment>();
+            while (dr.Read())
+            {
+                Appointment appointment = new Appointment();
+                appointment.ID = dr["ID"].ToString();
+                appointment.AppointmentDate = (DateTime)dr["AppointmentDate"];
+                appointment.Comment = dr["Comment"].ToString();
+                appointment.ClientID = dr["ClientID"].ToString();
+                appointment.agnetID = dr["AgentID"].ToString();
+                appointment.PropertyID = GetChoosenProperty(appointment.ID);
+                list.Add(appointment);
+            }
+            return list;
+        }
+        static List<string> GetChoosenProperty(string appointmentId)
+        {
+            throw new NotSupportedException();
         }
     }
 }
