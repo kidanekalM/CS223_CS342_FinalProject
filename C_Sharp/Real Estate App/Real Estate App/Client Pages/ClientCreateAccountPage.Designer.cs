@@ -1,0 +1,285 @@
+﻿namespace Real_Estate_App
+{
+    partial class ClientCreateAccountPage
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.grpbx_Gender = new System.Windows.Forms.GroupBox();
+            this.rb_Female = new System.Windows.Forms.RadioButton();
+            this.rb_Male = new System.Windows.Forms.RadioButton();
+            this.btn_Back = new System.Windows.Forms.Button();
+            this.btn_CreateAccount = new System.Windows.Forms.Button();
+            this.txt_PhoneNo = new System.Windows.Forms.TextBox();
+            this.txt_Email = new System.Windows.Forms.TextBox();
+            this.txt_LastName = new System.Windows.Forms.TextBox();
+            this.txt_FirstName = new System.Windows.Forms.TextBox();
+            this.lbl_Login = new System.Windows.Forms.Label();
+            this.btn_Unhide = new System.Windows.Forms.Button();
+            this.btn_Hide = new System.Windows.Forms.Button();
+            this.txt_Password = new System.Windows.Forms.TextBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.grpbx_Gender.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Real_Estate_App.Properties.Resources.luke_chesser_pJadQetzTkI_unsplash;
+            this.pictureBox1.Location = new System.Drawing.Point(-1, -243);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1368, 1099);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel1.Controls.Add(this.grpbx_Gender);
+            this.panel1.Controls.Add(this.btn_Back);
+            this.panel1.Controls.Add(this.btn_CreateAccount);
+            this.panel1.Controls.Add(this.txt_PhoneNo);
+            this.panel1.Controls.Add(this.txt_Email);
+            this.panel1.Controls.Add(this.txt_LastName);
+            this.panel1.Controls.Add(this.txt_FirstName);
+            this.panel1.Controls.Add(this.lbl_Login);
+            this.panel1.Controls.Add(this.btn_Unhide);
+            this.panel1.Controls.Add(this.btn_Hide);
+            this.panel1.Controls.Add(this.txt_Password);
+            this.panel1.Location = new System.Drawing.Point(213, 135);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(570, 528);
+            this.panel1.TabIndex = 1;
+            // 
+            // grpbx_Gender
+            // 
+            this.grpbx_Gender.Controls.Add(this.rb_Female);
+            this.grpbx_Gender.Controls.Add(this.rb_Male);
+            this.grpbx_Gender.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpbx_Gender.Location = new System.Drawing.Point(89, 373);
+            this.grpbx_Gender.Name = "grpbx_Gender";
+            this.grpbx_Gender.Size = new System.Drawing.Size(400, 32);
+            this.grpbx_Gender.TabIndex = 18;
+            this.grpbx_Gender.TabStop = false;
+            this.grpbx_Gender.Text = "Gender :";
+            // 
+            // rb_Female
+            // 
+            this.rb_Female.AutoSize = true;
+            this.rb_Female.Location = new System.Drawing.Point(250, 1);
+            this.rb_Female.Name = "rb_Female";
+            this.rb_Female.Size = new System.Drawing.Size(85, 25);
+            this.rb_Female.TabIndex = 1;
+            this.rb_Female.TabStop = true;
+            this.rb_Female.Text = "Female";
+            this.rb_Female.UseVisualStyleBackColor = true;
+            // 
+            // rb_Male
+            // 
+            this.rb_Male.AutoSize = true;
+            this.rb_Male.Location = new System.Drawing.Point(126, 1);
+            this.rb_Male.Name = "rb_Male";
+            this.rb_Male.Size = new System.Drawing.Size(69, 25);
+            this.rb_Male.TabIndex = 0;
+            this.rb_Male.TabStop = true;
+            this.rb_Male.Text = "Male";
+            this.rb_Male.UseVisualStyleBackColor = true;
+            // 
+            // btn_Back
+            // 
+            this.btn_Back.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Back.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Back.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_Back.Location = new System.Drawing.Point(299, 437);
+            this.btn_Back.Name = "btn_Back";
+            this.btn_Back.Size = new System.Drawing.Size(152, 48);
+            this.btn_Back.TabIndex = 17;
+            this.btn_Back.Text = "Back";
+            this.btn_Back.UseVisualStyleBackColor = false;
+            this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
+            // 
+            // btn_CreateAccount
+            // 
+            this.btn_CreateAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(122)))), ((int)(((byte)(163)))));
+            this.btn_CreateAccount.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CreateAccount.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_CreateAccount.Location = new System.Drawing.Point(120, 437);
+            this.btn_CreateAccount.Name = "btn_CreateAccount";
+            this.btn_CreateAccount.Size = new System.Drawing.Size(152, 48);
+            this.btn_CreateAccount.TabIndex = 14;
+            this.btn_CreateAccount.Text = "Create Account";
+            this.btn_CreateAccount.UseVisualStyleBackColor = false;
+            this.btn_CreateAccount.Click += new System.EventHandler(this.btn_CreateAccount_Click);
+            // 
+            // txt_PhoneNo
+            // 
+            this.txt_PhoneNo.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_PhoneNo.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txt_PhoneNo.Location = new System.Drawing.Point(89, 317);
+            this.txt_PhoneNo.Name = "txt_PhoneNo";
+            this.txt_PhoneNo.Size = new System.Drawing.Size(400, 29);
+            this.txt_PhoneNo.TabIndex = 12;
+            this.txt_PhoneNo.Text = "Phone Number";
+            this.txt_PhoneNo.Enter += new System.EventHandler(this.txt_PhoneNo_Enter);
+            this.txt_PhoneNo.Leave += new System.EventHandler(this.txt_PhoneNo_Leave);
+            // 
+            // txt_Email
+            // 
+            this.txt_Email.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Email.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txt_Email.Location = new System.Drawing.Point(89, 264);
+            this.txt_Email.Name = "txt_Email";
+            this.txt_Email.Size = new System.Drawing.Size(400, 29);
+            this.txt_Email.TabIndex = 11;
+            this.txt_Email.Text = "E-mail";
+            this.txt_Email.Enter += new System.EventHandler(this.txt_Email_Enter);
+            this.txt_Email.Leave += new System.EventHandler(this.txt_Email_Leave);
+            // 
+            // txt_LastName
+            // 
+            this.txt_LastName.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_LastName.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txt_LastName.Location = new System.Drawing.Point(89, 157);
+            this.txt_LastName.Name = "txt_LastName";
+            this.txt_LastName.Size = new System.Drawing.Size(400, 29);
+            this.txt_LastName.TabIndex = 7;
+            this.txt_LastName.Text = "Last Name";
+            this.txt_LastName.Enter += new System.EventHandler(this.txt_LastName_Enter);
+            this.txt_LastName.Leave += new System.EventHandler(this.txt_LastName_Leave);
+            // 
+            // txt_FirstName
+            // 
+            this.txt_FirstName.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_FirstName.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txt_FirstName.Location = new System.Drawing.Point(89, 108);
+            this.txt_FirstName.Name = "txt_FirstName";
+            this.txt_FirstName.Size = new System.Drawing.Size(400, 29);
+            this.txt_FirstName.TabIndex = 6;
+            this.txt_FirstName.Text = "First Name";
+            this.txt_FirstName.Enter += new System.EventHandler(this.txt_Firstname_Enter);
+            this.txt_FirstName.Leave += new System.EventHandler(this.txt_FirstName_Leave);
+            // 
+            // lbl_Login
+            // 
+            this.lbl_Login.AutoSize = true;
+            this.lbl_Login.Font = new System.Drawing.Font("Segoe UI Black", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Login.Location = new System.Drawing.Point(161, 36);
+            this.lbl_Login.Name = "lbl_Login";
+            this.lbl_Login.Size = new System.Drawing.Size(259, 45);
+            this.lbl_Login.TabIndex = 1;
+            this.lbl_Login.Text = "Create Account";
+            // 
+            // btn_Unhide
+            // 
+            this.btn_Unhide.BackColor = System.Drawing.Color.White;
+            this.btn_Unhide.BackgroundImage = global::Real_Estate_App.Properties.Resources.Unhide_com;
+            this.btn_Unhide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_Unhide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Unhide.Location = new System.Drawing.Point(455, 209);
+            this.btn_Unhide.Name = "btn_Unhide";
+            this.btn_Unhide.Size = new System.Drawing.Size(34, 34);
+            this.btn_Unhide.TabIndex = 20;
+            this.btn_Unhide.UseVisualStyleBackColor = false;
+            this.btn_Unhide.Click += new System.EventHandler(this.btn_Unhide_Click);
+            // 
+            // btn_Hide
+            // 
+            this.btn_Hide.AutoEllipsis = true;
+            this.btn_Hide.BackColor = System.Drawing.Color.White;
+            this.btn_Hide.BackgroundImage = global::Real_Estate_App.Properties.Resources.hide_com;
+            this.btn_Hide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_Hide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Hide.Location = new System.Drawing.Point(455, 209);
+            this.btn_Hide.Name = "btn_Hide";
+            this.btn_Hide.Size = new System.Drawing.Size(34, 34);
+            this.btn_Hide.TabIndex = 19;
+            this.btn_Hide.UseVisualStyleBackColor = false;
+            this.btn_Hide.Click += new System.EventHandler(this.btn_Hide_Click);
+            // 
+            // txt_Password
+            // 
+            this.txt_Password.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Password.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txt_Password.Location = new System.Drawing.Point(89, 209);
+            this.txt_Password.Name = "txt_Password";
+            this.txt_Password.Size = new System.Drawing.Size(400, 29);
+            this.txt_Password.TabIndex = 9;
+            this.txt_Password.Text = "Password";
+            this.txt_Password.Enter += new System.EventHandler(this.txt_Password_Enter);
+            this.txt_Password.Leave += new System.EventHandler(this.txt_Password_Leave);
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
+            // 
+            // ClientCreateAccountPage
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(973, 781);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "ClientCreateAccountPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "ClientCreatePage";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.grpbx_Gender.ResumeLayout(false);
+            this.grpbx_Gender.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lbl_Login;
+        private System.Windows.Forms.TextBox txt_PhoneNo;
+        private System.Windows.Forms.TextBox txt_Email;
+        private System.Windows.Forms.TextBox txt_Password;
+        private System.Windows.Forms.TextBox txt_LastName;
+        private System.Windows.Forms.TextBox txt_FirstName;
+        private System.Windows.Forms.Button btn_CreateAccount;
+        private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.Button btn_Back;
+        private System.Windows.Forms.GroupBox grpbx_Gender;
+        private System.Windows.Forms.RadioButton rb_Female;
+        private System.Windows.Forms.RadioButton rb_Male;
+        private System.Windows.Forms.Button btn_Unhide;
+        private System.Windows.Forms.Button btn_Hide;
+    }
+}
