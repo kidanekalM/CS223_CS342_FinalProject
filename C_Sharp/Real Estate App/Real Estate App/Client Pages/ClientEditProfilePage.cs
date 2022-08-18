@@ -42,29 +42,61 @@ namespace Real_Estate_App
             Regex name = new Regex(@"^[A-Za-z]{1,50}$");
             Regex email = new Regex(@"^[A-Za-z0-9]+[.-_]{0,1}[A-Za-z0-9]+[@][A-Za-z]+[.][a-z]{2,3}");
             Regex phone = new Regex(@"^[0-9]{10}$");
+
+            bool hasError = false;
             errorProvider.Clear();
 
+            //Checking if the proper characters are used
             if (!name.IsMatch(txt_FirstName.Text))
+            {
                 errorProvider.SetError(txt_FirstName, "Only characters A-Z are allowed!");
+                hasError = true;
+            }
             if (!name.IsMatch(txt_LastName.Text))
+            {
                 errorProvider.SetError(txt_LastName, "Only characters A-Z are allowed!");
+                hasError = true;
+            }
             if (!email.IsMatch(txt_Email.Text))
+            {
                 errorProvider.SetError(txt_Email, "Invalid E-mail!");
+                hasError = true;
+            }
             if (!phone.IsMatch(txt_PhoneNo.Text))
+            {
                 errorProvider.SetError(txt_PhoneNo, "Only numbers of 10 digits are allowed!");
+                hasError = true;
+            }
 
+            //Checking if the text boxes are filled in
             if (txt_FirstName.Text == "First Name")
+            {
                 errorProvider.SetError(txt_FirstName, "First Name must be provided!");
+                hasError = true;
+            }
             if (txt_LastName.Text == "Last Name")
+            {
                 errorProvider.SetError(txt_LastName, "Last Name must be provided!");
+                hasError = true;
+            }
             if (txt_Email.Text == "E-mail")
+            {
                 errorProvider.SetError(txt_Email, "E-mail must be provided!");
+                hasError = true;
+            }
             if (txt_PhoneNo.Text == "Phone Number")
+            {
                 errorProvider.SetError(txt_PhoneNo, "Phone Number must be provided!");
+                hasError = true;
+            }
             if (!rb_Male.Checked && !rb_Female.Checked)
+            {
                 errorProvider.SetError(grpbx_Gender, "Gender must be provided!");
+                hasError = true;
+            }
 
-            if (name.IsMatch(txt_FirstName.Text) && name.IsMatch(txt_LastName.Text) && email.IsMatch(txt_Email.Text) && phone.IsMatch(txt_PhoneNo.Text) && (rb_Male.Checked || rb_Female.Checked))
+            //Performing the action after validating
+            if (hasError == false)
             {
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                 DialogResult result = MessageBox.Show("Are you sure you want to save the changes?", "Edit Profile", buttons);
@@ -77,6 +109,7 @@ namespace Real_Estate_App
                         gender = "Female";
 
                     MessageBox.Show("Update successfull!");
+
                     ClientProfilePage profilePage = new ClientProfilePage(containerPage, txt_FirstName.Text, txt_LastName.Text, txt_Email.Text, txt_PhoneNo.Text, gender);
                     profilePage.MdiParent = containerPage;
                     profilePage.Show();

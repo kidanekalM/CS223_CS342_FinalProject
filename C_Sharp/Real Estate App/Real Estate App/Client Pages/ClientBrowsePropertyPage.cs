@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Real_Estate_App.Client_Pages
 {
@@ -72,10 +73,22 @@ namespace Real_Estate_App.Client_Pages
 
         private void btn_IdSearch_Click(object sender, EventArgs e)
         {
-            ClientSearchResultPage searchResult = new ClientSearchResultPage(container, this);
-            searchResult.MdiParent = container;
-            searchResult.Show();
-            this.Hide();
+            bool hasError = false;
+            errorProvider.Clear();
+
+            if (txt_id.Text == "Property Id")
+            {
+                errorProvider.SetError(btn_IdSearch, "Id must be provided!");
+                hasError = true;
+            }
+
+            if (hasError == false)
+            {
+                ClientSearchResultPage searchResult = new ClientSearchResultPage(container, this);
+                searchResult.MdiParent = container;
+                searchResult.Show();
+                this.Hide();
+            }
         }
 
         private void btn_FilterSearch_Click(object sender, EventArgs e)

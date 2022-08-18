@@ -139,29 +139,71 @@ namespace Real_Estate_App
             Regex email = new Regex(@"^[A-Za-z0-9]+[.-_]{0,1}[A-Za-z0-9]+[@][A-Za-z]+[.][a-z]{2,3}");
             Regex phone = new Regex(@"^[0-9]{10}$");
 
+            bool hasError = false;
             errorProvider.Clear();
 
+            //Checking what kind of characters are used
             if (!name.IsMatch(txt_FirstName.Text))
+            {
                 errorProvider.SetError(txt_FirstName, "Only characters A-Z are allowed!");
+                hasError = true;
+            }
             if (!name.IsMatch(txt_LastName.Text))
+            {
                 errorProvider.SetError(txt_LastName, "Only characters A-Z are allowed!");
+                hasError = true;
+            }
             if (!email.IsMatch(txt_Email.Text))
+            {
                 errorProvider.SetError(txt_Email, "Invalid E-mail!");
+                hasError = true;
+            }
             if (!phone.IsMatch(txt_PhoneNo.Text))
+            {
                 errorProvider.SetError(txt_PhoneNo, "Only numbers of 10 digits are allowed!");
+                hasError = true;
+            }
 
+            //Checking if the text boxes are filled or not
             if (txt_FirstName.Text == "First Name")
+            {
                 errorProvider.SetError(txt_FirstName, "First Name must be provided!");
+                hasError = true;
+            }
             if (txt_LastName.Text == "Last Name")
+            {
                 errorProvider.SetError(txt_LastName, "Last Name must be provided!");
+                hasError = true;
+            }
             if (txt_Password.Text == "Password")
+            {
                 errorProvider.SetError(txt_Password, "Password must be provided!");
+                hasError = true;
+            }
             if (txt_Email.Text == "E-mail")
+            {
                 errorProvider.SetError(txt_Email, "E-mail must be provided!");
+                hasError = true;
+            }
             if (txt_PhoneNo.Text == "Phone Number")
+            {
                 errorProvider.SetError(txt_PhoneNo, "Phone Number must be provided!");
+                hasError = true;
+            }
             if (!rb_Male.Checked && !rb_Female.Checked)
+            {
                 errorProvider.SetError(grpbx_Gender, "Gender must be provided!");
+                hasError = true;
+            }
+
+            //Performing the action after validation
+            if (hasError == false)
+            {
+                MessageBox.Show("Your account has been created successfully!");
+                LoginPage loginPage = new LoginPage();
+                loginPage.Show();
+                this.Hide();
+            }
         }
 
         private void btn_Unhide_Click(object sender, EventArgs e)

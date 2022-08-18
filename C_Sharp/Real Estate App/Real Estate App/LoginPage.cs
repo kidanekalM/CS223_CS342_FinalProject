@@ -110,13 +110,21 @@ namespace Real_Estate_App
 
         private void btn_AdminLogin_Click(object sender, EventArgs e)
         {
+            bool hasError = false;
             errorProvider.Clear();
 
             if (txt_AdminId.Text == "Admin Id")
+            {
                 errorProvider.SetError(txt_AdminId, "Admin Id must be provided!");
+                hasError = true;
+            }
             if (txt_AdminPassword.Text == "Password")
+            {
                 errorProvider.SetError(txt_AdminPassword, "Admin Password must be provided!");
-            if (txt_AdminId.Text != "Admin Id" && txt_AdminPassword.Text != "Password")
+                hasError = true;
+            }
+
+            if (hasError == false)
             {
                 //open admin page
             }
@@ -183,13 +191,21 @@ namespace Real_Estate_App
 
         private void btn_AgentLogin_Click(object sender, EventArgs e)
         {
+            bool hasError = false;
             errorProvider.Clear();
 
             if (txt_AgentId.Text == "Agent Id")
+            {
                 errorProvider.SetError(txt_AgentId, "Agent Id must be provided!");
+                hasError = true;
+            }
             if (txt_AgentPassword.Text == "Password")
+            {
                 errorProvider.SetError(txt_AgentPassword, "Agent Password must be provided!");
-            if (txt_AgentId.Text != "Agent Id" && txt_AgentPassword.Text != "Password")
+                hasError = true;
+            }
+
+            if (hasError == false)
             {
                 //open agent page
             }
@@ -263,16 +279,21 @@ namespace Real_Estate_App
 
         private void btn_ClientLogin_Click(object sender, EventArgs e)
         {
-            Boolean flag = false;
+            bool hasError = false;
             errorProvider.Clear();
 
-
             if (txt_ClientId.Text == "Client Id")
+            {
                 errorProvider.SetError(txt_ClientId, "Client Id must be provided!");
+                hasError = true;
+            }
             if (txt_ClientPassword.Text == "Password")
+            {
                 errorProvider.SetError(txt_ClientPassword, "Client Password must be provided!");
+                hasError = true;
+            }
 
-            if (txt_ClientId.Text != "Client Id" && txt_ClientPassword.Text != "Password")
+            if (hasError == false)
             {
                 ClientContainer containerPage = new ClientContainer();
                 containerPage.Show();
