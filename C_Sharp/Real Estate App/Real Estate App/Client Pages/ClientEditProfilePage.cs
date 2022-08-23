@@ -15,7 +15,7 @@ namespace Real_Estate_App
     {
         private ClientContainer containerPage = null;
         private ClientProfilePage profilePage = null;
-        public ClientEditProfilePage(ClientContainer containerPage, ClientProfilePage profilePage, string firstName, string lastName, string email, string phoneNumber, string gender)
+        public ClientEditProfilePage(ClientContainer containerPage, ClientProfilePage profilePage, string firstName, string lastName, string email, string phoneNumber)
         {
             InitializeComponent();
             this.containerPage = containerPage;
@@ -25,16 +25,6 @@ namespace Real_Estate_App
             txt_Email.Text = email;
             txt_PhoneNo.Text = phoneNumber;
 
-            if (gender.Equals("male", StringComparison.OrdinalIgnoreCase))
-            {
-                rb_Male.Checked = true;
-                rb_Female.Checked = false;
-            }
-            else if (gender.Equals("female", StringComparison.OrdinalIgnoreCase))
-            {
-                rb_Male.Checked = false;
-                rb_Female.Checked = true;
-            }
         }
 
         private void btn_Update_Click(object sender, EventArgs e)
@@ -89,11 +79,6 @@ namespace Real_Estate_App
                 errorProvider.SetError(txt_PhoneNo, "Phone Number must be provided!");
                 hasError = true;
             }
-            if (!rb_Male.Checked && !rb_Female.Checked)
-            {
-                errorProvider.SetError(grpbx_Gender, "Gender must be provided!");
-                hasError = true;
-            }
 
             //Performing the action after validating
             if (hasError == false)
@@ -102,15 +87,9 @@ namespace Real_Estate_App
                 DialogResult result = MessageBox.Show("Are you sure you want to save the changes?", "Edit Profile", buttons);
                 if (result == DialogResult.Yes)
                 {
-                    String gender = null;
-                    if (rb_Male.Checked)
-                        gender = "Male";
-                    else if (rb_Female.Checked)
-                        gender = "Female";
-
                     MessageBox.Show("Update successfull!");
 
-                    ClientProfilePage profilePage = new ClientProfilePage(containerPage, txt_FirstName.Text, txt_LastName.Text, txt_Email.Text, txt_PhoneNo.Text, gender);
+                    ClientProfilePage profilePage = new ClientProfilePage(containerPage, txt_FirstName.Text, txt_LastName.Text, txt_Email.Text, txt_PhoneNo.Text);
                     profilePage.MdiParent = containerPage;
                     profilePage.Show();
                     this.Hide();

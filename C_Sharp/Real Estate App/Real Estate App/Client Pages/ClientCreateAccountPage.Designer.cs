@@ -31,9 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.grpbx_Gender = new System.Windows.Forms.GroupBox();
-            this.rb_Female = new System.Windows.Forms.RadioButton();
-            this.rb_Male = new System.Windows.Forms.RadioButton();
             this.btn_Back = new System.Windows.Forms.Button();
             this.btn_CreateAccount = new System.Windows.Forms.Button();
             this.txt_PhoneNo = new System.Windows.Forms.TextBox();
@@ -47,7 +44,6 @@
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.grpbx_Gender.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +60,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel1.Controls.Add(this.grpbx_Gender);
             this.panel1.Controls.Add(this.btn_Back);
             this.panel1.Controls.Add(this.btn_CreateAccount);
             this.panel1.Controls.Add(this.txt_PhoneNo);
@@ -80,46 +75,12 @@
             this.panel1.Size = new System.Drawing.Size(570, 528);
             this.panel1.TabIndex = 1;
             // 
-            // grpbx_Gender
-            // 
-            this.grpbx_Gender.Controls.Add(this.rb_Female);
-            this.grpbx_Gender.Controls.Add(this.rb_Male);
-            this.grpbx_Gender.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpbx_Gender.Location = new System.Drawing.Point(89, 373);
-            this.grpbx_Gender.Name = "grpbx_Gender";
-            this.grpbx_Gender.Size = new System.Drawing.Size(400, 32);
-            this.grpbx_Gender.TabIndex = 18;
-            this.grpbx_Gender.TabStop = false;
-            this.grpbx_Gender.Text = "Gender :";
-            // 
-            // rb_Female
-            // 
-            this.rb_Female.AutoSize = true;
-            this.rb_Female.Location = new System.Drawing.Point(250, 1);
-            this.rb_Female.Name = "rb_Female";
-            this.rb_Female.Size = new System.Drawing.Size(85, 25);
-            this.rb_Female.TabIndex = 1;
-            this.rb_Female.TabStop = true;
-            this.rb_Female.Text = "Female";
-            this.rb_Female.UseVisualStyleBackColor = true;
-            // 
-            // rb_Male
-            // 
-            this.rb_Male.AutoSize = true;
-            this.rb_Male.Location = new System.Drawing.Point(126, 1);
-            this.rb_Male.Name = "rb_Male";
-            this.rb_Male.Size = new System.Drawing.Size(69, 25);
-            this.rb_Male.TabIndex = 0;
-            this.rb_Male.TabStop = true;
-            this.rb_Male.Text = "Male";
-            this.rb_Male.UseVisualStyleBackColor = true;
-            // 
             // btn_Back
             // 
             this.btn_Back.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btn_Back.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Back.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btn_Back.Location = new System.Drawing.Point(299, 437);
+            this.btn_Back.Location = new System.Drawing.Point(301, 414);
             this.btn_Back.Name = "btn_Back";
             this.btn_Back.Size = new System.Drawing.Size(152, 48);
             this.btn_Back.TabIndex = 17;
@@ -132,7 +93,7 @@
             this.btn_CreateAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(122)))), ((int)(((byte)(163)))));
             this.btn_CreateAccount.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CreateAccount.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_CreateAccount.Location = new System.Drawing.Point(120, 437);
+            this.btn_CreateAccount.Location = new System.Drawing.Point(122, 414);
             this.btn_CreateAccount.Name = "btn_CreateAccount";
             this.btn_CreateAccount.Size = new System.Drawing.Size(152, 48);
             this.btn_CreateAccount.TabIndex = 14;
@@ -144,7 +105,7 @@
             // 
             this.txt_PhoneNo.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_PhoneNo.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txt_PhoneNo.Location = new System.Drawing.Point(89, 317);
+            this.txt_PhoneNo.Location = new System.Drawing.Point(90, 347);
             this.txt_PhoneNo.Name = "txt_PhoneNo";
             this.txt_PhoneNo.Size = new System.Drawing.Size(400, 29);
             this.txt_PhoneNo.TabIndex = 12;
@@ -156,7 +117,7 @@
             // 
             this.txt_Email.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Email.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txt_Email.Location = new System.Drawing.Point(89, 264);
+            this.txt_Email.Location = new System.Drawing.Point(90, 294);
             this.txt_Email.Name = "txt_Email";
             this.txt_Email.Size = new System.Drawing.Size(400, 29);
             this.txt_Email.TabIndex = 11;
@@ -168,7 +129,7 @@
             // 
             this.txt_LastName.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_LastName.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txt_LastName.Location = new System.Drawing.Point(89, 157);
+            this.txt_LastName.Location = new System.Drawing.Point(90, 187);
             this.txt_LastName.Name = "txt_LastName";
             this.txt_LastName.Size = new System.Drawing.Size(400, 29);
             this.txt_LastName.TabIndex = 7;
@@ -180,7 +141,7 @@
             // 
             this.txt_FirstName.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_FirstName.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txt_FirstName.Location = new System.Drawing.Point(89, 108);
+            this.txt_FirstName.Location = new System.Drawing.Point(90, 138);
             this.txt_FirstName.Name = "txt_FirstName";
             this.txt_FirstName.Size = new System.Drawing.Size(400, 29);
             this.txt_FirstName.TabIndex = 6;
@@ -192,7 +153,7 @@
             // 
             this.lbl_Login.AutoSize = true;
             this.lbl_Login.Font = new System.Drawing.Font("Segoe UI Black", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Login.Location = new System.Drawing.Point(161, 36);
+            this.lbl_Login.Location = new System.Drawing.Point(161, 57);
             this.lbl_Login.Name = "lbl_Login";
             this.lbl_Login.Size = new System.Drawing.Size(259, 45);
             this.lbl_Login.TabIndex = 1;
@@ -204,7 +165,7 @@
             this.btn_Unhide.BackgroundImage = global::Real_Estate_App.Properties.Resources.Unhide_com;
             this.btn_Unhide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_Unhide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Unhide.Location = new System.Drawing.Point(455, 209);
+            this.btn_Unhide.Location = new System.Drawing.Point(456, 238);
             this.btn_Unhide.Name = "btn_Unhide";
             this.btn_Unhide.Size = new System.Drawing.Size(34, 34);
             this.btn_Unhide.TabIndex = 20;
@@ -218,7 +179,7 @@
             this.btn_Hide.BackgroundImage = global::Real_Estate_App.Properties.Resources.hide_com;
             this.btn_Hide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_Hide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Hide.Location = new System.Drawing.Point(455, 209);
+            this.btn_Hide.Location = new System.Drawing.Point(456, 238);
             this.btn_Hide.Name = "btn_Hide";
             this.btn_Hide.Size = new System.Drawing.Size(34, 34);
             this.btn_Hide.TabIndex = 19;
@@ -229,7 +190,7 @@
             // 
             this.txt_Password.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Password.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txt_Password.Location = new System.Drawing.Point(89, 209);
+            this.txt_Password.Location = new System.Drawing.Point(90, 239);
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Size = new System.Drawing.Size(400, 29);
             this.txt_Password.TabIndex = 9;
@@ -256,8 +217,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.grpbx_Gender.ResumeLayout(false);
-            this.grpbx_Gender.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
@@ -276,9 +235,6 @@
         private System.Windows.Forms.Button btn_CreateAccount;
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.Button btn_Back;
-        private System.Windows.Forms.GroupBox grpbx_Gender;
-        private System.Windows.Forms.RadioButton rb_Female;
-        private System.Windows.Forms.RadioButton rb_Male;
         private System.Windows.Forms.Button btn_Unhide;
         private System.Windows.Forms.Button btn_Hide;
     }

@@ -13,7 +13,7 @@ namespace Real_Estate_App
     public partial class ClientProfilePage : Form
     {
         private ClientContainer container = null;
-        public ClientProfilePage(ClientContainer cc, string firstName, string lastName, string email, string phoneNumber, string gender)
+        public ClientProfilePage(ClientContainer cc, string firstName, string lastName, string email, string phoneNumber)
         {
             InitializeComponent();
             container = cc;
@@ -21,16 +21,11 @@ namespace Real_Estate_App
             lbl_LastName.Text = lastName;
             lbl_Email.Text = email;
             lbl_PhoneNo.Text = phoneNumber;
-            if (gender.Equals("male", StringComparison.OrdinalIgnoreCase))
-                lbl_Gender.Text = "Male";
-            else if (gender.Equals("female", StringComparison.OrdinalIgnoreCase))
-                lbl_Gender.Text = "Female";
-
         }
 
         private void btn_editProfile_Click(object sender, EventArgs e)
         {
-            ClientEditProfilePage editPage = new ClientEditProfilePage(container, this, lbl_FirstName.Text, lbl_LastName.Text, lbl_Email.Text, lbl_PhoneNo.Text, lbl_Gender.Text);
+            ClientEditProfilePage editPage = new ClientEditProfilePage(container, this, lbl_FirstName.Text, lbl_LastName.Text, lbl_Email.Text, lbl_PhoneNo.Text);
             editPage.MdiParent = container;
             editPage.Show();
             this.Hide();

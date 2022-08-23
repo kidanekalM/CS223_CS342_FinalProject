@@ -190,11 +190,6 @@ namespace Real_Estate_App
                 errorProvider.SetError(txt_PhoneNo, "Phone Number must be provided!");
                 hasError = true;
             }
-            if (!rb_Male.Checked && !rb_Female.Checked)
-            {
-                errorProvider.SetError(grpbx_Gender, "Gender must be provided!");
-                hasError = true;
-            }
 
             //Performing the action after validation
             if (hasError == false)

@@ -39,8 +39,6 @@
             this.lbl_Email = new System.Windows.Forms.Label();
             this.lbl_PhoneNo = new System.Windows.Forms.Label();
             this.btn_editProfile = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lbl_Gender = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -70,7 +68,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(534, 269);
+            this.label1.Location = new System.Drawing.Point(537, 288);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(136, 26);
             this.label1.TabIndex = 2;
@@ -80,7 +78,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(534, 308);
+            this.label2.Location = new System.Drawing.Point(537, 327);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(138, 26);
             this.label2.TabIndex = 3;
@@ -90,7 +88,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(534, 388);
+            this.label4.Location = new System.Drawing.Point(537, 407);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(126, 26);
             this.label4.TabIndex = 4;
@@ -100,7 +98,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(534, 348);
+            this.label3.Location = new System.Drawing.Point(537, 367);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 26);
             this.label3.TabIndex = 5;
@@ -110,41 +108,37 @@
             // 
             this.lbl_FirstName.AutoSize = true;
             this.lbl_FirstName.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_FirstName.Location = new System.Drawing.Point(676, 269);
+            this.lbl_FirstName.Location = new System.Drawing.Point(679, 288);
             this.lbl_FirstName.Name = "lbl_FirstName";
-            this.lbl_FirstName.Size = new System.Drawing.Size(111, 23);
+            this.lbl_FirstName.Size = new System.Drawing.Size(0, 23);
             this.lbl_FirstName.TabIndex = 6;
-            this.lbl_FirstName.Text = "Hawariaw";
             // 
             // lbl_LastName
             // 
             this.lbl_LastName.AutoSize = true;
             this.lbl_LastName.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_LastName.Location = new System.Drawing.Point(676, 308);
+            this.lbl_LastName.Location = new System.Drawing.Point(679, 327);
             this.lbl_LastName.Name = "lbl_LastName";
-            this.lbl_LastName.Size = new System.Drawing.Size(74, 23);
+            this.lbl_LastName.Size = new System.Drawing.Size(0, 23);
             this.lbl_LastName.TabIndex = 7;
-            this.lbl_LastName.Text = "Paulos";
             // 
             // lbl_Email
             // 
             this.lbl_Email.AutoSize = true;
             this.lbl_Email.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Email.Location = new System.Drawing.Point(630, 349);
+            this.lbl_Email.Location = new System.Drawing.Point(633, 368);
             this.lbl_Email.Name = "lbl_Email";
-            this.lbl_Email.Size = new System.Drawing.Size(232, 23);
+            this.lbl_Email.Size = new System.Drawing.Size(0, 23);
             this.lbl_Email.TabIndex = 8;
-            this.lbl_Email.Text = "Hawariaw@email.com";
             // 
             // lbl_PhoneNo
             // 
             this.lbl_PhoneNo.AutoSize = true;
             this.lbl_PhoneNo.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PhoneNo.Location = new System.Drawing.Point(657, 390);
+            this.lbl_PhoneNo.Location = new System.Drawing.Point(660, 409);
             this.lbl_PhoneNo.Name = "lbl_PhoneNo";
-            this.lbl_PhoneNo.Size = new System.Drawing.Size(120, 23);
+            this.lbl_PhoneNo.Size = new System.Drawing.Size(0, 23);
             this.lbl_PhoneNo.TabIndex = 9;
-            this.lbl_PhoneNo.Text = "0972503268";
             // 
             // btn_editProfile
             // 
@@ -159,33 +153,11 @@
             this.btn_editProfile.UseVisualStyleBackColor = false;
             this.btn_editProfile.Click += new System.EventHandler(this.btn_editProfile_Click);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(534, 428);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 26);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Gender :";
-            // 
-            // lbl_Gender
-            // 
-            this.lbl_Gender.AutoSize = true;
-            this.lbl_Gender.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Gender.Location = new System.Drawing.Point(645, 430);
-            this.lbl_Gender.Name = "lbl_Gender";
-            this.lbl_Gender.Size = new System.Drawing.Size(59, 23);
-            this.lbl_Gender.TabIndex = 12;
-            this.lbl_Gender.Text = "Male";
-            // 
             // ClientProfilePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1001, 589);
-            this.Controls.Add(this.lbl_Gender);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.btn_editProfile);
             this.Controls.Add(this.lbl_PhoneNo);
             this.Controls.Add(this.lbl_Email);
@@ -220,7 +192,5 @@
         private System.Windows.Forms.Label lbl_Email;
         private System.Windows.Forms.Label lbl_PhoneNo;
         private System.Windows.Forms.Button btn_editProfile;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lbl_Gender;
     }
 }
