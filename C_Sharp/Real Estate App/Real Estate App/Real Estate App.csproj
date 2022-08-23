@@ -187,6 +187,11 @@
       <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs" />
+
+    <Compile Include="User Control\CircularButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+
     <Compile Include="User Control\CircularPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>

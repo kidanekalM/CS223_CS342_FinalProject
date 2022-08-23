@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Assignment_4_GUI
+namespace Real_Estate_App.User_Control
 {
-    internal class CircularPictureBox : PictureBox
+    internal class CircularButton : Button
     {
         Region defaultRegion;
         protected override void OnPaint(PaintEventArgs pe)
@@ -19,12 +19,8 @@ namespace Assignment_4_GUI
             gp.AddEllipse(0, 0, ClientSize.Width, ClientSize.Width);
             defaultRegion = this.Region;
             this.Region = new System.Drawing.Region(gp);
-            this.SizeMode = PictureBoxSizeMode.Zoom;
             base.OnPaint(pe);
-        }
-        private void DoubleClick(object sender, EventArgs e)
-        {
-            this.Region = defaultRegion;
+
         }
     }
 }

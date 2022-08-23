@@ -9,6 +9,7 @@ namespace Real_Estate_App.Model
         public string ID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public string Password { get; set; }
         public string EmployeeID { get; set; }
@@ -49,6 +50,7 @@ namespace Real_Estate_App.Model
                 cl.PhoneNumber = dr["PhoneNumber"].ToString();
                 cl.Password = dr["Password"].ToString();
                 cl.EmployeeID = dr["EmpId"].ToString();
+                cl.Email = dr["Email"].ToString();
                 list.Add(cl);
             }
             return list;

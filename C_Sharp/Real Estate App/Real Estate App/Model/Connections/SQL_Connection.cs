@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -7,25 +8,28 @@ namespace Real_Estate_App.Model
      public class SQL_Connection
     {
         static SqlConnection myConn;
-        static string ServerName = "Server=DESKTOP-HA15RJO;";
-        static string ConnectionType = "Trusted_Connection=True;";
+        //static string ServerName = "Server=DESKTOP-HA15RJO;";
+        //static string ConnectionType = "Trusted_Connection=True;";
         /// <summary>
         /// Creates the conection in a static way
         /// </summary>
         static SQL_Connection()
         {
-            String connectionStrng = ServerName+"Database=RealEstate;" + ConnectionType;
+
             try
             {
+                String connectionStrng = ConfigurationManager.ConnectionStrings["ConnectionSrtring"].ConnectionString;
+
                 myConn = new SqlConnection(connectionStrng);   
                 myConn.Open();
 
-                MessageBox.Show("Connected to database RealEstate ");
+                MessageBox.Show("Connected to database RealEstate");
             }
             catch (Exception e)
             {
                 MessageBox.Show("The database RealEstate may not exist"+"\n"+e.Message);       
             }
+            myConn.Close();
         }
         /// <summary>
         /// Executes SQL statements that return a resultset or a table
@@ -35,7 +39,8 @@ namespace Real_Estate_App.Model
         public static SqlDataReader Query(string query)
         {
             try 
-            { 
+            {
+                myConn.Open();
             SqlCommand cmd = new SqlCommand(query, myConn);
             return cmd.ExecuteReader();
             }
@@ -43,6 +48,7 @@ namespace Real_Estate_App.Model
             {
                 return null;
             }
+            myConn.Close();
         }
         /// <summary>
         /// Executes SQL statements that do not return a result set
@@ -53,6 +59,7 @@ namespace Real_Estate_App.Model
         {
             try
             {
+                myConn.Open();
                 SqlCommand cmd = new SqlCommand(query, myConn);
                 cmd.ExecuteNonQuery();
                 return true;
@@ -61,6 +68,7 @@ namespace Real_Estate_App.Model
             {
                 return false;
             }
+            myConn.Close();
         }
         /// <summary>
         /// creates an instance of sql command 
@@ -68,7 +76,9 @@ namespace Real_Estate_App.Model
         /// <returns>SqlCommand </returns>
         public static SqlCommand GetPreparedStatement()
         {
+            myConn.Open();
             SqlCommand cmd = new SqlCommand(null, myConn);
+            
             return cmd;
         }
     }
