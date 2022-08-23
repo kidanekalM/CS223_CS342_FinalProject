@@ -120,6 +120,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+
     <Compile Include="Client Pages\ClientAppointmentPage.cs">
       <SubType>Form</SubType>
     </Compile>
