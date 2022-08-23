@@ -907,7 +907,7 @@ BEGIN
 	IF ((SELECT AppointmentDate FROM inserted)>GETDATE())
 	INSERT INTO Appointment(AppointmentDate,Comment,ClientID,AgentID)
 	(
-		SELECT AppointmentDate,dbo.[Clean Names](Comment),ClientID,AgentID
+		SELECT AppointmentDate,trim(Comment),ClientID,AgentID
 		FROM INSERTED
 	)
 	ELSE 

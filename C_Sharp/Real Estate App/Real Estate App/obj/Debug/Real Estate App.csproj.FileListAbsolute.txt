@@ -59,6 +59,15 @@ C:\Users\hp\Desktop\New folder\code\CS223_CS342_FinalProject\C_Sharp\Real Estate
 C:\Users\hp\Desktop\New folder\code\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\hp\Desktop\New folder\code\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.ValueTuple.xml
 C:\Users\hp\Desktop\New folder\code\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real Estate App.csproj.CopyComplete
-C:\Users\hp\Desktop\New folder\code\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Form1.resources
-
-C:\Users\hp\Desktop\New folder\code\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.User_Control.ShowAppointment.resources
+C:\Users\hp\Desktop\New folder\code\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Client_Pages.ClientAppointmentPage.resources
+C:\Users\hp\Desktop\New folder\code\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Client_Pages.ClientBrowsePropertyPage.resources
+C:\Users\hp\Desktop\New folder\code\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.ClientContainer.resources
+C:\Users\hp\Desktop\New folder\code\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.ClientCreateAccountPage.resources
+C:\Users\hp\Desktop\New folder\code\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.ClientEditProfilePage.resources
+C:\Users\hp\Desktop\New folder\code\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.ClientHomePage.resources
+C:\Users\hp\Desktop\New folder\code\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Client_Pages.ClientLoginPage.resources
+C:\Users\hp\Desktop\New folder\code\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.ClientPasswordPage.resources
+C:\Users\hp\Desktop\New folder\code\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.ClientProfilePage.resources
+C:\Users\hp\Desktop\New folder\code\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Client_Pages.ClientPropertyPage.resources
+C:\Users\hp\Desktop\New folder\code\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Client_Pages.ClientSearchResultPage.resources
+C:\Users\hp\Desktop\New folder\code\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.LoginPage.resources
