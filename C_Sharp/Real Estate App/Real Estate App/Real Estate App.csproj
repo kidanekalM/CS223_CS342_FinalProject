@@ -120,16 +120,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< Updated upstream
-
-=======
     <Compile Include="Admin Pages\AdminHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Admin Pages\AdminHomePage.designer.cs">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </Compile>
->>>>>>> Stashed changes
     <Compile Include="Client Pages\ClientAppointmentPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,20 +192,14 @@
     <Compile Include="LoginPage.designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
-<<<<<<< Updated upstream
-    <Compile Include="Properties\Resources.Designer.cs" />
-
     <Compile Include="User Control\CircularButton.cs">
       <SubType>Component</SubType>
     </Compile>
-
-=======
     <Compile Include="Properties\Resources1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
->>>>>>> Stashed changes
     <Compile Include="User Control\CircularPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
