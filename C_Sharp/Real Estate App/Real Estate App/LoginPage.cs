@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using MyRealEstate;
 
 namespace Real_Estate_App
 {
@@ -126,7 +127,9 @@ namespace Real_Estate_App
 
             if (hasError == false)
             {
-                //open admin page
+                AdminHomePage a = new AdminHomePage();
+                a.Show();
+                this.Hide();
             }
         }
 

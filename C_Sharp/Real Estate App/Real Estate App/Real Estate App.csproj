@@ -120,7 +120,16 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< Updated upstream
 
+=======
+    <Compile Include="Admin Pages\AdminHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Pages\AdminHomePage.designer.cs">
+      <DependentUpon>AdminHomePage.cs</DependentUpon>
+    </Compile>
+>>>>>>> Stashed changes
     <Compile Include="Client Pages\ClientAppointmentPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,12 +196,20 @@
     <Compile Include="LoginPage.designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
+<<<<<<< Updated upstream
     <Compile Include="Properties\Resources.Designer.cs" />
 
     <Compile Include="User Control\CircularButton.cs">
       <SubType>Component</SubType>
     </Compile>
 
+=======
+    <Compile Include="Properties\Resources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+>>>>>>> Stashed changes
     <Compile Include="User Control\CircularPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -204,6 +221,9 @@
     <Compile Include="Model\Connections\SQL_Connection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admin Pages\AdminHomePage.resx">
+      <DependentUpon>AdminHomePage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Client Pages\ClientAppointmentPage.resx">
       <DependentUpon>ClientAppointmentPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -238,7 +258,10 @@
     <EmbeddedResource Include="LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -256,11 +279,18 @@
   <ItemGroup>
     <Content Include="Model\Connections\RealEstateDatabaseDefinitions.sql" />
     <Content Include="Resources\back.png" />
+    <None Include="Resources\blue-home-icon.png" />
+    <None Include="Resources\blue-folder-icon.png" />
+    <None Include="Resources\blue-ok-icon.png" />
+    <None Include="Resources\blue-user-icon.png" />
+    <None Include="Resources\blue-chart-icon.png" />
     <Content Include="Resources\cole-keister-CqUYwVZzJrw-unsplash.jpg" />
     <Content Include="Resources\etienne-beauregard-riverin-B0aCvAVSX8E-unsplash.jpg" />
     <Content Include="Resources\fernando-meloni-j_gnGCDQRew-unsplash.jpg" />
     <Content Include="Resources\filip-zrnzevic-Ceuh97A6OYM-unsplash.jpg" />
     <Content Include="Resources\hide.com.png" />
+    <None Include="Resources\istockphoto-1192403701-170667a.jpg" />
+    <None Include="Resources\icons8-menu-bar-24.png" />
     <Content Include="Resources\jannis-lucas-KsL8WZJ0CLA-unsplash.jpg" />
     <Content Include="Resources\jason-dent-w3eFhqXjkZE-unsplash.jpg" />
     <Content Include="Resources\jeremy-bishop-G9i_plbfDgk-unsplash.jpg" />
@@ -285,7 +315,6 @@
     <Content Include="Resources\zac-ong-B3Vr6hA8Vj8-unsplash.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Admin Pages\" />
     <Folder Include="Agent Pages\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
