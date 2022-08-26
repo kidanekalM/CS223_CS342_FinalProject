@@ -1,6 +1,4 @@
-﻿/*
--- NAMING CONSTRAINTS maybe
-trigger for total sold -- not applicable (may be for function or procedure)
+/*
 **************************************************************************************
 Admin   - Me / my account
 		- view everything about agents GET ALL EMPLOYEES WITH DEPARTMENT NAME (FUNC)
@@ -9,12 +7,12 @@ Admin   - Me / my account
 		- GET ALL BUYS WITH EVERYTHING 
 		- 
 ***************************************************************************************
-Agent   -GET ALL APPOINTMENTS WITH EVERYTHING (FUNC)
-		-
-		-
-		-
-		-
-		-
+Agent   - GET ALL APPOINTMENTS WITH EVERYTHING (FUNC)
+		- CLIENTS INFORMATION 
+		- ADD EDIT DELETE PROPERTY AND BUYS
+		- 
+		- 
+		- 
 ***************************************************************************************
 Client  -
 	    -
@@ -27,7 +25,7 @@ Client  -
 					Add Employee check if it is an admin          1
 					trigger for assignming agent for new customer 1
 					TRIGGER for calculating the comission         1
-_______________________________________________________________________________________________________
+_________________________________________________________________________________________
 					  TOTAL												                   [5-7/8]
 
 FUNCTION			function for login for all-0/1                			3
@@ -68,45 +66,45 @@ USE RealEstate
 -- Creating Tables 
 CREATE TABLE Contractor(
 ID INT PRIMARY KEY IDENTITY,
-Name VARCHAR(MAX)  NOT NULL,
-PhoneNumber VARCHAR(10) CONSTRAINT CHK_Phone_Num CHECK (PhoneNumber LIKE '%[0-9]%')  UNIQUE  NOT NULL,
+Name VARCHAR(100)  NOT NULL,
+PhoneNumber VARCHAR(10)  UNIQUE  NOT NULL,
 )
 CREATE TABLE Department(
 ID INT PRIMARY KEY IDENTITY,
-Name VARCHAR(MAX)  NOT NULL
+Name VARCHAR(100)  NOT NULL
 )
 
 CREATE TABLE Employee(
 ID INT PRIMARY KEY IDENTITY ,
-FirstName VARCHAR(MAX)NOT NULL,
-LastName VARCHAR(MAX)NOT NULL,
+FirstName VARCHAR(100)NOT NULL,
+LastName VARCHAR(100)NOT NULL,
 PhoneNumber VARCHAR(11) UNIQUE,
-Password VARCHAR(MAX)NOT NULL,
+Password VARCHAR(100)NOT NULL,
 Photo VARBINARY(MAX) NOT NULL,
-EmpType VARCHAR(MAX) NOT NULL,
+EmpType VARCHAR(100) NOT NULL,
 EmpDate DATE NOT NULL,
 DepartementID INT /*CONSTRAINT FK_DepartmentId*/FOREIGN KEY REFERENCES Departement(ID)
 )
 CREATE TABLE Client(
 ID INT PRIMARY KEY IDENTITY,
-FirstName VARCHAR(MAX) NOT NULL,
-LastName VARCHAR(MAX) NOT NULL,
+FirstName VARCHAR(100) NOT NULL,
+LastName VARCHAR(100) NOT NULL,
 Photo VARBINARY(MAX) NOT NULL, 
-PhoneNumber VARCHAR(11) UNIQUE CONSTRAINT CHK_Phone_Number CHECK (PhoneNumber LIKE '[0-9]{10}')  UNIQUE,
-Email VARCHAR(MAX) NOT NULL UNIQUE CONSTRAINT CHK_CLIENT_EMAIL CHECK (email LIKE '%@%.'),
-Password VARCHAR(MAX) NOT NULL,
+PhoneNumber VARCHAR(11)  UNIQUE,
+Email VARCHAR(100) NOT NULL UNIQUE CONSTRAINT CHK_CLIENT_EMAIL CHECK (email LIKE '%@%.'),
+Password VARCHAR(100) NOT NULL,
 EmpId INT /*CONSTRAINT FK_EMPID*/ FOREIGN KEY REFERENCES Employee(ID)  NOT NULL
 )
 
 CREATE TABLE Property(
 ID INT PRIMARY KEY IDENTITY  NOT NULL,
-Address VARCHAR(MAX)  NOT NULL,
+Address VARCHAR(100)  NOT NULL,
 Price FLOAT  NOT NULL,
-Type VARCHAR(MAX)  NOT NULL,
+Type VARCHAR(100)  NOT NULL,
 Area FLOAT  NOT NULL,
 Status BIT NOT NULL,
 ContractorID INT FOREIGN KEY REFERENCES Contractor(ID)  NOT NULL,
-Description VARCHAR(MAX)  NOT NULL
+Description VARCHAR(100)  NOT NULL
 )
 CREATE TABLE PropertyPhoto(
 PropertyID INT FOREIGN KEY REFERENCES Property(ID)  NOT NULL,
@@ -123,7 +121,7 @@ Comission MONEY
 CREATE TABLE Appointment(
 ID INT PRIMARY KEY IDENTITY NOT NULL,
 AppointmentDate DATETIME  NOT NULL,
-Comment NVARCHAR(MAX)  NOT NULL,
+Comment NVARCHAR(100)  NOT NULL,
 ClientID INT /*CONSTRAINT FK_ClientID*/ FOREIGN KEY REFERENCES Client(id)  NOT NULL,
 AgentID INT /*CONSTRAINT FK_AGENTID*/ FOREIGN KEY REFERENCES EMPLOYEE(ID) NOT NULL
 )
@@ -134,11 +132,12 @@ PropertyID INT /*CONSTRAINT FK_PropertyId*/ FOREIGN KEY  REFERENCES Property(ID)
 CONSTRAINT PKChoosenProperty PRIMARY KEY (ID,PropertyID)  
 )
 GO
+
 /*******************************************************
          Contractor Stored Procedures 
 *******************************************************/
 CREATE PROC [Add Contractor]
-	@Name VARCHAR(MAX),
+	@Name VARCHAR(100),
 	@PhoneNumber VARCHAR(10)
 	AS
 	BEGIN
@@ -148,7 +147,7 @@ CREATE PROC [Add Contractor]
 GO
 CREATE PROC [Update Contractor]
 	@id INT,
-	@Name VARCHAR(MAX),
+	@Name VARCHAR(100),
 	@PhoneNumber VARCHAR(10)
 	AS
 	BEGIN
@@ -161,7 +160,7 @@ CREATE PROC [Update Contractor]
 GO
 
 CREATE PROC [Search Contractor By Name]
-	@Name VARCHAR(MAX)
+	@Name VARCHAR(100)
 	AS
 	BEGIN
 		SELECT ID,Name,PhoneNumber 
@@ -194,7 +193,7 @@ GO
          Department Stored Procedures 
 *********************************************************/
 CREATE PROC [Add Department]
-	@Name VARCHAR(MAX)
+	@Name VARCHAR(100)
 	AS
 	BEGIN
 		INSERT INTO Departement(Name)
@@ -203,7 +202,7 @@ CREATE PROC [Add Department]
 GO
 
 CREATE PROC [Update Department]
-	@Name VARCHAR(MAX),
+	@Name VARCHAR(100),
 	@ID INT
 	AS
 	BEGIN
@@ -233,7 +232,7 @@ CREATE PROC [Search Department By ID]
 GO
 
 CREATE PROC [Search Department By Name]
-	@Name VARCHAR(MAX)
+	@Name VARCHAR(100)
 	AS
 	BEGIN
 		SELECT ID,Name
@@ -245,12 +244,12 @@ GO
          Employee Stored Procedures 
 *********************************************************/
 CREATE PROC [Add Employee]
-	@FirstName VARCHAR(MAX),
-	@LastName VARCHAR(MAX),
+	@FirstName VARCHAR(100),
+	@LastName VARCHAR(100),
 	@PhoneNumber VARCHAR(11),
-	@Password VARCHAR(MAX),
+	@Password VARCHAR(100),
 	@Photo VARBINARY(MAX),
-	@EmpType VARCHAR(MAX),
+	@EmpType VARCHAR(100),
 	@EmpDate DATE,
 	@DepartementID INT
 	AS
@@ -261,12 +260,12 @@ CREATE PROC [Add Employee]
 GO
 CREATE PROC [Update Employee]
 	@ID INT,
-	@FirstName VARCHAR(MAX),
-	@LastName VARCHAR(MAX),
+	@FirstName VARCHAR(100),
+	@LastName VARCHAR(100),
 	@PhoneNumber VARCHAR(11),
-	@Password VARCHAR(MAX),
+	@Password VARCHAR(100),
 	@Photo VARBINARY(MAX),
-	@EmpType VARCHAR(MAX),
+	@EmpType VARCHAR(100),
 	@EmpDate DATE,
 	@DepartementID INT
 	
@@ -306,7 +305,7 @@ CREATE PROC [Search Employee By ID]
 GO
 
 CREATE PROC [Search Employee By Name]
-	@Name VARCHAR(MAX)
+	@Name VARCHAR(100)
 	AS
 	BEGIN
 		SELECT ID,FirstName,LastName,PhoneNumber,Password,PhoneNumber,EmpType,EmpDate,DepartementID
@@ -322,12 +321,12 @@ GO
          Client Stored Procedures 
 *********************************************************/
 CREATE PROC [Add Client]
-	@FirstName VARCHAR(MAX),
-	@LastName VARCHAR(MAX),
+	@FirstName VARCHAR(100),
+	@LastName VARCHAR(100),
 	@Photo VARBINARY(MAX),
 	@PhoneNumber VARCHAR(11),
-	@Email VARCHAR(MAX),
-	@Password VARCHAR(MAX) ,
+	@Email VARCHAR(100),
+	@Password VARCHAR(100) ,
 	@EmpId INT = NULL
 	AS
 	BEGIN
@@ -337,12 +336,12 @@ CREATE PROC [Add Client]
 GO
 CREATE PROC [Update Client]
 	@ID INT,
-	@FirstName VARCHAR(MAX),
-	@LastName VARCHAR(MAX),
+	@FirstName VARCHAR(100),
+	@LastName VARCHAR(100),
 	@Photo VARBINARY(MAX),
 	@PhoneNumber VARCHAR(11) ,
-	@Email VARCHAR(MAX),
-	@Password VARCHAR(MAX) ,
+	@Email VARCHAR(100),
+	@Password VARCHAR(100) ,
 	@EmpId INT
 	
 	AS
@@ -379,7 +378,7 @@ CREATE PROC [Search Client By ID]
 GO
 
 CREATE PROC [Search Client By Name]
-	@Name VARCHAR(MAX)
+	@Name VARCHAR(100)
 	AS
 	BEGIN
 		SELECT ID,FirstName,LastName,Photo,PhoneNumber,Email ,Password,EmpId
@@ -393,13 +392,13 @@ GO
 *********************************************************/
 CREATE PROC [Add Property]
 	@ID INT ,
-	@Address VARCHAR(MAX),
+	@Address VARCHAR(100),
 	@Price FLOAT,
-	@Type VARCHAR(MAX),
+	@Type VARCHAR(100),
 	@Area FLOAT,
 	@Status BIT,
 	@ContractorID INT,
-	@Description VARCHAR(MAX)
+	@Description VARCHAR(100)
 
 	AS
 	BEGIN
@@ -410,13 +409,13 @@ GO
 
 CREATE PROC [Update Property]
 	@ID INT ,
-	@Address VARCHAR(MAX),
+	@Address VARCHAR(100),
 	@Price FLOAT,
-	@Type VARCHAR(MAX),
+	@Type VARCHAR(100),
 	@Area FLOAT,
 	@Status BIT,
 	@ContractorID INT,
-	@Description VARCHAR(MAX)
+	@Description VARCHAR(100)
 	
 	AS
 	BEGIN
@@ -452,7 +451,7 @@ CREATE PROC [Search Property By ID]
 GO
 
 CREATE PROC [Search Property By Type]
-	@Type VARCHAR(MAX)
+	@Type VARCHAR(100)
 	AS
 	BEGIN
 		SELECT ID,Address,Price,Type,Area,Status,ContractorID,Description
@@ -461,12 +460,12 @@ CREATE PROC [Search Property By Type]
 	END
 GO
 CREATE PROC [Filter Property]
-	@Address VARCHAR(MAX) = '',
+	@Address VARCHAR(100) = '',
 	@Price MONEY  = 9999999999999999,
-	@Type VARCHAR(MAX) = '',
+	@Type VARCHAR(100) = '',
 	@Area FLOAT = 9999999999999999,
 	@Status BIT = 1,
-	@Description VARCHAR(MAX) = ''
+	@Description VARCHAR(100) = ''
 	AS
 	BEGIN
 		SELECT ID,Address,Price,Type,Area,Status,ContractorID,Description
@@ -597,7 +596,7 @@ CREATE PROC [Search Buy By AgentId]
 	END
 GO
 CREATE PROC [Search Total Sold By Employee]
-@EmpId VARCHAR(MAX)
+@EmpId VARCHAR(100)
 AS
 BEGIN
 	SELECT COUNT(AgentID)
@@ -667,7 +666,7 @@ GO
 CREATE PROC [Add Appointment]
 	--@Id INT,
 	@AppointmentDate DATETIME,
-	@Comment VARCHAR(MAX),
+	@Comment VARCHAR(100),
 	@ClientId INT,
 	@AgentId INT
 	AS
@@ -680,7 +679,7 @@ GO
 CREATE PROC [Update Appointment]
 	@Id INT,
 	@AppointmentDate DATETIME,
-	@Comment VARCHAR(MAX),
+	@Comment VARCHAR(100),
 	@ClientId INT,
 	@AgentId INT
 	
@@ -796,11 +795,11 @@ RETURN (
 
 --login Admin function
 GO
-CREATE FUNCTION [Login Admin](@ID INT, @Upwd VARCHAR(MAX))
+CREATE FUNCTION [Login Admin](@ID INT, @Upwd VARCHAR(100))
 RETURNS BIT
 AS
 BEGIN
-	DECLARE @pwd VARCHAR(MAX),@VAL BIT
+	DECLARE @pwd VARCHAR(100),@VAL BIT
 	SELECT @pwd = Password 
 	FROM Employee 
 	WHERE DepartementID = 0 AND ID = @ID 
@@ -812,11 +811,11 @@ BEGIN
 	RETURN @VAL
 END
 GO
-CREATE FUNCTION [Login Agent](@ID INT, @Upwd VARCHAR(MAX))
+CREATE FUNCTION [Login Agent](@ID INT, @Upwd VARCHAR(100))
 RETURNS BIT
 AS
 BEGIN
-	DECLARE @pwd VARCHAR(MAX),@VAL BIT
+	DECLARE @pwd VARCHAR(100),@VAL BIT
 	SELECT @pwd = Password 
 	FROM Employee 
 	WHERE DepartementID = 1 AND ID = @ID 
@@ -829,11 +828,11 @@ BEGIN
 END
 
 GO
-CREATE FUNCTION [Login Client](@ID INT, @Upwd VARCHAR(MAX))
+CREATE FUNCTION [Login Client](@ID INT, @Upwd VARCHAR(100))
 RETURNS BIT
 AS
 BEGIN
-	DECLARE @pwd VARCHAR(MAX),@VAL BIT
+	DECLARE @pwd VARCHAR(100),@VAL BIT
 	SELECT @pwd = Password 
 	FROM Client
 	WHERE ID = @ID AND @pwd = Password
@@ -846,8 +845,8 @@ BEGIN
 END
 GO
 --edit string
-CREATE FUNCTION [Clean Names](@name VARCHAR(MAX))
-RETURNS VARCHAR(MAX)
+CREATE FUNCTION [Clean Names](@name VARCHAR(100))
+RETURNS VARCHAR(100)
 AS
 BEGIN
 	RETURN (
@@ -926,3 +925,136 @@ BEGIN
 	)
 END
 GO
+/*******************************************************
+		creating logins
+********************************************************/
+CREATE LOGIN [Admin Login] WITH PASSWORD = '0'
+	CREATE USER [Admin] FOR LOGIN [Admin Login]
+
+CREATE LOGIN [Agent Login] WITH PASSWORD = '0'
+	CREATE USER [Agent] FOR LOGIN [Agent Login]
+
+CREATE LOGIN [Customer Login] WITH PASSWORD = '0'
+	CREATE USER [Customer] FOR LOGIN [Customer Login]
+
+GO
+USE RealEstate
+--					Admin permissions
+
+GRANT EXECUTE ON [dbo].[Search Choosen Property By Appintment] TO [Admin]
+GRANT EXECUTE ON [dbo].[Update Property] TO [Admin]
+GRANT EXECUTE ON [dbo].[Search Choosen Property By Property] TO [Admin]
+GRANT EXECUTE ON [dbo].[Search Appointment By ID] TO [Admin]
+GRANT EXECUTE ON [dbo].[Update Client] TO [Admin]
+GRANT EXECUTE ON [dbo].[Add Choosen Property] TO [Admin]
+GRANT EXECUTE ON [dbo].[Update Contractor] TO [Admin]
+GRANT EXECUTE ON [dbo].[Add Buy] TO [Admin]
+GRANT EXECUTE ON [dbo].[Search Appointment By AgentID] TO [Admin]
+GRANT EXECUTE ON [dbo].[Delete Property Photo By Id] TO [Admin]
+GRANT EXECUTE ON [dbo].[Update Employee] TO [Admin]
+GRANT SELECT ON [dbo].[Get All Properties] TO [Admin]
+GRANT EXECUTE ON [dbo].[Search Client By Name] TO [Admin]
+GRANT EXECUTE ON [dbo].[Search Buy By ClientID] TO [Admin]
+GRANT EXECUTE ON [dbo].[Add Property Photo] TO [Admin]
+GRANT EXECUTE ON [dbo].[Update Choosen Property] TO [Admin]
+GRANT EXECUTE ON [dbo].[Delete Employee] TO [Admin]
+GRANT EXECUTE ON [dbo].[Add Appointment] TO [Admin]
+GRANT EXECUTE ON [dbo].[Search Employee By Name] TO [Admin]
+GRANT EXECUTE ON [dbo].[Add Contractor] TO [Admin]
+GRANT EXECUTE ON [dbo].[Search Property Photo By ID] TO [Admin]
+GRANT EXECUTE ON [dbo].[Delete Appointment] TO [Admin]
+GRANT EXECUTE ON [dbo].[Search Department By Name] TO [Admin]
+GRANT EXECUTE ON [dbo].[Delete Property] TO [Admin]
+GRANT EXECUTE ON [dbo].[Delete Property Photo] TO [Admin]
+GRANT EXECUTE ON [dbo].[Add Property] TO [Admin]
+GRANT EXECUTE ON [dbo].[Search Employee By ID] TO [Admin]
+GRANT EXECUTE ON [dbo].[Search Total Sold By Employee] TO [Admin]
+GRANT EXECUTE ON [dbo].[Search Property By ID] TO [Admin]
+GRANT EXECUTE ON [dbo].[Delete Department] TO [Admin]
+GRANT EXECUTE ON [dbo].[Search Client By ID] TO [Admin]
+GRANT EXECUTE ON [dbo].[Add Employee] TO [Admin]
+GRANT EXECUTE ON [dbo].[Add Department] TO [Admin]
+GRANT EXECUTE ON [dbo].[Search Contractor By Name] TO [Admin]
+GRANT EXECUTE ON [dbo].[Search Appointment By Date] TO [Admin]
+GRANT SELECT ON [dbo].[Get All Appointments] TO [Admin]
+GRANT SELECT ON [dbo].[Get All Employees] TO [Admin]
+GRANT EXECUTE ON [dbo].[Update Property Photo] TO [Admin]
+GRANT EXECUTE ON [dbo].[Search Contractor By Id] TO [Admin]
+GRANT EXECUTE ON [dbo].[Delete Contractor] TO [Admin]
+GRANT EXECUTE ON [dbo].[Update Department] TO [Admin]
+GRANT EXECUTE ON [dbo].[Filter Property] TO [Admin]
+GRANT EXECUTE ON [dbo].[Update Buy] TO [Admin]
+GRANT EXECUTE ON [dbo].[Search Department By ID] TO [Admin]
+GRANT SELECT ON [dbo].[Get All Clients] TO [Admin]
+GRANT EXECUTE ON [dbo].[Delete Choosen Property] TO [Admin]
+GRANT EXECUTE ON [dbo].[Update Appointment] TO [Admin]
+GRANT EXECUTE ON [dbo].[Search Buy By AgentId] TO [Admin]
+GRANT EXECUTE ON [dbo].[Search Property By Type] TO [Admin]
+GRANT EXECUTE ON [dbo].[Add Client] TO [Admin]
+GRANT EXECUTE ON [dbo].[Delete Client] TO [Admin]
+GRANT EXECUTE ON [dbo].[Delete Buy] TO [Admin]
+GRANT EXECUTE ON [dbo].[Search Appointment By ClientID] TO [Admin]
+
+--			Agent permissions
+USE RealEstate
+GRANT EXECUTE ON [dbo].[Search Choosen Property By Appintment] TO [Agent]
+GRANT EXECUTE ON [dbo].[Update Property] TO [Agent]
+GRANT EXECUTE ON [dbo].[Search Choosen Property By Property] TO [Agent]
+GRANT EXECUTE ON [dbo].[Search Appointment By ID] TO [Agent]
+GRANT EXECUTE ON [dbo].[Update Client] TO [Agent]
+GRANT EXECUTE ON [dbo].[Add Choosen Property] TO [Agent]
+GRANT EXECUTE ON [dbo].[Search Appointment By AgentID] TO [Agent]
+GRANT EXECUTE ON [dbo].[Delete Property Photo By Id] TO [Agent]
+GRANT EXECUTE ON [dbo].[Update Employee] TO [Agent]
+GRANT SELECT ON [dbo].[Get All Properties] TO [Agent]
+GRANT EXECUTE ON [dbo].[Search Client By Name] TO [Agent]
+GRANT EXECUTE ON [dbo].[Add Property Photo] TO [Agent]
+GRANT EXECUTE ON [dbo].[Update Choosen Property] TO [Agent]
+GRANT EXECUTE ON [dbo].[Delete Employee] TO [Agent]
+GRANT EXECUTE ON [dbo].[Search Property Photo By ID] TO [Agent]
+GRANT EXECUTE ON [dbo].[Search Department By Name] TO [Agent]
+GRANT EXECUTE ON [dbo].[Delete Property] TO [Agent]
+GRANT EXECUTE ON [dbo].[Delete Property Photo] TO [Agent]
+GRANT EXECUTE ON [dbo].[Add Property] TO [Agent]
+GRANT EXECUTE ON [dbo].[Search Employee By ID] TO [Agent]
+GRANT EXECUTE ON [dbo].[Search Total Sold By Employee] TO [Agent]
+GRANT EXECUTE ON [dbo].[Search Property By ID] TO [Agent]
+GRANT EXECUTE ON [dbo].[Search Client By ID] TO [Agent]
+GRANT EXECUTE ON [dbo].[Add Employee] TO [Agent]
+GRANT EXECUTE ON [dbo].[Search Appointment By Date] TO [Agent]
+GRANT SELECT ON [dbo].[Get All Appointments] TO [Agent]
+GRANT EXECUTE ON [dbo].[Update Property Photo] TO [Agent]
+GRANT EXECUTE ON [dbo].[Filter Property] TO [Agent]
+GRANT EXECUTE ON [dbo].[Search Department By ID] TO [Agent]
+GRANT SELECT ON [dbo].[Get All Clients] TO [Agent]
+GRANT EXECUTE ON [dbo].[Delete Choosen Property] TO [Agent]
+GRANT EXECUTE ON [dbo].[Search Buy By AgentId] TO [Agent]
+GRANT EXECUTE ON [dbo].[Search Property By Type] TO [Agent]
+
+--			Customer/client permissions
+USE RealEstate
+GRANT EXECUTE ON [dbo].[Search Choosen Property By Appintment] TO [Customer]
+GRANT EXECUTE ON [dbo].[Search Choosen Property By Property] TO [Customer]
+GRANT EXECUTE ON [dbo].[Search Appointment By ID] TO [Customer]
+GRANT EXECUTE ON [dbo].[Update Client] TO [Customer]
+GRANT EXECUTE ON [dbo].[Add Choosen Property] TO [Customer]
+GRANT SELECT ON [dbo].[Get All Properties] TO [Customer]
+GRANT EXECUTE ON [dbo].[Search Client By Name] TO [Customer]
+GRANT EXECUTE ON [dbo].[Search Buy By ClientID] TO [Customer]
+GRANT EXECUTE ON [dbo].[Add Appointment] TO [Customer]
+GRANT EXECUTE ON [dbo].[Search Employee By Name] TO [Customer]
+GRANT EXECUTE ON [dbo].[Search Property Photo By ID] TO [Customer]
+GRANT EXECUTE ON [dbo].[Delete Appointment] TO [Customer]
+GRANT EXECUTE ON [dbo].[Search Employee By ID] TO [Customer]
+GRANT EXECUTE ON [dbo].[Search Property By ID] TO [Customer]
+GRANT EXECUTE ON [dbo].[Search Client By ID] TO [Customer]
+GRANT EXECUTE ON [dbo].[Search Appointment By Date] TO [Customer]
+GRANT SELECT ON [dbo].[Get All Appointments] TO [Customer]
+GRANT EXECUTE ON [dbo].[Filter Property] TO [Customer]
+GRANT EXECUTE ON [dbo].[Update Appointment] TO [Customer]
+GRANT EXECUTE ON [dbo].[Search Property By Type] TO [Customer]
+GRANT EXECUTE ON [dbo].[Add Client] TO [Customer]
+GRANT EXECUTE ON [dbo].[Delete Client] TO [Customer]
+GRANT EXECUTE ON [dbo].[Search Appointment By ClientID] TO [Customer]
+
+
