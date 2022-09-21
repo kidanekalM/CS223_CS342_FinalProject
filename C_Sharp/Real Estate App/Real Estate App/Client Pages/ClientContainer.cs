@@ -33,7 +33,7 @@ namespace Real_Estate_App
             if (ActiveMdiChild != null)
                 ActiveMdiChild.Close();
 
-            ClientProfilePage profilePage = new ClientProfilePage(this, "Hawariaw", "Paulos", "hawariaw@email.com", "0972503268");
+            ClientProfilePage profilePage = new ClientProfilePage(this, Properties.Resources.Default_Profile, "Hawariaw", "Paulos", "hawariaw@email.com", "0972503268");
             profilePage.MdiParent = this;
             profilePage.Show();
         }

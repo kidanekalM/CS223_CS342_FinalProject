@@ -275,6 +275,9 @@
     <None Include="Resources\blue-user-icon.png" />
     <None Include="Resources\blue-chart-icon.png" />
     <Content Include="Resources\cole-keister-CqUYwVZzJrw-unsplash.jpg" />
+    <None Include="Resources\Default Profile.png" />
+    <None Include="Resources\delete-icon.png" />
+    <None Include="Resources\edit-icon.png" />
     <Content Include="Resources\etienne-beauregard-riverin-B0aCvAVSX8E-unsplash.jpg" />
     <Content Include="Resources\fernando-meloni-j_gnGCDQRew-unsplash.jpg" />
     <Content Include="Resources\filip-zrnzevic-Ceuh97A6OYM-unsplash.jpg" />
