@@ -219,5 +219,20 @@ namespace Real_Estate_App
 
             }
         }
+
+        private void btn_editPic_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Image files|*.jpg;*.jpeg;*.png;*.gif;...";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                circularPictureBox1.Image = Bitmap.FromFile(ofd.FileName);
+            }
+        }
+
+        private void btn_deletePic_Click(object sender, EventArgs e)
+        {
+                circularPictureBox1.Image = Properties.Resources.Default_Profile;
+        }
     }
 }
