@@ -99,5 +99,15 @@ namespace Real_Estate_App
             homePage.MdiParent = this;
             homePage.Show();
         }
+
+        private void agentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ActiveMdiChild != null)
+                ActiveMdiChild.Close();
+
+            AgentProfilePage agentPage = new AgentProfilePage();
+            agentPage.MdiParent = this;
+            agentPage.Show();
+        }
     }
 }

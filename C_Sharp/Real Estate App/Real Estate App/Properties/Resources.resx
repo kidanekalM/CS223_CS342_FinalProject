@@ -121,6 +121,9 @@
   <data name="blue-home-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blue-home-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="delete-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="keenan-barber-pPfJN6wfYC0-unsplash1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\keenan-barber-pPfJN6wfYC0-unsplash1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -138,9 +141,6 @@
   </data>
   <data name="icons8-menu-bar-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-menu-bar-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Default Profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Default Profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="blue-ok-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blue-ok-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,6 +175,9 @@
   <data name="r-architecture-JvQ0Q5IkeMM-unsplash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\r-architecture-JvQ0Q5IkeMM-unsplash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ClientAgentPage 3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ClientAgentPage 3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="x.com" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\x.com.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -193,14 +196,23 @@
   <data name="jannis-lucas-KsL8WZJ0CLA-unsplash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\jannis-lucas-KsL8WZJ0CLA-unsplash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="edit-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="istockphoto-1192403701-170667a" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\istockphoto-1192403701-170667a.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Default Profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Default Profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="luke-chesser-pJadQetzTkI-unsplash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\luke-chesser-pJadQetzTkI-unsplash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="filip-zrnzevic-Ceuh97A6OYM-unsplash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\filip-zrnzevic-Ceuh97A6OYM-unsplash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClientAgentPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ClientAgentPage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fernando-meloni-j_gnGCDQRew-unsplash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fernando-meloni-j_gnGCDQRew-unsplash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -210,6 +222,9 @@
   </data>
   <data name="yoal-desurmont-1uyPsrWxefI-unsplash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\yoal-desurmont-1uyPsrWxefI-unsplash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClientAgentPage 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ClientAgentPage 2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="jason-dent-w3eFhqXjkZE-unsplash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\jason-dent-w3eFhqXjkZE-unsplash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -223,10 +238,7 @@
   <data name="SeekPng.com_profile-icon-png_9665493" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SeekPng.com_profile-icon-png_9665493.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="delete-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\delete-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="edit-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ClientAgentPage 4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ClientAgentPage 4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

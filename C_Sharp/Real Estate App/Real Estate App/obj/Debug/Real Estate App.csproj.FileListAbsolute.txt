@@ -186,3 +186,4 @@ C:\Users\ASUS\Documents\GitHub\CS223_CS342_FinalProject\C_Sharp\Real Estate App\
 C:\Users\ASUS\Documents\GitHub\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.LoginPage.resources
 C:\Users\ASUS\Documents\GitHub\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real Estate App.csproj.CopyComplete
 C:\Users\Japu\Documents\GitHub\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\MyRealEstate.AdminHomePage.resources
+C:\Users\Japu\Documents\GitHub\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Client_Pages.AgentProfilePage.resources
