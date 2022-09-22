@@ -8,7 +8,7 @@ Admin   - Me / my account
 		- 
 ***************************************************************************************
 Agent   - GET ALL APPOINTMENTS WITH EVERYTHING (FUNC)
-		- CLIENTS INFORMATION 
+		- CLIENTS INFORMATION                      
 		- ADD EDIT DELETE PROPERTY AND BUYS
 		- 
 		- 
