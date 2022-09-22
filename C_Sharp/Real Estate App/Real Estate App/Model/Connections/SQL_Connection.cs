@@ -18,9 +18,9 @@ namespace Real_Estate_App.Model
 
             try
             {
-                String connectionStrng = ConfigurationManager.ConnectionStrings["ConnectionSrtring"].ConnectionString;
+                String connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
-                myConn = new SqlConnection(connectionStrng);   
+                myConn = new SqlConnection(connectionString);   
                 myConn.Open();
 
                 MessageBox.Show("Connected to database RealEstate");
@@ -41,8 +41,8 @@ namespace Real_Estate_App.Model
             try 
             {
                 myConn.Open();
-            SqlCommand cmd = new SqlCommand(query, myConn);
-            return cmd.ExecuteReader();
+                SqlCommand cmd = new SqlCommand(query, myConn);
+                return cmd.ExecuteReader();
             }
             catch(Exception e)
             {

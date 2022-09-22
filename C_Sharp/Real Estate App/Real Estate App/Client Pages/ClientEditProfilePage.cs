@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using Real_Estate_App.Model;
 
 namespace Real_Estate_App
 {
@@ -88,12 +89,30 @@ namespace Real_Estate_App
                 DialogResult result = MessageBox.Show("Are you sure you want to save the changes?", "Edit Profile", buttons);
                 if (result == DialogResult.Yes)
                 {
-                    MessageBox.Show("Update successfull!");
+                    bool updateSuccess;
 
-                    ClientProfilePage profilePage = new ClientProfilePage(containerPage, pic_ClientPic.Image, txt_FirstName.Text, txt_LastName.Text, txt_Email.Text, txt_PhoneNo.Text);
-                    profilePage.MdiParent = containerPage;
-                    profilePage.Show();
-                    this.Hide();
+                    try
+                    {
+                        Client client = new Client();
+                        updateSuccess = client.Update();
+
+                        if (updateSuccess == true)
+                        {
+
+                            MessageBox.Show("Update successfull!");
+
+                            ClientProfilePage profilePage = new ClientProfilePage(containerPage, pic_ClientPic.Image, txt_FirstName.Text, txt_LastName.Text, txt_Email.Text, txt_PhoneNo.Text);
+                            profilePage.MdiParent = containerPage;
+                            profilePage.Show();
+                            this.Hide();
+                        }
+                        else
+                            MessageBox.Show("Update failed. Please try again!");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Update failed! \n" + ex.Message);
+                    }
                 }
 
             }

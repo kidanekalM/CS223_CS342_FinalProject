@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_deletePic = new System.Windows.Forms.Button();
+            this.btn_editPic = new System.Windows.Forms.Button();
+            this.pic_ClientProfilePic = new Assignment_4_GUI.CircularPictureBox();
             this.btn_Back = new System.Windows.Forms.Button();
             this.btn_CreateAccount = new System.Windows.Forms.Button();
             this.txt_PhoneNo = new System.Windows.Forms.TextBox();
@@ -42,13 +45,10 @@
             this.btn_Hide = new System.Windows.Forms.Button();
             this.txt_Password = new System.Windows.Forms.TextBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btn_editPic = new System.Windows.Forms.Button();
-            this.btn_deletePic = new System.Windows.Forms.Button();
-            this.circularPictureBox1 = new Assignment_4_GUI.CircularPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_ClientProfilePic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -66,7 +66,7 @@
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
             this.panel1.Controls.Add(this.btn_deletePic);
             this.panel1.Controls.Add(this.btn_editPic);
-            this.panel1.Controls.Add(this.circularPictureBox1);
+            this.panel1.Controls.Add(this.pic_ClientProfilePic);
             this.panel1.Controls.Add(this.btn_Back);
             this.panel1.Controls.Add(this.btn_CreateAccount);
             this.panel1.Controls.Add(this.txt_PhoneNo);
@@ -81,6 +81,40 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(695, 453);
             this.panel1.TabIndex = 1;
+            // 
+            // btn_deletePic
+            // 
+            this.btn_deletePic.BackgroundImage = global::Real_Estate_App.Properties.Resources.delete_icon;
+            this.btn_deletePic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_deletePic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_deletePic.Location = new System.Drawing.Point(161, 299);
+            this.btn_deletePic.Name = "btn_deletePic";
+            this.btn_deletePic.Size = new System.Drawing.Size(42, 37);
+            this.btn_deletePic.TabIndex = 23;
+            this.btn_deletePic.UseVisualStyleBackColor = true;
+            this.btn_deletePic.Click += new System.EventHandler(this.btn_deletePic_Click);
+            // 
+            // btn_editPic
+            // 
+            this.btn_editPic.BackgroundImage = global::Real_Estate_App.Properties.Resources.edit_icon;
+            this.btn_editPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_editPic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_editPic.Location = new System.Drawing.Point(96, 298);
+            this.btn_editPic.Name = "btn_editPic";
+            this.btn_editPic.Size = new System.Drawing.Size(42, 37);
+            this.btn_editPic.TabIndex = 22;
+            this.btn_editPic.UseVisualStyleBackColor = true;
+            this.btn_editPic.Click += new System.EventHandler(this.btn_editPic_Click);
+            // 
+            // pic_ClientProfilePic
+            // 
+            this.pic_ClientProfilePic.Image = global::Real_Estate_App.Properties.Resources.Default_Profile;
+            this.pic_ClientProfilePic.Location = new System.Drawing.Point(78, 115);
+            this.pic_ClientProfilePic.Name = "pic_ClientProfilePic";
+            this.pic_ClientProfilePic.Size = new System.Drawing.Size(155, 155);
+            this.pic_ClientProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_ClientProfilePic.TabIndex = 21;
+            this.pic_ClientProfilePic.TabStop = false;
             // 
             // btn_Back
             // 
@@ -210,40 +244,6 @@
             this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider.ContainerControl = this;
             // 
-            // btn_editPic
-            // 
-            this.btn_editPic.BackgroundImage = global::Real_Estate_App.Properties.Resources.edit_icon;
-            this.btn_editPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_editPic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_editPic.Location = new System.Drawing.Point(96, 298);
-            this.btn_editPic.Name = "btn_editPic";
-            this.btn_editPic.Size = new System.Drawing.Size(42, 37);
-            this.btn_editPic.TabIndex = 22;
-            this.btn_editPic.UseVisualStyleBackColor = true;
-            this.btn_editPic.Click += new System.EventHandler(this.btn_editPic_Click);
-            // 
-            // btn_deletePic
-            // 
-            this.btn_deletePic.BackgroundImage = global::Real_Estate_App.Properties.Resources.delete_icon;
-            this.btn_deletePic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_deletePic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_deletePic.Location = new System.Drawing.Point(161, 299);
-            this.btn_deletePic.Name = "btn_deletePic";
-            this.btn_deletePic.Size = new System.Drawing.Size(42, 37);
-            this.btn_deletePic.TabIndex = 23;
-            this.btn_deletePic.UseVisualStyleBackColor = true;
-            this.btn_deletePic.Click += new System.EventHandler(this.btn_deletePic_Click);
-            // 
-            // circularPictureBox1
-            // 
-            this.circularPictureBox1.Image = global::Real_Estate_App.Properties.Resources.Default_Profile;
-            this.circularPictureBox1.Location = new System.Drawing.Point(78, 115);
-            this.circularPictureBox1.Name = "circularPictureBox1";
-            this.circularPictureBox1.Size = new System.Drawing.Size(155, 155);
-            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.circularPictureBox1.TabIndex = 21;
-            this.circularPictureBox1.TabStop = false;
-            // 
             // ClientCreateAccountPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -258,8 +258,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_ClientProfilePic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -281,6 +281,6 @@
         private System.Windows.Forms.Button btn_Hide;
         private System.Windows.Forms.Button btn_deletePic;
         private System.Windows.Forms.Button btn_editPic;
-        private Assignment_4_GUI.CircularPictureBox circularPictureBox1;
+        private Assignment_4_GUI.CircularPictureBox pic_ClientProfilePic;
     }
 }

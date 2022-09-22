@@ -298,6 +298,10 @@ namespace Real_Estate_App
 
             if (hasError == false)
             {
+                //Client client = new Client(); and Employee employee = new Employee();
+                //client.Add(); and Employee.Add(id);
+                //pass client and employee to containerPage
+
                 ClientContainer containerPage = new ClientContainer();
                 containerPage.Show();
                 this.Hide();

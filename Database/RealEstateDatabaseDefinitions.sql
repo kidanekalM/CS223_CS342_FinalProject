@@ -57,7 +57,8 @@ get all functions
 */
 go
 --Database creating
-
+--USE master;
+--DROP DATABASE RealEstate;
 CREATE DATABASE RealEstate
 GO
 --Change Database
@@ -65,71 +66,87 @@ USE RealEstate
 
 -- Creating Tables 
 CREATE TABLE Contractor(
-ID INT PRIMARY KEY IDENTITY,
-Name VARCHAR(100)  NOT NULL,
-PhoneNumber VARCHAR(10)  UNIQUE  NOT NULL,
+	ID INT PRIMARY KEY IDENTITY,
+	Name VARCHAR(100)  NOT NULL,
+	PhoneNumber VARCHAR(10)  UNIQUE  NOT NULL,
 )
+
 CREATE TABLE Department(
-ID INT PRIMARY KEY IDENTITY,
-Name VARCHAR(100)  NOT NULL
+	ID INT PRIMARY KEY IDENTITY,
+	Name VARCHAR(100)  NOT NULL
 )
+--Exec [Add Department] 'Sales';
+--select * from Department;
 
 CREATE TABLE Employee(
-ID INT PRIMARY KEY IDENTITY ,
-FirstName VARCHAR(100)NOT NULL,
-LastName VARCHAR(100)NOT NULL,
-PhoneNumber VARCHAR(11) UNIQUE,
-Password VARCHAR(100)NOT NULL,
-Photo VARBINARY(MAX) ,
-EmpType VARCHAR(100) NOT NULL,
-EmpDate DATE NOT NULL,
-DepartementID INT /*CONSTRAINT FK_DepartmentId*/FOREIGN KEY REFERENCES Departement(ID)
+	ID INT PRIMARY KEY IDENTITY ,
+	FirstName VARCHAR(100)NOT NULL,
+	LastName VARCHAR(100)NOT NULL,
+	PhoneNumber VARCHAR(11) UNIQUE,
+	Password VARCHAR(100)NOT NULL,
+	Photo VARBINARY(MAX) ,
+	EmpType VARCHAR(100) NOT NULL,
+	EmpDate DATE NOT NULL,
+	DepartmentID INT /*CONSTRAINT FK_DepartmentId*/FOREIGN KEY REFERENCES Department(ID)
 )
+--insert into Employee values ('Abebe','Merga','0911223344', '1234', null, 'Agent', '2022/9/22', 1);
+--select * from Employee;
+
 CREATE TABLE Client(
-ID INT PRIMARY KEY IDENTITY,
-FirstName VARCHAR(100) NOT NULL,
-LastName VARCHAR(100) NOT NULL,
-Photo VARBINARY(MAX) , 
-PhoneNumber VARCHAR(11)  UNIQUE,
-Email VARCHAR(100) NOT NULL UNIQUE CONSTRAINT CHK_CLIENT_EMAIL CHECK (email LIKE '%@%.'),
-Password VARCHAR(100) NOT NULL,
-EmpId INT /*CONSTRAINT FK_EMPID*/ FOREIGN KEY REFERENCES Employee(ID)  NOT NULL
+	ID INT PRIMARY KEY IDENTITY,
+	FirstName VARCHAR(100) NOT NULL,
+	LastName VARCHAR(100) NOT NULL,
+	Photo VARBINARY(MAX) , 
+	PhoneNumber VARCHAR(11)  UNIQUE,
+	Email VARCHAR(100) NOT NULL UNIQUE CONSTRAINT CHK_CLIENT_EMAIL CHECK (email LIKE '%@%.%'),
+	Password VARCHAR(100) NOT NULL,
+	EmpId INT FOREIGN KEY REFERENCES Employee(ID) --NOT NULL
 )
+--EXEC [Add Client] 'Eman', 'Eskindir', null, '0911223344','eman@email.com', 'eman1234'
+--INSERT INTO Client(FirstName,LastName,Photo,PhoneNumber,Email,Password,EmpId)
+--VALUES ('Eman', 'Eskindir', null, '0911223344','eman@email.com', 'eman1234' )
+--select * from Client;
+--drop table Client;
 
 CREATE TABLE Property(
-ID INT PRIMARY KEY IDENTITY  NOT NULL,
-Address VARCHAR(100)  NOT NULL,
-Price FLOAT  NOT NULL,
-Type VARCHAR(100)  NOT NULL,
-Area FLOAT  NOT NULL,
-Status BIT NOT NULL,
-ContractorID INT FOREIGN KEY REFERENCES Contractor(ID)  NOT NULL,
-Description VARCHAR(100)  NOT NULL
-)
-CREATE TABLE PropertyPhoto(
-PropertyID INT FOREIGN KEY REFERENCES Property(ID)  NOT NULL,
-Photo VARBINARY(MAX)  NOT NULL
-)
-CREATE TABLE Buy(
-ID INT PRIMARY KEY IDENTITY  NOT NULL,
-PropertyID INT /*CONSTRAINT FK_PropertyId*/ FOREIGN KEY REFERENCES Property(ID)  NOT NULL,
-ClientID INT /*CONSTRAINT FK_ClientID*/ FOREIGN KEY REFERENCES Client(id)  NOT NULL,
-AgentID INT /*CONSTRAINT FK_AGENTID*/ FOREIGN KEY REFERENCES EMPLOYEE(ID)  NOT NULL,
-SellDate DATETIME  NOT NULL,
-Comission MONEY
-)
-CREATE TABLE Appointment(
-ID INT PRIMARY KEY IDENTITY NOT NULL,
-AppointmentDate DATETIME  NOT NULL,
-Comment NVARCHAR(100)  NOT NULL,
-ClientID INT /*CONSTRAINT FK_ClientID*/ FOREIGN KEY REFERENCES Client(id)  NOT NULL,
-AgentID INT /*CONSTRAINT FK_AGENTID*/ FOREIGN KEY REFERENCES EMPLOYEE(ID) NOT NULL
+	ID INT PRIMARY KEY IDENTITY  NOT NULL,
+	Address VARCHAR(100)  NOT NULL,
+	Price FLOAT  NOT NULL,
+	Type VARCHAR(100)  NOT NULL,
+	Area FLOAT  NOT NULL,
+	Status BIT NOT NULL,
+	ContractorID INT FOREIGN KEY REFERENCES Contractor(ID)  NOT NULL,
+	Description VARCHAR(100)  NOT NULL
 )
 
+CREATE TABLE PropertyPhoto(
+	PropertyID INT FOREIGN KEY REFERENCES Property(ID)  NOT NULL,
+	Photo VARBINARY(MAX)  NOT NULL
+)
+
+CREATE TABLE Buy(
+	ID INT PRIMARY KEY IDENTITY  NOT NULL,
+	PropertyID INT /*CONSTRAINT FK_PropertyId*/ FOREIGN KEY REFERENCES Property(ID)  NOT NULL,
+	ClientID INT /*CONSTRAINT FK_ClientID*/ FOREIGN KEY REFERENCES Client(id)  NOT NULL,
+	AgentID INT /*CONSTRAINT FK_AGENTID*/ FOREIGN KEY REFERENCES EMPLOYEE(ID)  NOT NULL,
+	SellDate DATETIME  NOT NULL,
+	Comission MONEY
+)
+--drop table Buy;
+
+CREATE TABLE Appointment(
+	ID INT PRIMARY KEY IDENTITY NOT NULL,
+	AppointmentDate DATETIME  NOT NULL,
+	Comment NVARCHAR(100)  NOT NULL,
+	ClientID INT /*CONSTRAINT FK_ClientID*/ FOREIGN KEY REFERENCES Client(id)  NOT NULL,
+	AgentID INT /*CONSTRAINT FK_AGENTID*/ FOREIGN KEY REFERENCES EMPLOYEE(ID) NOT NULL
+)
+--drop table Appointment
+
 CREATE TABLE ChoosenProperty(
-ID INT FOREIGN KEY REFERENCES Appointment(ID)  NOT NULL,
-PropertyID INT /*CONSTRAINT FK_PropertyId*/ FOREIGN KEY  REFERENCES Property(ID)  NOT NULL
-CONSTRAINT PKChoosenProperty PRIMARY KEY (ID,PropertyID)  
+	ID INT FOREIGN KEY REFERENCES Appointment(ID)  NOT NULL,
+	PropertyID INT /*CONSTRAINT FK_PropertyId*/ FOREIGN KEY  REFERENCES Property(ID)  NOT NULL
+	CONSTRAINT PKChoosenProperty PRIMARY KEY (ID,PropertyID)  
 )
 GO
 
@@ -196,7 +213,7 @@ CREATE PROC [Add Department]
 	@Name VARCHAR(100)
 	AS
 	BEGIN
-		INSERT INTO Departement(Name)
+		INSERT INTO Department(Name)
 		VALUES (@Name)
 	END
 GO
@@ -206,7 +223,7 @@ CREATE PROC [Update Department]
 	@ID INT
 	AS
 	BEGIN
-		UPDATE Departement
+		UPDATE Department
 		SET Name = TRIM(@Name)
 		WHERE ID = @ID
 	END
@@ -216,7 +233,7 @@ CREATE PROC [Delete Department]
 	@ID INT
 	AS
 	BEGIN
-		DELETE FROM Departement 
+		DELETE FROM Department 
 		WHERE ID = @ID
 	END
 GO
@@ -226,7 +243,7 @@ CREATE PROC [Search Department By ID]
 	AS
 	BEGIN
 		SELECT ID,Name
-		FROM Departement
+		FROM Department
 		WHERE ID LIKE '%'+CAST( @ID AS VARCHAR(20))+'%'
 	END
 GO
@@ -236,7 +253,7 @@ CREATE PROC [Search Department By Name]
 	AS
 	BEGIN
 		SELECT ID,Name
-		FROM Departement
+		FROM Department
 		WHERE Name LIKE '%' + TRIM(@Name) + '%'
 	END
 GO
@@ -251,11 +268,11 @@ CREATE PROC [Add Employee]
 	@Photo VARBINARY(MAX),
 	@EmpType VARCHAR(100),
 	@EmpDate DATE,
-	@DepartementID INT
+	@DepartmentID INT
 	AS
 	BEGIN
-		INSERT INTO Employee(FirstName,LastName,PhoneNumber,Password,Photo,EmpType,EmpDate,DepartementID)
-		VALUES (@FirstName,@LastName,@PhoneNumber,@Password,@Photo,@EmpType,@EmpDate,@DepartementID)
+		INSERT INTO Employee(FirstName,LastName,PhoneNumber,Password,Photo,EmpType,EmpDate,DepartmentID)
+		VALUES (@FirstName,@LastName,@PhoneNumber,@Password,@Photo,@EmpType,@EmpDate,@DepartmentID)
 	END
 GO
 CREATE PROC [Update Employee]
@@ -280,7 +297,7 @@ CREATE PROC [Update Employee]
 		Photo = @Photo, 
 		EmpType = @EmpType, 
 		EmpDate = @EmpDate, 
-		DepartementID = @DepartementID 
+		DepartmentID = @DepartementID 
 		WHERE ID = @ID
 	END
 GO
@@ -298,7 +315,7 @@ CREATE PROC [Search Employee By ID]
 	@ID INT
 	AS
 	BEGIN
-		SELECT ID,FirstName,LastName,PhoneNumber,Password,PhoneNumber,EmpType,EmpDate,DepartementID
+		SELECT ID,FirstName,LastName,PhoneNumber,Password,PhoneNumber,EmpType,EmpDate,DepartmentID
 		FROM Employee
 		WHERE ID LIKE '%'+CAST( @ID AS VARCHAR(20))+'%'
 	END
@@ -308,7 +325,7 @@ CREATE PROC [Search Employee By Name]
 	@Name VARCHAR(100)
 	AS
 	BEGIN
-		SELECT ID,FirstName,LastName,PhoneNumber,Password,PhoneNumber,EmpType,EmpDate,DepartementID
+		SELECT ID,FirstName,LastName,PhoneNumber,Password,PhoneNumber,EmpType,EmpDate,DepartmentID
 		FROM Employee
 		WHERE FirstName LIKE '%' + TRIM(@Name) + '%' OR 
 				LastName LIKE '%' + TRIM(@Name) + '%'
@@ -749,7 +766,7 @@ RETURNS TABLE
 AS
 RETURN (
 		SELECT E.ID,E.Photo,E.FirstName,E.LastName,E.PhoneNumber
-		FROM Employee E JOIN Departement D ON E.DepartementID = D.ID
+		FROM Employee E JOIN Department D ON E.DepartmentID = D.ID
 		)
 GO
 CREATE FUNCTION [Get All Clients]()
@@ -786,7 +803,7 @@ CREATE FUNCTION [Get All Buys]()
 RETURNS TABLE 
 AS
 RETURN (
-		SELECT P.ID,C.FirstName+' '+ C.LastName AS Client,E.FirstName+' '+E.LastName AS Agent,B.Comission,B.SellDate,B.SellDate
+		SELECT P.ID,C.FirstName+' '+ C.LastName AS Client,E.FirstName+' '+E.LastName AS Agent,B.Comission,B.SellDate
 		FROM Buy B JOIN Employee E 
 		ON E.ID = B.AgentID JOIN Client C
 		ON B.ClientID = C.ID JOIN Property P
@@ -802,7 +819,7 @@ BEGIN
 	DECLARE @pwd VARCHAR(100),@VAL BIT
 	SELECT @pwd = Password 
 	FROM Employee 
-	WHERE DepartementID = 0 AND ID = @ID 
+	WHERE DepartmentID = 0 AND ID = @ID 
 	IF ((@pwd) IS NOT NULL AND @pwd = @Upwd )
 		SET @VAL = 1
 	ELSE 
@@ -818,7 +835,7 @@ BEGIN
 	DECLARE @pwd VARCHAR(100),@VAL BIT
 	SELECT @pwd = Password 
 	FROM Employee 
-	WHERE DepartementID = 1 AND ID = @ID 
+	WHERE DepartmentID = 1 AND ID = @ID 
 	IF ((@pwd) IS NOT NULL AND @pwd = @Upwd )
 		SET @VAL = 1
 	ELSE 
@@ -862,9 +879,9 @@ ON Employee
 INSTEAD OF INSERT, UPDATE
 AS 
 BEGIN
-	INSERT INTO Employee(FirstName,LastName,PhoneNumber,Password,Photo,EmpType,EmpDate,DepartementID)
+	INSERT INTO Employee(FirstName,LastName,PhoneNumber,Password,Photo,EmpType,EmpDate,DepartmentID)
 	(
-	SELECT dbo.[Clean Names](FirstName)	,dbo.[Clean Names](LastName), PhoneNumber,Password,Photo,EmpType,EmpDate,DepartementID 
+	SELECT dbo.[Clean Names](FirstName)	,dbo.[Clean Names](LastName), PhoneNumber,Password,Photo,EmpType,EmpDate,DepartmentID 
 	FROM INSERTED
 	)
 END
@@ -918,7 +935,7 @@ ON Department
 INSTEAD OF INSERT
 AS
 BEGIN
-	INSERT INTO Departement(Name)
+	INSERT INTO Department(Name)
 	(
 		SELECT dbo.[Clean Names](name)
 		FROM INSERTED

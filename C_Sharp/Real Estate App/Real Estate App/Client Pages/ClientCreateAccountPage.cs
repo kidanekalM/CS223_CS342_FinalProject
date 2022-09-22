@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using Real_Estate_App.Model;
 
 namespace Real_Estate_App
 {
@@ -194,10 +195,30 @@ namespace Real_Estate_App
             //Performing the action after validation
             if (hasError == false)
             {
-                MessageBox.Show("Your account has been created successfully!");
-                LoginPage loginPage = new LoginPage();
-                loginPage.Show();
-                this.Hide();
+                bool addSuccess;
+
+                try
+                {
+                    Client client = new Client();
+                    addSuccess = client.Add(txt_FirstName.Text, txt_LastName.Text, txt_Email.Text, txt_PhoneNo.Text, txt_Password.Text);
+
+                    if (addSuccess == true)
+                    {
+                        MessageBox.Show("Your account has been created successfully!");
+
+                        LoginPage loginPage = new LoginPage();
+                        loginPage.Show();
+                        this.Hide();
+                    }
+                    else
+                        MessageBox.Show("Your account was not created. Please try again!");
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Account creation failed! \n" + ex.Message);
+                }
+
             }
         }
 
@@ -226,13 +247,13 @@ namespace Real_Estate_App
             ofd.Filter = "Image files|*.jpg;*.jpeg;*.png;*.gif;...";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                circularPictureBox1.Image = Bitmap.FromFile(ofd.FileName);
+                pic_ClientProfilePic.Image = Bitmap.FromFile(ofd.FileName);
             }
         }
 
         private void btn_deletePic_Click(object sender, EventArgs e)
         {
-                circularPictureBox1.Image = Properties.Resources.Default_Profile;
+            pic_ClientProfilePic.Image = Properties.Resources.Default_Profile;
         }
     }
 }
