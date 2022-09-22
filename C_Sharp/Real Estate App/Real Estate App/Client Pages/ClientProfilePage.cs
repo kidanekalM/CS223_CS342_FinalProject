@@ -13,10 +13,11 @@ namespace Real_Estate_App
     public partial class ClientProfilePage : Form
     {
         private ClientContainer container = null;
-        public ClientProfilePage(ClientContainer cc, string firstName, string lastName, string email, string phoneNumber)
+        public ClientProfilePage(ClientContainer cc, Image ProfilePic, string firstName, string lastName, string email, string phoneNumber)
         {
             InitializeComponent();
             container = cc;
+            pic_ClientProfilePic.Image = ProfilePic;
             lbl_FirstName.Text = firstName;
             lbl_LastName.Text = lastName;
             lbl_Email.Text = email;
@@ -25,7 +26,7 @@ namespace Real_Estate_App
 
         private void btn_editProfile_Click(object sender, EventArgs e)
         {
-            ClientEditProfilePage editPage = new ClientEditProfilePage(container, this, lbl_FirstName.Text, lbl_LastName.Text, lbl_Email.Text, lbl_PhoneNo.Text);
+            ClientEditProfilePage editPage = new ClientEditProfilePage(container, this, pic_ClientProfilePic.Image, lbl_FirstName.Text, lbl_LastName.Text, lbl_Email.Text, lbl_PhoneNo.Text);
             editPage.MdiParent = container;
             editPage.Show();
             this.Hide();

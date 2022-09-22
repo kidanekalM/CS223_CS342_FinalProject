@@ -33,7 +33,7 @@ namespace Real_Estate_App
             if (ActiveMdiChild != null)
                 ActiveMdiChild.Close();
 
-            ClientProfilePage profilePage = new ClientProfilePage(this, "Hawariaw", "Paulos", "hawariaw@email.com", "0972503268");
+            ClientProfilePage profilePage = new ClientProfilePage(this, Properties.Resources.Default_Profile, "Hawariaw", "Paulos", "hawariaw@email.com", "0972503268");
             profilePage.MdiParent = this;
             profilePage.Show();
         }
@@ -98,6 +98,16 @@ namespace Real_Estate_App
             ClientHomePage homePage = new ClientHomePage(this);
             homePage.MdiParent = this;
             homePage.Show();
+        }
+
+        private void agentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ActiveMdiChild != null)
+                ActiveMdiChild.Close();
+
+            AgentProfilePage agentPage = new AgentProfilePage();
+            agentPage.MdiParent = this;
+            agentPage.Show();
         }
     }
 }

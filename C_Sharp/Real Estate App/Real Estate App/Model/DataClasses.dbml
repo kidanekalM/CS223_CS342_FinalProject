@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="RealEstate" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=hawariaw;Initial Catalog=RealEstate;User ID=&quot;Customer Login&quot;" SettingsObjectName="Real_Estate_App.Properties.Settings" SettingsPropertyName="RealEstateConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Appointment" Member="AppointmentTbls">
+    <Type Name="AppointmentTbl">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AppointmentDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ClientID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AgentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Appointment_ChoosenProperty" Member="ChoosenProperties" ThisKey="ID" OtherKey="ID" Type="ChoosenProperty" />
+      <Association Name="Client_Appointment" Member="ClientTbl" ThisKey="ClientID" OtherKey="ID" Type="ClientTbl" IsForeignKey="true" />
+      <Association Name="Employee_Appointment" Member="EmployeeTbl" ThisKey="AgentID" OtherKey="ID" Type="EmployeeTbl" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Buy" Member="Buys">
+    <Type Name="Buy">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PropertyID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ClientID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AgentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SellDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Comission" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="Client_Buy" Member="ClientTbl" ThisKey="ClientID" OtherKey="ID" Type="ClientTbl" IsForeignKey="true" />
+      <Association Name="Employee_Buy" Member="EmployeeTbl" ThisKey="AgentID" OtherKey="ID" Type="EmployeeTbl" IsForeignKey="true" />
+      <Association Name="Property_Buy" Member="PropertyTbl" ThisKey="PropertyID" OtherKey="ID" Type="PropertyTbl" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChoosenProperty" Member="ChoosenProperties">
+    <Type Name="ChoosenProperty">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PropertyID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Appointment_ChoosenProperty" Member="AppointmentTbl" ThisKey="ID" OtherKey="ID" Type="AppointmentTbl" IsForeignKey="true" />
+      <Association Name="Property_ChoosenProperty" Member="PropertyTbl" ThisKey="PropertyID" OtherKey="ID" Type="PropertyTbl" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Client" Member="ClientTbls">
+    <Type Name="ClientTbl">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Photo" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="EmpId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Client_Appointment" Member="AppointmentTbls" ThisKey="ID" OtherKey="ClientID" Type="AppointmentTbl" />
+      <Association Name="Client_Buy" Member="Buys" ThisKey="ID" OtherKey="ClientID" Type="Buy" />
+      <Association Name="Employee_Client" Member="EmployeeTbl" ThisKey="EmpId" OtherKey="ID" Type="EmployeeTbl" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Contractor" Member="Contractors">
+    <Type Name="Contractor">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Contractor_Property" Member="PropertyTbls" ThisKey="ID" OtherKey="ContractorID" Type="PropertyTbl" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Department" Member="Departments">
+    <Type Name="Department">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Employee" Member="EmployeeTbls">
+    <Type Name="EmployeeTbl">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Photo" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="EmpType" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="EmpDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DepartmentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Employee_Appointment" Member="AppointmentTbls" ThisKey="ID" OtherKey="AgentID" Type="AppointmentTbl" />
+      <Association Name="Employee_Buy" Member="Buys" ThisKey="ID" OtherKey="AgentID" Type="Buy" />
+      <Association Name="Employee_Client" Member="ClientTbls" ThisKey="ID" OtherKey="EmpId" Type="ClientTbl" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Property" Member="PropertyTbls">
+    <Type Name="PropertyTbl">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Area" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ContractorID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Property_Buy" Member="Buys" ThisKey="ID" OtherKey="PropertyID" Type="Buy" />
+      <Association Name="Property_ChoosenProperty" Member="ChoosenProperties" ThisKey="ID" OtherKey="PropertyID" Type="ChoosenProperty" />
+      <Association Name="Property_PropertyPhoto" Member="PropertyPhotos" ThisKey="ID" OtherKey="PropertyID" Type="PropertyPhoto" />
+      <Association Name="Contractor_Property" Member="Contractor" ThisKey="ContractorID" OtherKey="ID" Type="Contractor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PropertyPhoto" Member="PropertyPhotos">
+    <Type Name="PropertyPhoto">
+      <Column Name="PropertyID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Photo" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="Property_PropertyPhoto" Member="PropertyTbl" ThisKey="PropertyID" OtherKey="ID" Type="PropertyTbl" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

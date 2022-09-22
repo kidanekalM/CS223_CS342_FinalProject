@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -39,8 +38,9 @@
             this.lbl_Email = new System.Windows.Forms.Label();
             this.lbl_PhoneNo = new System.Windows.Forms.Label();
             this.btn_editProfile = new System.Windows.Forms.Button();
+            this.pic_ClientProfilePic = new Assignment_4_GUI.CircularPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_ClientProfilePic)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -52,17 +52,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBox1.Image = global::Real_Estate_App.Properties.Resources.SeekPng_com_profile_icon_png_9665493;
-            this.pictureBox1.Location = new System.Drawing.Point(616, 80);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(152, 152);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -153,11 +142,22 @@
             this.btn_editProfile.UseVisualStyleBackColor = false;
             this.btn_editProfile.Click += new System.EventHandler(this.btn_editProfile_Click);
             // 
+            // pic_ClientProfilePic
+            // 
+            this.pic_ClientProfilePic.Image = global::Real_Estate_App.Properties.Resources.Default_Profile;
+            this.pic_ClientProfilePic.Location = new System.Drawing.Point(609, 73);
+            this.pic_ClientProfilePic.Name = "pic_ClientProfilePic";
+            this.pic_ClientProfilePic.Size = new System.Drawing.Size(152, 152);
+            this.pic_ClientProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_ClientProfilePic.TabIndex = 11;
+            this.pic_ClientProfilePic.TabStop = false;
+            // 
             // ClientProfilePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1001, 589);
+            this.Controls.Add(this.pic_ClientProfilePic);
             this.Controls.Add(this.btn_editProfile);
             this.Controls.Add(this.lbl_PhoneNo);
             this.Controls.Add(this.lbl_Email);
@@ -168,20 +168,18 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ClientProfilePage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ClientProfilePage";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_ClientProfilePic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -192,5 +190,6 @@
         private System.Windows.Forms.Label lbl_Email;
         private System.Windows.Forms.Label lbl_PhoneNo;
         private System.Windows.Forms.Button btn_editProfile;
+        private Assignment_4_GUI.CircularPictureBox pic_ClientProfilePic;
     }
 }

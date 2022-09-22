@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using Real_Estate_App.Model;
 
 namespace Real_Estate_App
 {
@@ -15,11 +16,12 @@ namespace Real_Estate_App
     {
         private ClientContainer containerPage = null;
         private ClientProfilePage profilePage = null;
-        public ClientEditProfilePage(ClientContainer containerPage, ClientProfilePage profilePage, string firstName, string lastName, string email, string phoneNumber)
+        public ClientEditProfilePage(ClientContainer containerPage, ClientProfilePage profilePage, Image ProfilePic, string firstName, string lastName, string email, string phoneNumber)
         {
             InitializeComponent();
             this.containerPage = containerPage;
             this.profilePage = profilePage;
+            pic_ClientPic.Image = ProfilePic;
             txt_FirstName.Text = firstName;
             txt_LastName.Text = lastName;
             txt_Email.Text = email;
@@ -87,12 +89,30 @@ namespace Real_Estate_App
                 DialogResult result = MessageBox.Show("Are you sure you want to save the changes?", "Edit Profile", buttons);
                 if (result == DialogResult.Yes)
                 {
-                    MessageBox.Show("Update successfull!");
+                    bool updateSuccess;
 
-                    ClientProfilePage profilePage = new ClientProfilePage(containerPage, txt_FirstName.Text, txt_LastName.Text, txt_Email.Text, txt_PhoneNo.Text);
-                    profilePage.MdiParent = containerPage;
-                    profilePage.Show();
-                    this.Hide();
+                    try
+                    {
+                        Client client = new Client();
+                        updateSuccess = client.Update();
+
+                        if (updateSuccess == true)
+                        {
+
+                            MessageBox.Show("Update successfull!");
+
+                            ClientProfilePage profilePage = new ClientProfilePage(containerPage, pic_ClientPic.Image, txt_FirstName.Text, txt_LastName.Text, txt_Email.Text, txt_PhoneNo.Text);
+                            profilePage.MdiParent = containerPage;
+                            profilePage.Show();
+                            this.Hide();
+                        }
+                        else
+                            MessageBox.Show("Update failed. Please try again!");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Update failed! \n" + ex.Message);
+                    }
                 }
 
             }
@@ -175,6 +195,21 @@ namespace Real_Estate_App
         {
             this.Hide();
             profilePage.Show();
+        }
+
+        private void btn_editPic_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Image files|*.jpg;*.jpeg;*.png;*.gif;...";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                pic_ClientPic.Image = Bitmap.FromFile(ofd.FileName);
+            }
+        }
+
+        private void btn_deletePic_Click(object sender, EventArgs e)
+        {
+            pic_ClientPic.Image = Properties.Resources.Default_Profile;
         }
     }
 }
