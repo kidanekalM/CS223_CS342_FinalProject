@@ -54,6 +54,7 @@ namespace Real_Estate_App.Model
                 list.Add(cl);
             }
             return list;
+            
         }
     }
 }

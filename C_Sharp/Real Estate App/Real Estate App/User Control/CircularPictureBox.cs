@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Assignment_4_GUI
+namespace Real_Estate_App.User_Control
 {
     internal class CircularPictureBox : PictureBox
     {
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         Region defaultRegion;
         protected override void OnPaint(PaintEventArgs pe)
         {
@@ -25,6 +22,16 @@ namespace Assignment_4_GUI
         private void DoubleClick(object sender, EventArgs e)
         {
             this.Region = defaultRegion;
+        }
+
+        private void InitializeComponent()
+        {
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
+            this.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
+            this.ResumeLayout(false);
+
         }
     }
 }

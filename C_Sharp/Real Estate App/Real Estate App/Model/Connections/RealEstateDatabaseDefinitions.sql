@@ -83,7 +83,7 @@ Password VARCHAR(100)NOT NULL,
 Photo VARBINARY(MAX) ,
 EmpType VARCHAR(100) NOT NULL,
 EmpDate DATE NOT NULL,
-DepartementID INT /*CONSTRAINT FK_DepartmentId*/FOREIGN KEY REFERENCES Departement(ID)
+DepartmentID INT /*CONSTRAINT FK_DepartmentId*/FOREIGN KEY REFERENCES Department(ID)
 )
 CREATE TABLE Client(
 ID INT PRIMARY KEY IDENTITY,
@@ -196,7 +196,7 @@ CREATE PROC [Add Department]
 	@Name VARCHAR(100)
 	AS
 	BEGIN
-		INSERT INTO Departement(Name)
+		INSERT INTO Department(Name)
 		VALUES (@Name)
 	END
 GO
@@ -206,7 +206,7 @@ CREATE PROC [Update Department]
 	@ID INT
 	AS
 	BEGIN
-		UPDATE Departement
+		UPDATE Department
 		SET Name = TRIM(@Name)
 		WHERE ID = @ID
 	END
@@ -216,7 +216,7 @@ CREATE PROC [Delete Department]
 	@ID INT
 	AS
 	BEGIN
-		DELETE FROM Departement 
+		DELETE FROM Department 
 		WHERE ID = @ID
 	END
 GO
@@ -226,7 +226,7 @@ CREATE PROC [Search Department By ID]
 	AS
 	BEGIN
 		SELECT ID,Name
-		FROM Departement
+		FROM Department
 		WHERE ID LIKE '%'+CAST( @ID AS VARCHAR(20))+'%'
 	END
 GO
@@ -236,7 +236,7 @@ CREATE PROC [Search Department By Name]
 	AS
 	BEGIN
 		SELECT ID,Name
-		FROM Departement
+		FROM Department
 		WHERE Name LIKE '%' + TRIM(@Name) + '%'
 	END
 GO
@@ -251,11 +251,11 @@ CREATE PROC [Add Employee]
 	@Photo VARBINARY(MAX),
 	@EmpType VARCHAR(100),
 	@EmpDate DATE,
-	@DepartementID INT
+	@DepartmentID INT
 	AS
 	BEGIN
-		INSERT INTO Employee(FirstName,LastName,PhoneNumber,Password,Photo,EmpType,EmpDate,DepartementID)
-		VALUES (@FirstName,@LastName,@PhoneNumber,@Password,@Photo,@EmpType,@EmpDate,@DepartementID)
+		INSERT INTO Employee(FirstName,LastName,PhoneNumber,Password,Photo,EmpType,EmpDate,DepartmentID)
+		VALUES (@FirstName,@LastName,@PhoneNumber,@Password,@Photo,@EmpType,@EmpDate,@DepartmentID)
 	END
 GO
 CREATE PROC [Update Employee]
@@ -267,7 +267,7 @@ CREATE PROC [Update Employee]
 	@Photo VARBINARY(MAX),
 	@EmpType VARCHAR(100),
 	@EmpDate DATE,
-	@DepartementID INT
+	@DepartmentID INT
 	
 	AS
 	BEGIN
@@ -280,7 +280,7 @@ CREATE PROC [Update Employee]
 		Photo = @Photo, 
 		EmpType = @EmpType, 
 		EmpDate = @EmpDate, 
-		DepartementID = @DepartementID 
+		DepartmentID = @DepartmentID 
 		WHERE ID = @ID
 	END
 GO
@@ -298,7 +298,7 @@ CREATE PROC [Search Employee By ID]
 	@ID INT
 	AS
 	BEGIN
-		SELECT ID,FirstName,LastName,PhoneNumber,Password,PhoneNumber,EmpType,EmpDate,DepartementID
+		SELECT ID,FirstName,LastName,PhoneNumber,Password,PhoneNumber,EmpType,EmpDate,DepartmentID
 		FROM Employee
 		WHERE ID LIKE '%'+CAST( @ID AS VARCHAR(20))+'%'
 	END
@@ -308,7 +308,7 @@ CREATE PROC [Search Employee By Name]
 	@Name VARCHAR(100)
 	AS
 	BEGIN
-		SELECT ID,FirstName,LastName,PhoneNumber,Password,PhoneNumber,EmpType,EmpDate,DepartementID
+		SELECT ID,FirstName,LastName,PhoneNumber,Password,PhoneNumber,EmpType,EmpDate,DepartmentID
 		FROM Employee
 		WHERE FirstName LIKE '%' + TRIM(@Name) + '%' OR 
 				LastName LIKE '%' + TRIM(@Name) + '%'
@@ -749,7 +749,7 @@ RETURNS TABLE
 AS
 RETURN (
 		SELECT E.ID,E.Photo,E.FirstName,E.LastName,E.PhoneNumber
-		FROM Employee E JOIN Departement D ON E.DepartementID = D.ID
+		FROM Employee E JOIN Department D ON E.DepartmentID = D.ID
 		)
 GO
 CREATE FUNCTION [Get All Clients]()
@@ -802,7 +802,7 @@ BEGIN
 	DECLARE @pwd VARCHAR(100),@VAL BIT
 	SELECT @pwd = Password 
 	FROM Employee 
-	WHERE DepartementID = 0 AND ID = @ID 
+	WHERE DepartmentID = 0 AND ID = @ID 
 	IF ((@pwd) IS NOT NULL AND @pwd = @Upwd )
 		SET @VAL = 1
 	ELSE 
@@ -818,7 +818,7 @@ BEGIN
 	DECLARE @pwd VARCHAR(100),@VAL BIT
 	SELECT @pwd = Password 
 	FROM Employee 
-	WHERE DepartementID = 1 AND ID = @ID 
+	WHERE DepartmentID = 1 AND ID = @ID 
 	IF ((@pwd) IS NOT NULL AND @pwd = @Upwd )
 		SET @VAL = 1
 	ELSE 
@@ -862,9 +862,9 @@ ON Employee
 INSTEAD OF INSERT, UPDATE
 AS 
 BEGIN
-	INSERT INTO Employee(FirstName,LastName,PhoneNumber,Password,Photo,EmpType,EmpDate,DepartementID)
+	INSERT INTO Employee(FirstName,LastName,PhoneNumber,Password,Photo,EmpType,EmpDate,DepartmentID)
 	(
-	SELECT dbo.[Clean Names](FirstName)	,dbo.[Clean Names](LastName), PhoneNumber,Password,Photo,EmpType,EmpDate,DepartementID 
+	SELECT dbo.[Clean Names](FirstName)	,dbo.[Clean Names](LastName), PhoneNumber,Password,Photo,EmpType,EmpDate,DepartmentID 
 	FROM INSERTED
 	)
 END
@@ -918,7 +918,7 @@ ON Department
 INSTEAD OF INSERT
 AS
 BEGIN
-	INSERT INTO Departement(Name)
+	INSERT INTO Department(Name)
 	(
 		SELECT dbo.[Clean Names](name)
 		FROM INSERTED
@@ -1031,7 +1031,7 @@ GRANT EXECUTE ON [dbo].[Delete Choosen Property] TO [Agent]
 GRANT EXECUTE ON [dbo].[Search Buy By AgentId] TO [Agent]
 GRANT EXECUTE ON [dbo].[Search Property By Type] TO [Agent]
 
---			Customer/client permissions
+---			Customer/client permissions
 USE RealEstate
 GRANT EXECUTE ON [dbo].[Search Choosen Property By Appintment] TO [Customer]
 GRANT EXECUTE ON [dbo].[Search Choosen Property By Property] TO [Customer]

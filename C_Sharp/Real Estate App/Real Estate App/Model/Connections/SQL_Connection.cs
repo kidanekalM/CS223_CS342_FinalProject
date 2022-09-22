@@ -13,17 +13,17 @@ namespace Real_Estate_App.Model
         /// <summary>
         /// Creates the conection in a static way
         /// </summary>
-        static SQL_Connection()
+         public SQL_Connection(string user)
         {
 
             try
             {
-                String connectionStrng = ConfigurationManager.ConnectionStrings["ConnectionSrtring"].ConnectionString;
+                String connectionStrng = ConfigurationManager.ConnectionStrings[$"{user}ConnectionString"].ConnectionString;
 
                 myConn = new SqlConnection(connectionStrng);   
                 myConn.Open();
 
-                MessageBox.Show("Connected to database RealEstate");
+                MessageBox.Show($"Connected to database RealEstate as {user}");
             }
             catch (Exception e)
             {

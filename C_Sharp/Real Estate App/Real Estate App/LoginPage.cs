@@ -127,6 +127,7 @@ namespace Real_Estate_App
 
             if (hasError == false)
             {
+                Model.SQL_Connection sQL_Connection = new Model.SQL_Connection("Client");
                 AdminHomePage a = new AdminHomePage();
                 a.Show();
                 this.Hide();
@@ -210,6 +211,7 @@ namespace Real_Estate_App
 
             if (hasError == false)
             {
+                Model.SQL_Connection sQL_Connection = new Model.SQL_Connection("Agent");
                 //open agent page
             }
         }
@@ -301,7 +303,9 @@ namespace Real_Estate_App
                 ClientContainer containerPage = new ClientContainer();
                 containerPage.Show();
                 this.Hide();
+                Model.SQL_Connection sQL_Connection = new Model.SQL_Connection("Client");
             }
+
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)
