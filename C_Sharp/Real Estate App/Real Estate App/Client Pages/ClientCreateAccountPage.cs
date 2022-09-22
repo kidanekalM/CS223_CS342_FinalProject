@@ -200,7 +200,8 @@ namespace Real_Estate_App
                 try
                 {
                     Client client = new Client();
-                    addSuccess = client.Add(txt_FirstName.Text, txt_LastName.Text, txt_Email.Text, txt_PhoneNo.Text, txt_Password.Text);
+                    //addSuccess = client.Add(txt_FirstName.Text, txt_LastName.Text, txt_Email.Text, txt_PhoneNo.Text, txt_Password.Text);
+                    addSuccess = true;
 
                     if (addSuccess == true)
                     {
