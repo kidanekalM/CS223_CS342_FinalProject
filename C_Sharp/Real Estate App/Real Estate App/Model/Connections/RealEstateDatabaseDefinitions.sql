@@ -859,7 +859,7 @@ GO
 **********************************************************/
 CREATE TRIGGER [Clean Employee Names]
 ON Employee
-INSTEAD OF INSERT, UPDATE
+INSTEAD OF INSERT
 AS 
 BEGIN
 	INSERT INTO Employee(FirstName,LastName,PhoneNumber,Password,Photo,EmpType,EmpDate,DepartmentID)
@@ -871,15 +871,26 @@ END
 GO
 CREATE TRIGGER [Assign Agents]
 ON Client 
-INSTEAD OF INSERT
+AFTER INSERT
 AS
 BEGIN
-	INSERT INTO Client(FirstName,LastName,Photo,PhoneNumber,Email,Password,EmpId) 
-	(
-	SELECT dbo.[Clean Names]( FirstName),dbo.[Clean Names]( LastName),Photo,PhoneNumber,Email,Password,(SELECT TOP 1 EmpId FROM Client GROUP BY EmpId ORDER BY COUNT(EmpId)  )
-	FROM INSERTED
-	)
-	SELECT EmpId FROM Client GROUP BY EmpId ORDER BY EmpId 
+	DECLARE @EmpID INT 
+	SELECT TOP(1) @EmpID = E.ID 
+	FROM Employee E LEFT OUTER JOIN Client C 
+	ON E.ID=C.EmpId INNER JOIN Department D 
+	ON D.ID=E.DepartmentID 
+	WHERE D.Name LIKE '%SALES%' 
+	GROUP BY (E.ID) ORDER BY COUNT(E.ID)
+	
+	IF @empid IS NOT NULL
+		UPDATE Client
+		SET EmpId =  @EmpID
+		WHERE EmpId IS NULL
+
+	ELSE 
+		UPDATE Client
+		SET EmpId = (SELECT TOP (1) EmpId FROM Client GROUP BY EmpId ORDER BY(COUNT(EmpId)))
+
 END
 GO
 CREATE TRIGGER [Property Photo Limit]
