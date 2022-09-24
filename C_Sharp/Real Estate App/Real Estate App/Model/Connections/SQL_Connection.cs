@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace Real_Estate_App.Model
 {
-     public class SQL_Connection
+    public class SQL_Connection
     {
         static SqlConnection myConn;
         //static string ServerName = "Server=DESKTOP-HA15RJO;";
@@ -13,21 +13,21 @@ namespace Real_Estate_App.Model
         /// <summary>
         /// Creates the conection in a static way
         /// </summary>
-         public SQL_Connection(string user)
+        public SQL_Connection(string user)
         {
 
             try
             {
-                String connectionStrng = ConfigurationManager.ConnectionStrings[$"{user}ConnectionString"].ConnectionString;
+                string connectionStrng = ConfigurationManager.ConnectionStrings[$"{user}ConnectionString"].ConnectionString;
 
-                myConn = new SqlConnection(connectionStrng);   
+                myConn = new SqlConnection(connectionStrng);
                 myConn.Open();
 
                 MessageBox.Show($"Connected to database RealEstate as {user}");
             }
             catch (Exception e)
             {
-                MessageBox.Show("The database RealEstate may not exist"+"\n"+e.Message);       
+                MessageBox.Show("The database RealEstate may not exist" + "\n" + e.Message);
             }
             myConn.Close();
         }
@@ -38,13 +38,13 @@ namespace Real_Estate_App.Model
         /// <returns>retunrns SqlDataReader</returns>
         public static SqlDataReader Query(string query)
         {
-            try 
+            try
             {
                 myConn.Open();
-            SqlCommand cmd = new SqlCommand(query, myConn);
-            return cmd.ExecuteReader();
+                SqlCommand cmd = new SqlCommand(query, myConn);
+                return cmd.ExecuteReader();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return null;
             }
@@ -64,7 +64,7 @@ namespace Real_Estate_App.Model
                 cmd.ExecuteNonQuery();
                 return true;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return false;
             }
@@ -78,7 +78,7 @@ namespace Real_Estate_App.Model
         {
             myConn.Open();
             SqlCommand cmd = new SqlCommand(null, myConn);
-            
+
             return cmd;
         }
     }

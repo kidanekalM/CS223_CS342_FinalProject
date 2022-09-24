@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pic_AgentPic = new Assignment_4_GUI.CircularPictureBox();
+            this.pic_AgentPic = new Real_Estate_App.User_Control.CircularPictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -173,7 +173,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Assignment_4_GUI.CircularPictureBox pic_AgentPic;
+        private Real_Estate_App.User_Control.CircularPictureBox pic_AgentPic;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

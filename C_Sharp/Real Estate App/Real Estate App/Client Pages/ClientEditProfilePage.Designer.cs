@@ -32,7 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_deletePic = new System.Windows.Forms.Button();
             this.btn_editPic = new System.Windows.Forms.Button();
-            this.pic_ClientPic = new Assignment_4_GUI.CircularPictureBox();
+            this.pic_ClientPic = new Real_Estate_App.User_Control.CircularPictureBox();
             this.txt_PhoneNo = new System.Windows.Forms.TextBox();
             this.txt_Email = new System.Windows.Forms.TextBox();
             this.txt_LastName = new System.Windows.Forms.TextBox();
@@ -230,7 +230,7 @@
         private System.Windows.Forms.TextBox txt_Email;
         private System.Windows.Forms.TextBox txt_LastName;
         private System.Windows.Forms.TextBox txt_FirstName;
-        private Assignment_4_GUI.CircularPictureBox pic_ClientPic;
+        private Real_Estate_App.User_Control.CircularPictureBox pic_ClientPic;
         private System.Windows.Forms.Button btn_editPic;
         private System.Windows.Forms.Button btn_deletePic;
     }

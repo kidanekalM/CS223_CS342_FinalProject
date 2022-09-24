@@ -94,7 +94,8 @@ namespace Real_Estate_App
                     try
                     {
                         Client client = new Client();
-                        updateSuccess = client.Update();
+                        //updateSuccess = client.Update();
+                        updateSuccess = true;
 
                         if (updateSuccess == true)
                         {
