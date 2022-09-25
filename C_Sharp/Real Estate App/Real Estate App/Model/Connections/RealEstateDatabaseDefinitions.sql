@@ -391,7 +391,6 @@ GO
          Property Stored Procedures 
 *********************************************************/
 CREATE PROC [Add Property]
-	@ID INT ,
 	@Address VARCHAR(100),
 	@Price FLOAT,
 	@Type VARCHAR(100),
@@ -444,7 +443,7 @@ CREATE PROC [Search Property By ID]
 	@ID INT
 	AS
 	BEGIN
-		SELECT ID,Address,Price,Type,Area,Status,ContractorID,Description
+		SELECT *
 		FROM Property
 		WHERE ID LIKE '%'+CAST( @ID AS VARCHAR(20))+'%'
 	END
@@ -454,7 +453,7 @@ CREATE PROC [Search Property By Type]
 	@Type VARCHAR(100)
 	AS
 	BEGIN
-		SELECT ID,Address,Price,Type,Area,Status,ContractorID,Description
+		SELECT *
 		FROM Property
 		WHERE Type LIKE '%' + TRIM(@Type) + '%'
 	END
