@@ -126,25 +126,11 @@
     <Compile Include="Admin Pages\AdminHomePage.designer.cs">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </Compile>
-<<<<<<<Updated upstream
-<<<<<<< Updated upstream
     <Compile Include="Client Pages\AgentProfilePage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Client Pages\AgentProfilePage.Designer.cs">
       <DependentUpon>AgentProfilePage.cs</DependentUpon>
-=======
-=======
->>>>>>> Stashed changes
-    <Compile Include="Admin Pages\AdminShowAllProperties.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin Pages\AdminShowAllProperties.Designer.cs">
-      <DependentUpon>AdminShowAllProperties.cs</DependentUpon>
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     </Compile>
     <Compile Include="Client Pages\ClientAppointmentPage.cs">
       <SubType>Form</SubType>
@@ -234,18 +220,8 @@
     <EmbeddedResource Include="Admin Pages\AdminHomePage.resx">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     <EmbeddedResource Include="Client Pages\AgentProfilePage.resx">
       <DependentUpon>AgentProfilePage.cs</DependentUpon>
-=======
-    <EmbeddedResource Include="Admin Pages\AdminShowAllProperties.resx">
-      <DependentUpon>AdminShowAllProperties.cs</DependentUpon>
->>>>>>> Stashed changes
-=======
-    <EmbeddedResource Include="Admin Pages\AdminShowAllProperties.resx">
-      <DependentUpon>AdminShowAllProperties.cs</DependentUpon>
->>>>>>> Stashed changes
     </EmbeddedResource>
     <EmbeddedResource Include="Client Pages\ClientAppointmentPage.resx">
       <DependentUpon>ClientAppointmentPage.cs</DependentUpon>
@@ -284,13 +260,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-<<<<<<< Updated upstream
     </EmbeddedResource>
     <EmbeddedResource Include="User Control\CircularPictureBox.resx">
       <DependentUpon>CircularPictureBox.cs</DependentUpon>
-=======
->>>>>>> Stashed changes
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -308,6 +280,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Model\Connections\RealEstateDatabaseDefinitions.sql" />
+    <Content Include="Resources\back.png" />
     <None Include="Resources\blue-home-icon.png" />
     <None Include="Resources\blue-folder-icon.png" />
     <None Include="Resources\blue-ok-icon.png" />
@@ -320,7 +293,6 @@
     <Content Include="Resources\hide.com.png" />
     <None Include="Resources\istockphoto-1192403701-170667a.jpg" />
     <None Include="Resources\icons8-menu-bar-24.png" />
-    <None Include="Resources\istockphoto-172200613-170667a.jpg" />
     <Content Include="Resources\jannis-lucas-KsL8WZJ0CLA-unsplash.jpg" />
     <Content Include="Resources\jason-dent-w3eFhqXjkZE-unsplash.jpg" />
     <Content Include="Resources\jeremy-bishop-G9i_plbfDgk-unsplash.jpg" />
@@ -335,7 +307,6 @@
     <Content Include="Resources\naomi-august-wI55e75C5TY-unsplash.jpg" />
     <None Include="Resources\naomi-august-wI55e75C5TY-unsplash1.jpg" />
     <Content Include="Resources\nick-Y9lUSUhhd58-unsplash.jpg" />
-    <None Include="Resources\photo-1491466424936-e304919aada7.jpg" />
     <Content Include="Resources\r-architecture-JvQ0Q5IkeMM-unsplash.jpg" />
     <Content Include="Resources\sean-pollock-PhYq704ffdA-unsplash.jpg" />
     <Content Include="Resources\SeekPng.com_profile-icon-png_9665493.png" />

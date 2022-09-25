@@ -63,6 +63,16 @@ namespace Real_Estate_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap back {
+            get {
+                object obj = ResourceManager.GetObject("back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap blue_chart_icon {
             get {
                 object obj = ResourceManager.GetObject("blue-chart-icon", resourceCulture);
@@ -253,16 +263,6 @@ namespace Real_Estate_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap istockphoto_172200613_170667a {
-            get {
-                object obj = ResourceManager.GetObject("istockphoto-172200613-170667a", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap jannis_lucas_KsL8WZJ0CLA_unsplash {
             get {
                 object obj = ResourceManager.GetObject("jannis-lucas-KsL8WZJ0CLA-unsplash", resourceCulture);
@@ -386,16 +386,6 @@ namespace Real_Estate_App.Properties {
         internal static System.Drawing.Bitmap nick_Y9lUSUhhd58_unsplash {
             get {
                 object obj = ResourceManager.GetObject("nick-Y9lUSUhhd58-unsplash", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap photo_1491466424936_e304919aada7 {
-            get {
-                object obj = ResourceManager.GetObject("photo-1491466424936-e304919aada7", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

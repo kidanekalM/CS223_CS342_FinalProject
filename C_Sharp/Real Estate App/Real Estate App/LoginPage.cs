@@ -9,13 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using MyRealEstate;
-using Real_Estate_App.Model;
 
 namespace Real_Estate_App
 {
     public partial class LoginPage : Form
     {
-        Employee employee;
         public LoginPage()
         {
             InitializeComponent();
