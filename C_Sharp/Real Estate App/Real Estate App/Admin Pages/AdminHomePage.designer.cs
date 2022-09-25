@@ -35,7 +35,6 @@
             this.HomeButton = new System.Windows.Forms.Button();
             this.FinanceButton = new System.Windows.Forms.Button();
             this.WelcomePanel = new System.Windows.Forms.Panel();
-            this.circularPictureBox2 = new Real_Estate_App.User_Control.CircularPictureBox();
             this.UserNameLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.BarHideButton = new System.Windows.Forms.Button();
@@ -105,7 +104,6 @@
             this.showToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.allPropertiesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.HomePanel = new System.Windows.Forms.Panel();
-            this.circularPictureBox1 = new Real_Estate_App.User_Control.CircularPictureBox();
             this.DATElbl = new System.Windows.Forms.Label();
             this.EMAILlbl = new System.Windows.Forms.Label();
             this.NAMElbl = new System.Windows.Forms.Label();
@@ -117,11 +115,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.circularPictureBox1 = new Real_Estate_App.User_Control.CircularPictureBox();
+            this.circularPictureBox2 = new Real_Estate_App.User_Control.CircularPictureBox();
             this.LeftPanel.SuspendLayout();
             this.SidePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.WelcomePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Search_errorProvider)).BeginInit();
             this.AddPropertyPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -131,8 +130,9 @@
             this.PropertiesPanel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.HomePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // LeftPanel
@@ -224,18 +224,6 @@
             this.WelcomePanel.Size = new System.Drawing.Size(200, 108);
             this.WelcomePanel.TabIndex = 1;
             // 
-            // circularPictureBox2
-            // 
-            this.circularPictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.circularPictureBox2.Image = global::Real_Estate_App.Properties.Resources.SeekPng_com_profile_icon_png_9665493;
-            this.circularPictureBox2.Location = new System.Drawing.Point(14, 15);
-            this.circularPictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.circularPictureBox2.Name = "circularPictureBox2";
-            this.circularPictureBox2.Size = new System.Drawing.Size(74, 74);
-            this.circularPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.circularPictureBox2.TabIndex = 8;
-            this.circularPictureBox2.TabStop = false;
-            // 
             // UserNameLabel
             // 
             this.UserNameLabel.AutoSize = true;
@@ -264,7 +252,7 @@
             // 
             this.BarHideButton.Image = global::Real_Estate_App.Properties.Resources.icons8_menu_bar_24;
             this.BarHideButton.Location = new System.Drawing.Point(196, 97);
-            this.BarHideButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BarHideButton.Margin = new System.Windows.Forms.Padding(4);
             this.BarHideButton.Name = "BarHideButton";
             this.BarHideButton.Size = new System.Drawing.Size(36, 37);
             this.BarHideButton.TabIndex = 7;
@@ -275,7 +263,7 @@
             // 
             this.BarShowButton.Image = global::Real_Estate_App.Properties.Resources.icons8_menu_bar_24;
             this.BarShowButton.Location = new System.Drawing.Point(197, 96);
-            this.BarShowButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BarShowButton.Margin = new System.Windows.Forms.Padding(4);
             this.BarShowButton.Name = "BarShowButton";
             this.BarShowButton.Size = new System.Drawing.Size(35, 37);
             this.BarShowButton.TabIndex = 6;
@@ -340,9 +328,9 @@
             // 
             this.AppointmentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AppointmentPanel.Location = new System.Drawing.Point(202, 0);
-            this.AppointmentPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AppointmentPanel.Margin = new System.Windows.Forms.Padding(4);
             this.AppointmentPanel.Name = "AppointmentPanel";
-            this.AppointmentPanel.Size = new System.Drawing.Size(714, 684);
+            this.AppointmentPanel.Size = new System.Drawing.Size(744, 684);
             this.AppointmentPanel.TabIndex = 0;
             // 
             // CustomersPanel
@@ -351,7 +339,7 @@
             this.CustomersPanel.Location = new System.Drawing.Point(202, 0);
             this.CustomersPanel.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.CustomersPanel.Name = "CustomersPanel";
-            this.CustomersPanel.Size = new System.Drawing.Size(714, 684);
+            this.CustomersPanel.Size = new System.Drawing.Size(744, 684);
             this.CustomersPanel.TabIndex = 0;
             // 
             // viewToolStripMenuItem
@@ -398,7 +386,7 @@
             this.EditProfilePanel.Location = new System.Drawing.Point(202, 0);
             this.EditProfilePanel.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.EditProfilePanel.Name = "EditProfilePanel";
-            this.EditProfilePanel.Size = new System.Drawing.Size(714, 684);
+            this.EditProfilePanel.Size = new System.Drawing.Size(744, 684);
             this.EditProfilePanel.TabIndex = 12;
             // 
             // Search_errorProvider
@@ -410,10 +398,10 @@
             this.AddPropertyPanel.BackColor = System.Drawing.Color.SteelBlue;
             this.AddPropertyPanel.Controls.Add(this.panel1);
             this.AddPropertyPanel.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddPropertyPanel.Location = new System.Drawing.Point(0, 37);
-            this.AddPropertyPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddPropertyPanel.Location = new System.Drawing.Point(1, 30);
+            this.AddPropertyPanel.Margin = new System.Windows.Forms.Padding(4);
             this.AddPropertyPanel.Name = "AddPropertyPanel";
-            this.AddPropertyPanel.Size = new System.Drawing.Size(744, 804);
+            this.AddPropertyPanel.Size = new System.Drawing.Size(743, 654);
             this.AddPropertyPanel.TabIndex = 1;
             // 
             // panel1
@@ -433,10 +421,10 @@
             this.panel1.Controls.Add(this.textSell);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.textCId);
-            this.panel1.Location = new System.Drawing.Point(83, 52);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(106, 52);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(560, 649);
+            this.panel1.Size = new System.Drawing.Size(528, 553);
             this.panel1.TabIndex = 26;
             // 
             // label21
@@ -456,10 +444,10 @@
             this.AddPropertyButton.BackColor = System.Drawing.Color.SteelBlue;
             this.AddPropertyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddPropertyButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddPropertyButton.Location = new System.Drawing.Point(404, 570);
-            this.AddPropertyButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddPropertyButton.Location = new System.Drawing.Point(383, 490);
+            this.AddPropertyButton.Margin = new System.Windows.Forms.Padding(4);
             this.AddPropertyButton.Name = "AddPropertyButton";
-            this.AddPropertyButton.Size = new System.Drawing.Size(121, 47);
+            this.AddPropertyButton.Size = new System.Drawing.Size(123, 37);
             this.AddPropertyButton.TabIndex = 24;
             this.AddPropertyButton.Text = "Add";
             this.AddPropertyButton.UseVisualStyleBackColor = false;
@@ -480,8 +468,8 @@
             // StatusCheckBox
             // 
             this.StatusCheckBox.AutoSize = true;
-            this.StatusCheckBox.Location = new System.Drawing.Point(48, 570);
-            this.StatusCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StatusCheckBox.Location = new System.Drawing.Point(48, 520);
+            this.StatusCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.StatusCheckBox.Name = "StatusCheckBox";
             this.StatusCheckBox.Size = new System.Drawing.Size(93, 20);
             this.StatusCheckBox.TabIndex = 25;
@@ -491,11 +479,11 @@
             // textDescription
             // 
             this.textDescription.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textDescription.Location = new System.Drawing.Point(160, 337);
-            this.textDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textDescription.Location = new System.Drawing.Point(137, 339);
+            this.textDescription.Margin = new System.Windows.Forms.Padding(4);
             this.textDescription.Multiline = true;
             this.textDescription.Name = "textDescription";
-            this.textDescription.Size = new System.Drawing.Size(346, 31);
+            this.textDescription.Size = new System.Drawing.Size(352, 29);
             this.textDescription.TabIndex = 1;
             // 
             // label11
@@ -513,8 +501,8 @@
             // textAddress
             // 
             this.textAddress.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textAddress.Location = new System.Drawing.Point(138, 105);
-            this.textAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textAddress.Location = new System.Drawing.Point(121, 105);
+            this.textAddress.Margin = new System.Windows.Forms.Padding(4);
             this.textAddress.Name = "textAddress";
             this.textAddress.Size = new System.Drawing.Size(368, 23);
             this.textAddress.TabIndex = 4;
@@ -537,11 +525,11 @@
             this.groupBox1.Controls.Add(this.BigR);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.groupBox1.Location = new System.Drawing.Point(48, 399);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(48, 377);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(176, 130);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(144, 115);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Type";
@@ -551,8 +539,8 @@
             this.SmallR.AutoSize = true;
             this.SmallR.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SmallR.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.SmallR.Location = new System.Drawing.Point(40, 95);
-            this.SmallR.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SmallR.Location = new System.Drawing.Point(40, 76);
+            this.SmallR.Margin = new System.Windows.Forms.Padding(4);
             this.SmallR.Name = "SmallR";
             this.SmallR.Size = new System.Drawing.Size(64, 20);
             this.SmallR.TabIndex = 1;
@@ -566,7 +554,7 @@
             this.BigR.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BigR.ForeColor = System.Drawing.SystemColors.Desktop;
             this.BigR.Location = new System.Drawing.Point(40, 50);
-            this.BigR.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BigR.Margin = new System.Windows.Forms.Padding(4);
             this.BigR.Name = "BigR";
             this.BigR.Size = new System.Drawing.Size(49, 20);
             this.BigR.TabIndex = 0;
@@ -578,9 +566,9 @@
             // 
             this.textArea.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textArea.Location = new System.Drawing.Point(102, 278);
-            this.textArea.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textArea.Margin = new System.Windows.Forms.Padding(4);
             this.textArea.Name = "textArea";
-            this.textArea.Size = new System.Drawing.Size(404, 23);
+            this.textArea.Size = new System.Drawing.Size(387, 23);
             this.textArea.TabIndex = 21;
             // 
             // label13
@@ -598,8 +586,8 @@
             // textSell
             // 
             this.textSell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textSell.Location = new System.Drawing.Point(138, 165);
-            this.textSell.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textSell.Location = new System.Drawing.Point(121, 165);
+            this.textSell.Margin = new System.Windows.Forms.Padding(4);
             this.textSell.Name = "textSell";
             this.textSell.Size = new System.Drawing.Size(368, 23);
             this.textSell.TabIndex = 3;
@@ -619,10 +607,10 @@
             // textCId
             // 
             this.textCId.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textCId.Location = new System.Drawing.Point(180, 223);
-            this.textCId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textCId.Location = new System.Drawing.Point(149, 223);
+            this.textCId.Margin = new System.Windows.Forms.Padding(4);
             this.textCId.Name = "textCId";
-            this.textCId.Size = new System.Drawing.Size(326, 23);
+            this.textCId.Size = new System.Drawing.Size(340, 23);
             this.textCId.TabIndex = 2;
             // 
             // homeToolStripMenuItem
@@ -693,9 +681,9 @@
             this.EmployeesPanel.Controls.Add(this.menuStrip2);
             this.EmployeesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EmployeesPanel.Location = new System.Drawing.Point(202, 0);
-            this.EmployeesPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EmployeesPanel.Margin = new System.Windows.Forms.Padding(4);
             this.EmployeesPanel.Name = "EmployeesPanel";
-            this.EmployeesPanel.Size = new System.Drawing.Size(714, 684);
+            this.EmployeesPanel.Size = new System.Drawing.Size(744, 684);
             this.EmployeesPanel.TabIndex = 0;
             // 
             // label10
@@ -704,7 +692,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.Control;
-            this.label10.Location = new System.Drawing.Point(302, 177);
+            this.label10.Location = new System.Drawing.Point(312, 96);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(97, 23);
@@ -717,7 +705,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.Control;
-            this.label9.Location = new System.Drawing.Point(293, 220);
+            this.label9.Location = new System.Drawing.Point(303, 139);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(115, 23);
@@ -730,7 +718,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.Control;
-            this.label8.Location = new System.Drawing.Point(307, 263);
+            this.label8.Location = new System.Drawing.Point(317, 182);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(80, 23);
@@ -743,7 +731,7 @@
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.SystemColors.Control;
-            this.label20.Location = new System.Drawing.Point(287, 394);
+            this.label20.Location = new System.Drawing.Point(297, 313);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(117, 23);
@@ -756,7 +744,7 @@
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.SystemColors.Control;
-            this.label17.Location = new System.Drawing.Point(298, 439);
+            this.label17.Location = new System.Drawing.Point(308, 358);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(98, 23);
@@ -769,7 +757,7 @@
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.SystemColors.Control;
-            this.label16.Location = new System.Drawing.Point(279, 354);
+            this.label16.Location = new System.Drawing.Point(289, 273);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(137, 23);
@@ -787,7 +775,7 @@
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip2.Size = new System.Drawing.Size(714, 25);
+            this.menuStrip2.Size = new System.Drawing.Size(744, 30);
             this.menuStrip2.TabIndex = 0;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -796,7 +784,7 @@
             this.homeToolStripMenuItem2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeToolStripMenuItem2.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.homeToolStripMenuItem2.Name = "homeToolStripMenuItem2";
-            this.homeToolStripMenuItem2.Size = new System.Drawing.Size(61, 21);
+            this.homeToolStripMenuItem2.Size = new System.Drawing.Size(61, 26);
             this.homeToolStripMenuItem2.Text = "Home";
             // 
             // manageToolStripMenuItem2
@@ -808,7 +796,7 @@
             this.manageToolStripMenuItem2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manageToolStripMenuItem2.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.manageToolStripMenuItem2.Name = "manageToolStripMenuItem2";
-            this.manageToolStripMenuItem2.Size = new System.Drawing.Size(76, 21);
+            this.manageToolStripMenuItem2.Size = new System.Drawing.Size(76, 26);
             this.manageToolStripMenuItem2.Text = "Manage";
             // 
             // addEmployeeToolStripMenuItem
@@ -842,7 +830,7 @@
             this.showToolStripMenuItem2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.showToolStripMenuItem2.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.showToolStripMenuItem2.Name = "showToolStripMenuItem2";
-            this.showToolStripMenuItem2.Size = new System.Drawing.Size(57, 21);
+            this.showToolStripMenuItem2.Size = new System.Drawing.Size(57, 26);
             this.showToolStripMenuItem2.Text = "Show";
             // 
             // allEmployeesToolStripMenuItem
@@ -863,9 +851,9 @@
             this.PropertiesPanel.Controls.Add(this.menuStrip1);
             this.PropertiesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PropertiesPanel.Location = new System.Drawing.Point(202, 0);
-            this.PropertiesPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PropertiesPanel.Margin = new System.Windows.Forms.Padding(4);
             this.PropertiesPanel.Name = "PropertiesPanel";
-            this.PropertiesPanel.Size = new System.Drawing.Size(714, 684);
+            this.PropertiesPanel.Size = new System.Drawing.Size(744, 684);
             this.PropertiesPanel.TabIndex = 0;
             // 
             // label2
@@ -904,7 +892,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(714, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(744, 30);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -913,7 +901,7 @@
             this.homeToolStripMenuItem1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.homeToolStripMenuItem1.Name = "homeToolStripMenuItem1";
-            this.homeToolStripMenuItem1.Size = new System.Drawing.Size(61, 21);
+            this.homeToolStripMenuItem1.Size = new System.Drawing.Size(61, 26);
             this.homeToolStripMenuItem1.Text = "Home";
             this.homeToolStripMenuItem1.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
@@ -926,7 +914,7 @@
             this.manageToolStripMenuItem1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manageToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.manageToolStripMenuItem1.Name = "manageToolStripMenuItem1";
-            this.manageToolStripMenuItem1.Size = new System.Drawing.Size(76, 21);
+            this.manageToolStripMenuItem1.Size = new System.Drawing.Size(76, 26);
             this.manageToolStripMenuItem1.Text = "Manage";
             // 
             // addPropertyToolStripMenuItem1
@@ -964,7 +952,7 @@
             this.showToolStripMenuItem1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.showToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.showToolStripMenuItem1.Name = "showToolStripMenuItem1";
-            this.showToolStripMenuItem1.Size = new System.Drawing.Size(57, 21);
+            this.showToolStripMenuItem1.Size = new System.Drawing.Size(57, 26);
             this.showToolStripMenuItem1.Text = "Show";
             // 
             // allPropertiesToolStripMenuItem1
@@ -993,20 +981,8 @@
             this.HomePanel.Location = new System.Drawing.Point(202, 0);
             this.HomePanel.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.HomePanel.Name = "HomePanel";
-            this.HomePanel.Size = new System.Drawing.Size(714, 684);
+            this.HomePanel.Size = new System.Drawing.Size(744, 684);
             this.HomePanel.TabIndex = 0;
-            // 
-            // circularPictureBox1
-            // 
-            this.circularPictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.circularPictureBox1.Image = global::Real_Estate_App.Properties.Resources.SeekPng_com_profile_icon_png_9665493;
-            this.circularPictureBox1.Location = new System.Drawing.Point(266, 30);
-            this.circularPictureBox1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.circularPictureBox1.Name = "circularPictureBox1";
-            this.circularPictureBox1.Size = new System.Drawing.Size(200, 200);
-            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.circularPictureBox1.TabIndex = 12;
-            this.circularPictureBox1.TabStop = false;
             // 
             // DATElbl
             // 
@@ -1027,7 +1003,7 @@
             this.EMAILlbl.BackColor = System.Drawing.Color.Transparent;
             this.EMAILlbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EMAILlbl.ForeColor = System.Drawing.Color.Black;
-            this.EMAILlbl.Location = new System.Drawing.Point(233, 373);
+            this.EMAILlbl.Location = new System.Drawing.Point(230, 373);
             this.EMAILlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EMAILlbl.Name = "EMAILlbl";
             this.EMAILlbl.Size = new System.Drawing.Size(277, 23);
@@ -1040,7 +1016,7 @@
             this.NAMElbl.BackColor = System.Drawing.Color.Transparent;
             this.NAMElbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NAMElbl.ForeColor = System.Drawing.Color.Black;
-            this.NAMElbl.Location = new System.Drawing.Point(279, 310);
+            this.NAMElbl.Location = new System.Drawing.Point(270, 310);
             this.NAMElbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NAMElbl.Name = "NAMElbl";
             this.NAMElbl.Size = new System.Drawing.Size(150, 23);
@@ -1138,21 +1114,45 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // circularPictureBox1
+            // 
+            this.circularPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox1.Image = global::Real_Estate_App.Properties.Resources.SeekPng_com_profile_icon_png_9665493;
+            this.circularPictureBox1.Location = new System.Drawing.Point(266, 30);
+            this.circularPictureBox1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.circularPictureBox1.Name = "circularPictureBox1";
+            this.circularPictureBox1.Size = new System.Drawing.Size(200, 200);
+            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.circularPictureBox1.TabIndex = 12;
+            this.circularPictureBox1.TabStop = false;
+            // 
+            // circularPictureBox2
+            // 
+            this.circularPictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox2.Image = global::Real_Estate_App.Properties.Resources.SeekPng_com_profile_icon_png_9665493;
+            this.circularPictureBox2.Location = new System.Drawing.Point(14, 15);
+            this.circularPictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.circularPictureBox2.Name = "circularPictureBox2";
+            this.circularPictureBox2.Size = new System.Drawing.Size(74, 74);
+            this.circularPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.circularPictureBox2.TabIndex = 8;
+            this.circularPictureBox2.TabStop = false;
+            // 
             // AdminHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(916, 684);
-            this.Controls.Add(this.HomePanel);
-            this.Controls.Add(this.PropertiesPanel);
+            this.ClientSize = new System.Drawing.Size(946, 684);
             this.Controls.Add(this.EmployeesPanel);
+            this.Controls.Add(this.PropertiesPanel);
+            this.Controls.Add(this.HomePanel);
             this.Controls.Add(this.AppointmentPanel);
             this.Controls.Add(this.CustomersPanel);
             this.Controls.Add(this.EditProfilePanel);
             this.Controls.Add(this.LeftPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip2;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AdminHomePage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "`";
@@ -1162,7 +1162,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.WelcomePanel.ResumeLayout(false);
             this.WelcomePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Search_errorProvider)).EndInit();
             this.AddPropertyPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -1179,8 +1178,9 @@
             this.menuStrip1.PerformLayout();
             this.HomePanel.ResumeLayout(false);
             this.HomePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
