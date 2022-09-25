@@ -208,16 +208,6 @@
   <data name="luke-chesser-pJadQetzTkI-unsplash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\luke-chesser-pJadQetzTkI-unsplash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< Updated upstream
-  <data name="filip-zrnzevic-Ceuh97A6OYM-unsplash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\filip-zrnzevic-Ceuh97A6OYM-unsplash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ClientAgentPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ClientAgentPage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
-  <data name="istockphoto-172200613-170667a" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\istockphoto-172200613-170667a.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="m" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\m.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
 >>>>>>> Stashed changes
@@ -246,12 +236,7 @@
   <data name="SeekPng.com_profile-icon-png_9665493" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SeekPng.com_profile-icon-png_9665493.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< Updated upstream
-  <data name="ClientAgentPage 4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ClientAgentPage 4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
-  <data name="photo-1491466424936-e304919aada7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\photo-1491466424936-e304919aada7.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> Stashed changes
+  <data name="icons8-menu-bar-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-menu-bar-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
