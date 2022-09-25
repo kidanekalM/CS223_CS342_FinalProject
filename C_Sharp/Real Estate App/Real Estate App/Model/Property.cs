@@ -30,7 +30,7 @@ namespace Real_Estate_App.Model
             throw new NotImplementedException();
         }
 
-        public bool Add()
+        public int Add()
         {
             throw new NotImplementedException();
         }

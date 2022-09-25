@@ -15,7 +15,7 @@ namespace Real_Estate_App.Model
         /// </summary>
         /// <returns>bool for success or faliure</returns>
         
-        bool Add();
+        int Add();
 
 
         /// <summary>

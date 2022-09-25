@@ -277,6 +277,7 @@ namespace Real_Estate_App
 
         private void lk_lbl_CreateAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            Model.SQL_Connection sqlconnection = new Model.SQL_Connection("Client");
             ClientCreateAccountPage createPage = new ClientCreateAccountPage();
             createPage.Show();
             this.Hide();

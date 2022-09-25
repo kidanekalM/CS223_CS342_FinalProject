@@ -192,6 +192,8 @@
     <Compile Include="LoginPage.designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Buy.cs" />
+    <Compile Include="Model\Department.cs" />
     <Compile Include="User Control\CircularButton.cs">
       <SubType>Component</SubType>
     </Compile>

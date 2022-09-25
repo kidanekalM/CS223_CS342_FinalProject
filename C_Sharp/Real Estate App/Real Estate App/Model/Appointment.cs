@@ -16,7 +16,7 @@ namespace Real_Estate_App.Model
         public List<string> PropertyID { get; set; }
         public string Comment { get; set; }
 
-        public bool Add()
+        public int Add()
         {
             throw new NotImplementedException();
         }

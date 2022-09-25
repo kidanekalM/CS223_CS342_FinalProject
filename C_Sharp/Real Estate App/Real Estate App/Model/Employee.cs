@@ -18,7 +18,7 @@ namespace Real_Estate_App.Model
         public string EmployeeType { get; set; }
 
        
-        public bool Add()
+        public int Add()
         {
             throw new NotImplementedException();
         }

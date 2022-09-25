@@ -195,17 +195,25 @@ namespace Real_Estate_App
             //Performing the action after validation
             if (hasError == false)
             {
-                bool addSuccess;
+                int addSuccess;
 
                 try
                 {
-                    Client client = new Client();
-                    //addSuccess = client.Add(txt_FirstName.Text, txt_LastName.Text, txt_Email.Text, txt_PhoneNo.Text, txt_Password.Text);
-                    addSuccess = true;
-
-                    if (addSuccess == true)
+                    Client client = new Client()
                     {
-                        MessageBox.Show("Your account has been created successfully!");
+                        FirstName = txt_FirstName.Text,
+                        LastName = txt_LastName.Text,
+                        Email = txt_Email.Text,
+                        PhoneNumber = txt_PhoneNo.Text,
+                        Password = txt_Password.Text,
+                        Photo = null
+                    };
+                    addSuccess = client.Add();
+                   // addSuccess = true;
+
+                    if (addSuccess != -1 )
+                    {
+                        MessageBox.Show($"Your account has been created successfully!\n Use This ID  to login nextime ID : {addSuccess}");
 
                         LoginPage loginPage = new LoginPage();
                         loginPage.Show();

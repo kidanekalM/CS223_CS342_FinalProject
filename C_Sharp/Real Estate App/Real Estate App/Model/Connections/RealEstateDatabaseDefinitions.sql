@@ -7,9 +7,9 @@ Admin   - Me / my account
 		- GET ALL BUYS WITH EVERYTHING 
 		- 
 ***************************************************************************************
-Agent   - GET ALL APPOINTMENTS WITH EVERYTHING (FUNC)
-		- CLIENTS INFORMATION                      
-		- ADD EDIT DELETE PROPERTY AND BUYS
+Agent   - GET ALL APPOINTMENTS WITH EVERYTHING (FUNC) 
+		- CLIENTS INFORMATION                         
+		- ADD EDIT DELETE PROPERTY AND BUYS           
 		- 
 		- 
 		- 
@@ -64,11 +64,6 @@ GO
 USE RealEstate
 
 -- Creating Tables 
-CREATE TABLE Contractor(
-ID INT PRIMARY KEY IDENTITY,
-Name VARCHAR(100)  NOT NULL,
-PhoneNumber VARCHAR(10)  UNIQUE  NOT NULL,
-)
 CREATE TABLE Department(
 ID INT PRIMARY KEY IDENTITY,
 Name VARCHAR(100)  NOT NULL
@@ -103,7 +98,6 @@ Price FLOAT  NOT NULL,
 Type VARCHAR(100)  NOT NULL,
 Area FLOAT  NOT NULL,
 Status BIT NOT NULL,
-ContractorID INT FOREIGN KEY REFERENCES Contractor(ID)  NOT NULL,
 Description VARCHAR(100)  NOT NULL
 )
 CREATE TABLE PropertyPhoto(
@@ -133,62 +127,6 @@ CONSTRAINT PKChoosenProperty PRIMARY KEY (ID,PropertyID)
 )
 GO
 
-/*******************************************************
-         Contractor Stored Procedures 
-*******************************************************/
-CREATE PROC [Add Contractor]
-	@Name VARCHAR(100),
-	@PhoneNumber VARCHAR(10)
-	AS
-	BEGIN
-		INSERT INTO Contractor(Name,PhoneNumber) 
-		VALUES (@Name,@PhoneNumber)
-	END
-GO
-CREATE PROC [Update Contractor]
-	@id INT,
-	@Name VARCHAR(100),
-	@PhoneNumber VARCHAR(10)
-	AS
-	BEGIN
-		UPDATE Contractor 
-		SET Name = @Name,
-			PhoneNumber = @PhoneNumber
-			WHERE ID = @id
-	END
-
-GO
-
-CREATE PROC [Search Contractor By Name]
-	@Name VARCHAR(100)
-	AS
-	BEGIN
-		SELECT ID,Name,PhoneNumber 
-		FROM Contractor 
-		WHERE Name LIKE '%'+@Name+'%'
-	END
-
-GO
-
-CREATE PROC [Search Contractor By Id]
-	@ID INT
-	AS
-	BEGIN
-		SELECT ID,Name,PhoneNumber 
-		FROM Contractor
-		WHERE ID LIKE '%'+CAST(@ID AS VARCHAR(20))+'%'
-	END
-GO
-
-CREATE PROC [Delete Contractor]
-	@ID INT
-	AS
-	BEGIN
-		DELETE FROM Contractor 
-		WHERE ID = @ID 
-	END
-GO
-
 /********************************************************
          Department Stored Procedures 
 *********************************************************/
@@ -198,6 +136,7 @@ CREATE PROC [Add Department]
 	BEGIN
 		INSERT INTO Department(Name)
 		VALUES (@Name)
+		  SELECT @@IDENTITY
 	END
 GO
 
@@ -256,6 +195,7 @@ CREATE PROC [Add Employee]
 	BEGIN
 		INSERT INTO Employee(FirstName,LastName,PhoneNumber,Password,Photo,EmpType,EmpDate,DepartmentID)
 		VALUES (@FirstName,@LastName,@PhoneNumber,@Password,@Photo,@EmpType,@EmpDate,@DepartmentID)
+		  SELECT @@IDENTITY
 	END
 GO
 CREATE PROC [Update Employee]
@@ -332,6 +272,7 @@ CREATE PROC [Add Client]
 	BEGIN
 		INSERT INTO Client(FirstName,LastName,Photo,PhoneNumber,Email,Password,EmpId)
 		VALUES (@FirstName ,@LastName,@Photo, @PhoneNumber,@Email, @Password,@EmpId ) 
+		SELECT @@IDENTITY
 	END
 GO
 CREATE PROC [Update Client]
@@ -397,13 +338,13 @@ CREATE PROC [Add Property]
 	@Type VARCHAR(100),
 	@Area FLOAT,
 	@Status BIT,
-	@ContractorID INT,
 	@Description VARCHAR(100)
 
 	AS
 	BEGIN
-		INSERT INTO Property(Address,Price,Type,Area,Status,ContractorID,Description)
-		VALUES (@Address,@Price,@Type,@Area,@Status,@ContractorID,@Description)
+		INSERT INTO Property(Address,Price,Type,Area,Status,Description)
+		VALUES (@Address,@Price,@Type,@Area,@Status,@Description)
+		  SELECT @@IDENTITY
 	END
 GO
 
@@ -414,7 +355,6 @@ CREATE PROC [Update Property]
 	@Type VARCHAR(100),
 	@Area FLOAT,
 	@Status BIT,
-	@ContractorID INT,
 	@Description VARCHAR(100)
 	
 	AS
@@ -425,7 +365,6 @@ CREATE PROC [Update Property]
 			Type = @Type,
 			Area = @Area,
 			Status = @Status,
-			ContractorID = @ContractorID,
 			Description = @Description
 		WHERE ID = @ID
 	END
@@ -444,7 +383,7 @@ CREATE PROC [Search Property By ID]
 	@ID INT
 	AS
 	BEGIN
-		SELECT ID,Address,Price,Type,Area,Status,ContractorID,Description
+		SELECT ID,Address,Price,Type,Area,Status,Description
 		FROM Property
 		WHERE ID LIKE '%'+CAST( @ID AS VARCHAR(20))+'%'
 	END
@@ -454,7 +393,7 @@ CREATE PROC [Search Property By Type]
 	@Type VARCHAR(100)
 	AS
 	BEGIN
-		SELECT ID,Address,Price,Type,Area,Status,ContractorID,Description
+		SELECT ID,Address,Price,Type,Area,Status,Description
 		FROM Property
 		WHERE Type LIKE '%' + TRIM(@Type) + '%'
 	END
@@ -468,7 +407,7 @@ CREATE PROC [Filter Property]
 	@Description VARCHAR(100) = ''
 	AS
 	BEGIN
-		SELECT ID,Address,Price,Type,Area,Status,ContractorID,Description
+		SELECT ID,Address,Price,Type,Area,Status,Description
 		FROM Property
 		WHERE Type LIKE '%' + TRIM(@Type) + '%' OR
 			Address LIKE '%' + @Address + '%' OR
@@ -673,6 +612,7 @@ CREATE PROC [Add Appointment]
 	BEGIN
 		INSERT INTO Appointment(AppointmentDate,Comment,ClientID,AgentID)
 		VALUES (@AppointmentDate,@Comment,@ClientId,@AgentId)
+		  SELECT @@IDENTITY
 	END
 GO
 
@@ -958,7 +898,6 @@ GRANT EXECUTE ON [dbo].[Search Choosen Property By Property] TO [Admin]
 GRANT EXECUTE ON [dbo].[Search Appointment By ID] TO [Admin]
 GRANT EXECUTE ON [dbo].[Update Client] TO [Admin]
 GRANT EXECUTE ON [dbo].[Add Choosen Property] TO [Admin]
-GRANT EXECUTE ON [dbo].[Update Contractor] TO [Admin]
 GRANT EXECUTE ON [dbo].[Add Buy] TO [Admin]
 GRANT EXECUTE ON [dbo].[Search Appointment By AgentID] TO [Admin]
 GRANT EXECUTE ON [dbo].[Delete Property Photo By Id] TO [Admin]
@@ -971,7 +910,6 @@ GRANT EXECUTE ON [dbo].[Update Choosen Property] TO [Admin]
 GRANT EXECUTE ON [dbo].[Delete Employee] TO [Admin]
 GRANT EXECUTE ON [dbo].[Add Appointment] TO [Admin]
 GRANT EXECUTE ON [dbo].[Search Employee By Name] TO [Admin]
-GRANT EXECUTE ON [dbo].[Add Contractor] TO [Admin]
 GRANT EXECUTE ON [dbo].[Search Property Photo By ID] TO [Admin]
 GRANT EXECUTE ON [dbo].[Delete Appointment] TO [Admin]
 GRANT EXECUTE ON [dbo].[Search Department By Name] TO [Admin]
@@ -985,13 +923,10 @@ GRANT EXECUTE ON [dbo].[Delete Department] TO [Admin]
 GRANT EXECUTE ON [dbo].[Search Client By ID] TO [Admin]
 GRANT EXECUTE ON [dbo].[Add Employee] TO [Admin]
 GRANT EXECUTE ON [dbo].[Add Department] TO [Admin]
-GRANT EXECUTE ON [dbo].[Search Contractor By Name] TO [Admin]
 GRANT EXECUTE ON [dbo].[Search Appointment By Date] TO [Admin]
 GRANT SELECT ON [dbo].[Get All Appointments] TO [Admin]
 GRANT SELECT ON [dbo].[Get All Employees] TO [Admin]
 GRANT EXECUTE ON [dbo].[Update Property Photo] TO [Admin]
-GRANT EXECUTE ON [dbo].[Search Contractor By Id] TO [Admin]
-GRANT EXECUTE ON [dbo].[Delete Contractor] TO [Admin]
 GRANT EXECUTE ON [dbo].[Update Department] TO [Admin]
 GRANT EXECUTE ON [dbo].[Filter Property] TO [Admin]
 GRANT EXECUTE ON [dbo].[Update Buy] TO [Admin]
