@@ -38,7 +38,7 @@
             this.lbl_Email = new System.Windows.Forms.Label();
             this.lbl_PhoneNo = new System.Windows.Forms.Label();
             this.btn_editProfile = new System.Windows.Forms.Button();
-            this.pic_ClientProfilePic = new User_Control.CircularPictureBox();
+            this.pic_ClientProfilePic = new Real_Estate_App.User_Control.CircularPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_ClientProfilePic)).BeginInit();
             this.SuspendLayout();
@@ -190,6 +190,6 @@
         private System.Windows.Forms.Label lbl_Email;
         private System.Windows.Forms.Label lbl_PhoneNo;
         private System.Windows.Forms.Button btn_editProfile;
-        private User_Control.CircularPictureBox pic_ClientProfilePic;
+        private Real_Estate_App.User_Control.CircularPictureBox pic_ClientProfilePic;
     }
 }

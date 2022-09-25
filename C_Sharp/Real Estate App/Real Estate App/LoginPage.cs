@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using MyRealEstate;
+using Real_Estate_App.Model;
 
 namespace Real_Estate_App
 {
     public partial class LoginPage : Form
     {
+        Employee employee;
         public LoginPage()
         {
             InitializeComponent();
@@ -301,14 +303,20 @@ namespace Real_Estate_App
 
             if (hasError == false)
             {
-                //Client client = new Client(); and Employee employee = new Employee();
-                //client.Add(); and Employee.Add(id);
-                //pass client and employee to containerPage
+                /* VERIFY CLIENT
+                   If client is verified
+                      a. Create a Client Object
+                      b. Fill the Object with the clients data
+                      c. Pass the Object to the ClientContainer page
+                   If client isn't verified
+                      a. Tell the user its a wrong userId or password
+                */
+
+                //Model.SQL_Connection sQL_Connection = new Model.SQL_Connection("Client");
 
                 ClientContainer containerPage = new ClientContainer();
                 containerPage.Show();
                 this.Hide();
-                Model.SQL_Connection sQL_Connection = new Model.SQL_Connection("Client");
             }
 
         }

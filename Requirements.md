@@ -29,10 +29,6 @@
 5. Can view all properties for sale 
 6. can view sold proerties  
   
-###  Contractor   
-  
-1. Has information stored
-  
 ### Property  
   
 1.  Can add/edit a property by selecting the owner for this property
