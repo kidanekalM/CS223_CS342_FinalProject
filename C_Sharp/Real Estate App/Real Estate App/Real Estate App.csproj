@@ -126,19 +126,17 @@
     <Compile Include="Admin Pages\AdminHomePage.designer.cs">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </Compile>
-<<<<<<< Updated upstream
     <Compile Include="Client Pages\AgentProfilePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Client Pages\AgentProfilePage.Designer.cs">
-      <DependentUpon>AgentProfilePage.cs</DependentUpon>
-=======
+	  <Compile Include="Client Pages\AgentProfilePage.Designer.cs">
+		  <DependentUpon>AgentProfilePage.cs</DependentUpon>
+	  </Compile>
     <Compile Include="Admin Pages\AdminShowAllProperties.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Admin Pages\AdminShowAllProperties.Designer.cs">
       <DependentUpon>AdminShowAllProperties.cs</DependentUpon>
->>>>>>> Stashed changes
     </Compile>
     <Compile Include="Client Pages\ClientAppointmentPage.cs">
       <SubType>Form</SubType>
@@ -230,13 +228,11 @@
     <EmbeddedResource Include="Admin Pages\AdminHomePage.resx">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< Updated upstream
     <EmbeddedResource Include="Client Pages\AgentProfilePage.resx">
-      <DependentUpon>AgentProfilePage.cs</DependentUpon>
-=======
+	  <DependentUpon>AgentProfilePage.cs</DependentUpon>
+  </EmbeddedResource>
     <EmbeddedResource Include="Admin Pages\AdminShowAllProperties.resx">
       <DependentUpon>AdminShowAllProperties.cs</DependentUpon>
->>>>>>> Stashed changes
     </EmbeddedResource>
     <EmbeddedResource Include="Client Pages\ClientAppointmentPage.resx">
       <DependentUpon>ClientAppointmentPage.cs</DependentUpon>
