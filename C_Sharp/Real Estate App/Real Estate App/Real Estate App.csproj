@@ -129,9 +129,9 @@
     <Compile Include="Client Pages\AgentProfilePage.cs">
       <SubType>Form</SubType>
     </Compile>
-	  <Compile Include="Client Pages\AgentProfilePage.Designer.cs">
-		  <DependentUpon>AgentProfilePage.cs</DependentUpon>
-	  </Compile>
+    <Compile Include="Client Pages\AgentProfilePage.Designer.cs">
+      <DependentUpon>AgentProfilePage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin Pages\AdminShowAllProperties.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,8 +229,8 @@
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Client Pages\AgentProfilePage.resx">
-	  <DependentUpon>AgentProfilePage.cs</DependentUpon>
-  </EmbeddedResource>
+      <DependentUpon>AgentProfilePage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin Pages\AdminShowAllProperties.resx">
       <DependentUpon>AdminShowAllProperties.cs</DependentUpon>
     </EmbeddedResource>
@@ -305,6 +305,10 @@
     <None Include="Resources\istockphoto-1192403701-170667a.jpg" />
     <None Include="Resources\icons8-menu-bar-24.png" />
     <None Include="Resources\istockphoto-172200613-170667a.jpg" />
+    <None Include="Resources\istockphoto-1324561334-612x612.jpg" />
+    <None Include="Resources\istockphoto-1192518093-612x612.jpg" />
+    <None Include="Resources\istockphoto-1192524192-170667a.jpg" />
+    <None Include="Resources\istockphoto-1192600456-170667a.jpg" />
     <Content Include="Resources\jannis-lucas-KsL8WZJ0CLA-unsplash.jpg" />
     <Content Include="Resources\jason-dent-w3eFhqXjkZE-unsplash.jpg" />
     <Content Include="Resources\jeremy-bishop-G9i_plbfDgk-unsplash.jpg" />
