@@ -253,6 +253,46 @@ namespace Real_Estate_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap istockphoto_1192518093_612x612 {
+            get {
+                object obj = ResourceManager.GetObject("istockphoto-1192518093-612x612", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap istockphoto_1192524192_170667a {
+            get {
+                object obj = ResourceManager.GetObject("istockphoto-1192524192-170667a", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap istockphoto_1192600456_170667a {
+            get {
+                object obj = ResourceManager.GetObject("istockphoto-1192600456-170667a", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap istockphoto_1324561334_612x612 {
+            get {
+                object obj = ResourceManager.GetObject("istockphoto-1324561334-612x612", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap istockphoto_172200613_170667a {
             get {
                 object obj = ResourceManager.GetObject("istockphoto-172200613-170667a", resourceCulture);
