@@ -22,7 +22,7 @@ namespace MyRealEstate
         }
        
         AdminShowAllProperties a = new AdminShowAllProperties();
-        Property property;
+        
         private void HomeButton_Click(object sender, EventArgs e)
         {
             PropertiesPanel.Visible = false;
@@ -243,24 +243,6 @@ namespace MyRealEstate
             }
             else
             {
-                property = new Property()
-                {
-                    Address = textAddress.Text,
-                    Area = Double.Parse(textArea.Text),
-                    SellPrice = Double.Parse(textSell.Text),
-                    Description = textDescription.Text,
-                    ContractorID = int.Parse(textCId.Text),
-                    Status = StatusCheckBox.Checked
-                };
-                if (SmallR.Checked)
-                {
-                    property.Type = SmallR.Text;
-                }
-                else if (BigR.Checked)
-                {
-                    property.Type = BigR.Text;
-                }
-                property.Add();
             }
         }
 

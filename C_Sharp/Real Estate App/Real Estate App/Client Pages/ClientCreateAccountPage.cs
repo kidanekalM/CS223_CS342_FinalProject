@@ -199,7 +199,7 @@ namespace Real_Estate_App
 
                 try
                 {
-                    Client client = new Client()
+                    /*Client client = new Client()
                     {
                         FirstName = txt_FirstName.Text,
                         LastName = txt_LastName.Text,
@@ -209,8 +209,8 @@ namespace Real_Estate_App
                         Photo = null
                     };
                     addSuccess = client.Add();
-                   // addSuccess = true;
-
+                    addSuccess = true;
+                    
                     if (addSuccess != -1 )
                     {
                         MessageBox.Show($"Your account has been created successfully!\n Use This ID  to login nextime ID : {addSuccess}");
@@ -221,7 +221,7 @@ namespace Real_Estate_App
                     }
                     else
                         MessageBox.Show("Your account was not created. Please try again!");
-
+                    */
                 }
                 catch (Exception ex)
                 {

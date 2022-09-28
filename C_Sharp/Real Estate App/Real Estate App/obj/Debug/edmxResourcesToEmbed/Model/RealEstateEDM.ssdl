@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RealEstateModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="Add_Appointment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Add Appointment">
+    <Parameter Name="AppointmentDate" Type="datetime" Mode="In" />
+    <Parameter Name="Comment" Type="varchar" Mode="In" />
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="AgentId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Add_Buy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Add Buy">
+    <Parameter Name="PropertyId" Type="int" Mode="In" />
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="AgentId" Type="int" Mode="In" />
+    <Parameter Name="SellDate" Type="datetime" Mode="In" />
+    <Parameter Name="Comission" Type="money" Mode="In" />
+  </Function>
+  <Function Name="Add_Choosen_Property" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Add Choosen Property">
+    <Parameter Name="AppointmentId" Type="int" Mode="In" />
+    <Parameter Name="PropertyID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Add_Client" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Add Client">
+    <Parameter Name="FirstName" Type="varchar" Mode="In" />
+    <Parameter Name="LastName" Type="varchar" Mode="In" />
+    <Parameter Name="Photo" Type="varbinary(max)" Mode="In" />
+    <Parameter Name="PhoneNumber" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+    <Parameter Name="EmpId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Add_Department" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Add Department">
+    <Parameter Name="Name" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Add_Employee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Add Employee">
+    <Parameter Name="FirstName" Type="varchar" Mode="In" />
+    <Parameter Name="LastName" Type="varchar" Mode="In" />
+    <Parameter Name="PhoneNumber" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+    <Parameter Name="Photo" Type="varbinary(max)" Mode="In" />
+    <Parameter Name="EmpType" Type="varchar" Mode="In" />
+    <Parameter Name="EmpDate" Type="date" Mode="In" />
+    <Parameter Name="DepartmentID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Add_Property" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Add Property">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="Address" Type="varchar" Mode="In" />
+    <Parameter Name="Price" Type="float" Mode="In" />
+    <Parameter Name="Type" Type="varchar" Mode="In" />
+    <Parameter Name="Area" Type="float" Mode="In" />
+    <Parameter Name="Status" Type="bit" Mode="In" />
+    <Parameter Name="Description" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Add_Property_Photo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Add Property Photo">
+    <Parameter Name="PropertyID" Type="int" Mode="In" />
+    <Parameter Name="Photo" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="Delete_Appointment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Delete Appointment">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Delete_Buy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Delete Buy">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Delete_Choosen_Property" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Delete Choosen Property">
+    <Parameter Name="AppointmentId" Type="int" Mode="In" />
+    <Parameter Name="PropertyId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Delete_Client" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Delete Client">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Delete_Department" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Delete Department">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Delete_Employee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Delete Employee">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Delete_Property" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Delete Property">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Delete_Property_Photo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Delete Property Photo">
+    <Parameter Name="Photo" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="Delete_Property_Photo_By_Id" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Delete Property Photo By Id">
+    <Parameter Name="PropertyId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Filter_Property" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Filter Property">
+    <Parameter Name="Address" Type="varchar" Mode="In" />
+    <Parameter Name="Price" Type="money" Mode="In" />
+    <Parameter Name="Type" Type="varchar" Mode="In" />
+    <Parameter Name="Area" Type="float" Mode="In" />
+    <Parameter Name="Status" Type="bit" Mode="In" />
+    <Parameter Name="Description" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="Get_All_Appointments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Appointments">
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Client" Type="varchar" MaxLength="201" Nullable="false" />
+          <Property Name="Agent" Type="varchar" MaxLength="201" Nullable="false" />
+          <Property Name="AppointmentDate" Type="datetime" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="53" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="Get_All_Clients" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Clients">
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Photo" Type="varbinary(max)" />
+          <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="11" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="Get_All_Employees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Employees">
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Photo" Type="varbinary(max)" />
+          <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="11" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="Get_All_Properties" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Properties">
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Property Photo" Type="varbinary(max)" />
+          <Property Name="Address" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Price" Type="float" Nullable="false" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="53" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="Search_Appointment_By_AgentID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Appointment By AgentID">
+    <Parameter Name="AgentID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Search_Appointment_By_ClientID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Appointment By ClientID">
+    <Parameter Name="ClientID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Search_Appointment_By_Date" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Appointment By Date">
+    <Parameter Name="Date" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="Search_Appointment_By_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Appointment By ID">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Search_Buy_By_AgentId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Buy By AgentId">
+    <Parameter Name="AgentId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Search_Buy_By_ClientID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Buy By ClientID">
+    <Parameter Name="ClientID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Search_Choosen_Property_By_Appintment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Choosen Property By Appintment">
+    <Parameter Name="AppointmentID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Search_Choosen_Property_By_Property" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Choosen Property By Property">
+    <Parameter Name="PropertyID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Search_Client_By_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Client By ID">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Search_Client_By_Name" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Client By Name">
+    <Parameter Name="Name" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Search_Department_By_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Department By ID">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Search_Department_By_Name" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Department By Name">
+    <Parameter Name="Name" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Search_Employee_By_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Employee By ID">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Search_Employee_By_Name" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Employee By Name">
+    <Parameter Name="Name" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Search_Property_By_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Property By ID">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Search_Property_By_Type" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Property By Type">
+    <Parameter Name="Type" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Search_Property_Photo_By_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Property Photo By ID">
+    <Parameter Name="PropertyID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Search_Total_Sold_By_Employee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Total Sold By Employee">
+    <Parameter Name="EmpId" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Update_Appointment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Update Appointment">
+    <Parameter Name="Id" Type="int" Mode="In" />
+    <Parameter Name="AppointmentDate" Type="datetime" Mode="In" />
+    <Parameter Name="Comment" Type="varchar" Mode="In" />
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="AgentId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Update_Buy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Update Buy">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="PropertyId" Type="int" Mode="In" />
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="AgentId" Type="int" Mode="In" />
+    <Parameter Name="SellDate" Type="datetime" Mode="In" />
+    <Parameter Name="Comission" Type="money" Mode="In" />
+  </Function>
+  <Function Name="Update_Choosen_Property" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Update Choosen Property">
+    <Parameter Name="AppointmentId" Type="int" Mode="In" />
+    <Parameter Name="OldPropertyId" Type="int" Mode="In" />
+    <Parameter Name="NewPropertyId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Update_Client" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Update Client">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="FirstName" Type="varchar" Mode="In" />
+    <Parameter Name="LastName" Type="varchar" Mode="In" />
+    <Parameter Name="Photo" Type="varbinary(max)" Mode="In" />
+    <Parameter Name="PhoneNumber" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+    <Parameter Name="EmpId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Update_Department" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Update Department">
+    <Parameter Name="Name" Type="varchar" Mode="In" />
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Update_Employee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Update Employee">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="FirstName" Type="varchar" Mode="In" />
+    <Parameter Name="LastName" Type="varchar" Mode="In" />
+    <Parameter Name="PhoneNumber" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+    <Parameter Name="Photo" Type="varbinary(max)" Mode="In" />
+    <Parameter Name="EmpType" Type="varchar" Mode="In" />
+    <Parameter Name="EmpDate" Type="date" Mode="In" />
+    <Parameter Name="DepartmentID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Update_Property" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Update Property">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="Address" Type="varchar" Mode="In" />
+    <Parameter Name="Price" Type="float" Mode="In" />
+    <Parameter Name="Type" Type="varchar" Mode="In" />
+    <Parameter Name="Area" Type="float" Mode="In" />
+    <Parameter Name="Status" Type="bit" Mode="In" />
+    <Parameter Name="Description" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Update_Property_Photo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Update Property Photo">
+    <Parameter Name="OldPhoto" Type="varbinary(max)" Mode="In" />
+    <Parameter Name="NewPhoto" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <EntityContainer Name="RealEstateModelStoreContainer" />
+</Schema>

@@ -21,7 +21,7 @@ namespace Real_Estate_App.Admin_Pages
         private void AdminShowAllProperties_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = null;
-            dataGridView1.DataSource = Property.GetAllProperties();
+           // dataGridView1.DataSource = Property.GetAllProperties();
         }
 
         private void btn_Exit_Click_1(object sender, EventArgs e)
@@ -34,12 +34,12 @@ namespace Real_Estate_App.Admin_Pages
             if (comboBox_Search.Text == "Id")
             {
                 dataGridView1.DataSource = null;
-                dataGridView1.DataSource = Property.SearchPropertiesbyId(SearchtextBox.Text);
+                //dataGridView1.DataSource = Property.SearchPropertiesbyId(SearchtextBox.Text);
             }
             else if (comboBox_Search.Text == "Type")
             {
                 dataGridView1.DataSource = null;
-                dataGridView1.DataSource = Property.SearchPropertiesbyType(SearchtextBox.Text);
+                //dataGridView1.DataSource = Property.SearchPropertiesbyType(SearchtextBox.Text);
             }
             else
             {

@@ -15,7 +15,6 @@ namespace Real_Estate_App
 {
     public partial class LoginPage : Form
     {
-        Employee employee;
         public LoginPage()
         {
             InitializeComponent();
@@ -129,7 +128,6 @@ namespace Real_Estate_App
 
             if (hasError == false)
             {
-                Model.SQL_Connection sQL_Connection = new Model.SQL_Connection("Client");
                 AdminHomePage a = new AdminHomePage();
                 a.Show();
                 this.Hide();
@@ -213,7 +211,6 @@ namespace Real_Estate_App
 
             if (hasError == false)
             {
-                Model.SQL_Connection sQL_Connection = new Model.SQL_Connection("Agent");
                 //open agent page
             }
         }
@@ -279,7 +276,6 @@ namespace Real_Estate_App
 
         private void lk_lbl_CreateAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Model.SQL_Connection sqlconnection = new Model.SQL_Connection("Client");
             ClientCreateAccountPage createPage = new ClientCreateAccountPage();
             createPage.Show();
             this.Hide();
@@ -312,7 +308,6 @@ namespace Real_Estate_App
                       a. Tell the user its a wrong userId or password
                 */
 
-                //Model.SQL_Connection sQL_Connection = new Model.SQL_Connection("Client");
 
                 ClientContainer containerPage = new ClientContainer();
                 containerPage.Show();
