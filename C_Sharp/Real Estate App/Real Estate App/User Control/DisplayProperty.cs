@@ -57,6 +57,14 @@ namespace Real_Estate_App.User_Control
             }
         }
 
+        private Image _photo;
+
+        public Image Photo
+        {
+            get { return _photo; }
+            set { _photo = value; PropertyPhoto.Image = value; }
+        }
+
 
     }
 }

@@ -2,11 +2,9 @@
 ### Customer   
   
 1. Customers can buy a house/property  
-2. Customers can rent a property  
+2. Customers can create an account  
 3. Customers can browse properties  
-4. Customers can rate an agent   
-5. Customers can create an account 
-6. Customers can remove an account
+4. Customers can remove an account
 
   
 ### Employee (Role ) Admin  
@@ -22,12 +20,10 @@
   
 ### Employee (Role ) Agent  
   
-1. Create an account 
+1. can view sold proerties  
 2. Put a property for sale  
 3. Can sell a property to a customer 
 4. Can view all properties for sale
-5. Can view all properties for sale 
-6. can view sold proerties  
   
 ### Property  
   

@@ -68,4 +68,3 @@ C:\Users\hp\Desktop\New folder\code\CS223_CS342_FinalProject\C_Sharp\Real Estate
 C:\Users\hp\Desktop\New folder\code\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\EntityFramework.xml
 C:\Users\hp\Desktop\New folder\code\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.User_Control.DisplayPerson.resources
 C:\Users\hp\Desktop\New folder\code\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.User_Control.DisplayProperty.resources
-C:\Users\hp\Desktop\New folder\code\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.User_Control.Form1.resources

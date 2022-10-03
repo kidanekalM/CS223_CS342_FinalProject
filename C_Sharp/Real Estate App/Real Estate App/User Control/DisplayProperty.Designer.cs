@@ -28,22 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DisplayProperty));
             this.PropertyPhoto = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_availability = new System.Windows.Forms.Label();
             this.txt_Description = new System.Windows.Forms.TextBox();
             this.lbl_Description = new System.Windows.Forms.Label();
             this.lbl_price = new System.Windows.Forms.Label();
             this.lbl_address = new System.Windows.Forms.Label();
-            this.lbl_availability = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PropertyPhoto)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PropertyPhoto
             // 
+            this.PropertyPhoto.Image = ((System.Drawing.Image)(resources.GetObject("PropertyPhoto.Image")));
             this.PropertyPhoto.Location = new System.Drawing.Point(15, 13);
             this.PropertyPhoto.Name = "PropertyPhoto";
             this.PropertyPhoto.Size = new System.Drawing.Size(205, 157);
+            this.PropertyPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PropertyPhoto.TabIndex = 0;
             this.PropertyPhoto.TabStop = false;
             // 
@@ -58,6 +61,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(351, 156);
             this.panel1.TabIndex = 1;
+            // 
+            // lbl_availability
+            // 
+            this.lbl_availability.AutoSize = true;
+            this.lbl_availability.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_availability.Location = new System.Drawing.Point(16, 36);
+            this.lbl_availability.Name = "lbl_availability";
+            this.lbl_availability.Size = new System.Drawing.Size(95, 24);
+            this.lbl_availability.TabIndex = 6;
+            this.lbl_availability.Text = "Available";
             // 
             // txt_Description
             // 
@@ -99,16 +112,6 @@
             this.lbl_address.Size = new System.Drawing.Size(99, 24);
             this.lbl_address.TabIndex = 0;
             this.lbl_address.Text = "Address :";
-            // 
-            // lbl_availability
-            // 
-            this.lbl_availability.AutoSize = true;
-            this.lbl_availability.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_availability.Location = new System.Drawing.Point(16, 36);
-            this.lbl_availability.Name = "lbl_availability";
-            this.lbl_availability.Size = new System.Drawing.Size(95, 24);
-            this.lbl_availability.TabIndex = 6;
-            this.lbl_availability.Text = "Available";
             // 
             // DisplayProperty
             // 

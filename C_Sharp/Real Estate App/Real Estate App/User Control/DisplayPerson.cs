@@ -37,6 +37,12 @@ namespace Real_Estate_App.User_Control
             get { return _phoneNumber; }
             set { _phoneNumber = value; lbl_phoneNumber.Text = "Phone Number: " + value; }
         }
+        private Image _personPhoto;
+        public Image PersonPhoto
+        {
+            get { return _personPhoto;; }
+            set { _personPhoto = value; circularPictureBox1.Image = value; }
+        }
 
 
     }

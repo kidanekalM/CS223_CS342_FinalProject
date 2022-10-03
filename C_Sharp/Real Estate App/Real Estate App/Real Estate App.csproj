@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>RealEstate-App-Icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Azure.Core, Version=1.20.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
       <HintPath>..\packages\Azure.Core.1.20.0\lib\net461\Azure.Core.dll</HintPath>
@@ -410,6 +413,7 @@
       <DependentUpon>RealEstateEDM.edmx</DependentUpon>
       <LastGenOutput>RealEstateEDM.cs</LastGenOutput>
     </Content>
+    <Content Include="RealEstate-App-Icon.ico" />
     <Content Include="Resources\cole-keister-CqUYwVZzJrw-unsplash.jpg" />
     <Content Include="Resources\etienne-beauregard-riverin-B0aCvAVSX8E-unsplash.jpg" />
     <Content Include="Resources\fernando-meloni-j_gnGCDQRew-unsplash.jpg" />
