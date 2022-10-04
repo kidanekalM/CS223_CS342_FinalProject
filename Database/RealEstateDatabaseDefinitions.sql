@@ -278,7 +278,15 @@ CREATE PROC [Search Client By Name]
 		WHERE FirstName LIKE '%' + TRIM(@Name) + '%' OR LastName LIKE '%' + TRIM(@Name) + '%' 
 	END
 GO
-
+CREATE PROC [Get All Clients By Agent]
+	@ID INT
+	AS
+	BEGIN
+		SELECT C.ID,C.Photo,C.FirstName,C.LastName,C.PhoneNumber,C.Email
+		FROM Client C
+		WHERE C.EmpId = @ID
+	END
+GO
 /********************************************************
          Property Stored Procedures 
 *********************************************************/
@@ -891,7 +899,7 @@ GRANT EXECUTE ON [dbo].[Add Client] TO [Admin]
 GRANT EXECUTE ON [dbo].[Delete Client] TO [Admin]
 GRANT EXECUTE ON [dbo].[Delete Buy] TO [Admin]
 GRANT EXECUTE ON [dbo].[Search Appointment By ClientID] TO [Admin]
-
+GRANT EXECUTE ON [dbo].[Get All Clients By Agent] TO [Admin]
 --			Agent permissions
 USE RealEstate
 GRANT EXECUTE ON [dbo].[Search Choosen Property By Appintment] TO [Agent]
@@ -927,7 +935,7 @@ GRANT SELECT ON [dbo].[Get All Clients] TO [Agent]
 GRANT EXECUTE ON [dbo].[Delete Choosen Property] TO [Agent]
 GRANT EXECUTE ON [dbo].[Search Buy By AgentId] TO [Agent]
 GRANT EXECUTE ON [dbo].[Search Property By Type] TO [Agent]
-
+GRANT EXECUTE ON [dbo].[Get All Clients By Agent] TO [Agent]
 ---			Customer/client permissions
 USE RealEstate
 GRANT EXECUTE ON [dbo].[Search Choosen Property By Appintment] TO [Customer]
@@ -953,5 +961,5 @@ GRANT EXECUTE ON [dbo].[Search Property By Type] TO [Customer]
 GRANT EXECUTE ON [dbo].[Add Client] TO [Customer]
 GRANT EXECUTE ON [dbo].[Delete Client] TO [Customer]
 GRANT EXECUTE ON [dbo].[Search Appointment By ClientID] TO [Customer]
-
+GRANT EXECUTE ON [dbo].[Get All Clients By Agent] TO [Customer]
 

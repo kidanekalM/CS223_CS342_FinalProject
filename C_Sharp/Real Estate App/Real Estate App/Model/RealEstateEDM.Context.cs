@@ -16,10 +16,10 @@ namespace Real_Estate_App.Model
     using System.Data.Objects.DataClasses;
     using System.Linq;
     
-    public partial class RealEstateEDM : DbContext
+    public partial class AdminConnectionString1 : DbContext
     {
-        public RealEstateEDM(string s)
-            : base(s+"ConnectionString")
+        public AdminConnectionString1()
+            : base("name=AdminConnectionString1")
         {
         }
     
@@ -719,6 +719,15 @@ namespace Real_Estate_App.Model
                 new ObjectParameter("NewPhoto", typeof(byte[]));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Update_Property_Photo", oldPhotoParameter, newPhotoParameter);
+        }
+    
+        public virtual ObjectResult<Get_All_Clients_By_Agent_Result> Get_All_Clients_By_Agent(Nullable<int> iD)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Get_All_Clients_By_Agent_Result>("Get_All_Clients_By_Agent", iDParameter);
         }
     }
 }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="RealEstateModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="RealEstateModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <Function Name="Add_Appointment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Add Appointment">
           <Parameter Name="AppointmentDate" Type="datetime" Mode="In" />
           <Parameter Name="Comment" Type="varchar" Mode="In" />
@@ -119,6 +119,9 @@
               </RowType>
             </CollectionType>
           </ReturnType>
+        </Function>
+        <Function Name="Get_All_Clients_By_Agent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Clients By Agent">
+          <Parameter Name="ID" Type="int" Mode="In" />
         </Function>
         <Function Name="Get_All_Employees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Employees">
           <ReturnType>
@@ -260,8 +263,7 @@
           <Parameter Name="NewPhoto" Type="varbinary(max)" Mode="In" />
         </Function>
         <EntityContainer Name="RealEstateModelStoreContainer" />
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="RealEstateModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -326,7 +328,7 @@
             <Parameter Name="EmpId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Add_Department" ReturnType="Collection(Decimal)">
-            <Parameter Name="Name" Mode="In" Type="String" />
+          <Parameter Name="Name" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Add_Employee" ReturnType="Collection(Decimal)">
             <Parameter Name="FirstName" Mode="In" Type="String" />
@@ -352,32 +354,32 @@
             <Parameter Name="Photo" Mode="In" Type="Binary" />
           </FunctionImport>
           <FunctionImport Name="Delete_Appointment">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
+          <Parameter Name="ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Delete_Buy">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
+          <Parameter Name="ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Delete_Choosen_Property">
             <Parameter Name="AppointmentId" Mode="In" Type="Int32" />
             <Parameter Name="PropertyId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Delete_Client">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
+          <Parameter Name="ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Delete_Department">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
+          <Parameter Name="ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Delete_Employee">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
+          <Parameter Name="ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Delete_Property">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
+          <Parameter Name="ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Delete_Property_Photo">
-            <Parameter Name="Photo" Mode="In" Type="Binary" />
+          <Parameter Name="Photo" Mode="In" Type="Binary" />
           </FunctionImport>
           <FunctionImport Name="Delete_Property_Photo_By_Id">
-            <Parameter Name="PropertyId" Mode="In" Type="Int32" />
+          <Parameter Name="PropertyId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Filter_Property" ReturnType="Collection(RealEstateModel.Filter_Property_Result)">
             <Parameter Name="Address" Mode="In" Type="String" />
@@ -388,58 +390,58 @@
             <Parameter Name="Description" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Search_Appointment_By_AgentID" ReturnType="Collection(RealEstateModel.Search_Appointment_By_AgentID_Result)">
-            <Parameter Name="AgentID" Mode="In" Type="Int32" />
+          <Parameter Name="AgentID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Search_Appointment_By_ClientID" ReturnType="Collection(RealEstateModel.Search_Appointment_By_ClientID_Result)">
-            <Parameter Name="ClientID" Mode="In" Type="Int32" />
+          <Parameter Name="ClientID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Search_Appointment_By_Date" ReturnType="Collection(RealEstateModel.Search_Appointment_By_Date_Result)">
-            <Parameter Name="Date" Mode="In" Type="DateTime" />
+          <Parameter Name="Date" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="Search_Appointment_By_ID" ReturnType="Collection(RealEstateModel.Search_Appointment_By_ID_Result)">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
+          <Parameter Name="ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Search_Buy_By_AgentId" ReturnType="Collection(RealEstateModel.Search_Buy_By_AgentId_Result)">
-            <Parameter Name="AgentId" Mode="In" Type="Int32" />
+          <Parameter Name="AgentId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Search_Buy_By_ClientID" ReturnType="Collection(RealEstateModel.Search_Buy_By_ClientID_Result)">
-            <Parameter Name="ClientID" Mode="In" Type="Int32" />
+          <Parameter Name="ClientID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Search_Choosen_Property_By_Appintment" ReturnType="Collection(RealEstateModel.Search_Choosen_Property_By_Appintment_Result)">
-            <Parameter Name="AppointmentID" Mode="In" Type="Int32" />
+          <Parameter Name="AppointmentID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Search_Choosen_Property_By_Property" ReturnType="Collection(RealEstateModel.Search_Choosen_Property_By_Property_Result)">
-            <Parameter Name="PropertyID" Mode="In" Type="Int32" />
+          <Parameter Name="PropertyID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Search_Client_By_ID" ReturnType="Collection(RealEstateModel.Search_Client_By_ID_Result)">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
+          <Parameter Name="ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Search_Client_By_Name" ReturnType="Collection(RealEstateModel.Search_Client_By_Name_Result)">
-            <Parameter Name="Name" Mode="In" Type="String" />
+          <Parameter Name="Name" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Search_Department_By_ID" ReturnType="Collection(RealEstateModel.Search_Department_By_ID_Result)">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
+          <Parameter Name="ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Search_Department_By_Name" ReturnType="Collection(RealEstateModel.Search_Department_By_Name_Result)">
-            <Parameter Name="Name" Mode="In" Type="String" />
+          <Parameter Name="Name" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Search_Employee_By_ID" ReturnType="Collection(RealEstateModel.Search_Employee_By_ID_Result)">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
+          <Parameter Name="ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Search_Employee_By_Name" ReturnType="Collection(RealEstateModel.Search_Employee_By_Name_Result)">
-            <Parameter Name="Name" Mode="In" Type="String" />
+          <Parameter Name="Name" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Search_Property_By_ID" ReturnType="Collection(RealEstateModel.Search_Property_By_ID_Result)">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
+          <Parameter Name="ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Search_Property_By_Type" ReturnType="Collection(RealEstateModel.Search_Property_By_Type_Result)">
-            <Parameter Name="Type" Mode="In" Type="String" />
+          <Parameter Name="Type" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Search_Property_Photo_By_ID" ReturnType="Collection(RealEstateModel.Search_Property_Photo_By_ID_Result)">
-            <Parameter Name="PropertyID" Mode="In" Type="Int32" />
+          <Parameter Name="PropertyID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Search_Total_Sold_By_Employee" ReturnType="Collection(Int32)">
-            <Parameter Name="EmpId" Mode="In" Type="String" />
+          <Parameter Name="EmpId" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Update_Appointment">
             <Parameter Name="Id" Mode="In" Type="Int32" />
@@ -498,6 +500,9 @@
           <FunctionImport Name="Update_Property_Photo">
             <Parameter Name="OldPhoto" Mode="In" Type="Binary" />
             <Parameter Name="NewPhoto" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="Get_All_Clients_By_Agent" ReturnType="Collection(RealEstateModel.Get_All_Clients_By_Agent_Result)">
+            <Parameter Name="ID" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="Filter_Property_Result">
@@ -632,6 +637,14 @@
         <ComplexType Name="Search_Property_Photo_By_ID_Result">
           <Property Type="Int32" Name="PropertyID" Nullable="false" />
           <Property Type="Binary" Name="Photo" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="Get_All_Clients_By_Agent_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Binary" Name="Photo" Nullable="true" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -915,6 +928,18 @@
           <FunctionImportMapping FunctionImportName="Update_Employee" FunctionName="RealEstateModel.Store.Update_Employee" />
           <FunctionImportMapping FunctionImportName="Update_Property" FunctionName="RealEstateModel.Store.Update_Property" />
           <FunctionImportMapping FunctionImportName="Update_Property_Photo" FunctionName="RealEstateModel.Store.Update_Property_Photo" />
+          <FunctionImportMapping FunctionImportName="Get_All_Clients_By_Agent" FunctionName="RealEstateModel.Store.Get_All_Clients_By_Agent">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateModel.Get_All_Clients_By_Agent_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
