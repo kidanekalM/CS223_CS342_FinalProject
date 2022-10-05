@@ -115,6 +115,9 @@
       </CollectionType>
     </ReturnType>
   </Function>
+  <Function Name="Get_All_Clients_By_Agent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Clients By Agent">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
   <Function Name="Get_All_Employees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Employees">
     <ReturnType>
       <CollectionType>

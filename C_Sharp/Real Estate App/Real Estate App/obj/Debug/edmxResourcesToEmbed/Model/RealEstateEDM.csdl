@@ -234,6 +234,9 @@
       <Parameter Name="OldPhoto" Mode="In" Type="Binary" />
       <Parameter Name="NewPhoto" Mode="In" Type="Binary" />
     </FunctionImport>
+    <FunctionImport Name="Get_All_Clients_By_Agent" ReturnType="Collection(RealEstateModel.Get_All_Clients_By_Agent_Result1)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="Filter_Property_Result">
     <Property Type="Int32" Name="ID" Nullable="false" />
@@ -367,5 +370,21 @@
   <ComplexType Name="Search_Property_Photo_By_ID_Result">
     <Property Type="Int32" Name="PropertyID" Nullable="false" />
     <Property Type="Binary" Name="Photo" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Get_All_Clients_By_Agent_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Binary" Name="Photo" Nullable="true" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="Get_All_Clients_By_Agent_Result1">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Binary" Name="Photo" Nullable="true" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
   </ComplexType>
 </Schema>

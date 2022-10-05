@@ -277,5 +277,17 @@
     <FunctionImportMapping FunctionImportName="Update_Employee" FunctionName="RealEstateModel.Store.Update_Employee" />
     <FunctionImportMapping FunctionImportName="Update_Property" FunctionName="RealEstateModel.Store.Update_Property" />
     <FunctionImportMapping FunctionImportName="Update_Property_Photo" FunctionName="RealEstateModel.Store.Update_Property_Photo" />
+    <FunctionImportMapping FunctionImportName="Get_All_Clients_By_Agent" FunctionName="RealEstateModel.Store.Get_All_Clients_By_Agent">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.Get_All_Clients_By_Agent_Result1">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

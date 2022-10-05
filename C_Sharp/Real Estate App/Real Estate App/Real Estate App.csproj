@@ -219,6 +219,12 @@
     <Compile Include="Model\Get_All_Appointments_Result.cs">
       <DependentUpon>RealEstateEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\Get_All_Clients_By_Agent_Result.cs">
+      <DependentUpon>RealEstateEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Get_All_Clients_By_Agent_Result1.cs">
+      <DependentUpon>RealEstateEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Get_All_Clients_Result.cs">
       <DependentUpon>RealEstateEDM.tt</DependentUpon>
     </Compile>
