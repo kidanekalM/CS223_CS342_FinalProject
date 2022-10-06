@@ -70,6 +70,7 @@
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.7.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.IdentityModel" />
     <Reference Include="System.IdentityModel.Tokens.Jwt, Version=6.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.6.8.0\lib\net461\System.IdentityModel.Tokens.Jwt.dll</HintPath>
@@ -313,6 +314,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User Control\DisplayPeople.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\DisplayPeople.Designer.cs">
+      <DependentUpon>DisplayPeople.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Control\DisplayPerson.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -324,6 +331,12 @@
     </Compile>
     <Compile Include="User Control\DisplayProperty.Designer.cs">
       <DependentUpon>DisplayProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Control\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Admin Pages\AdminHomePage.resx">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
@@ -376,11 +389,17 @@
     <EmbeddedResource Include="User Control\CircularPictureBox.resx">
       <DependentUpon>CircularPictureBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User Control\DisplayPeople.resx">
+      <DependentUpon>DisplayPeople.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Control\DisplayPerson.resx">
       <DependentUpon>DisplayPerson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Control\DisplayProperty.resx">
       <DependentUpon>DisplayProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model\RealEstateEDM.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

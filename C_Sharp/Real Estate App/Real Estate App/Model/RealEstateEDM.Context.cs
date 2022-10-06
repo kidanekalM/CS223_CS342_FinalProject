@@ -16,10 +16,10 @@ namespace Real_Estate_App.Model
     using System.Data.Objects.DataClasses;
     using System.Linq;
     
-    public partial class AdminConnectionString1 : DbContext
+    public partial class RealEstateEDM : DbContext
     {
-        public AdminConnectionString1()
-            : base("name=AdminConnectionString1")
+        public RealEstateEDM(string s )
+            : base(s + "ConnectionString")
         {
         }
     
