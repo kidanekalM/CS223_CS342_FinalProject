@@ -1,6 +1,6 @@
 ﻿namespace Real_Estate_App.User_Control
 {
-    partial class Form1
+    partial class Test_User_Control
     {
         /// <summary>
         /// Required designer variable.
@@ -28,31 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.displayPeople1 = new Real_Estate_App.User_Control.DisplayPeople();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.SuspendLayout();
             // 
-            // displayPeople1
+            // tableLayoutPanel1
             // 
-            this.displayPeople1.BackColor = System.Drawing.Color.MidnightBlue;
-            this.displayPeople1.Location = new System.Drawing.Point(106, 12);
-            this.displayPeople1.Name = "displayPeople1";
-            this.displayPeople1.Size = new System.Drawing.Size(651, 471);
-            this.displayPeople1.TabIndex = 0;
+            this.tableLayoutPanel1.AutoScroll = true;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(655, 23);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(66, 338);
+            this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // Form1
+            // Test_User_Control
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.displayPeople1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Name = "Test_User_Control";
+            this.Text = "TestUserControls";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DisplayPeople displayPeople1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

@@ -314,12 +314,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User Control\DisplayPeople.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="User Control\DisplayPeople.Designer.cs">
-      <DependentUpon>DisplayPeople.cs</DependentUpon>
-    </Compile>
     <Compile Include="User Control\DisplayPerson.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -388,9 +382,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Control\CircularPictureBox.resx">
       <DependentUpon>CircularPictureBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="User Control\DisplayPeople.resx">
-      <DependentUpon>DisplayPeople.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Control\DisplayPerson.resx">
       <DependentUpon>DisplayPerson.cs</DependentUpon>
@@ -467,6 +458,7 @@
     <Content Include="Resources\nick-Y9lUSUhhd58-unsplash.jpg" />
     <None Include="Resources\photo-1491466424936-e304919aada7.jpg" />
     <Content Include="Resources\r-architecture-JvQ0Q5IkeMM-unsplash.jpg" />
+    <None Include="Resources\RealEstate App Icon.png" />
     <Content Include="Resources\sean-pollock-PhYq704ffdA-unsplash.jpg" />
     <Content Include="Resources\SeekPng.com_profile-icon-png_9665493.png" />
     <Content Include="Resources\tiard-schulz-b8dA3eY5VrY-unsplash.jpg" />

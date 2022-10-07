@@ -453,6 +453,16 @@ namespace Real_Estate_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap RealEstate_App_Icon {
+            get {
+                object obj = ResourceManager.GetObject("RealEstate_App_Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sean_pollock_PhYq704ffdA_unsplash {
             get {
                 object obj = ResourceManager.GetObject("sean-pollock-PhYq704ffdA-unsplash", resourceCulture);

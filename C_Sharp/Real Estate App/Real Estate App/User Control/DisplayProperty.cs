@@ -12,10 +12,46 @@ namespace Real_Estate_App.User_Control
 {
     public partial class DisplayProperty : UserControl
     {
+        public DisplayProperty(Model.Get_All_Properties_Result Property)
+        {
+            InitializeComponent();
+
+            Address = Property.Address;
+            Availability = Property.Status;
+            Price = Property.Price.ToString();
+            Id = Property.ID.ToString();
+            Description = Property.Description;
+            if (Property.Property_Photo != null && (!Property.Property_Photo.All(val => val == 0)))
+            {
+                using (System.IO.MemoryStream s = new System.IO.MemoryStream(Property.Property_Photo))
+                {
+                    try
+                    {
+                        this.Photo = Image.FromStream(s);
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.ToString());
+                    }
+                }
+            }
+            else
+            {
+                this.Photo = global::Real_Estate_App.Properties.Resources.RealEstate_App_Icon;
+            }
+        }
         public DisplayProperty()
         {
             InitializeComponent();
         }
+        private string _id;
+
+        public string Id
+        {
+            get { return _id; }
+            set { _id = value; lbl_Id.Text = "ID: " + value;  }
+        }
+
         private string _address;
 
         public string Address
@@ -47,10 +83,12 @@ namespace Real_Estate_App.User_Control
                 if (value) 
                 {
                     this.BackColor = SystemColors.Control;
+                    this.BackColor = SystemColors.Control;
                     lbl_availability.Text = "Available";
                 }
                 else
                 {
+                    this.BackColor = SystemColors.ControlDark;
                     lbl_availability.Text = "Not Available";
                     this.BackColor = SystemColors.ControlDark;
                 }
