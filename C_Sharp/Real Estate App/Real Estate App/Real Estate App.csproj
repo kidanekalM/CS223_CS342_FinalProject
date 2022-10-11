@@ -380,7 +380,6 @@
     <EmbeddedResource Include="Client Pages\ClientHomePage.resx">
       <DependentUpon>ClientHomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Client Pages\ClientLoginPage.resx" />
     <EmbeddedResource Include="Client Pages\ClientPasswordPage.resx">
       <DependentUpon>ClientPasswordPage.cs</DependentUpon>
     </EmbeddedResource>

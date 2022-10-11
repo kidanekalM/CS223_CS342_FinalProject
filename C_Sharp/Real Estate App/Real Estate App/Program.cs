@@ -15,8 +15,8 @@ namespace Real_Estate_App
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);           
-            Application.Run(new User_Control.Test_User_Control());
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new LoginPage());
         }
     }
 }
