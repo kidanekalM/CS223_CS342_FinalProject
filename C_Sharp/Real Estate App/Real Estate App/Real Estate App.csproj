@@ -314,11 +314,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User Control\DetailPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Control\DetailPage.Designer.cs">
+      <DependentUpon>DetailPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Control\DisplayPerson.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="User Control\DisplayPerson.Designer.cs">
       <DependentUpon>DisplayPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\DisplayProperties.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\DisplayProperties.Designer.cs">
+      <DependentUpon>DisplayProperties.cs</DependentUpon>
     </Compile>
     <Compile Include="User Control\DisplayProperty.cs">
       <SubType>UserControl</SubType>
@@ -383,8 +395,14 @@
     <EmbeddedResource Include="User Control\CircularPictureBox.resx">
       <DependentUpon>CircularPictureBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User Control\DetailPage.resx">
+      <DependentUpon>DetailPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Control\DisplayPerson.resx">
       <DependentUpon>DisplayPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\DisplayProperties.resx">
+      <DependentUpon>DisplayProperties.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Control\DisplayProperty.resx">
       <DependentUpon>DisplayProperty.cs</DependentUpon>
@@ -430,6 +448,8 @@
       <LastGenOutput>RealEstateEDM.cs</LastGenOutput>
     </Content>
     <Content Include="RealEstate-App-Icon.ico" />
+    <None Include="Resources\Add.jpg" />
+    <None Include="Resources\Add2.jpg" />
     <Content Include="Resources\cole-keister-CqUYwVZzJrw-unsplash.jpg" />
     <Content Include="Resources\etienne-beauregard-riverin-B0aCvAVSX8E-unsplash.jpg" />
     <Content Include="Resources\fernando-meloni-j_gnGCDQRew-unsplash.jpg" />

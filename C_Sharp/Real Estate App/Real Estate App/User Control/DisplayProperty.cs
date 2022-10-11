@@ -100,7 +100,7 @@ namespace Real_Estate_App.User_Control
         public Image Photo
         {
             get { return _photo; }
-            set { _photo = value; PropertyPhoto.Image = value; }
+            set { _photo = value; PropertyPhoto.Image = value; if (value == null) this.Photo = global::Real_Estate_App.Properties.Resources.RealEstate_App_Icon; }
         }
 
 

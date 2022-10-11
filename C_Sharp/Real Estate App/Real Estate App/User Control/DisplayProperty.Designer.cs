@@ -56,7 +56,7 @@
             this.txt_Description.Location = new System.Drawing.Point(232, 137);
             this.txt_Description.Multiline = true;
             this.txt_Description.Name = "txt_Description";
-            this.txt_Description.Size = new System.Drawing.Size(332, 28);
+            this.txt_Description.Size = new System.Drawing.Size(332, 49);
             this.txt_Description.TabIndex = 5;
             // 
             // lbl_Description

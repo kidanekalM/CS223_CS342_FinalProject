@@ -665,7 +665,7 @@ AS
 RETURN (
 		SELECT P.ID,MIN(Ph.Photo)as [Property Photo],P.Address,P.Price,P.Status
 			,SUBSTRING(P.Description,1,50)+'...' AS [Description]
-		FROM Property P JOIN PropertyPhoto Ph
+		FROM Property P FULL OUTER JOIN PropertyPhoto Ph
 		ON P.ID = Ph.PropertyID
 		GROUP BY P.ID,p.Address,p.Price,p.Status,P.Description
 		)
@@ -797,7 +797,8 @@ ON PropertyPhoto
 INSTEAD OF INSERT
 AS
 BEGIN
-	IF ((SELECT COUNT(*) FROM PropertyPhoto WHERE PropertyID = (SELECT PropertyID FROM PropertyPhoto)) < 5)
+	IF ((SELECT COUNT(*) FROM PropertyPhoto WHERE PropertyID = (SELECT TOP(1) PropertyID FROM INSERTED)) < 5)
+		
 		INSERT INTO PropertyPhoto(PropertyID,Photo)
 		(
 			SELECT PropertyID,Photo
