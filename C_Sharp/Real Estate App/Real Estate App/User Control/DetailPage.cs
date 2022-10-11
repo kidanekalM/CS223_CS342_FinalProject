@@ -192,11 +192,13 @@ namespace Real_Estate_App.User_Control
             chk_Status.Enabled = value;
             if (value)
             {
+                ReplaceImage.Show();
                 btn_save.Show();
                 btn_delete.Show();
             }
             else
             {
+                ReplaceImage.Hide();
                 btn_save.Hide();
                 btn_delete.Hide();
             }

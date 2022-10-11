@@ -695,53 +695,31 @@ RETURN (
 --login Admin function
 GO
 CREATE FUNCTION [Login Admin](@ID INT, @Upwd VARCHAR(100))
-RETURNS BIT
+RETURNS TABLE
 AS
-BEGIN
-	DECLARE @pwd VARCHAR(100),@VAL BIT
-	SELECT @pwd = Password 
-	FROM Employee 
-	WHERE DepartmentID = 0 AND ID = @ID 
-	IF ((@pwd) IS NOT NULL AND @pwd = @Upwd )
-		SET @VAL = 1
-	ELSE 
-		SET @VAL = 0
-
-	RETURN @VAL
-END
+	RETURN(
+			SELECT * 
+			FROM Employee E
+			WHERE E.DepartmentID = 0 AND E.Password = @Upwd AND E.ID = @ID
+		  )
 GO
 CREATE FUNCTION [Login Agent](@ID INT, @Upwd VARCHAR(100))
-RETURNS BIT
+RETURNS TABLE
 AS
-BEGIN
-	DECLARE @pwd VARCHAR(100),@VAL BIT
-	SELECT @pwd = Password 
-	FROM Employee 
-	WHERE DepartmentID = 1 AND ID = @ID 
-	IF ((@pwd) IS NOT NULL AND @pwd = @Upwd )
-		SET @VAL = 1
-	ELSE 
-		SET @VAL = 0
-
-	RETURN @VAL
-END
-
+	RETURN (
+			 SELECT * 
+			 FROM Employee E
+			 WHERE E.DepartmentID = 1 AND E.ID = @ID AND E.Password = @Upwd
+		   )
 GO
 CREATE FUNCTION [Login Client](@ID INT, @Upwd VARCHAR(100))
-RETURNS BIT
+RETURNS TABLE
 AS
-BEGIN
-	DECLARE @pwd VARCHAR(100),@VAL BIT
-	SELECT @pwd = Password 
-	FROM Client
-	WHERE ID = @ID AND @pwd = Password
-	IF ((@pwd) IS NOT NULL )
-		SET @VAL = 1
-	ELSE 
-		SET @VAL = 0
-
-	RETURN @VAL
-END
+RETURN (
+		SELECT * 
+		FROM Client 
+		WHERE ID = @ID AND Password = @Upwd
+	   )
 GO
 --edit string
 CREATE FUNCTION [Clean Names](@name VARCHAR(100))
@@ -851,7 +829,9 @@ CREATE LOGIN [Customer Login] WITH PASSWORD = '0'
 GO
 USE RealEstate
 --					Admin permissions
-
+GRANT SELECT ON [dbo].[login Admin] TO [Admin]
+GRANT SELECT ON [dbo].[login Agent] TO [Admin]
+GRANT SELECT ON [dbo].[login Client] TO [Admin]
 GRANT EXECUTE ON [dbo].[Search Choosen Property By Appintment] TO [Admin]
 GRANT EXECUTE ON [dbo].[Update Property] TO [Admin]
 GRANT EXECUTE ON [dbo].[Search Choosen Property By Property] TO [Admin]
@@ -903,6 +883,8 @@ GRANT EXECUTE ON [dbo].[Search Appointment By ClientID] TO [Admin]
 GRANT EXECUTE ON [dbo].[Get All Clients By Agent] TO [Admin]
 --			Agent permissions
 USE RealEstate
+GRANT SELECT ON [dbo].[login Agent] TO [Agent]
+GRANT SELECT ON [dbo].[login Client] TO [Agent]
 GRANT EXECUTE ON [dbo].[Search Choosen Property By Appintment] TO [Agent]
 GRANT EXECUTE ON [dbo].[Update Property] TO [Agent]
 GRANT EXECUTE ON [dbo].[Search Choosen Property By Property] TO [Agent]
@@ -939,6 +921,7 @@ GRANT EXECUTE ON [dbo].[Search Property By Type] TO [Agent]
 GRANT EXECUTE ON [dbo].[Get All Clients By Agent] TO [Agent]
 ---			Customer/client permissions
 USE RealEstate
+GRANT SELECT ON [dbo].[login Client] TO [Customer]
 GRANT EXECUTE ON [dbo].[Search Choosen Property By Appintment] TO [Customer]
 GRANT EXECUTE ON [dbo].[Search Choosen Property By Property] TO [Customer]
 GRANT EXECUTE ON [dbo].[Search Appointment By ID] TO [Customer]

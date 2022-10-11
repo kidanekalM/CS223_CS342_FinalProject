@@ -235,6 +235,15 @@
     <Compile Include="Model\Get_All_Properties_Result.cs">
       <DependentUpon>RealEstateEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\Login_Admin_Result.cs">
+      <DependentUpon>RealEstateEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Login_Agent_Result.cs">
+      <DependentUpon>RealEstateEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Login_Client_Result.cs">
+      <DependentUpon>RealEstateEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\RealEstateEDM.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

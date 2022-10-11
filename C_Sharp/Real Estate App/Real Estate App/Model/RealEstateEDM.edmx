@@ -140,12 +140,68 @@
           <ReturnType>
             <CollectionType>
               <RowType>
-                <Property Name="ID" Type="int" Nullable="false" />
+                <Property Name="ID" Type="int" />
                 <Property Name="Property Photo" Type="varbinary(max)" />
-                <Property Name="Address" Type="varchar" MaxLength="100" Nullable="false" />
-                <Property Name="Price" Type="float" Nullable="false" />
-                <Property Name="Status" Type="bit" Nullable="false" />
+                <Property Name="Address" Type="varchar" MaxLength="100" />
+                <Property Name="Price" Type="float" />
+                <Property Name="Status" Type="bit" />
                 <Property Name="Description" Type="varchar" MaxLength="53" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="Login_Admin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Login Admin">
+          <Parameter Name="ID" Type="int" Mode="In" />
+          <Parameter Name="Upwd" Type="varchar" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="ID" Type="int" Nullable="false" />
+                <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
+                <Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
+                <Property Name="PhoneNumber" Type="varchar" MaxLength="11" />
+                <Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
+                <Property Name="Photo" Type="varbinary(max)" />
+                <Property Name="EmpType" Type="varchar" MaxLength="100" Nullable="false" />
+                <Property Name="EmpDate" Type="date" Nullable="false" />
+                <Property Name="DepartmentID" Type="int" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="Login_Agent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Login Agent">
+          <Parameter Name="ID" Type="int" Mode="In" />
+          <Parameter Name="Upwd" Type="varchar" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="ID" Type="int" Nullable="false" />
+                <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
+                <Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
+                <Property Name="PhoneNumber" Type="varchar" MaxLength="11" />
+                <Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
+                <Property Name="Photo" Type="varbinary(max)" />
+                <Property Name="EmpType" Type="varchar" MaxLength="100" Nullable="false" />
+                <Property Name="EmpDate" Type="date" Nullable="false" />
+                <Property Name="DepartmentID" Type="int" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="Login_Client" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Login Client">
+          <Parameter Name="ID" Type="int" Mode="In" />
+          <Parameter Name="Upwd" Type="varchar" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="ID" Type="int" Nullable="false" />
+                <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
+                <Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
+                <Property Name="Photo" Type="varbinary(max)" />
+                <Property Name="PhoneNumber" Type="varchar" MaxLength="11" />
+                <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+                <Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
+                <Property Name="EmpId" Type="int" />
               </RowType>
             </CollectionType>
           </ReturnType>
@@ -502,7 +558,19 @@
             <Parameter Name="NewPhoto" Mode="In" Type="Binary" />
           </FunctionImport>
           <FunctionImport Name="Get_All_Clients_By_Agent" ReturnType="Collection(RealEstateModel.Get_All_Clients_By_Agent_Result1)">
+          <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Login_Admin" IsComposable="true" ReturnType="Collection(RealEstateModel.Login_Admin_Result)">
             <Parameter Name="ID" Mode="In" Type="Int32" />
+            <Parameter Name="Upwd" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Login_Agent" IsComposable="true" ReturnType="Collection(RealEstateModel.Login_Agent_Result)">
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+            <Parameter Name="Upwd" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Login_Client" IsComposable="true" ReturnType="Collection(RealEstateModel.Login_Client_Result)">
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+            <Parameter Name="Upwd" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="Filter_Property_Result">
@@ -653,6 +721,38 @@
           <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
           <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
           <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="Login_Admin_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
+          <Property Type="Binary" Name="Photo" Nullable="true" />
+          <Property Type="String" Name="EmpType" Nullable="false" MaxLength="100" />
+          <Property Type="DateTime" Name="EmpDate" Nullable="false" Precision="10" />
+          <Property Type="Int32" Name="DepartmentID" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Login_Agent_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
+          <Property Type="Binary" Name="Photo" Nullable="true" />
+          <Property Type="String" Name="EmpType" Nullable="false" MaxLength="100" />
+          <Property Type="DateTime" Name="EmpDate" Nullable="false" Precision="10" />
+          <Property Type="Int32" Name="DepartmentID" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Login_Client_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
+          <Property Type="Binary" Name="Photo" Nullable="true" />
+          <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="EmpId" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -945,6 +1045,50 @@
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Login_Admin" FunctionName="RealEstateModel.Store.Login_Admin">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateModel.Login_Admin_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="EmpType" ColumnName="EmpType" />
+                <ScalarProperty Name="EmpDate" ColumnName="EmpDate" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Login_Agent" FunctionName="RealEstateModel.Store.Login_Agent">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateModel.Login_Agent_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="EmpType" ColumnName="EmpType" />
+                <ScalarProperty Name="EmpDate" ColumnName="EmpDate" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Login_Client" FunctionName="RealEstateModel.Store.Login_Client">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateModel.Login_Client_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

@@ -18,8 +18,8 @@ namespace Real_Estate_App.Model
     
     public partial class RealEstateEDM : DbContext
     {
-        public RealEstateEDM(string s )
-            : base(s + "ConnectionString")
+        public RealEstateEDM( string s)
+            : base(s+"ConnectionString")
         {
         }
     
@@ -728,6 +728,48 @@ namespace Real_Estate_App.Model
                 new ObjectParameter("ID", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Get_All_Clients_By_Agent_Result1>("Get_All_Clients_By_Agent", iDParameter);
+        }
+    
+        [EdmFunction("AdminConnectionString1", "Login_Admin")]
+        public virtual IQueryable<Login_Admin_Result> Login_Admin(Nullable<int> iD, string upwd)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            var upwdParameter = upwd != null ?
+                new ObjectParameter("Upwd", upwd) :
+                new ObjectParameter("Upwd", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<Login_Admin_Result>("[AdminConnectionString1].[Login_Admin](@ID, @Upwd)", iDParameter, upwdParameter);
+        }
+    
+        [EdmFunction("AdminConnectionString1", "Login_Agent")]
+        public virtual IQueryable<Login_Agent_Result> Login_Agent(Nullable<int> iD, string upwd)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            var upwdParameter = upwd != null ?
+                new ObjectParameter("Upwd", upwd) :
+                new ObjectParameter("Upwd", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<Login_Agent_Result>("[AdminConnectionString1].[Login_Agent](@ID, @Upwd)", iDParameter, upwdParameter);
+        }
+    
+        [EdmFunction("AdminConnectionString1", "Login_Client")]
+        public virtual IQueryable<Login_Client_Result> Login_Client(Nullable<int> iD, string upwd)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            var upwdParameter = upwd != null ?
+                new ObjectParameter("Upwd", upwd) :
+                new ObjectParameter("Upwd", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<Login_Client_Result>("[AdminConnectionString1].[Login_Client](@ID, @Upwd)", iDParameter, upwdParameter);
         }
     }
 }
