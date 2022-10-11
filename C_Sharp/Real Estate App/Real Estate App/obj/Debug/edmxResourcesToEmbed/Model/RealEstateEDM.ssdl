@@ -135,12 +135,68 @@
     <ReturnType>
       <CollectionType>
         <RowType>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" />
           <Property Name="Property Photo" Type="varbinary(max)" />
-          <Property Name="Address" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="Price" Type="float" Nullable="false" />
-          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="100" />
+          <Property Name="Price" Type="float" />
+          <Property Name="Status" Type="bit" />
           <Property Name="Description" Type="varchar" MaxLength="53" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="Login_Admin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Login Admin">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="Upwd" Type="varchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="11" />
+          <Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Photo" Type="varbinary(max)" />
+          <Property Name="EmpType" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="EmpDate" Type="date" Nullable="false" />
+          <Property Name="DepartmentID" Type="int" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="Login_Agent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Login Agent">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="Upwd" Type="varchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="11" />
+          <Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Photo" Type="varbinary(max)" />
+          <Property Name="EmpType" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="EmpDate" Type="date" Nullable="false" />
+          <Property Name="DepartmentID" Type="int" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="Login_Client" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Login Client">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="Upwd" Type="varchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Photo" Type="varbinary(max)" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="11" />
+          <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="EmpId" Type="int" />
         </RowType>
       </CollectionType>
     </ReturnType>

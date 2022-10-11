@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -9,7 +10,18 @@ namespace Real_Estate_App.User_Control
     {
         public Test_User_Control()
         {
+            using (Model.RealEstateEDM r = new Model.RealEstateEDM("Client"))
+            {
+                var x = (List<Model.Login_Client_Result>)r.Login_Client(6, "adsf");
+                
+                foreach(var item in x)
+                {
+                    if (item != null)
+                    MessageBox.Show(item.ID+"");
+                }
+            }
             InitializeComponent();
+         
             /*
             using (Model.RealEstateEDM r = new Model.RealEstateEDM("Admin"))
             {

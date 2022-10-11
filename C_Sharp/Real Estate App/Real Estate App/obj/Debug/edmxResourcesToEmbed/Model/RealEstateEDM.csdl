@@ -237,6 +237,18 @@
     <FunctionImport Name="Get_All_Clients_By_Agent" ReturnType="Collection(RealEstateModel.Get_All_Clients_By_Agent_Result1)">
       <Parameter Name="ID" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="Login_Admin" IsComposable="true" ReturnType="Collection(RealEstateModel.Login_Admin_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="Upwd" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Login_Agent" IsComposable="true" ReturnType="Collection(RealEstateModel.Login_Agent_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="Upwd" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Login_Client" IsComposable="true" ReturnType="Collection(RealEstateModel.Login_Client_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="Upwd" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="Filter_Property_Result">
     <Property Type="Int32" Name="ID" Nullable="false" />
@@ -386,5 +398,37 @@
     <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
     <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
     <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="Login_Admin_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
+    <Property Type="Binary" Name="Photo" Nullable="true" />
+    <Property Type="String" Name="EmpType" Nullable="false" MaxLength="100" />
+    <Property Type="DateTime" Name="EmpDate" Nullable="false" Precision="10" />
+    <Property Type="Int32" Name="DepartmentID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Login_Agent_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
+    <Property Type="Binary" Name="Photo" Nullable="true" />
+    <Property Type="String" Name="EmpType" Nullable="false" MaxLength="100" />
+    <Property Type="DateTime" Name="EmpDate" Nullable="false" Precision="10" />
+    <Property Type="Int32" Name="DepartmentID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Login_Client_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
+    <Property Type="Binary" Name="Photo" Nullable="true" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="EmpId" Nullable="true" />
   </ComplexType>
 </Schema>
