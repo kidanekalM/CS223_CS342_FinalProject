@@ -195,33 +195,21 @@ namespace Real_Estate_App
             //Performing the action after validation
             if (hasError == false)
             {
-                int addSuccess;
-
                 try
                 {
-                    /*Client client = new Client()
+                    using (RealEstateEDM rm = new RealEstateEDM("Client"))
                     {
-                        FirstName = txt_FirstName.Text,
-                        LastName = txt_LastName.Text,
-                        Email = txt_Email.Text,
-                        PhoneNumber = txt_PhoneNo.Text,
-                        Password = txt_Password.Text,
-                        Photo = null
-                    };
-                    addSuccess = client.Add();
-                    addSuccess = true;
-                    
-                    if (addSuccess != -1 )
-                    {
-                        MessageBox.Show($"Your account has been created successfully!\n Use This ID  to login nextime ID : {addSuccess}");
-
-                        LoginPage loginPage = new LoginPage();
-                        loginPage.Show();
-                        this.Hide();
+                        int id = (int)rm.Add_Client(txt_FirstName.Text, txt_LastName.Text, converterDemo(pic_ClientProfilePic.Image), txt_PhoneNo.Text, txt_Email.Text, txt_Password.Text, null).FirstOrDefault();
+                        if (id != null)
+                        {
+                            MessageBox.Show("Account created successfully! \nYour ID is " + id.ToString());
+                            LoginPage login = new LoginPage();
+                            login.Show();
+                            this.Hide();
+                        }
+                        else
+                            MessageBox.Show("Unknown error occured. Please try again!");
                     }
-                    else
-                        MessageBox.Show("Your account was not created. Please try again!");
-                    */
                 }
                 catch (Exception ex)
                 {
@@ -263,6 +251,13 @@ namespace Real_Estate_App
         private void btn_deletePic_Click(object sender, EventArgs e)
         {
             pic_ClientProfilePic.Image = Properties.Resources.Default_Profile;
+        }
+
+        public static byte[] converterDemo(Image x)
+        {
+            ImageConverter _imageConverter = new ImageConverter();
+            byte[] xByte = (byte[])_imageConverter.ConvertTo(x, typeof(byte[]));
+            return xByte;
         }
     }
 }
