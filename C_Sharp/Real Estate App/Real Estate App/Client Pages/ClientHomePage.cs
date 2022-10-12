@@ -12,7 +12,7 @@ namespace Real_Estate_App
 {
     public partial class ClientHomePage : Form
     {
-        public ClientHomePage(ClientContainer cc)
+        public ClientHomePage()
         {
             InitializeComponent();
         }

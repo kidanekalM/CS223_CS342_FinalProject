@@ -32,11 +32,9 @@
             this.pic_AgentPic = new Real_Estate_App.User_Control.CircularPictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbl_Firstname = new System.Windows.Forms.Label();
             this.lbl_Lastname = new System.Windows.Forms.Label();
-            this.lbl_Email = new System.Windows.Forms.Label();
             this.lbl_PhoneNo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_AgentPic)).BeginInit();
@@ -82,21 +80,11 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Last Name : ";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(564, 409);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 26);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Email : ";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(564, 451);
+            this.label4.Location = new System.Drawing.Point(564, 410);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(132, 26);
             this.label4.TabIndex = 5;
@@ -122,21 +110,11 @@
             this.lbl_Lastname.TabIndex = 7;
             this.lbl_Lastname.Text = "Unknown";
             // 
-            // lbl_Email
-            // 
-            this.lbl_Email.AutoSize = true;
-            this.lbl_Email.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Email.Location = new System.Drawing.Point(648, 409);
-            this.lbl_Email.Name = "lbl_Email";
-            this.lbl_Email.Size = new System.Drawing.Size(110, 26);
-            this.lbl_Email.TabIndex = 8;
-            this.lbl_Email.Text = "Unknown";
-            // 
             // lbl_PhoneNo
             // 
             this.lbl_PhoneNo.AutoSize = true;
             this.lbl_PhoneNo.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PhoneNo.Location = new System.Drawing.Point(700, 451);
+            this.lbl_PhoneNo.Location = new System.Drawing.Point(700, 410);
             this.lbl_PhoneNo.Name = "lbl_PhoneNo";
             this.lbl_PhoneNo.Size = new System.Drawing.Size(110, 26);
             this.lbl_PhoneNo.TabIndex = 9;
@@ -149,11 +127,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.ClientSize = new System.Drawing.Size(1001, 589);
             this.Controls.Add(this.lbl_PhoneNo);
-            this.Controls.Add(this.lbl_Email);
             this.Controls.Add(this.lbl_Lastname);
             this.Controls.Add(this.lbl_Firstname);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pic_AgentPic);
@@ -176,11 +152,9 @@
         private Real_Estate_App.User_Control.CircularPictureBox pic_AgentPic;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbl_Firstname;
         private System.Windows.Forms.Label lbl_Lastname;
-        private System.Windows.Forms.Label lbl_Email;
         private System.Windows.Forms.Label lbl_PhoneNo;
     }
 }
