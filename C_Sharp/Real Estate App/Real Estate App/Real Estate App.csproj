@@ -295,7 +295,13 @@
     <Compile Include="Model\Search_Department_By_Name_Result.cs">
       <DependentUpon>RealEstateEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\Search_Employee_By_ID1_Result.cs">
+      <DependentUpon>RealEstateEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Search_Employee_By_ID_Result.cs">
+      <DependentUpon>RealEstateEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Search_Employee_By_Name1_Result.cs">
       <DependentUpon>RealEstateEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Search_Employee_By_Name_Result.cs">

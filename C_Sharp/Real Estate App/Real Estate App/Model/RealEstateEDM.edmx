@@ -572,6 +572,12 @@
             <Parameter Name="ID" Mode="In" Type="Int32" />
             <Parameter Name="Upwd" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="Search_Employee_By_ID1" ReturnType="Collection(RealEstateModel.Search_Employee_By_ID1_Result)">
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Search_Employee_By_Name1" ReturnType="Collection(RealEstateModel.Search_Employee_By_Name1_Result)">
+            <Parameter Name="Name" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="Filter_Property_Result">
           <Property Type="Int32" Name="ID" Nullable="false" />
@@ -753,6 +759,28 @@
           <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
           <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
           <Property Type="Int32" Name="EmpId" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Search_Employee_By_ID1_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
+          <Property Type="Binary" Name="Photo" Nullable="true" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
+          <Property Type="String" Name="EmpType" Nullable="false" MaxLength="100" />
+          <Property Type="DateTime" Name="EmpDate" Nullable="false" />
+          <Property Type="Int32" Name="DepartmentID" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Search_Employee_By_Name1_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
+          <Property Type="Binary" Name="Photo" Nullable="true" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
+          <Property Type="String" Name="EmpType" Nullable="false" MaxLength="100" />
+          <Property Type="DateTime" Name="EmpDate" Nullable="false" />
+          <Property Type="Int32" Name="DepartmentID" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -963,36 +991,6 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Search_Employee_By_ID" FunctionName="RealEstateModel.Store.Search_Employee_By_ID">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Search_Employee_By_ID_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="PhoneNumber1" ColumnName="PhoneNumber1" />
-                <ScalarProperty Name="EmpType" ColumnName="EmpType" />
-                <ScalarProperty Name="EmpDate" ColumnName="EmpDate" />
-                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Search_Employee_By_Name" FunctionName="RealEstateModel.Store.Search_Employee_By_Name">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Search_Employee_By_Name_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="PhoneNumber1" ColumnName="PhoneNumber1" />
-                <ScalarProperty Name="EmpType" ColumnName="EmpType" />
-                <ScalarProperty Name="EmpDate" ColumnName="EmpDate" />
-                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="Search_Property_By_ID" FunctionName="RealEstateModel.Store.Search_Property_By_ID">
             <ResultMapping>
               <ComplexTypeMapping TypeName="RealEstateModel.Search_Property_By_ID_Result">
@@ -1089,6 +1087,36 @@
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Search_Employee_By_ID1" FunctionName="RealEstateModel.Store.Search_Employee_By_ID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateModel.Search_Employee_By_ID1_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="EmpType" ColumnName="EmpType" />
+                <ScalarProperty Name="EmpDate" ColumnName="EmpDate" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Search_Employee_By_Name1" FunctionName="RealEstateModel.Store.Search_Employee_By_Name">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateModel.Search_Employee_By_Name1_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="EmpType" ColumnName="EmpType" />
+                <ScalarProperty Name="EmpDate" ColumnName="EmpDate" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

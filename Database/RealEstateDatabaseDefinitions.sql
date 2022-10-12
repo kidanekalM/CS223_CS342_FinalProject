@@ -189,7 +189,7 @@ CREATE PROC [Search Employee By ID]
 	@ID INT
 	AS
 	BEGIN
-		SELECT ID,FirstName,LastName,PhoneNumber,Password,PhoneNumber,EmpType,EmpDate,DepartmentID
+		SELECT ID,FirstName,LastName,Photo,Password,PhoneNumber,EmpType,EmpDate,DepartmentID
 		FROM Employee
 		WHERE ID LIKE '%'+CAST( @ID AS VARCHAR(20))+'%'
 	END
@@ -199,7 +199,7 @@ CREATE PROC [Search Employee By Name]
 	@Name VARCHAR(100)
 	AS
 	BEGIN
-		SELECT ID,FirstName,LastName,PhoneNumber,Password,PhoneNumber,EmpType,EmpDate,DepartmentID
+		SELECT ID,FirstName,LastName,Photo,Password,PhoneNumber,EmpType,EmpDate,DepartmentID
 		FROM Employee
 		WHERE FirstName LIKE '%' + TRIM(@Name) + '%' OR 
 				LastName LIKE '%' + TRIM(@Name) + '%'

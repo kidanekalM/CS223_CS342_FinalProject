@@ -18,7 +18,7 @@ namespace Real_Estate_App.Model
     
     public partial class RealEstateEDM : DbContext
     {
-        public RealEstateEDM( string s)
+        public RealEstateEDM(string s)
             : base(s+"ConnectionString")
         {
         }
@@ -770,6 +770,24 @@ namespace Real_Estate_App.Model
                 new ObjectParameter("Upwd", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<Login_Client_Result>("[AdminConnectionString1].[Login_Client](@ID, @Upwd)", iDParameter, upwdParameter);
+        }
+    
+        public virtual ObjectResult<Search_Employee_By_ID1_Result> Search_Employee_By_ID1(Nullable<int> iD)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Search_Employee_By_ID1_Result>("Search_Employee_By_ID1", iDParameter);
+        }
+    
+        public virtual ObjectResult<Search_Employee_By_Name1_Result> Search_Employee_By_Name1(string name)
+        {
+            var nameParameter = name != null ?
+                new ObjectParameter("Name", name) :
+                new ObjectParameter("Name", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Search_Employee_By_Name1_Result>("Search_Employee_By_Name1", nameParameter);
         }
     }
 }
