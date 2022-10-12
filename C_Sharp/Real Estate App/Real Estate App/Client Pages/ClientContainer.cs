@@ -111,7 +111,7 @@ namespace Real_Estate_App
             if (ActiveMdiChild != null)
                 ActiveMdiChild.Close();
 
-            AgentProfilePage agentPage = new AgentProfilePage(AgentId);
+            AgentProfilePage agentPage = new AgentProfilePage(Id);
             agentPage.MdiParent = this;
             agentPage.Show();
         }

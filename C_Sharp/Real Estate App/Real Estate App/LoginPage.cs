@@ -310,7 +310,7 @@ namespace Real_Estate_App
                             MessageBox.Show("Login successfull!");
 
                             //ClientContainer containerPage = new ClientContainer(result.ID, result.FirstName, result.LastName, result.Photo, result.PhoneNumber, result.Email, result.Password, Convert.ToInt32(result.EmpId));
-                            ClientContainer containerPage = new ClientContainer(10);
+                            ClientContainer containerPage = new ClientContainer(int.Parse(txt_ClientId.Text));
                             containerPage.Show();
                             this.Hide();
                         }

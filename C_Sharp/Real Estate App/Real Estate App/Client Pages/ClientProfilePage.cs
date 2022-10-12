@@ -70,7 +70,7 @@ namespace Real_Estate_App
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occured. Couldn't load Agents Data!\n" + ex.Message);
+                MessageBox.Show("An error occured. Couldn't load Clients Data!\n" + ex.Message);
             }
         }
     }
