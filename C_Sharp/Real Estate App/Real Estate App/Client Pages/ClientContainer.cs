@@ -13,16 +13,20 @@ namespace Real_Estate_App
 {
     public partial class ClientContainer : Form
     {
-        public ClientContainer()
+        private int Id;
+        private int AgentId;
+        public ClientContainer(int id)
         {
             InitializeComponent();
+
+            Id = id;
         }
         private void ClientContainer_Load(object sender, EventArgs e)
         {
             if (ActiveMdiChild != null)
                 ActiveMdiChild.Close();
 
-            ClientHomePage homePage = new ClientHomePage(this);
+            ClientHomePage homePage = new ClientHomePage();
             homePage.MdiParent = this;
             homePage.Show();
         }
@@ -33,7 +37,7 @@ namespace Real_Estate_App
             if (ActiveMdiChild != null)
                 ActiveMdiChild.Close();
 
-            ClientProfilePage profilePage = new ClientProfilePage(this, Properties.Resources.Default_Profile, "Hawariaw", "Paulos", "hawariaw@email.com", "0972503268");
+            ClientProfilePage profilePage = new ClientProfilePage(this, Id);
             profilePage.MdiParent = this;
             profilePage.Show();
         }
@@ -43,7 +47,7 @@ namespace Real_Estate_App
             if (ActiveMdiChild != null)
                 ActiveMdiChild.Close();
 
-            ClientPasswordPage passwordPage = new ClientPasswordPage();
+            ClientPasswordPage passwordPage = new ClientPasswordPage(this, Id);
             passwordPage.MdiParent = this;
             passwordPage.Show();
         }
@@ -54,6 +58,8 @@ namespace Real_Estate_App
             DialogResult result = MessageBox.Show("Are you sure you want to Log Out?", "Log Out", buttons);
             if (result == DialogResult.Yes)
             {
+                Id = 0;
+
                 LoginPage loginPage = new LoginPage();
                 this.Hide();
                 loginPage.Show();
@@ -95,7 +101,7 @@ namespace Real_Estate_App
             if (ActiveMdiChild != null)
                 ActiveMdiChild.Close();
 
-            ClientHomePage homePage = new ClientHomePage(this);
+            ClientHomePage homePage = new ClientHomePage();
             homePage.MdiParent = this;
             homePage.Show();
         }
@@ -105,9 +111,9 @@ namespace Real_Estate_App
             if (ActiveMdiChild != null)
                 ActiveMdiChild.Close();
 
-            //AgentProfilePage agentPage = new AgentProfilePage();
-            //agentPage.MdiParent = this;
-            //agentPage.Show();
+            AgentProfilePage agentPage = new AgentProfilePage(Id);
+            agentPage.MdiParent = this;
+            agentPage.Show();
         }
     }
 }

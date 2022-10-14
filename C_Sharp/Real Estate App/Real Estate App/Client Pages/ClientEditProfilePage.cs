@@ -16,11 +16,18 @@ namespace Real_Estate_App
     {
         private ClientContainer containerPage = null;
         private ClientProfilePage profilePage = null;
-        public ClientEditProfilePage(ClientContainer containerPage, ClientProfilePage profilePage, Image ProfilePic, string firstName, string lastName, string email, string phoneNumber)
+        private int Id;
+        private string Password;
+        private int AgentId;
+        public ClientEditProfilePage(ClientContainer containerPage, ClientProfilePage profilePage, int id, Image ProfilePic, string firstName, string lastName, string email, string phoneNumber, string password, int agentId)
         {
             InitializeComponent();
+
             this.containerPage = containerPage;
             this.profilePage = profilePage;
+            Id = id;
+            Password = password;
+            AgentId = agentId;
             pic_ClientPic.Image = ProfilePic;
             txt_FirstName.Text = firstName;
             txt_LastName.Text = lastName;
@@ -89,26 +96,20 @@ namespace Real_Estate_App
                 DialogResult result = MessageBox.Show("Are you sure you want to save the changes?", "Edit Profile", buttons);
                 if (result == DialogResult.Yes)
                 {
-                    bool updateSuccess;
-
                     try
                     {
-                        //Client client = new Client();
-                        //updateSuccess = client.Update();
-                        updateSuccess = true;
-
-                        if (updateSuccess == true)
+                        using (RealEstateEDM rm = new RealEstateEDM("Client"))
                         {
+                            rm.Update_Client(Id, txt_FirstName.Text, txt_LastName.Text, converterDemo(pic_ClientPic.Image), txt_PhoneNo.Text, txt_Email.Text, Password, AgentId);
 
                             MessageBox.Show("Update successfull!");
 
-                            ClientProfilePage profilePage = new ClientProfilePage(containerPage, pic_ClientPic.Image, txt_FirstName.Text, txt_LastName.Text, txt_Email.Text, txt_PhoneNo.Text);
+                            ClientProfilePage profilePage = new ClientProfilePage(containerPage, Id);
                             profilePage.MdiParent = containerPage;
                             profilePage.Show();
                             this.Hide();
+
                         }
-                        else
-                            MessageBox.Show("Update failed. Please try again!");
                     }
                     catch (Exception ex)
                     {
@@ -211,6 +212,13 @@ namespace Real_Estate_App
         private void btn_deletePic_Click(object sender, EventArgs e)
         {
             pic_ClientPic.Image = Properties.Resources.Default_Profile;
+        }
+
+        public static byte[] converterDemo(Image x)
+        {
+            ImageConverter _imageConverter = new ImageConverter();
+            byte[] xByte = (byte[])_imageConverter.ConvertTo(x, typeof(byte[]));
+            return xByte;
         }
     }
 }

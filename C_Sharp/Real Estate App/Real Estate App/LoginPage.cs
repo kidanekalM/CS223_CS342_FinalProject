@@ -299,21 +299,30 @@ namespace Real_Estate_App
 
             if (hasError == false)
             {
-                /* VERIFY CLIENT
-                   If client is verified
-                      a. Create a Client Object
-                      b. Fill the Object with the clients data
-                      c. Pass the Object to the ClientContainer page
-                   If client isn't verified
-                      a. Tell the user its a wrong userId or password
-                */
+                try
+                {
+                    using (RealEstateEDM r = new RealEstateEDM("Client"))
+                    {
+                        var result = 3; //r.Login_Client(Convert.ToInt32(txt_ClientId.Text), txt_ClientPassword.Text).FirstOrDefault();
+                        if (result != null)
+                        {
+                            //MessageBox.Show("Login successfull! \nWelcome back " + result.FirstName);
+                            MessageBox.Show("Login successfull!");
 
-
-                ClientContainer containerPage = new ClientContainer();
-                containerPage.Show();
-                this.Hide();
+                            //ClientContainer containerPage = new ClientContainer(result.ID, result.FirstName, result.LastName, result.Photo, result.PhoneNumber, result.Email, result.Password, Convert.ToInt32(result.EmpId));
+                            ClientContainer containerPage = new ClientContainer(int.Parse(txt_ClientId.Text));
+                            containerPage.Show();
+                            this.Hide();
+                        }
+                        else
+                            MessageBox.Show("Wrong username or password. Please try again!");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occured! \n" + ex.Message);
+                }
             }
-
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)
