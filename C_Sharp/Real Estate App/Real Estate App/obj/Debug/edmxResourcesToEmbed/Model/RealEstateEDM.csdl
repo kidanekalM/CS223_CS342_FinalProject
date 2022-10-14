@@ -34,7 +34,7 @@
     <FunctionImport Name="Get_All_Clients" IsComposable="true" ReturnType="Collection(RealEstateModel.Get_All_Clients_Result)" />
     <FunctionImport Name="Get_All_Employees" IsComposable="true" ReturnType="Collection(RealEstateModel.Get_All_Employees_Result)" />
     <FunctionImport Name="Get_All_Properties" IsComposable="true" ReturnType="Collection(RealEstateModel.Get_All_Properties_Result)" />
-    <FunctionImport Name="Add_Appointment" ReturnType="Collection(Decimal)">
+    <FunctionImport Name="Add_Appointment" ReturnType="Collection(RealEstateModel.Add_Appointment_Result)">
       <Parameter Name="AppointmentDate" Mode="In" Type="DateTime" />
       <Parameter Name="Comment" Mode="In" Type="String" />
       <Parameter Name="ClientId" Mode="In" Type="Int32" />
@@ -60,10 +60,10 @@
       <Parameter Name="Password" Mode="In" Type="String" />
       <Parameter Name="EmpId" Mode="In" Type="Int32" />
     </FunctionImport>
-    <FunctionImport Name="Add_Department" ReturnType="Collection(Decimal)">
+    <FunctionImport Name="Add_Department" ReturnType="Collection(RealEstateModel.Add_Department_Result)">
       <Parameter Name="Name" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="Add_Employee" ReturnType="Collection(Decimal)">
+    <FunctionImport Name="Add_Employee" ReturnType="Collection(RealEstateModel.Add_Employee_Result)">
       <Parameter Name="FirstName" Mode="In" Type="String" />
       <Parameter Name="LastName" Mode="In" Type="String" />
       <Parameter Name="PhoneNumber" Mode="In" Type="String" />
@@ -73,8 +73,7 @@
       <Parameter Name="EmpDate" Mode="In" Type="DateTime" />
       <Parameter Name="DepartmentID" Mode="In" Type="Int32" />
     </FunctionImport>
-    <FunctionImport Name="Add_Property" ReturnType="Collection(Decimal)">
-      <Parameter Name="ID" Mode="In" Type="Int32" />
+    <FunctionImport Name="Add_Property" ReturnType="Collection(RealEstateModel.Add_Property_Result)">
       <Parameter Name="Address" Mode="In" Type="String" />
       <Parameter Name="Price" Mode="In" Type="Double" />
       <Parameter Name="Type" Mode="In" Type="String" />
@@ -156,12 +155,6 @@
       <Parameter Name="ID" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="Search_Department_By_Name" ReturnType="Collection(RealEstateModel.Search_Department_By_Name_Result)">
-      <Parameter Name="Name" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="Search_Employee_By_ID" ReturnType="Collection(RealEstateModel.Search_Employee_By_ID_Result)">
-      <Parameter Name="ID" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="Search_Employee_By_Name" ReturnType="Collection(RealEstateModel.Search_Employee_By_Name_Result)">
       <Parameter Name="Name" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="Search_Property_By_ID" ReturnType="Collection(RealEstateModel.Search_Property_By_ID_Result)">
@@ -248,6 +241,13 @@
     <FunctionImport Name="Login_Client" IsComposable="true" ReturnType="Collection(RealEstateModel.Login_Client_Result)">
       <Parameter Name="ID" Mode="In" Type="Int32" />
       <Parameter Name="Upwd" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Get_All_Departments" ReturnType="Collection(RealEstateModel.Get_All_Departments_Result)" />
+    <FunctionImport Name="Search_Employee_By_ID" ReturnType="Collection(RealEstateModel.Search_Employee_By_ID_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Search_Employee_By_Name" ReturnType="Collection(RealEstateModel.Search_Employee_By_Name_Result)">
+      <Parameter Name="Name" Mode="In" Type="String" />
     </FunctionImport>
   </EntityContainer>
   <ComplexType Name="Filter_Property_Result">
@@ -339,28 +339,6 @@
     <Property Type="Int32" Name="ID" Nullable="false" />
     <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
   </ComplexType>
-  <ComplexType Name="Search_Employee_By_ID_Result">
-    <Property Type="Int32" Name="ID" Nullable="false" />
-    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
-    <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
-    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
-    <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
-    <Property Type="String" Name="PhoneNumber1" Nullable="true" MaxLength="11" />
-    <Property Type="String" Name="EmpType" Nullable="false" MaxLength="100" />
-    <Property Type="DateTime" Name="EmpDate" Nullable="false" />
-    <Property Type="Int32" Name="DepartmentID" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="Search_Employee_By_Name_Result">
-    <Property Type="Int32" Name="ID" Nullable="false" />
-    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
-    <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
-    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
-    <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
-    <Property Type="String" Name="PhoneNumber1" Nullable="true" MaxLength="11" />
-    <Property Type="String" Name="EmpType" Nullable="false" MaxLength="100" />
-    <Property Type="DateTime" Name="EmpDate" Nullable="false" />
-    <Property Type="Int32" Name="DepartmentID" Nullable="true" />
-  </ComplexType>
   <ComplexType Name="Search_Property_By_ID_Result">
     <Property Type="Int32" Name="ID" Nullable="false" />
     <Property Type="String" Name="Address" Nullable="false" MaxLength="100" />
@@ -430,5 +408,46 @@
     <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
     <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
     <Property Type="Int32" Name="EmpId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Add_Property_Result">
+    <Property Type="Decimal" Name="PropertyID" Nullable="true" Precision="38" Scale="0" />
+  </ComplexType>
+  <ComplexType Name="Get_All_Departments_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="Search_Employee_By_ID_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
+    <Property Type="Binary" Name="Photo" Nullable="true" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
+    <Property Type="String" Name="EmpType" Nullable="false" MaxLength="100" />
+    <Property Type="DateTime" Name="EmpDate" Nullable="false" />
+    <Property Type="Int32" Name="DepartmentID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Search_Employee_By_Name_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
+    <Property Type="Binary" Name="Photo" Nullable="true" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
+    <Property Type="String" Name="EmpType" Nullable="false" MaxLength="100" />
+    <Property Type="DateTime" Name="EmpDate" Nullable="false" />
+    <Property Type="Int32" Name="DepartmentID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Add_Employee_Result">
+    <Property Type="Decimal" Name="EmployeeID" Nullable="true" Precision="38" Scale="0" />
+  </ComplexType>
+  <ComplexType Name="Add_Department_Result">
+    <Property Type="Decimal" Name="DepartmentID" Nullable="true" Precision="38" Scale="0" />
+  </ComplexType>
+  <ComplexType Name="Add_Client_Result">
+    <Property Type="Decimal" Name="ClientID" Nullable="true" Precision="38" Scale="0" />
+  </ComplexType>
+  <ComplexType Name="Add_Appointment_Result">
+    <Property Type="Decimal" Name="AppointmentID" Nullable="true" Precision="38" Scale="0" />
   </ComplexType>
 </Schema>

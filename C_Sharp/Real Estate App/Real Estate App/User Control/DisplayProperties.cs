@@ -19,6 +19,10 @@ namespace Real_Estate_App.User_Control
             this.UserID = userID;
             this.AppointmentID = appointmentID;
         }
+        public DisplayProperties()
+        {
+            InitializeComponent();
+        }
         private EventHandler _propertyClicked;
 
         public EventHandler PropertyClicked
@@ -42,13 +46,28 @@ namespace Real_Estate_App.User_Control
             foreach (var property in Properties)
             {
                 DisplayProperty d = new DisplayProperty(property);
-                d.BackColor = displayProperty1.BackColor;
                 d.Click += PropertyClicked + Click;
-                    d.Size = displayProperty1.Size;
+                d.Size = displayProperty1.Size;
                 tableLayoutPanel1.Controls.Add(d);
             }
+            if (UserType.ToLower().Contains( "agent") || UserType.ToLower().Contains( "dmin"))
+            {
+                CircularButton cb = new CircularButton();
+                cb.Image = global::Real_Estate_App.Properties.Resources.Add2;
+                Size s = new Size();
+                s.Width = displayProperty1.Height;
+                s.Height = displayProperty1.Height;
+                cb.Size = s;
+                cb.BackgroundImageLayout = ImageLayout.Zoom;
+                cb.Click += AddClick;
+                tableLayoutPanel1.Controls.Add(cb);
+            }
         }
-        
+        public void AddClick(object sender, EventArgs e)
+        {
+            DetailPage d = new DetailPage("admin","0","addproperty");
+            d.Show();
+        }
         public void Click(object sender, EventArgs e)
         {
             using(Model.RealEstateEDM rdm = new Model.RealEstateEDM("Admin"))

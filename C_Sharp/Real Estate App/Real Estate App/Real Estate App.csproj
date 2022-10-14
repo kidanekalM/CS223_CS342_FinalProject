@@ -130,11 +130,23 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin Pages\AdminGetAllEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Pages\AdminGetAllEmployees.Designer.cs">
+      <DependentUpon>AdminGetAllEmployees.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin Pages\AdminHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Admin Pages\AdminHomePage.designer.cs">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Pages\EmployeeDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Pages\EmployeeDetail.Designer.cs">
+      <DependentUpon>EmployeeDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="Client Pages\AgentProfilePage.cs">
       <SubType>Form</SubType>
@@ -214,6 +226,21 @@
     <Compile Include="LoginPage.designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Add_Appointment_Result.cs">
+      <DependentUpon>RealEstateEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Add_Client_Result.cs">
+      <DependentUpon>RealEstateEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Add_Department_Result.cs">
+      <DependentUpon>RealEstateEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Add_Employee_Result.cs">
+      <DependentUpon>RealEstateEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Add_Property_Result.cs">
+      <DependentUpon>RealEstateEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Filter_Property_Result.cs">
       <DependentUpon>RealEstateEDM.tt</DependentUpon>
     </Compile>
@@ -227,6 +254,9 @@
       <DependentUpon>RealEstateEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Get_All_Clients_Result.cs">
+      <DependentUpon>RealEstateEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Get_All_Departments_Result.cs">
       <DependentUpon>RealEstateEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Get_All_Employees_Result.cs">
@@ -295,13 +325,7 @@
     <Compile Include="Model\Search_Department_By_Name_Result.cs">
       <DependentUpon>RealEstateEDM.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Search_Employee_By_ID1_Result.cs">
-      <DependentUpon>RealEstateEDM.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\Search_Employee_By_ID_Result.cs">
-      <DependentUpon>RealEstateEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Search_Employee_By_Name1_Result.cs">
       <DependentUpon>RealEstateEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Search_Employee_By_Name_Result.cs">
@@ -359,8 +383,17 @@
     <Compile Include="User Control\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Control\PlaceHolderTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="Admin Pages\AdminGetAllEmployees.resx">
+      <DependentUpon>AdminGetAllEmployees.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin Pages\AdminHomePage.resx">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Pages\EmployeeDetail.resx">
+      <DependentUpon>EmployeeDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Client Pages\AgentProfilePage.resx">
       <DependentUpon>AgentProfilePage.cs</DependentUpon>

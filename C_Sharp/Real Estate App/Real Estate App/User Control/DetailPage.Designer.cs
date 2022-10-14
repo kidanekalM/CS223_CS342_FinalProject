@@ -55,6 +55,7 @@
             this.btn_delete = new System.Windows.Forms.Button();
             this.ReplaceImage = new Real_Estate_App.User_Control.CircularPictureBox();
             this.pic_Edit = new Real_Estate_App.User_Control.CircularPictureBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -64,6 +65,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_BigPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReplaceImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Edit)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -240,9 +242,9 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.White;
             this.pictureBox5.Image = global::Real_Estate_App.Properties.Resources.Add2;
-            this.pictureBox5.Location = new System.Drawing.Point(43, 262);
+            this.pictureBox5.Location = new System.Drawing.Point(3, 183);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(45, 45);
+            this.pictureBox5.Size = new System.Drawing.Size(45, 39);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 5;
             this.pictureBox5.TabStop = false;
@@ -252,9 +254,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Image = global::Real_Estate_App.Properties.Resources.Add2;
-            this.pictureBox1.Location = new System.Drawing.Point(42, 73);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 45);
+            this.pictureBox1.Size = new System.Drawing.Size(45, 39);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -264,9 +266,9 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.White;
             this.pictureBox4.Image = global::Real_Estate_App.Properties.Resources.Add2;
-            this.pictureBox4.Location = new System.Drawing.Point(43, 217);
+            this.pictureBox4.Location = new System.Drawing.Point(3, 138);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(45, 45);
+            this.pictureBox4.Size = new System.Drawing.Size(45, 39);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 4;
             this.pictureBox4.TabStop = false;
@@ -276,9 +278,9 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.White;
             this.pictureBox2.Image = global::Real_Estate_App.Properties.Resources.Add2;
-            this.pictureBox2.Location = new System.Drawing.Point(43, 121);
+            this.pictureBox2.Location = new System.Drawing.Point(3, 48);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(45, 45);
+            this.pictureBox2.Size = new System.Drawing.Size(45, 39);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
@@ -288,9 +290,9 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.White;
             this.pictureBox3.Image = global::Real_Estate_App.Properties.Resources.Add2;
-            this.pictureBox3.Location = new System.Drawing.Point(43, 169);
+            this.pictureBox3.Location = new System.Drawing.Point(3, 93);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(45, 45);
+            this.pictureBox3.Size = new System.Drawing.Size(45, 39);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
@@ -366,20 +368,37 @@
             this.pic_Edit.TabStop = false;
             this.pic_Edit.Click += new System.EventHandler(this.pic_Edit_Click);
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.Controls.Add(this.pictureBox1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.pictureBox5, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.pictureBox2, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.pictureBox3, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.pictureBox4, 0, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(43, 106);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 5;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(51, 225);
+            this.tableLayoutPanel2.TabIndex = 10;
+            // 
             // DetailPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Real_Estate_App.Properties.Resources.photo_1491466424936_e304919aada7;
             this.ClientSize = new System.Drawing.Size(521, 669);
-            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.btn_delete);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.btn_addToMyProperties);
             this.Controls.Add(this.btn_save);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.ReplaceImage);
             this.Controls.Add(this.pic_Edit);
             this.Controls.Add(this.pic_BigPicture);
@@ -397,6 +416,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_BigPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReplaceImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Edit)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -429,5 +449,6 @@
         private System.Windows.Forms.Button btn_addToMyProperties;
         private System.Windows.Forms.Button btn_delete;
         private CircularPictureBox pic_Edit;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }
 }
