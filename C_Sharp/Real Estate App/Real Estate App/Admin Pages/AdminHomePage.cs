@@ -1,13 +1,12 @@
 ﻿using Real_Estate_App;
 using Real_Estate_App.Admin_Pages;
-using Real_Estate_App.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
+using System.Linq;  
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -198,7 +197,7 @@ namespace MyRealEstate
 
         private void AddPropertyButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textAddress.Text) || string.IsNullOrEmpty(textArea.Text) || string.IsNullOrEmpty(textSell.Text) || string.IsNullOrEmpty(textDescription.Text) || string.IsNullOrEmpty(textCId.Text))
+            if (string.IsNullOrEmpty(textAddress.Text) || string.IsNullOrEmpty(textArea.Text) || string.IsNullOrEmpty(textSell.Text) || string.IsNullOrEmpty(textDescription.Text))
             {
                 if (string.IsNullOrEmpty(textAddress.Text))
                 {
@@ -232,18 +231,34 @@ namespace MyRealEstate
                 {
                     errorProvider1.SetError(textDescription, "");
                 }
-                if (string.IsNullOrEmpty(textCId.Text))
-                {
-                    errorProvider1.SetError(textCId, "Contractor ID is required!!");
-                }
-                else
-                {
-                    errorProvider1.SetError(textCId, "");
-                }
             }
             else
             {
+                errorProvider1.Clear();
+                try
+                {
+                    using (Real_Estate_App.Model.RealEstateEDM r = new Real_Estate_App.Model.RealEstateEDM("Admin"))
+                    {
+                        var d = r.Add_Property(textAddress.Text, double.Parse(textSell.Text),BigR.Text, double.Parse(textArea.Text),StatusCheckBox.Checked,textDescription.Text);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    if (ex.InnerException != null)
+                        errorProvider1.SetError(AddPropertyButton, ex.Message + ex.InnerException.Message);
+                    else
+                        errorProvider1.SetError(AddPropertyButton, ex.Message);
+                }
+                clear();
             }
+        }
+        void clear()
+        {
+            textArea.Text = "";
+            textAddress.Text = "";
+            textDescription.Text = "";
+            textSell.Text = "";
+            groupBox1.Text = "";
         }
 
         private void AdminHomePage_Load(object sender, EventArgs e)
