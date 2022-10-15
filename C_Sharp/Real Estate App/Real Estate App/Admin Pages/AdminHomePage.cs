@@ -170,29 +170,9 @@ namespace MyRealEstate
                 loginPage.Show();
             }
         }
-        private void addPropertyToolStripMenuItem1_Click_1(object sender, EventArgs e)
-        {
-            PropertiesPanel.Visible = true;
-            HomePanel.Visible = false;
-            EmployeesPanel.Visible = false;
-            CustomersPanel.Visible = false;
-            AppointmentPanel.Visible = false;
-            EditProfilePanel.Visible = false;
-            if (PropertiesPanel.Visible == true)
-            {
-                AddPropertyPanel.Visible = true;
-            }
-        }
 
         private void allPropertiesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            a.Show();
-        }
-
-        private void editPropertyToolStripMenuItem1_MouseMove(object sender, MouseEventArgs e)
-        {
-            PropertyOneToolStripMenuItem.Text = "First Property";
-
         }
 
         private void AddPropertyButton_Click(object sender, EventArgs e)
@@ -271,6 +251,25 @@ namespace MyRealEstate
             EditProfilePanel.Visible = false;
             AddPropertyPanel.Visible = false;
             pictureBox2.Top = 88;
+        }
+
+        private void manageToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            PropertiesPanel.Visible = true;
+            HomePanel.Visible = false;
+            EmployeesPanel.Visible = false;
+            CustomersPanel.Visible = false;
+            AppointmentPanel.Visible = false;
+            EditProfilePanel.Visible = false;
+            if (PropertiesPanel.Visible == true)
+            {
+                AddPropertyPanel.Visible = true;
+            }
+        }
+
+        private void showToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            a.Show();
         }
     }
 

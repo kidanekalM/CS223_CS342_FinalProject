@@ -35,6 +35,7 @@
             this.HomeButton = new System.Windows.Forms.Button();
             this.FinanceButton = new System.Windows.Forms.Button();
             this.WelcomePanel = new System.Windows.Forms.Panel();
+            this.circularPictureBox2 = new Real_Estate_App.User_Control.CircularPictureBox();
             this.UserNameLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.BarHideButton = new System.Windows.Forms.Button();
@@ -75,11 +76,7 @@
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.manageToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.addEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.allEmployeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PropertiesPanel = new System.Windows.Forms.Panel();
             this.AddPropertyPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -102,13 +99,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.manageToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.addPropertyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.editPropertyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.PropertyOneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deletePropertyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.showToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.allPropertiesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.HomePanel = new System.Windows.Forms.Panel();
+            this.circularPictureBox1 = new Real_Estate_App.User_Control.CircularPictureBox();
             this.DATElbl = new System.Windows.Forms.Label();
             this.EMAILlbl = new System.Windows.Forms.Label();
             this.NAMElbl = new System.Windows.Forms.Label();
@@ -119,12 +112,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.circularPictureBox1 = new Real_Estate_App.User_Control.CircularPictureBox();
-            this.circularPictureBox2 = new Real_Estate_App.User_Control.CircularPictureBox();
             this.LeftPanel.SuspendLayout();
             this.SidePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.WelcomePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox2)).BeginInit();
             this.AppointmentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Search_errorProvider)).BeginInit();
@@ -140,7 +132,6 @@
             this.menuStrip1.SuspendLayout();
             this.HomePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // LeftPanel
@@ -231,6 +222,18 @@
             this.WelcomePanel.Name = "WelcomePanel";
             this.WelcomePanel.Size = new System.Drawing.Size(200, 108);
             this.WelcomePanel.TabIndex = 1;
+            // 
+            // circularPictureBox2
+            // 
+            this.circularPictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox2.Image = global::Real_Estate_App.Properties.Resources.SeekPng_com_profile_icon_png_9665493;
+            this.circularPictureBox2.Location = new System.Drawing.Point(14, 15);
+            this.circularPictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.circularPictureBox2.Name = "circularPictureBox2";
+            this.circularPictureBox2.Size = new System.Drawing.Size(74, 74);
+            this.circularPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.circularPictureBox2.TabIndex = 8;
+            this.circularPictureBox2.TabStop = false;
             // 
             // UserNameLabel
             // 
@@ -497,7 +500,7 @@
             this.showToolStripMenuItem3});
             this.menuStrip3.Location = new System.Drawing.Point(0, 0);
             this.menuStrip3.Name = "menuStrip3";
-            this.menuStrip3.Size = new System.Drawing.Size(744, 30);
+            this.menuStrip3.Size = new System.Drawing.Size(744, 24);
             this.menuStrip3.TabIndex = 0;
             this.menuStrip3.Text = "menuStrip3";
             // 
@@ -506,7 +509,7 @@
             this.homeToolStripMenuItem3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeToolStripMenuItem3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(60)))), ((int)(((byte)(126)))));
             this.homeToolStripMenuItem3.Name = "homeToolStripMenuItem3";
-            this.homeToolStripMenuItem3.Size = new System.Drawing.Size(58, 26);
+            this.homeToolStripMenuItem3.Size = new System.Drawing.Size(58, 20);
             this.homeToolStripMenuItem3.Text = "Home";
             // 
             // manageToolStripMenuItem3
@@ -514,7 +517,7 @@
             this.manageToolStripMenuItem3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manageToolStripMenuItem3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(60)))), ((int)(((byte)(126)))));
             this.manageToolStripMenuItem3.Name = "manageToolStripMenuItem3";
-            this.manageToolStripMenuItem3.Size = new System.Drawing.Size(76, 26);
+            this.manageToolStripMenuItem3.Size = new System.Drawing.Size(76, 20);
             this.manageToolStripMenuItem3.Text = "Manage";
             // 
             // showToolStripMenuItem3
@@ -522,7 +525,7 @@
             this.showToolStripMenuItem3.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.showToolStripMenuItem3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(60)))), ((int)(((byte)(126)))));
             this.showToolStripMenuItem3.Name = "showToolStripMenuItem3";
-            this.showToolStripMenuItem3.Size = new System.Drawing.Size(54, 26);
+            this.showToolStripMenuItem3.Size = new System.Drawing.Size(54, 20);
             this.showToolStripMenuItem3.Text = "Show";
             // 
             // EmployeesPanel
@@ -632,7 +635,7 @@
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip2.Size = new System.Drawing.Size(744, 30);
+            this.menuStrip2.Size = new System.Drawing.Size(744, 24);
             this.menuStrip2.TabIndex = 0;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -641,61 +644,24 @@
             this.homeToolStripMenuItem2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeToolStripMenuItem2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(60)))), ((int)(((byte)(126)))));
             this.homeToolStripMenuItem2.Name = "homeToolStripMenuItem2";
-            this.homeToolStripMenuItem2.Size = new System.Drawing.Size(58, 26);
+            this.homeToolStripMenuItem2.Size = new System.Drawing.Size(58, 20);
             this.homeToolStripMenuItem2.Text = "Home";
             // 
             // manageToolStripMenuItem2
             // 
-            this.manageToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addEmployeeToolStripMenuItem,
-            this.editEmployeeToolStripMenuItem,
-            this.deleteEmployeeToolStripMenuItem});
             this.manageToolStripMenuItem2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manageToolStripMenuItem2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(60)))), ((int)(((byte)(126)))));
             this.manageToolStripMenuItem2.Name = "manageToolStripMenuItem2";
-            this.manageToolStripMenuItem2.Size = new System.Drawing.Size(76, 26);
-            this.manageToolStripMenuItem2.Text = "Manage";
-            // 
-            // addEmployeeToolStripMenuItem
-            // 
-            this.addEmployeeToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addEmployeeToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.addEmployeeToolStripMenuItem.Name = "addEmployeeToolStripMenuItem";
-            this.addEmployeeToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
-            this.addEmployeeToolStripMenuItem.Text = "Add Employee";
-            // 
-            // editEmployeeToolStripMenuItem
-            // 
-            this.editEmployeeToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editEmployeeToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.editEmployeeToolStripMenuItem.Name = "editEmployeeToolStripMenuItem";
-            this.editEmployeeToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
-            this.editEmployeeToolStripMenuItem.Text = "Edit Employee";
-            // 
-            // deleteEmployeeToolStripMenuItem
-            // 
-            this.deleteEmployeeToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteEmployeeToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.deleteEmployeeToolStripMenuItem.Name = "deleteEmployeeToolStripMenuItem";
-            this.deleteEmployeeToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
-            this.deleteEmployeeToolStripMenuItem.Text = "Delete Employee";
+            this.manageToolStripMenuItem2.Size = new System.Drawing.Size(117, 20);
+            this.manageToolStripMenuItem2.Text = "Add Employee";
             // 
             // showToolStripMenuItem2
             // 
-            this.showToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.allEmployeesToolStripMenuItem});
             this.showToolStripMenuItem2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.showToolStripMenuItem2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(60)))), ((int)(((byte)(126)))));
             this.showToolStripMenuItem2.Name = "showToolStripMenuItem2";
-            this.showToolStripMenuItem2.Size = new System.Drawing.Size(54, 26);
-            this.showToolStripMenuItem2.Text = "Show";
-            // 
-            // allEmployeesToolStripMenuItem
-            // 
-            this.allEmployeesToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.allEmployeesToolStripMenuItem.Name = "allEmployeesToolStripMenuItem";
-            this.allEmployeesToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
-            this.allEmployeesToolStripMenuItem.Text = "All Employees";
+            this.showToolStripMenuItem2.Size = new System.Drawing.Size(150, 20);
+            this.showToolStripMenuItem2.Text = "Show All Employees";
             // 
             // PropertiesPanel
             // 
@@ -750,12 +716,12 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label21.Location = new System.Drawing.Point(136, 30);
+            this.label21.Location = new System.Drawing.Point(162, 30);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(264, 41);
+            this.label21.Size = new System.Drawing.Size(209, 41);
             this.label21.TabIndex = 26;
-            this.label21.Text = "Manage Property";
+            this.label21.Text = "Add Property";
             // 
             // AddPropertyButton
             // 
@@ -946,7 +912,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(744, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(744, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -955,66 +921,27 @@
             this.homeToolStripMenuItem1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.homeToolStripMenuItem1.Name = "homeToolStripMenuItem1";
-            this.homeToolStripMenuItem1.Size = new System.Drawing.Size(58, 26);
+            this.homeToolStripMenuItem1.Size = new System.Drawing.Size(58, 24);
             this.homeToolStripMenuItem1.Text = "Home";
             this.homeToolStripMenuItem1.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // manageToolStripMenuItem1
             // 
-            this.manageToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addPropertyToolStripMenuItem1,
-            this.editPropertyToolStripMenuItem1,
-            this.deletePropertyToolStripMenuItem1});
             this.manageToolStripMenuItem1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manageToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.manageToolStripMenuItem1.Name = "manageToolStripMenuItem1";
-            this.manageToolStripMenuItem1.Size = new System.Drawing.Size(76, 26);
-            this.manageToolStripMenuItem1.Text = "Manage";
-            // 
-            // addPropertyToolStripMenuItem1
-            // 
-            this.addPropertyToolStripMenuItem1.Name = "addPropertyToolStripMenuItem1";
-            this.addPropertyToolStripMenuItem1.Size = new System.Drawing.Size(187, 26);
-            this.addPropertyToolStripMenuItem1.Text = "Add Property";
-            this.addPropertyToolStripMenuItem1.Click += new System.EventHandler(this.addPropertyToolStripMenuItem1_Click_1);
-            // 
-            // editPropertyToolStripMenuItem1
-            // 
-            this.editPropertyToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.PropertyOneToolStripMenuItem});
-            this.editPropertyToolStripMenuItem1.Name = "editPropertyToolStripMenuItem1";
-            this.editPropertyToolStripMenuItem1.Size = new System.Drawing.Size(187, 26);
-            this.editPropertyToolStripMenuItem1.Text = "Edit Property";
-            this.editPropertyToolStripMenuItem1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.editPropertyToolStripMenuItem1_MouseMove);
-            // 
-            // PropertyOneToolStripMenuItem
-            // 
-            this.PropertyOneToolStripMenuItem.Name = "PropertyOneToolStripMenuItem";
-            this.PropertyOneToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
-            this.PropertyOneToolStripMenuItem.Text = "Property One";
-            // 
-            // deletePropertyToolStripMenuItem1
-            // 
-            this.deletePropertyToolStripMenuItem1.Name = "deletePropertyToolStripMenuItem1";
-            this.deletePropertyToolStripMenuItem1.Size = new System.Drawing.Size(187, 26);
-            this.deletePropertyToolStripMenuItem1.Text = "Delete Property";
+            this.manageToolStripMenuItem1.Size = new System.Drawing.Size(107, 24);
+            this.manageToolStripMenuItem1.Text = "Add Property";
+            this.manageToolStripMenuItem1.Click += new System.EventHandler(this.manageToolStripMenuItem1_Click);
             // 
             // showToolStripMenuItem1
             // 
-            this.showToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.allPropertiesToolStripMenuItem1});
             this.showToolStripMenuItem1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.showToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.showToolStripMenuItem1.Name = "showToolStripMenuItem1";
-            this.showToolStripMenuItem1.Size = new System.Drawing.Size(54, 26);
-            this.showToolStripMenuItem1.Text = "Show";
-            // 
-            // allPropertiesToolStripMenuItem1
-            // 
-            this.allPropertiesToolStripMenuItem1.Name = "allPropertiesToolStripMenuItem1";
-            this.allPropertiesToolStripMenuItem1.Size = new System.Drawing.Size(174, 26);
-            this.allPropertiesToolStripMenuItem1.Text = "All Properties";
-            this.allPropertiesToolStripMenuItem1.Click += new System.EventHandler(this.allPropertiesToolStripMenuItem1_Click);
+            this.showToolStripMenuItem1.Size = new System.Drawing.Size(144, 24);
+            this.showToolStripMenuItem1.Text = "Show All Properties";
+            this.showToolStripMenuItem1.Click += new System.EventHandler(this.showToolStripMenuItem1_Click);
             // 
             // HomePanel
             // 
@@ -1037,6 +964,18 @@
             this.HomePanel.Name = "HomePanel";
             this.HomePanel.Size = new System.Drawing.Size(744, 684);
             this.HomePanel.TabIndex = 0;
+            // 
+            // circularPictureBox1
+            // 
+            this.circularPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox1.Image = global::Real_Estate_App.Properties.Resources.SeekPng_com_profile_icon_png_9665493;
+            this.circularPictureBox1.Location = new System.Drawing.Point(266, 30);
+            this.circularPictureBox1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.circularPictureBox1.Name = "circularPictureBox1";
+            this.circularPictureBox1.Size = new System.Drawing.Size(200, 200);
+            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.circularPictureBox1.TabIndex = 12;
+            this.circularPictureBox1.TabStop = false;
             // 
             // DATElbl
             // 
@@ -1164,40 +1103,16 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "ID:";
             // 
-            // circularPictureBox1
-            // 
-            this.circularPictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.circularPictureBox1.Image = global::Real_Estate_App.Properties.Resources.SeekPng_com_profile_icon_png_9665493;
-            this.circularPictureBox1.Location = new System.Drawing.Point(266, 30);
-            this.circularPictureBox1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.circularPictureBox1.Name = "circularPictureBox1";
-            this.circularPictureBox1.Size = new System.Drawing.Size(200, 200);
-            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.circularPictureBox1.TabIndex = 12;
-            this.circularPictureBox1.TabStop = false;
-            // 
-            // circularPictureBox2
-            // 
-            this.circularPictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.circularPictureBox2.Image = global::Real_Estate_App.Properties.Resources.SeekPng_com_profile_icon_png_9665493;
-            this.circularPictureBox2.Location = new System.Drawing.Point(14, 15);
-            this.circularPictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.circularPictureBox2.Name = "circularPictureBox2";
-            this.circularPictureBox2.Size = new System.Drawing.Size(74, 74);
-            this.circularPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.circularPictureBox2.TabIndex = 8;
-            this.circularPictureBox2.TabStop = false;
-            // 
             // AdminHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(946, 684);
-            this.Controls.Add(this.PropertiesPanel);
             this.Controls.Add(this.EmployeesPanel);
+            this.Controls.Add(this.PropertiesPanel);
+            this.Controls.Add(this.HomePanel);
             this.Controls.Add(this.AppointmentPanel);
             this.Controls.Add(this.CustomersPanel);
-            this.Controls.Add(this.HomePanel);
             this.Controls.Add(this.EditProfilePanel);
             this.Controls.Add(this.LeftPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1212,6 +1127,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.WelcomePanel.ResumeLayout(false);
             this.WelcomePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox2)).EndInit();
             this.AppointmentPanel.ResumeLayout(false);
             this.AppointmentPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -1237,7 +1153,6 @@
             this.HomePanel.ResumeLayout(false);
             this.HomePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1303,13 +1218,8 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem manageToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem addPropertyToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem deletePropertyToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem showToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem allPropertiesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem editPropertyToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem PropertyOneToolStripMenuItem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.MenuStrip menuStrip2;
@@ -1321,11 +1231,7 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem manageToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem addEmployeeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editEmployeeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteEmployeeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem allEmployeesToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label10;
