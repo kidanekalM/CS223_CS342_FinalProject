@@ -17,19 +17,6 @@ namespace Real_Estate_App.Admin_Pages
         {
             InitializeComponent();
         }
-        public AdminShowAllEmployees(string userName)
-        {
-            InitializeComponent();
-            if (userName != null)
-                this.UserName = userName;   
-        }
-        private string _userName;
-
-        public string UserName
-        {
-            get { return _userName; }
-            set { _userName = value; lbl_Name.Text = _userName; }
-        }
 
         public List<Model.Get_All_Employees_Result> Employees { get; set; } 
         private void btn_Exit_Click(object sender, EventArgs e)
@@ -127,7 +114,7 @@ namespace Real_Estate_App.Admin_Pages
                 }
             }
         }
-        private void AdminGetAllEmployees_Load(object sender, EventArgs e)
+        public void AdminGetAllEmployees_Load(object sender, EventArgs e)
         {
             using (Model.RealEstateEDM r = new Model.RealEstateEDM("Admin"))
             {
