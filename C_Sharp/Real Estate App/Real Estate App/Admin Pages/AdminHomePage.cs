@@ -132,6 +132,9 @@ namespace MyRealEstate
             CustomersPanel.Visible = false;
             AddPropertyPanel.Visible = false;
             EditProfilePanel.Visible = true;
+            idtext.Text = IDlbl.Text;
+            fullnametext.Text = NAMElbl.Text;
+            emailtext.Text = EMAILlbl.Text;
 
         }
         private void addPropertyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -270,6 +273,62 @@ namespace MyRealEstate
         private void showToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             a.Show();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            PropertiesPanel.Visible = false;
+            EmployeesPanel.Visible = false;
+            AppointmentPanel.Visible = false;
+            HomePanel.Visible = true;
+            CustomersPanel.Visible = false;
+            EditProfilePanel.Visible = false;
+            AddPropertyPanel.Visible = false;
+        }
+
+        private void SaveProfile_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(idtext.Text) || string.IsNullOrEmpty(fullnametext.Text) || string.IsNullOrEmpty(emailtext.Text))
+            {
+                if (string.IsNullOrEmpty(idtext.Text))
+                {
+                    errorProvider1.SetError(idtext, "ID is required!!");
+                }
+                else
+                {
+                    errorProvider1.SetError(idtext, "");
+                }
+                if (string.IsNullOrEmpty(fullnametext.Text))
+                {
+                    errorProvider1.SetError(fullnametext, "Name is required!!");
+                }
+                else
+                {
+                    errorProvider1.SetError(fullnametext, "");
+                }
+                if (string.IsNullOrEmpty(emailtext.Text))
+                {
+                    errorProvider1.SetError(emailtext, "E-mail is required!!");
+                }
+                else
+                {
+                    errorProvider1.SetError(emailtext, "");
+                }
+            }
+            else
+            {
+                IDlbl.Text = idtext.Text;
+                NAMElbl.Text = fullnametext.Text;
+                EMAILlbl.Text = emailtext.Text;
+            }
+            clear2();
+
+        }
+        void clear2()
+        {
+            idtext.Text = "";
+            fullnametext.Text = "";
+            emailtext.Text = "";
         }
     }
 
