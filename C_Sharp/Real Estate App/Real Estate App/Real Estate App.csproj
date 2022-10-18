@@ -136,6 +136,12 @@
     <Compile Include="Admin Pages\AdminHomePage.designer.cs">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Agent pages\agent page.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agent pages\agent page.Designer.cs">
+      <DependentUpon>agent page.cs</DependentUpon>
+    </Compile>
     <Compile Include="Client Pages\AgentProfilePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -362,6 +368,9 @@
     <EmbeddedResource Include="Admin Pages\AdminHomePage.resx">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Agent pages\agent page.resx">
+      <DependentUpon>agent page.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Client Pages\AgentProfilePage.resx">
       <DependentUpon>AgentProfilePage.cs</DependentUpon>
     </EmbeddedResource>
@@ -501,9 +510,7 @@
     <Content Include="Resources\yoal-desurmont-1uyPsrWxefI-unsplash.jpg" />
     <Content Include="Resources\zac-ong-B3Vr6hA8Vj8-unsplash.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Agent Pages\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
