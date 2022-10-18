@@ -148,11 +148,17 @@
     <Compile Include="Admin Pages\AdminHomePage.designer.cs">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin Pages\EmployeeDetail.cs">
+    <Compile Include="Agent pages\agent page.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin Pages\EmployeeDetail.Designer.cs">
-      <DependentUpon>EmployeeDetail.cs</DependentUpon>
+    <Compile Include="Agent pages\agent page.Designer.cs">
+      <DependentUpon>agent page.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Agent pages\frmsale.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Agent pages\frmsale.Designer.cs">
+      <DependentUpon>frmsale.cs</DependentUpon>
     </Compile>
     <Compile Include="Client Pages\AgentProfilePage.cs">
       <SubType>Form</SubType>
@@ -232,21 +238,6 @@
     <Compile Include="LoginPage.designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\Add_Appointment_Result.cs">
-      <DependentUpon>RealEstateEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Add_Client_Result.cs">
-      <DependentUpon>RealEstateEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Add_Department_Result.cs">
-      <DependentUpon>RealEstateEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Add_Employee_Result.cs">
-      <DependentUpon>RealEstateEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Add_Property_Result.cs">
-      <DependentUpon>RealEstateEDM.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\Filter_Property_Result.cs">
       <DependentUpon>RealEstateEDM.tt</DependentUpon>
     </Compile>
@@ -260,9 +251,6 @@
       <DependentUpon>RealEstateEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Get_All_Clients_Result.cs">
-      <DependentUpon>RealEstateEDM.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Get_All_Departments_Result.cs">
       <DependentUpon>RealEstateEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Get_All_Employees_Result.cs">
@@ -331,7 +319,13 @@
     <Compile Include="Model\Search_Department_By_Name_Result.cs">
       <DependentUpon>RealEstateEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\Search_Employee_By_ID1_Result.cs">
+      <DependentUpon>RealEstateEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Search_Employee_By_ID_Result.cs">
+      <DependentUpon>RealEstateEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Search_Employee_By_Name1_Result.cs">
       <DependentUpon>RealEstateEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Search_Employee_By_Name_Result.cs">
@@ -401,8 +395,11 @@
     <EmbeddedResource Include="Admin Pages\AdminHomePage.resx">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin Pages\EmployeeDetail.resx">
-      <DependentUpon>EmployeeDetail.cs</DependentUpon>
+    <EmbeddedResource Include="Agent pages\agent page.resx">
+      <DependentUpon>agent page.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agent pages\frmsale.resx">
+      <DependentUpon>frmsale.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Client Pages\AgentProfilePage.resx">
       <DependentUpon>AgentProfilePage.cs</DependentUpon>
@@ -518,6 +515,7 @@
     <None Include="Resources\istockphoto-1192518093-612x612.jpg" />
     <None Include="Resources\istockphoto-1192524192-170667a.jpg" />
     <None Include="Resources\istockphoto-1192600456-170667a.jpg" />
+    <Content Include="Resources\house-agent-caricature-807052.jpg" />
     <Content Include="Resources\jannis-lucas-KsL8WZJ0CLA-unsplash.jpg" />
     <Content Include="Resources\jason-dent-w3eFhqXjkZE-unsplash.jpg" />
     <Content Include="Resources\jeremy-bishop-G9i_plbfDgk-unsplash.jpg" />
@@ -535,6 +533,7 @@
     <None Include="Resources\photo-1491466424936-e304919aada7.jpg" />
     <Content Include="Resources\r-architecture-JvQ0Q5IkeMM-unsplash.jpg" />
     <None Include="Resources\RealEstate App Icon.png" />
+    <Content Include="Resources\salebackground.jpg" />
     <Content Include="Resources\sean-pollock-PhYq704ffdA-unsplash.jpg" />
     <Content Include="Resources\SeekPng.com_profile-icon-png_9665493.png" />
     <Content Include="Resources\tiard-schulz-b8dA3eY5VrY-unsplash.jpg" />
@@ -543,9 +542,7 @@
     <Content Include="Resources\yoal-desurmont-1uyPsrWxefI-unsplash.jpg" />
     <Content Include="Resources\zac-ong-B3Vr6hA8Vj8-unsplash.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Agent Pages\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
