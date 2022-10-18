@@ -190,11 +190,9 @@ C:\Users\ASUS\Documents\GitHub\CS223_CS342_FinalProject\C_Sharp\Real Estate App\
 C:\Users\ASUS\Documents\GitHub\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.ValueTuple.xml
 C:\Users\ASUS\Documents\GitHub\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real Estate App.csproj.AssemblyReference.cache
 C:\Users\ASUS\Documents\GitHub\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real Estate App.csproj.SuggestedBindingRedirects.cache
-C:\Users\ASUS\Documents\GitHub\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Admin_Pages.AdminShowAllEmployees.resources
 C:\Users\ASUS\Documents\GitHub\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\MyRealEstate.AdminHomePage.resources
 C:\Users\ASUS\Documents\GitHub\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Admin_Pages.EmployeeDetail.resources
 C:\Users\ASUS\Documents\GitHub\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Client_Pages.AgentProfilePage.resources
-C:\Users\ASUS\Documents\GitHub\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Admin_Pages.AdminShowAllProperties.resources
 C:\Users\ASUS\Documents\GitHub\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Client_Pages.ClientAppointmentPage.resources
 C:\Users\ASUS\Documents\GitHub\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Client_Pages.ClientBrowsePropertyPage.resources
 C:\Users\ASUS\Documents\GitHub\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.ClientContainer.resources
