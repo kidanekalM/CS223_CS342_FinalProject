@@ -83,12 +83,10 @@ namespace Real_Estate_App.User_Control
                 if (value) 
                 {
                     this.BackColor = SystemColors.Control;
-                    this.BackColor = SystemColors.Control;
                     lbl_availability.Text = "Available";
                 }
                 else
                 {
-                    this.BackColor = SystemColors.ControlDark;
                     lbl_availability.Text = "Not Available";
                     this.BackColor = SystemColors.ControlDark;
                 }

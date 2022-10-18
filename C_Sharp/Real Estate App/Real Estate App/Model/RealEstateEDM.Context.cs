@@ -18,8 +18,8 @@ namespace Real_Estate_App.Model
     
     public partial class RealEstateEDM : DbContext
     {
-        public RealEstateEDM(string s)
-            : base(s+"ConnectionString")
+        public RealEstateEDM(string user)
+            : base(user + "ConnectionString")
         {
         }
     
@@ -53,7 +53,7 @@ namespace Real_Estate_App.Model
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<Get_All_Properties_Result>("[AdminConnectionString1].[Get_All_Properties]()");
         }
     
-        public virtual ObjectResult<Nullable<decimal>> Add_Appointment(Nullable<System.DateTime> appointmentDate, string comment, Nullable<int> clientId, Nullable<int> agentId)
+        public virtual ObjectResult<Add_Appointment_Result> Add_Appointment(Nullable<System.DateTime> appointmentDate, string comment, Nullable<int> clientId, Nullable<int> agentId)
         {
             var appointmentDateParameter = appointmentDate.HasValue ?
                 new ObjectParameter("AppointmentDate", appointmentDate) :
@@ -71,7 +71,7 @@ namespace Real_Estate_App.Model
                 new ObjectParameter("AgentId", agentId) :
                 new ObjectParameter("AgentId", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("Add_Appointment", appointmentDateParameter, commentParameter, clientIdParameter, agentIdParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Add_Appointment_Result>("Add_Appointment", appointmentDateParameter, commentParameter, clientIdParameter, agentIdParameter);
         }
     
         public virtual int Add_Buy(Nullable<int> propertyId, Nullable<int> clientId, Nullable<int> agentId, Nullable<System.DateTime> sellDate, Nullable<decimal> comission)
@@ -145,16 +145,16 @@ namespace Real_Estate_App.Model
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("Add_Client", firstNameParameter, lastNameParameter, photoParameter, phoneNumberParameter, emailParameter, passwordParameter, empIdParameter);
         }
     
-        public virtual ObjectResult<Nullable<decimal>> Add_Department(string name)
+        public virtual ObjectResult<Add_Department_Result> Add_Department(string name)
         {
             var nameParameter = name != null ?
                 new ObjectParameter("Name", name) :
                 new ObjectParameter("Name", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("Add_Department", nameParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Add_Department_Result>("Add_Department", nameParameter);
         }
     
-        public virtual ObjectResult<Nullable<decimal>> Add_Employee(string firstName, string lastName, string phoneNumber, string password, byte[] photo, string empType, Nullable<System.DateTime> empDate, Nullable<int> departmentID)
+        public virtual ObjectResult<Add_Employee_Result> Add_Employee(string firstName, string lastName, string phoneNumber, string password, byte[] photo, string empType, Nullable<System.DateTime> empDate, Nullable<int> departmentID)
         {
             var firstNameParameter = firstName != null ?
                 new ObjectParameter("FirstName", firstName) :
@@ -188,15 +188,11 @@ namespace Real_Estate_App.Model
                 new ObjectParameter("DepartmentID", departmentID) :
                 new ObjectParameter("DepartmentID", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("Add_Employee", firstNameParameter, lastNameParameter, phoneNumberParameter, passwordParameter, photoParameter, empTypeParameter, empDateParameter, departmentIDParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Add_Employee_Result>("Add_Employee", firstNameParameter, lastNameParameter, phoneNumberParameter, passwordParameter, photoParameter, empTypeParameter, empDateParameter, departmentIDParameter);
         }
     
-        public virtual ObjectResult<Nullable<decimal>> Add_Property(Nullable<int> iD, string address, Nullable<double> price, string type, Nullable<double> area, Nullable<bool> status, string description)
+        public virtual ObjectResult<Add_Property_Result> Add_Property(string address, Nullable<double> price, string type, Nullable<double> area, Nullable<bool> status, string description)
         {
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
             var addressParameter = address != null ?
                 new ObjectParameter("Address", address) :
                 new ObjectParameter("Address", typeof(string));
@@ -221,7 +217,7 @@ namespace Real_Estate_App.Model
                 new ObjectParameter("Description", description) :
                 new ObjectParameter("Description", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("Add_Property", iDParameter, addressParameter, priceParameter, typeParameter, areaParameter, statusParameter, descriptionParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Add_Property_Result>("Add_Property", addressParameter, priceParameter, typeParameter, areaParameter, statusParameter, descriptionParameter);
         }
     
         public virtual int Add_Property_Photo(Nullable<int> propertyID, byte[] photo)
@@ -457,24 +453,6 @@ namespace Real_Estate_App.Model
                 new ObjectParameter("Name", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Search_Department_By_Name_Result>("Search_Department_By_Name", nameParameter);
-        }
-    
-        public virtual ObjectResult<Search_Employee_By_ID_Result> Search_Employee_By_ID(Nullable<int> iD)
-        {
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Search_Employee_By_ID_Result>("Search_Employee_By_ID", iDParameter);
-        }
-    
-        public virtual ObjectResult<Search_Employee_By_Name_Result> Search_Employee_By_Name(string name)
-        {
-            var nameParameter = name != null ?
-                new ObjectParameter("Name", name) :
-                new ObjectParameter("Name", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Search_Employee_By_Name_Result>("Search_Employee_By_Name", nameParameter);
         }
     
         public virtual ObjectResult<Search_Property_By_ID_Result> Search_Property_By_ID(Nullable<int> iD)
@@ -772,22 +750,27 @@ namespace Real_Estate_App.Model
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<Login_Client_Result>("[AdminConnectionString1].[Login_Client](@ID, @Upwd)", iDParameter, upwdParameter);
         }
     
-        public virtual ObjectResult<Search_Employee_By_ID1_Result> Search_Employee_By_ID1(Nullable<int> iD)
+        public virtual ObjectResult<Get_All_Departments_Result> Get_All_Departments()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Get_All_Departments_Result>("Get_All_Departments");
+        }
+    
+        public virtual ObjectResult<Search_Employee_By_ID_Result> Search_Employee_By_ID(Nullable<int> iD)
         {
             var iDParameter = iD.HasValue ?
                 new ObjectParameter("ID", iD) :
                 new ObjectParameter("ID", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Search_Employee_By_ID1_Result>("Search_Employee_By_ID1", iDParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Search_Employee_By_ID_Result>("Search_Employee_By_ID", iDParameter);
         }
     
-        public virtual ObjectResult<Search_Employee_By_Name1_Result> Search_Employee_By_Name1(string name)
+        public virtual ObjectResult<Search_Employee_By_Name_Result> Search_Employee_By_Name(string name)
         {
             var nameParameter = name != null ?
                 new ObjectParameter("Name", name) :
                 new ObjectParameter("Name", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Search_Employee_By_Name1_Result>("Search_Employee_By_Name1", nameParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Search_Employee_By_Name_Result>("Search_Employee_By_Name", nameParameter);
         }
     }
 }

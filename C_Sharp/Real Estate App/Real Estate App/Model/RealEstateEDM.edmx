@@ -45,7 +45,6 @@
           <Parameter Name="DepartmentID" Type="int" Mode="In" />
         </Function>
         <Function Name="Add_Property" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Add Property">
-          <Parameter Name="ID" Type="int" Mode="In" />
           <Parameter Name="Address" Type="varchar" Mode="In" />
           <Parameter Name="Price" Type="float" Mode="In" />
           <Parameter Name="Type" Type="varchar" Mode="In" />
@@ -123,6 +122,7 @@
         <Function Name="Get_All_Clients_By_Agent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Clients By Agent">
           <Parameter Name="ID" Type="int" Mode="In" />
         </Function>
+        <Function Name="Get_All_Departments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Departments" />
         <Function Name="Get_All_Employees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Employees">
           <ReturnType>
             <CollectionType>
@@ -357,7 +357,7 @@
           <FunctionImport Name="Get_All_Clients" IsComposable="true" ReturnType="Collection(RealEstateModel.Get_All_Clients_Result)" />
           <FunctionImport Name="Get_All_Employees" IsComposable="true" ReturnType="Collection(RealEstateModel.Get_All_Employees_Result)" />
           <FunctionImport Name="Get_All_Properties" IsComposable="true" ReturnType="Collection(RealEstateModel.Get_All_Properties_Result)" />
-          <FunctionImport Name="Add_Appointment" ReturnType="Collection(Decimal)">
+          <FunctionImport Name="Add_Appointment" ReturnType="Collection(RealEstateModel.Add_Appointment_Result)">
             <Parameter Name="AppointmentDate" Mode="In" Type="DateTime" />
             <Parameter Name="Comment" Mode="In" Type="String" />
             <Parameter Name="ClientId" Mode="In" Type="Int32" />
@@ -383,10 +383,10 @@
             <Parameter Name="Password" Mode="In" Type="String" />
             <Parameter Name="EmpId" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="Add_Department" ReturnType="Collection(Decimal)">
+          <FunctionImport Name="Add_Department" ReturnType="Collection(RealEstateModel.Add_Department_Result)">
           <Parameter Name="Name" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="Add_Employee" ReturnType="Collection(Decimal)">
+          <FunctionImport Name="Add_Employee" ReturnType="Collection(RealEstateModel.Add_Employee_Result)">
             <Parameter Name="FirstName" Mode="In" Type="String" />
             <Parameter Name="LastName" Mode="In" Type="String" />
             <Parameter Name="PhoneNumber" Mode="In" Type="String" />
@@ -396,8 +396,7 @@
             <Parameter Name="EmpDate" Mode="In" Type="DateTime" />
             <Parameter Name="DepartmentID" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="Add_Property" ReturnType="Collection(Decimal)">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
+          <FunctionImport Name="Add_Property" ReturnType="Collection(RealEstateModel.Add_Property_Result)">
             <Parameter Name="Address" Mode="In" Type="String" />
             <Parameter Name="Price" Mode="In" Type="Double" />
             <Parameter Name="Type" Mode="In" Type="String" />
@@ -479,12 +478,6 @@
           <Parameter Name="ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Search_Department_By_Name" ReturnType="Collection(RealEstateModel.Search_Department_By_Name_Result)">
-          <Parameter Name="Name" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="Search_Employee_By_ID" ReturnType="Collection(RealEstateModel.Search_Employee_By_ID_Result)">
-          <Parameter Name="ID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Search_Employee_By_Name" ReturnType="Collection(RealEstateModel.Search_Employee_By_Name_Result)">
           <Parameter Name="Name" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Search_Property_By_ID" ReturnType="Collection(RealEstateModel.Search_Property_By_ID_Result)">
@@ -572,10 +565,11 @@
             <Parameter Name="ID" Mode="In" Type="Int32" />
             <Parameter Name="Upwd" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="Search_Employee_By_ID1" ReturnType="Collection(RealEstateModel.Search_Employee_By_ID1_Result)">
+          <FunctionImport Name="Get_All_Departments" ReturnType="Collection(RealEstateModel.Get_All_Departments_Result)" />
+          <FunctionImport Name="Search_Employee_By_ID" ReturnType="Collection(RealEstateModel.Search_Employee_By_ID_Result)">
             <Parameter Name="ID" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="Search_Employee_By_Name1" ReturnType="Collection(RealEstateModel.Search_Employee_By_Name1_Result)">
+          <FunctionImport Name="Search_Employee_By_Name" ReturnType="Collection(RealEstateModel.Search_Employee_By_Name_Result)">
             <Parameter Name="Name" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
@@ -668,28 +662,6 @@
           <Property Type="Int32" Name="ID" Nullable="false" />
           <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
         </ComplexType>
-        <ComplexType Name="Search_Employee_By_ID_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
-          <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="PhoneNumber1" Nullable="true" MaxLength="11" />
-          <Property Type="String" Name="EmpType" Nullable="false" MaxLength="100" />
-          <Property Type="DateTime" Name="EmpDate" Nullable="false" />
-          <Property Type="Int32" Name="DepartmentID" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="Search_Employee_By_Name_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
-          <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="PhoneNumber1" Nullable="true" MaxLength="11" />
-          <Property Type="String" Name="EmpType" Nullable="false" MaxLength="100" />
-          <Property Type="DateTime" Name="EmpDate" Nullable="false" />
-          <Property Type="Int32" Name="DepartmentID" Nullable="true" />
-        </ComplexType>
         <ComplexType Name="Search_Property_By_ID_Result">
           <Property Type="Int32" Name="ID" Nullable="false" />
           <Property Type="String" Name="Address" Nullable="false" MaxLength="100" />
@@ -760,7 +732,14 @@
           <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
           <Property Type="Int32" Name="EmpId" Nullable="true" />
         </ComplexType>
-        <ComplexType Name="Search_Employee_By_ID1_Result">
+        <ComplexType Name="Add_Property_Result">
+        <Property Type="Decimal" Name="PropertyID" Nullable="true" Precision="38" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="Get_All_Departments_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="Search_Employee_By_ID_Result">
           <Property Type="Int32" Name="ID" Nullable="false" />
           <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
           <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
@@ -771,7 +750,7 @@
           <Property Type="DateTime" Name="EmpDate" Nullable="false" />
           <Property Type="Int32" Name="DepartmentID" Nullable="true" />
         </ComplexType>
-        <ComplexType Name="Search_Employee_By_Name1_Result">
+        <ComplexType Name="Search_Employee_By_Name_Result">
           <Property Type="Int32" Name="ID" Nullable="false" />
           <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
           <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
@@ -781,6 +760,18 @@
           <Property Type="String" Name="EmpType" Nullable="false" MaxLength="100" />
           <Property Type="DateTime" Name="EmpDate" Nullable="false" />
           <Property Type="Int32" Name="DepartmentID" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Add_Employee_Result">
+          <Property Type="Decimal" Name="EmployeeID" Nullable="true" Precision="38" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="Add_Department_Result">
+          <Property Type="Decimal" Name="DepartmentID" Nullable="true" Precision="38" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="Add_Client_Result">
+          <Property Type="Decimal" Name="ClientID" Nullable="true" Precision="38" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="Add_Appointment_Result">
+          <Property Type="Decimal" Name="AppointmentID" Nullable="true" Precision="38" Scale="0" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -833,13 +824,8 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Add_Appointment" FunctionName="RealEstateModel.Store.Add_Appointment" />
           <FunctionImportMapping FunctionImportName="Add_Buy" FunctionName="RealEstateModel.Store.Add_Buy" />
           <FunctionImportMapping FunctionImportName="Add_Choosen_Property" FunctionName="RealEstateModel.Store.Add_Choosen_Property" />
-          <FunctionImportMapping FunctionImportName="Add_Client" FunctionName="RealEstateModel.Store.Add_Client" />
-          <FunctionImportMapping FunctionImportName="Add_Department" FunctionName="RealEstateModel.Store.Add_Department" />
-          <FunctionImportMapping FunctionImportName="Add_Employee" FunctionName="RealEstateModel.Store.Add_Employee" />
-          <FunctionImportMapping FunctionImportName="Add_Property" FunctionName="RealEstateModel.Store.Add_Property" />
           <FunctionImportMapping FunctionImportName="Add_Property_Photo" FunctionName="RealEstateModel.Store.Add_Property_Photo" />
           <FunctionImportMapping FunctionImportName="Delete_Appointment" FunctionName="RealEstateModel.Store.Delete_Appointment" />
           <FunctionImportMapping FunctionImportName="Delete_Buy" FunctionName="RealEstateModel.Store.Delete_Buy" />
@@ -1090,9 +1076,24 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Search_Employee_By_ID1" FunctionName="RealEstateModel.Store.Search_Employee_By_ID">
+          <FunctionImportMapping FunctionImportName="Add_Property" FunctionName="RealEstateModel.Store.Add_Property">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Search_Employee_By_ID1_Result">
+              <ComplexTypeMapping TypeName="RealEstateModel.Add_Property_Result">
+              <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Get_All_Departments" FunctionName="RealEstateModel.Store.Get_All_Departments">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateModel.Get_All_Departments_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Search_Employee_By_ID" FunctionName="RealEstateModel.Store.Search_Employee_By_ID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateModel.Search_Employee_By_ID_Result">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
@@ -1105,9 +1106,9 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Search_Employee_By_Name1" FunctionName="RealEstateModel.Store.Search_Employee_By_Name">
+          <FunctionImportMapping FunctionImportName="Search_Employee_By_Name" FunctionName="RealEstateModel.Store.Search_Employee_By_Name">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Search_Employee_By_Name1_Result">
+              <ComplexTypeMapping TypeName="RealEstateModel.Search_Employee_By_Name_Result">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
@@ -1120,7 +1121,30 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-        </EntityContainerMapping>
+          <FunctionImportMapping FunctionImportName="Add_Employee" FunctionName="RealEstateModel.Store.Add_Employee">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateModel.Add_Employee_Result">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Add_Department" FunctionName="RealEstateModel.Store.Add_Department">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateModel.Add_Department_Result">
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Add_Client" FunctionName="RealEstateModel.Store.Add_Client">
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Add_Appointment" FunctionName="RealEstateModel.Store.Add_Appointment">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateModel.Add_Appointment_Result">
+                <ScalarProperty Name="AppointmentID" ColumnName="AppointmentID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

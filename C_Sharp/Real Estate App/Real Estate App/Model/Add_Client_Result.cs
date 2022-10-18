@@ -11,16 +11,8 @@ namespace Real_Estate_App.Model
 {
     using System;
     
-    public partial class Search_Employee_By_ID1_Result
+    public partial class Add_Client_Result
     {
-        public int ID { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public byte[] Photo { get; set; }
-        public string Password { get; set; }
-        public string PhoneNumber { get; set; }
-        public string EmpType { get; set; }
-        public System.DateTime EmpDate { get; set; }
-        public Nullable<int> DepartmentID { get; set; }
+        public Nullable<decimal> ClientID { get; set; }
     }
 }

@@ -16,12 +16,12 @@ USE RealEstate
 
 -- Creating Tables 
 CREATE TABLE Department(
-ID INT PRIMARY KEY IDENTITY,
+ID INT PRIMARY KEY IDENTITY ,
 Name VARCHAR(100)  NOT NULL
 )
 
 CREATE TABLE Employee(
-ID INT PRIMARY KEY IDENTITY ,
+ID INT PRIMARY KEY IDENTITY (2000,1),
 FirstName VARCHAR(100)NOT NULL,
 LastName VARCHAR(100)NOT NULL,
 PhoneNumber VARCHAR(11) UNIQUE,
@@ -32,7 +32,7 @@ EmpDate DATE NOT NULL,
 DepartmentID INT /*CONSTRAINT FK_DepartmentId*/FOREIGN KEY REFERENCES Department(ID)
 )
 CREATE TABLE Client(
-ID INT PRIMARY KEY IDENTITY,
+ID INT PRIMARY KEY IDENTITY (2000,1),
 FirstName VARCHAR(100) NOT NULL,
 LastName VARCHAR(100) NOT NULL,
 Photo VARBINARY(MAX) , 
@@ -43,7 +43,7 @@ EmpId INT FOREIGN KEY REFERENCES Employee(ID)
 )
 
 CREATE TABLE Property(
-ID INT PRIMARY KEY IDENTITY  NOT NULL,
+ID INT PRIMARY KEY IDENTITY(2000,1)  NOT NULL,
 Address VARCHAR(100)  NOT NULL,
 Price FLOAT  NOT NULL,
 Type VARCHAR(100)  NOT NULL,
@@ -87,7 +87,7 @@ CREATE PROC [Add Department]
 	BEGIN
 		INSERT INTO Department(Name)
 		VALUES (@Name)
-		  SELECT @@IDENTITY
+		  SELECT @@IDENTITY AS DepartmentID
 	END
 GO
 
@@ -130,6 +130,13 @@ CREATE PROC [Search Department By Name]
 		WHERE Name LIKE '%' + TRIM(@Name) + '%'
 	END
 GO
+CREATE PROC [Get All Departments]
+AS
+BEGIN
+	SELECT ID,Name
+	FROM Department
+END
+GO
 /********************************************************
          Employee Stored Procedures 
 *********************************************************/
@@ -146,7 +153,7 @@ CREATE PROC [Add Employee]
 	BEGIN
 		INSERT INTO Employee(FirstName,LastName,PhoneNumber,Password,Photo,EmpType,EmpDate,DepartmentID)
 		VALUES (@FirstName,@LastName,@PhoneNumber,@Password,@Photo,@EmpType,@EmpDate,@DepartmentID)
-		  SELECT @@IDENTITY
+		  SELECT @@IDENTITY AS EmployeeID
 	END
 GO
 CREATE PROC [Update Employee]
@@ -184,7 +191,6 @@ CREATE PROC [Delete Employee]
 		WHERE ID = @ID
 	END
 GO
-
 CREATE PROC [Search Employee By ID]
 	@ID INT
 	AS
@@ -207,7 +213,6 @@ CREATE PROC [Search Employee By Name]
 GO
 
 
-
 /********************************************************
          Client Stored Procedures 
 *********************************************************/
@@ -223,7 +228,7 @@ CREATE PROC [Add Client]
 	BEGIN
 		INSERT INTO Client(FirstName,LastName,Photo,PhoneNumber,Email,Password,EmpId)
 		VALUES (@FirstName ,@LastName,@Photo, @PhoneNumber,@Email, @Password,@EmpId ) 
-		SELECT @@IDENTITY
+		SELECT @@IDENTITY AS ClientID
 	END
 GO
 CREATE PROC [Update Client]
@@ -291,7 +296,6 @@ GO
          Property Stored Procedures 
 *********************************************************/
 CREATE PROC [Add Property]
-	@ID INT ,
 	@Address VARCHAR(100),
 	@Price FLOAT,
 	@Type VARCHAR(100),
@@ -303,7 +307,7 @@ CREATE PROC [Add Property]
 	BEGIN
 		INSERT INTO Property(Address,Price,Type,Area,Status,Description)
 		VALUES (@Address,@Price,@Type,@Area,@Status,@Description)
-		  SELECT @@IDENTITY
+		  SELECT @@IDENTITY AS PropertyID
 	END
 GO
 
@@ -571,7 +575,7 @@ CREATE PROC [Add Appointment]
 	BEGIN
 		INSERT INTO Appointment(AppointmentDate,Comment,ClientID,AgentID)
 		VALUES (@AppointmentDate,@Comment,@ClientId,@AgentId)
-		  SELECT @@IDENTITY
+		  SELECT @@IDENTITY AS AppointmentID
 	END
 GO
 
@@ -700,7 +704,7 @@ AS
 	RETURN(
 			SELECT * 
 			FROM Employee E
-			WHERE E.DepartmentID = 0 AND E.Password = @Upwd AND E.ID = @ID
+			WHERE E.DepartmentID = 1 AND E.Password = @Upwd AND E.ID = @ID
 		  )
 GO
 CREATE FUNCTION [Login Agent](@ID INT, @Upwd VARCHAR(100))
@@ -709,7 +713,7 @@ AS
 	RETURN (
 			 SELECT * 
 			 FROM Employee E
-			 WHERE E.DepartmentID = 1 AND E.ID = @ID AND E.Password = @Upwd
+			 WHERE E.DepartmentID = 2 AND E.ID = @ID AND E.Password = @Upwd
 		   )
 GO
 CREATE FUNCTION [Login Client](@ID INT, @Upwd VARCHAR(100))
@@ -814,6 +818,19 @@ BEGIN
 	)
 END
 GO
+CREATE TRIGGER [Change Property Status]
+ON Buy
+AFTER INSERT
+AS
+BEGIN
+	DECLARE @ID INT 
+	SELECT @ID = PropertyID
+	FROM INSERTED
+
+	UPDATE Property
+	SET Status = 0
+	WHERE ID = @ID
+END
 /*******************************************************
 		creating logins
 ********************************************************/
@@ -829,6 +846,7 @@ CREATE LOGIN [Customer Login] WITH PASSWORD = '0'
 GO
 USE RealEstate
 --					Admin permissions
+GRANT EXECUTE ON [dbo].[Get All Departments] TO [Admin]
 GRANT SELECT ON [dbo].[login Admin] TO [Admin]
 GRANT SELECT ON [dbo].[login Agent] TO [Admin]
 GRANT SELECT ON [dbo].[login Client] TO [Admin]

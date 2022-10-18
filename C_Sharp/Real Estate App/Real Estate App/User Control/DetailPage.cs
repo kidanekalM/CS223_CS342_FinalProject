@@ -7,6 +7,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -20,7 +21,15 @@ namespace Real_Estate_App.User_Control
         }
         public string UserType { get; set; }
         public string UserID { get; set; }
+        public string Type { get; set; }
         public string AppointmentID { get; set; }
+        private int _propertyID;
+
+        public int PropertyID
+        {
+            get { return _propertyID; }
+            set { _propertyID = value; txt_Id.Text = PropertyID+""; }
+        }        
         public DetailPage(Model.Search_Property_By_ID_Result r,List< Model.Search_Property_Photo_By_ID_Result> ph, string userType,string userID, string appointmentID)
         {
             UserType = userType;
@@ -51,6 +60,47 @@ namespace Real_Estate_App.User_Control
             }
             txt_Id.ReadOnly = true;
         }
+        public DetailPage( string userType, string userID,string TypeOfPage)
+        {
+            UserType = userType;
+            UserID = userID;
+
+            InitializeComponent();
+            Editable(true);
+            this.Show();
+            btn_addToMyProperties.Hide();
+            btn_delete.Hide();
+            pic_Edit.Hide();
+            btn_save.Show();
+            
+            if (userID == null)
+            {
+                btn_addToMyProperties.Enabled = false;
+                btn_addToMyProperties.Hide();
+            }
+            if (UserType == null || UserType.Equals("Client"))
+            {
+                pic_Edit.Hide();
+                pic_Edit_Click(this, null);
+                btn_addToMyProperties.Show();
+            }
+            else if (UserType == "Admin" || UserType == "Agent")
+            {
+                pic_Edit.Show();
+                pic_Edit.Enabled = true;
+                btn_addToMyProperties.Hide();
+            }
+            if (TypeOfPage.ToLower() == "addproperty")
+            {
+                txt_Id.Hide();
+                label1.Hide();
+                tableLayoutPanel1.Controls.Remove(txt_Id);
+                tableLayoutPanel1.Controls.Remove(label1);
+                btn_delete.Hide();
+                ReplaceImage.Hide();
+                Type = TypeOfPage;
+            }
+        }
         public void Display(Model.Search_Property_By_ID_Result r, List<Model.Search_Property_Photo_By_ID_Result> ph)
         {
             txt_Id.Text = r.ID.ToString();
@@ -64,12 +114,15 @@ namespace Real_Estate_App.User_Control
             else
             {
                 chk_Status.Text = "Not Available";
+                btn_addToMyProperties.Hide();
             }
+
             txt_Type.Text = r.Type;
             txt_Description.Text = r.Description;
             txt_Area.Text = r.Area.ToString();
             int i = 0;
             foreach (var b in ph)
+            
             {
                 using (MemoryStream ms = new MemoryStream(b.Photo))
                 {
@@ -116,6 +169,12 @@ namespace Real_Estate_App.User_Control
         }
         private void pictureBoxEvent(PictureBox p)
         {
+            if (Type != null)
+            if (PropertyID == 0 && Type.ToLower() == "addproperty")
+            {
+                MessageBox.Show("Please save the property to add pictures");
+                return;
+            }
             Image addImage = (Image)global::Real_Estate_App.Properties.Resources.Add2;
             if (CompareImages( p.Image,addImage))
             {
@@ -205,6 +264,7 @@ namespace Real_Estate_App.User_Control
         }
         private void ReplaceImage_Click(object sender, EventArgs e)
         {
+
             OpenFileDialog op = new OpenFileDialog();
             op.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
             if (op.ShowDialog() == DialogResult.OK)
@@ -253,11 +313,66 @@ namespace Real_Estate_App.User_Control
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            using (Model.RealEstateEDM r = new Model.RealEstateEDM("Admin"))
+            Regex isDecimal = new Regex(@"^[0-9]+.[0-9]+$");
+            if (Type != null)
+            if (Type.ToLower() == "addproperty")
             {
-                r.Update_Property(int.Parse(txt_Id.Text), txt_Address.Text, double.Parse(txt_Price.Text), txt_Type.Text, double.Parse(txt_Area.Text), chk_Status.Checked, txt_Description.Text);
+                    if (!isDecimal.IsMatch(txt_Price.Text))
+                    {
+                        MessageBox.Show("price must be a decimal");
+                        txt_Price.Text = "";
+                        return;
+                    }
+                    if (!isDecimal.IsMatch(txt_Area.Text))
+                    {
+                        MessageBox.Show("price must be a decimal");
+                        txt_Price.Text = "";
+                        return;
+                    }
+                using (Model.RealEstateEDM r = new Model.RealEstateEDM("Admin"))
+                {
+                    try
+                    {
+                        decimal id = (decimal)0.0;
+                        foreach(var x in r.Add_Property(txt_Address.Text, double.Parse(txt_Price.Text), txt_Type.Text, double.Parse(txt_Area.Text), chk_Status.Checked, txt_Description.Text))
+                        {
+                            id =(decimal)x.PropertyID;
+                        }
+                        
+                        if (!(id == (decimal)0.0))
+                        {
+                            this.PropertyID = (int)id;
+                            MessageBox.Show("The property was added!");
+                            pic_Edit.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("The Property was not added please try again");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message+ex.InnerException);
+                    }
+                    Type = "";   
+                }
             }
-            pic_Edit_Click(sender, e);
+            else
+            {
+                using (Model.RealEstateEDM r = new Model.RealEstateEDM("Admin"))
+                {
+                    try 
+                    {
+                        r.Update_Property(int.Parse(txt_Id.Text), txt_Address.Text, double.Parse(txt_Price.Text), txt_Type.Text, double.Parse(txt_Area.Text), chk_Status.Checked, txt_Description.Text);
+                        pic_Edit_Click(sender, e);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message + ex.InnerException.Message);
+                    }
+
+                    }
+            }
         }
 
         private void pic_Delete_Click(object sender, EventArgs e)
@@ -268,7 +383,14 @@ namespace Real_Estate_App.User_Control
             {
                 using (Model.RealEstateEDM r = new Model.RealEstateEDM("Admin"))
                 {
+                    try 
+                    { 
                     r.Delete_Property(int.Parse(txt_Id.Text));
+                    }
+                    catch (Exception ex)
+                    {
+                    MessageBox.Show(ex.Message + ex.InnerException.Message);
+                    }
                 }
                 MessageBox.Show("Deleted");
             }

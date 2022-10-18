@@ -40,7 +40,6 @@
     <Parameter Name="DepartmentID" Type="int" Mode="In" />
   </Function>
   <Function Name="Add_Property" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Add Property">
-    <Parameter Name="ID" Type="int" Mode="In" />
     <Parameter Name="Address" Type="varchar" Mode="In" />
     <Parameter Name="Price" Type="float" Mode="In" />
     <Parameter Name="Type" Type="varchar" Mode="In" />
@@ -118,6 +117,7 @@
   <Function Name="Get_All_Clients_By_Agent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Clients By Agent">
     <Parameter Name="ID" Type="int" Mode="In" />
   </Function>
+  <Function Name="Get_All_Departments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Departments" />
   <Function Name="Get_All_Employees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Employees">
     <ReturnType>
       <CollectionType>

@@ -10,6 +10,7 @@ namespace Real_Estate_App.User_Control
     {
         public Test_User_Control()
         {
+            /*
             using (Model.RealEstateEDM r = new Model.RealEstateEDM("Client"))
             {
                 var x = (List<Model.Login_Client_Result>)r.Login_Client(6, "adsf");
@@ -20,7 +21,9 @@ namespace Real_Estate_App.User_Control
                     MessageBox.Show(item.ID+"");
                 }
             }
+            */
             InitializeComponent();
+            circularButton1.BackColor = Color.Transparent;
          
             /*
             using (Model.RealEstateEDM r = new Model.RealEstateEDM("Admin"))
@@ -60,7 +63,7 @@ namespace Real_Estate_App.User_Control
         {
             using (Model.RealEstateEDM r = new Model.RealEstateEDM("Admin"))
             {
-                this.displayProperties1.Properties = r.Get_All_Properties();
+                //this.displayProperties1.Properties = r.Get_All_Properties();
             }/*
             for (int i = 1; i < 9; i++) {
                 OpenFileDialog open = new OpenFileDialog();
