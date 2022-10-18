@@ -34,5 +34,10 @@ namespace Real_Estate_App.Agent_pages
         {
 
         }
+
+        private void agent_page_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
