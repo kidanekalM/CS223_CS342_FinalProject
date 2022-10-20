@@ -136,6 +136,12 @@
     <Compile Include="Admin Pages\AdminHomePage.designer.cs">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin Pages\CustomerDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Pages\CustomerDetail.Designer.cs">
+      <DependentUpon>CustomerDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin Pages\EmployeeDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,12 +153,6 @@
     </Compile>
     <Compile Include="Client Pages\AgentProfilePage.Designer.cs">
       <DependentUpon>AgentProfilePage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin Pages\AdminShowAllProperties.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin Pages\AdminShowAllProperties.Designer.cs">
-      <DependentUpon>AdminShowAllProperties.cs</DependentUpon>
     </Compile>
     <Compile Include="Client Pages\ClientAppointmentPage.cs">
       <SubType>Form</SubType>
@@ -383,14 +383,14 @@
     <EmbeddedResource Include="Admin Pages\AdminHomePage.resx">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin Pages\CustomerDetail.resx">
+      <DependentUpon>CustomerDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin Pages\EmployeeDetail.resx">
       <DependentUpon>EmployeeDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Client Pages\AgentProfilePage.resx">
       <DependentUpon>AgentProfilePage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin Pages\AdminShowAllProperties.resx">
-      <DependentUpon>AdminShowAllProperties.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Client Pages\ClientAppointmentPage.resx">
       <DependentUpon>ClientAppointmentPage.cs</DependentUpon>

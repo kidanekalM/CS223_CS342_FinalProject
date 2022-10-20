@@ -15,7 +15,6 @@ namespace Real_Estate_App
 {
     public partial class LoginPage : Form
     {
-        public string id { get; set; }
 
         public LoginPage()
         {
@@ -126,11 +125,6 @@ namespace Real_Estate_App
             {
                 errorProvider.SetError(txt_AdminPassword, "Admin Password must be provided!");
                 hasError = true;
-            }
-            if (txt_AdminId.Text == "admin" && txt_AdminPassword.Text == "admin")
-            {
-                Hide();
-                id = txt_AdminId.Text;
             }
             if (hasError == false)
             {

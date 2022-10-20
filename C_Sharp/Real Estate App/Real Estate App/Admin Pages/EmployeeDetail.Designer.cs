@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeDetail));
             this.pic_BigPicture = new Real_Estate_App.User_Control.CircularPictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.ibl_id = new System.Windows.Forms.Label();
@@ -50,10 +51,9 @@
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_edit = new System.Windows.Forms.Button();
             this.ReplaceImage = new Real_Estate_App.User_Control.CircularPictureBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btn_Exit = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pic_BigPicture)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReplaceImage)).BeginInit();
@@ -62,9 +62,10 @@
             // 
             // pic_BigPicture
             // 
-            this.pic_BigPicture.Location = new System.Drawing.Point(145, 60);
+            this.pic_BigPicture.Location = new System.Drawing.Point(169, 74);
+            this.pic_BigPicture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pic_BigPicture.Name = "pic_BigPicture";
-            this.pic_BigPicture.Size = new System.Drawing.Size(228, 228);
+            this.pic_BigPicture.Size = new System.Drawing.Size(281, 281);
             this.pic_BigPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_BigPicture.TabIndex = 0;
             this.pic_BigPicture.TabStop = false;
@@ -87,11 +88,12 @@
             this.tableLayoutPanel1.Controls.Add(this.txt_pNumber, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.label9, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.txt_pwd, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.txt_Type, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.dateTimePicker1, 1, 7);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(38, 305);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(44, 375);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 8;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -102,129 +104,154 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(439, 302);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(512, 372);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(207, 229);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(312, 38);
+            this.comboBox1.TabIndex = 13;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 148);
+            this.label8.Location = new System.Drawing.Point(4, 180);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(106, 25);
+            this.label8.Size = new System.Drawing.Size(134, 31);
             this.label8.TabIndex = 8;
             this.label8.Text = "Password";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 111);
+            this.label7.Location = new System.Drawing.Point(4, 135);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(155, 25);
+            this.label7.Size = new System.Drawing.Size(195, 31);
             this.label7.TabIndex = 7;
             this.label7.Text = "Phone Number";
             // 
             // ibl_id
             // 
             this.ibl_id.AutoSize = true;
-            this.ibl_id.Location = new System.Drawing.Point(3, 0);
+            this.ibl_id.Location = new System.Drawing.Point(4, 0);
+            this.ibl_id.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ibl_id.Name = "ibl_id";
-            this.ibl_id.Size = new System.Drawing.Size(32, 25);
+            this.ibl_id.Size = new System.Drawing.Size(42, 31);
             this.ibl_id.TabIndex = 0;
             this.ibl_id.Text = "ID";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 37);
+            this.label2.Location = new System.Drawing.Point(4, 45);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 25);
+            this.label2.Size = new System.Drawing.Size(147, 31);
             this.label2.TabIndex = 1;
             this.label2.Text = "First Name";
             // 
             // txt_id
             // 
-            this.txt_id.Location = new System.Drawing.Point(164, 3);
+            this.txt_id.Location = new System.Drawing.Point(207, 4);
+            this.txt_id.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_id.Name = "txt_id";
-            this.txt_id.Size = new System.Drawing.Size(268, 31);
+            this.txt_id.Size = new System.Drawing.Size(312, 37);
             this.txt_id.TabIndex = 2;
             // 
             // txt_fname
             // 
-            this.txt_fname.Location = new System.Drawing.Point(164, 40);
+            this.txt_fname.Location = new System.Drawing.Point(207, 49);
+            this.txt_fname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_fname.Name = "txt_fname";
-            this.txt_fname.Size = new System.Drawing.Size(268, 31);
+            this.txt_fname.Size = new System.Drawing.Size(312, 37);
             this.txt_fname.TabIndex = 10;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 185);
+            this.label4.Location = new System.Drawing.Point(4, 225);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 25);
+            this.label4.Size = new System.Drawing.Size(156, 31);
             this.label4.TabIndex = 4;
             this.label4.Text = "Department";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 74);
+            this.label3.Location = new System.Drawing.Point(4, 90);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 25);
+            this.label3.Size = new System.Drawing.Size(145, 31);
             this.label3.TabIndex = 3;
             this.label3.Text = "Last Name";
             // 
             // txt_lName
             // 
-            this.txt_lName.Location = new System.Drawing.Point(164, 77);
+            this.txt_lName.Location = new System.Drawing.Point(207, 94);
+            this.txt_lName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_lName.Name = "txt_lName";
-            this.txt_lName.Size = new System.Drawing.Size(268, 31);
+            this.txt_lName.Size = new System.Drawing.Size(312, 37);
             this.txt_lName.TabIndex = 11;
             // 
             // txt_pNumber
             // 
-            this.txt_pNumber.Location = new System.Drawing.Point(164, 114);
+            this.txt_pNumber.Location = new System.Drawing.Point(207, 139);
+            this.txt_pNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_pNumber.Name = "txt_pNumber";
-            this.txt_pNumber.Size = new System.Drawing.Size(268, 31);
+            this.txt_pNumber.Size = new System.Drawing.Size(312, 37);
             this.txt_pNumber.TabIndex = 12;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 224);
+            this.label9.Location = new System.Drawing.Point(4, 271);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(60, 25);
+            this.label9.Size = new System.Drawing.Size(75, 31);
             this.label9.TabIndex = 9;
             this.label9.Text = "Type";
             // 
             // txt_pwd
             // 
-            this.txt_pwd.Location = new System.Drawing.Point(164, 151);
+            this.txt_pwd.Location = new System.Drawing.Point(207, 184);
+            this.txt_pwd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_pwd.Name = "txt_pwd";
-            this.txt_pwd.Size = new System.Drawing.Size(268, 31);
+            this.txt_pwd.Size = new System.Drawing.Size(312, 37);
             this.txt_pwd.TabIndex = 13;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 261);
+            this.errorProvider1.SetIconAlignment(this.label5, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
+            this.label5.Location = new System.Drawing.Point(4, 316);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 25);
+            this.label5.Size = new System.Drawing.Size(72, 31);
             this.label5.TabIndex = 5;
             this.label5.Text = "Date";
             // 
             // txt_Type
             // 
-            this.txt_Type.Location = new System.Drawing.Point(164, 227);
+            this.txt_Type.Location = new System.Drawing.Point(207, 275);
+            this.txt_Type.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_Type.Name = "txt_Type";
-            this.txt_Type.Size = new System.Drawing.Size(268, 31);
+            this.txt_Type.Size = new System.Drawing.Size(312, 37);
             this.txt_Type.TabIndex = 15;
             // 
             // btn_save
             // 
             this.btn_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Location = new System.Drawing.Point(402, 628);
+            this.btn_save.Location = new System.Drawing.Point(469, 773);
+            this.btn_save.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(75, 32);
+            this.btn_save.Size = new System.Drawing.Size(88, 39);
             this.btn_save.TabIndex = 8;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = true;
@@ -238,9 +265,10 @@
             this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_delete.Image = global::Real_Estate_App.Properties.Resources.delete_icon;
             this.btn_delete.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_delete.Location = new System.Drawing.Point(38, 629);
+            this.btn_delete.Location = new System.Drawing.Point(44, 774);
+            this.btn_delete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(25, 33);
+            this.btn_delete.Size = new System.Drawing.Size(29, 41);
             this.btn_delete.TabIndex = 10;
             this.btn_delete.UseVisualStyleBackColor = false;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
@@ -250,9 +278,10 @@
             this.btn_edit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btn_edit.BackgroundImage = global::Real_Estate_App.Properties.Resources.edit_icon;
             this.btn_edit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_edit.Location = new System.Drawing.Point(442, 43);
+            this.btn_edit.Location = new System.Drawing.Point(516, 53);
+            this.btn_edit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_edit.Name = "btn_edit";
-            this.btn_edit.Size = new System.Drawing.Size(35, 33);
+            this.btn_edit.Size = new System.Drawing.Size(41, 41);
             this.btn_edit.TabIndex = 11;
             this.btn_edit.UseVisualStyleBackColor = false;
             this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
@@ -261,32 +290,18 @@
             // 
             this.ReplaceImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ReplaceImage.BackgroundImage")));
             this.ReplaceImage.Image = ((System.Drawing.Image)(resources.GetObject("ReplaceImage.Image")));
-            this.ReplaceImage.Location = new System.Drawing.Point(292, 233);
+            this.ReplaceImage.Location = new System.Drawing.Point(341, 287);
+            this.ReplaceImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ReplaceImage.Name = "ReplaceImage";
-            this.ReplaceImage.Size = new System.Drawing.Size(39, 39);
+            this.ReplaceImage.Size = new System.Drawing.Size(48, 48);
             this.ReplaceImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ReplaceImage.TabIndex = 12;
             this.ReplaceImage.TabStop = false;
             this.ReplaceImage.Click += new System.EventHandler(this.ReplaceImage_Click);
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(164, 264);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(268, 31);
-            this.dateTimePicker1.TabIndex = 16;
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(164, 188);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(268, 33);
-            this.comboBox1.TabIndex = 13;
             // 
             // btn_Exit
             // 
@@ -294,22 +309,29 @@
             this.btn_Exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Exit.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Exit.Location = new System.Drawing.Point(483, 1);
+            this.btn_Exit.Location = new System.Drawing.Point(564, 1);
             this.btn_Exit.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(57, 26);
+            this.btn_Exit.Size = new System.Drawing.Size(66, 32);
             this.btn_Exit.TabIndex = 18;
             this.btn_Exit.Text = "X";
             this.btn_Exit.UseVisualStyleBackColor = false;
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(206, 319);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(306, 37);
+            this.dateTimePicker1.TabIndex = 16;
+            // 
             // EmployeeDetail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Real_Estate_App.Properties.Resources.istockphoto_1324561334_612x612;
+            this.BackgroundImage = global::Real_Estate_App.Properties.Resources.fernando_meloni_j_gnGCDQRew_unsplash;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(542, 676);
+            this.ClientSize = new System.Drawing.Size(632, 832);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.ReplaceImage);
             this.Controls.Add(this.btn_edit);
@@ -318,6 +340,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.pic_BigPicture);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EmployeeDetail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmployeeDetail";
@@ -353,9 +376,9 @@
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_edit;
         private User_Control.CircularPictureBox ReplaceImage;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button btn_Exit;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

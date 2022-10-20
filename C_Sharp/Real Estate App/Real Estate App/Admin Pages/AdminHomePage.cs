@@ -1,5 +1,6 @@
 ﻿using Real_Estate_App;
 using Real_Estate_App.Admin_Pages;
+using Real_Estate_App.User_Control;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,6 +38,8 @@ namespace MyRealEstate
             EditProfilePanel.Visible = false;
             AddPropertyPanel.Visible = false;
             AddEmployeePanel.Visible = false;
+            ShowAllCustPanel.Visible = false;
+
 
             pictureBox2.Top = 88;
             pictureBox2.Height = 112;
@@ -56,6 +59,8 @@ namespace MyRealEstate
             AddEmployeePanel.Visible = false;
             ShowAllEmpPanel.Visible = false;
             ShowAllPropPanel.Visible = false;
+            ShowAllCustPanel.Visible = false;
+
             pictureBox2.Top = 199;
             pictureBox2.Height = 88;
 
@@ -73,6 +78,8 @@ namespace MyRealEstate
             AddEmployeePanel.Visible = false;
             ShowAllEmpPanel.Visible = false;
             ShowAllPropPanel.Visible = false;
+            ShowAllCustPanel.Visible = false;
+
             pictureBox2.Top = 288;
             pictureBox2.Height = 88;
 
@@ -90,6 +97,8 @@ namespace MyRealEstate
             AddEmployeePanel.Visible = false;
             ShowAllEmpPanel.Visible = false;
             ShowAllPropPanel.Visible = false;
+            ShowAllCustPanel.Visible = false;
+
             pictureBox2.Top = 377;
             pictureBox2.Height = 88;
 
@@ -107,6 +116,8 @@ namespace MyRealEstate
             AddEmployeePanel.Visible = false;
             ShowAllEmpPanel.Visible = false;
             ShowAllPropPanel.Visible = false;
+            ShowAllCustPanel.Visible = false;
+
             pictureBox2.Top = 467;
             pictureBox2.Height = 88;
 
@@ -137,6 +148,8 @@ namespace MyRealEstate
             AddEmployeePanel.Visible = false;
             ShowAllEmpPanel.Visible = false;
             ShowAllPropPanel.Visible = false;
+            ShowAllCustPanel.Visible = false;
+
             idtext.Text = IDlbl.Text;
             fullnametext.Text = NAMElbl.Text;
             emailtext.Text = EMAILlbl.Text;
@@ -156,6 +169,7 @@ namespace MyRealEstate
             AddEmployeePanel.Visible = false;
             ShowAllEmpPanel.Visible = false;
             ShowAllPropPanel.Visible = false;
+            ShowAllCustPanel.Visible = false;
 
         }
 
@@ -171,6 +185,8 @@ namespace MyRealEstate
             AddEmployeePanel.Visible = false;
             ShowAllEmpPanel.Visible = false;
             ShowAllPropPanel.Visible = false;
+            ShowAllCustPanel.Visible = false;
+
         }
 
         private void LogOutButton_Click(object sender, EventArgs e)
@@ -270,6 +286,8 @@ namespace MyRealEstate
             AddPropertyPanel.Visible = false;
             ShowAllEmpPanel.Visible = false;
             ShowAllPropPanel.Visible = false;
+            ShowAllCustPanel.Visible = false;
+
             pictureBox2.Top = 88;
         }
 
@@ -283,6 +301,7 @@ namespace MyRealEstate
             EditProfilePanel.Visible = false;
             ShowAllEmpPanel.Visible = false;
             ShowAllPropPanel.Visible = false;
+            ShowAllCustPanel.Visible = false;
             if (PropertiesPanel.Visible == true)
             {
                 AddPropertyPanel.Visible = true;
@@ -299,6 +318,8 @@ namespace MyRealEstate
             EditProfilePanel.Visible = false;
             ShowAllEmpPanel.Visible = false;
             AddPropertyPanel.Visible = false;
+            ShowAllCustPanel.Visible = false;
+
             if (PropertiesPanel.Visible == true)
             {
                 ShowAllPropPanel.Visible = true;
@@ -317,6 +338,8 @@ namespace MyRealEstate
             AddEmployeePanel.Visible = false;
             ShowAllEmpPanel.Visible = false;
             ShowAllPropPanel.Visible = false;
+            ShowAllCustPanel.Visible = false;
+
         }
 
         private void SaveProfile_Click(object sender, EventArgs e)
@@ -376,6 +399,8 @@ namespace MyRealEstate
             AddEmployeePanel.Visible = true;
             ShowAllEmpPanel.Visible = false;
             ShowAllPropPanel.Visible = false;
+            ShowAllCustPanel.Visible = false;
+
         }
 
         private void showToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -390,6 +415,8 @@ namespace MyRealEstate
             AddEmployeePanel.Visible = false;
             ShowAllEmpPanel.Visible = true;
             ShowAllPropPanel.Visible = false;
+            ShowAllCustPanel.Visible = false;
+
         }
 
         private void BarShowButton_Click_1(object sender, EventArgs e)
@@ -594,6 +621,65 @@ namespace MyRealEstate
                             tableLayoutPanel2.Controls.Add(d);
                         }
                     }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + ex.InnerException.Message);
+                }
+            }
+        }
+
+        private void homeToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            EmployeesPanel.Visible = true;
+            HomePanel.Visible = false;
+            PropertiesPanel.Visible = false;
+            AppointmentPanel.Visible = false;
+            CustomersPanel.Visible = false;
+            EditProfilePanel.Visible = false;
+            AddPropertyPanel.Visible = false;
+            AddEmployeePanel.Visible = false;
+            ShowAllEmpPanel.Visible = false;
+            ShowAllPropPanel.Visible = false;
+            ShowAllCustPanel.Visible = false;
+
+        }
+
+        private void showToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            EmployeesPanel.Visible = false;
+            HomePanel.Visible = false;
+            PropertiesPanel.Visible = false;
+            AppointmentPanel.Visible = false;
+            CustomersPanel.Visible = true;
+            EditProfilePanel.Visible = false;
+            AddPropertyPanel.Visible = false;
+            AddEmployeePanel.Visible = false;
+            ShowAllEmpPanel.Visible = false;
+            ShowAllPropPanel.Visible = false;
+            ShowAllCustPanel.Visible = true;
+        }
+
+        private void PropertyClicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CustomerClicked(object sender, EventArgs e)
+        {
+            Real_Estate_App.User_Control.DisplayPerson d = (Real_Estate_App.User_Control.DisplayPerson)sender;
+            using (Real_Estate_App.Model.RealEstateEDM r = new Real_Estate_App.Model.RealEstateEDM("Admin"))
+            {
+                try
+                {
+                    var customer = r.Search_Client_By_ID(d.ID);
+                    CustomerDetail custD = new CustomerDetail();
+                    foreach (var cust in customer)
+                    {
+                        custD = new CustomerDetail(cust);
+                    }
+                    if (custD != null)
+                         custD.Show();
                 }
                 catch (Exception ex)
                 {
