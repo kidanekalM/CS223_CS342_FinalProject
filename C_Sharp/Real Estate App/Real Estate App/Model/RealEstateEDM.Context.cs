@@ -52,7 +52,9 @@ namespace Real_Estate_App.Model
         {
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<Get_All_Properties_Result>("[AdminConnectionString1].[Get_All_Properties]()");
         }
-    
+
+        
+
         public virtual ObjectResult<Add_Appointment_Result> Add_Appointment(Nullable<System.DateTime> appointmentDate, string comment, Nullable<int> clientId, Nullable<int> agentId)
         {
             var appointmentDateParameter = appointmentDate.HasValue ?

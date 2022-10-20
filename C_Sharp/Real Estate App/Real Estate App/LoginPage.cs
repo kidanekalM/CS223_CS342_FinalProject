@@ -212,6 +212,14 @@ namespace Real_Estate_App
             if (hasError == false)
             {
                 //open agent page
+                Model.Login_Agent_Result agent;
+                using(Model.RealEstateEDM r = new Model.RealEstateEDM("Agent"))
+                {
+                    agent = r.Login_Agent(int.Parse(txt_AgentId.Text), txt_AgentPassword.Text).ToArray()[0];
+                    Agent_pages.AgentContainor agentPage = new Agent_pages.AgentContainor(agent);
+                    agentPage.Show();
+                    this.Hide();
+                }
             }
         }
 
