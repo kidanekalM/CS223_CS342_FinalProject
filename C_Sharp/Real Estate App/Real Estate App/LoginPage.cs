@@ -113,7 +113,7 @@ namespace Real_Estate_App
 
         private void btn_AdminLogin_Click(object sender, EventArgs e)
         {
-            /*bool hasError = false;
+            bool hasError = false;
             errorProvider.Clear();
 
             if (txt_AdminId.Text == "Admin Id")
@@ -131,11 +131,29 @@ namespace Real_Estate_App
                 AdminHomePage a = new AdminHomePage();
                 a.Show();
                 this.Hide();
-            }*/
-            if (ValidateChildren(ValidationConstraints.Enabled))
-            {
-                MessageBox.Show(txt_AdminId.Text, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            /*try
+            {
+                using (RealEstateEDM r = new RealEstateEDM("Admin"))
+                {
+                    var result = r.Login_Admin(Convert.ToInt32(txt_AdminId.Text), txt_AdminPassword.Text).FirstOrDefault();
+
+                    if (result != null && result.ID == int.Parse(txt_AdminId.Text) && result.Password == txt_AdminPassword.Text)
+                    {
+                        MessageBox.Show("Login successfull! \nWelcome " + result.FirstName + " " + result.LastName);
+
+                        AdminHomePage containerPage = new AdminHomePage(int.Parse(txt_AdminId.Text));
+                        containerPage.Show();
+                        this.Hide();
+                    }
+                    else
+                        MessageBox.Show("Wrong username or password. Please try again!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured! \n" + ex.Message);
+            }*/
         }
 
         /*
@@ -332,21 +350,6 @@ namespace Real_Estate_App
         private void btn_Exit_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void txt_AdminId_Validating(object sender, CancelEventArgs e)
-        {
-            if (string.IsNullOrEmpty(txt_AdminId.Text))
-            {
-                e.Cancel = true;
-                txt_AdminId.Focus();
-                errorProvider.SetError(txt_AdminId, "Please enter your admin id !");
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProvider.SetError(txt_AdminId, null);
-            }
         }
     }
 
