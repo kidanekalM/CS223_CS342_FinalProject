@@ -113,7 +113,7 @@ namespace Real_Estate_App
 
         private void btn_AdminLogin_Click(object sender, EventArgs e)
         {
-            bool hasError = false;
+            /*bool hasError = false;
             errorProvider.Clear();
 
             if (txt_AdminId.Text == "Admin Id")
@@ -131,6 +131,10 @@ namespace Real_Estate_App
                 AdminHomePage a = new AdminHomePage();
                 a.Show();
                 this.Hide();
+            }*/
+            if (ValidateChildren(ValidationConstraints.Enabled))
+            {
+                MessageBox.Show(txt_AdminId.Text, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -328,6 +332,21 @@ namespace Real_Estate_App
         private void btn_Exit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void txt_AdminId_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_AdminId.Text))
+            {
+                e.Cancel = true;
+                txt_AdminId.Focus();
+                errorProvider.SetError(txt_AdminId, "Please enter your admin id !");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider.SetError(txt_AdminId, null);
+            }
         }
     }
 

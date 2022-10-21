@@ -24,7 +24,6 @@ namespace MyRealEstate
             InitializeComponent();
         }
        
-        AdminShowAllProperties a = new AdminShowAllProperties();
         public List<Real_Estate_App.Model.Get_All_Employees_Result> Employees { get; set; }
 
 
