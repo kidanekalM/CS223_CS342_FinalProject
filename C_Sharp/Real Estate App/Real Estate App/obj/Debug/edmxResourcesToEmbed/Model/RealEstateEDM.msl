@@ -58,19 +58,6 @@
     <FunctionImportMapping FunctionImportName="Delete_Property" FunctionName="RealEstateModel.Store.Delete_Property" />
     <FunctionImportMapping FunctionImportName="Delete_Property_Photo" FunctionName="RealEstateModel.Store.Delete_Property_Photo" />
     <FunctionImportMapping FunctionImportName="Delete_Property_Photo_By_Id" FunctionName="RealEstateModel.Store.Delete_Property_Photo_By_Id" />
-    <FunctionImportMapping FunctionImportName="Filter_Property" FunctionName="RealEstateModel.Store.Filter_Property">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="RealEstateModel.Filter_Property_Result">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="Type" ColumnName="Type" />
-          <ScalarProperty Name="Area" ColumnName="Area" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="Search_Appointment_By_AgentID" FunctionName="RealEstateModel.Store.Search_Appointment_By_AgentID">
       <ResultMapping>
         <ComplexTypeMapping TypeName="RealEstateModel.Search_Appointment_By_AgentID_Result">
@@ -362,6 +349,19 @@
       <ResultMapping>
         <ComplexTypeMapping TypeName="RealEstateModel.Add_Appointment_Result">
           <ScalarProperty Name="AppointmentID" ColumnName="AppointmentID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Filter_Property" FunctionName="RealEstateModel.Store.Filter_Property">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.Filter_Property_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

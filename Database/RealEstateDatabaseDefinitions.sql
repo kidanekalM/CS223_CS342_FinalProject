@@ -363,21 +363,21 @@ CREATE PROC [Search Property By Type]
 GO
 CREATE PROC [Filter Property]
 	@Address VARCHAR(100) = '',
-	@Price MONEY  = 9999999999999999,
+	@Price MONEY  = 99999999999,
 	@Type VARCHAR(100) = '',
-	@Area FLOAT = 9999999999999999,
+	@Area FLOAT = 999999999999,
 	@Status BIT = 1,
 	@Description VARCHAR(100) = ''
 	AS
 	BEGIN
 		SELECT ID,Address,Price,Type,Area,Status,Description
 		FROM Property
-		WHERE Type LIKE '%' + TRIM(@Type) + '%' OR
-			Address LIKE '%' + @Address + '%' OR
-			Price <= @Price+(@Price*0.25) OR
-			Type LIKE '%' + @Type + '%' OR
-			Area <= @Area +(@Area*0.25) OR
-			Status = @Status OR
+		WHERE Type LIKE '%' + TRIM(@Type) + '%' AND
+			Address LIKE '%' + @Address + '%' AND
+			Price <= @Price+(@Price*0.25) AND
+			Type LIKE '%' + @Type + '%' AND
+			Area <= @Area +(@Area*0.25) AND
+			Status = @Status AND
 			Description LIKE '%' + @Description + '%'
 	END
 GO
