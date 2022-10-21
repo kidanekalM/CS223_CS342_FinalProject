@@ -1,10 +1,12 @@
   
 ### Customer   
   
-1. Customers can buy a house/property  
-2. Customers can create an account  
-3. Customers can browse properties  
-4. Customers can remove an account
+1. Customers can create an account  
+2. Customers can search properties
+3. Customers can make an appointment to buy a house/property
+4. Customers can view already owned properties
+5. Customers can view and edit thier profile information
+6. Customers can view thier agent
 
   
 ### Employee (Role ) Admin  

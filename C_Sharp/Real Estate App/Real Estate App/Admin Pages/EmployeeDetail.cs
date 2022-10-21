@@ -43,6 +43,8 @@ namespace Real_Estate_App.Admin_Pages
                 txt_fname.Text = Employee.FirstName;
                 txt_fname.ReadOnly = true;
                 txt_lName.Text = Employee.LastName;
+                txt_pNumber.Text = Employee.PhoneNumber;
+                txt_pNumber.ReadOnly = true;
                 txt_lName.ReadOnly = true;
                 txt_pwd.Text = Employee.Password;
                 txt_pwd.ReadOnly = true;
