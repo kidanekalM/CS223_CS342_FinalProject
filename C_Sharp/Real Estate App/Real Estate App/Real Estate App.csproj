@@ -184,12 +184,6 @@
     <Compile Include="Agent pages\ClientsLinkedtoAgent.Designer.cs">
       <DependentUpon>ClientsLinkedtoAgent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Agent pages\DeleteRecord.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Agent pages\DeleteRecord.Designer.cs">
-      <DependentUpon>DeleteRecord.cs</DependentUpon>
-    </Compile>
     <Compile Include="Agent pages\EditRecord.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -466,9 +460,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Agent pages\ClientsLinkedtoAgent.resx">
       <DependentUpon>ClientsLinkedtoAgent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Agent pages\DeleteRecord.resx">
-      <DependentUpon>DeleteRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Agent pages\EditRecord.resx">
       <DependentUpon>EditRecord.cs</DependentUpon>

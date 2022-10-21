@@ -28,20 +28,41 @@ namespace Real_Estate_App.Agent_pages
         {
             using (RealEstateEDM m = new RealEstateEDM(" agent "))
             {
-                dgvrsalerecords.DataSource = m.Search_Buy_By_AgentId(1);
+                dgvsalerecord.DataSource = m.Search_Buy_By_AgentId(1);
             }
         }
 
-        private void dgvrsalerecords_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgvrsalerecords.CurrentRow.Index != -1)
-            {
-                x.PropertyID = Convert.ToInt32(dgvrsalerecords.CurrentRow.Cells[" PropertyID"].Value);
-               x.ClientID = Convert.ToInt32(dgvrsalerecords.CurrentRow.Cells["ClientID"].Value);
-                 x.AgentID = Convert.ToInt32(dgvrsalerecords.CurrentRow.Cells[" AgentID"].Value);
-                x.SellDate = Convert.ToDateTime(dgvrsalerecords.CurrentRow.Cells[" SellDate"].Value);
-                x.Comission = Convert.ToDecimal(dgvrsalerecords.CurrentRow.Cells[" Comission"].Value);
+      
 
+        
+
+        private void btnedit_Click(object sender, EventArgs e)
+        {
+            using (RealEstateEDM rs = new RealEstateEDM(" agent "))
+            {
+
+                rs.Update_Buy(x.ID, x.PropertyID, x.ClientID, x.AgentID, x.SellDate, x.Comission);
+
+            }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvsalerecord_DoubleClick(object sender, EventArgs e)
+        {
+            if (dgvsalerecord.CurrentRow.Index != -1)
+            {
+                x.ID = Convert.ToInt32(dgvsalerecord.CurrentRow.Cells[" ID "].Value);
+                x.PropertyID = Convert.ToInt32(dgvsalerecord.CurrentRow.Cells[" PropertyID"].Value);
+                x.ClientID = Convert.ToInt32(dgvsalerecord.CurrentRow.Cells["ClientID"].Value);
+                x.AgentID = Convert.ToInt32(dgvsalerecord.CurrentRow.Cells[" AgentID"].Value);
+                x.SellDate = Convert.ToDateTime(dgvsalerecord.CurrentRow.Cells[" SellDate"].Value);
+                x.Comission = Convert.ToDecimal(dgvsalerecord.CurrentRow.Cells[" Comission"].Value);
+
+                txtid.Text = x.ID.ToString();
                 txtagent.Text = x.AgentID.ToString();
                 txtclient.Text = x.ClientID.ToString();
                 txtcomission.Text = x.Comission.ToString();
@@ -51,15 +72,15 @@ namespace Real_Estate_App.Agent_pages
             }
         }
 
-        
-
-        private void btnedit_Click(object sender, EventArgs e)
+        private void btndelete_Click(object sender, EventArgs e)
         {
-            using (RealEstateEDM rs = new RealEstateEDM(" agent "))
+            if(MessageBox.Show("are you sure to delete the record?","crud operation", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
+                using(RealEstateEDM y = new RealEstateEDM(" agent "))
+                {
+                    y.Delete_Buy(x.ID);
 
-                rs.Update_Buy(x.PropertyID, x.ClientID, x.AgentID, x.SellDate, x.Comission);
-
+                }
             }
         }
     }

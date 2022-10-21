@@ -115,9 +115,9 @@ namespace Real_Estate_App.Agent_pages
             if (ActiveMdiChild != null)
                 ActiveMdiChild.Close();
 
-            DeleteRecord Deletesale = new DeleteRecord();
-            Deletesale.MdiParent = this;
-            Deletesale.Show();
+            //DeleteRecord Deletesale = new DeleteRecord();
+            //Deletesale.MdiParent = this;
+            //Deletesale.Show();
 
         }
     }
