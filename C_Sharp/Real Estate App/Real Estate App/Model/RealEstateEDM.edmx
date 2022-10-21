@@ -106,6 +106,19 @@
             </CollectionType>
           </ReturnType>
         </Function>
+        <Function Name="Get_All_Buys" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Buys">
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="ID" Type="int" Nullable="false" />
+                <Property Name="Client" Type="varchar" MaxLength="201" Nullable="false" />
+                <Property Name="Agent" Type="varchar" MaxLength="201" Nullable="false" />
+                <Property Name="Comission" Type="money" />
+                <Property Name="SellDate" Type="datetime" Nullable="false" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
         <Function Name="Get_All_Clients" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Clients">
           <ReturnType>
             <CollectionType>
@@ -563,6 +576,7 @@
           </FunctionImport>
           <FunctionImport Name="Search_Employee_By_Name" ReturnType="Collection(RealEstateModel.Search_Employee_By_Name_Result)">
           <Parameter Name="Name" Mode="In" Type="String" />
+<<<<<<< Updated upstream
           </FunctionImport>
           <FunctionImport Name="Filter_Property" ReturnType="Collection(RealEstateModel.Filter_Property_Result)">
             <Parameter Name="Address" Mode="In" Type="String" />
@@ -571,7 +585,10 @@
             <Parameter Name="Area" Mode="In" Type="Double" />
             <Parameter Name="Status" Mode="In" Type="Boolean" />
             <Parameter Name="Description" Mode="In" Type="String" />
+=======
+>>>>>>> Stashed changes
           </FunctionImport>
+          <FunctionImport Name="Get_All_Buys" IsComposable="true" ReturnType="Collection(RealEstateModel.Get_All_Buys_Result)" />
         </EntityContainer>
         <ComplexType Name="Search_Appointment_By_AgentID_Result">
           <Property Type="Int32" Name="ID" Nullable="false" />
@@ -764,6 +781,7 @@
         <ComplexType Name="Add_Appointment_Result">
           <Property Type="Decimal" Name="AppointmentID" Nullable="true" Precision="38" Scale="0" />
         </ComplexType>
+<<<<<<< Updated upstream
         <ComplexType Name="Filter_Property_Result">
           <Property Type="Int32" Name="ID" Nullable="false" />
           <Property Type="String" Name="Address" Nullable="false" MaxLength="100" />
@@ -772,6 +790,14 @@
           <Property Type="Double" Name="Area" Nullable="false" />
           <Property Type="Boolean" Name="Status" Nullable="false" />
           <Property Type="String" Name="Description" Nullable="false" MaxLength="100" />
+=======
+        <ComplexType Name="Get_All_Buys_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Client" Nullable="false" MaxLength="201" />
+          <Property Type="String" Name="Agent" Nullable="false" MaxLength="201" />
+          <Property Type="Decimal" Name="Comission" Nullable="true" Precision="19" Scale="4" />
+          <Property Type="DateTime" Name="SellDate" Nullable="false" Precision="23" />
+>>>>>>> Stashed changes
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1131,6 +1157,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+<<<<<<< Updated upstream
           <FunctionImportMapping FunctionImportName="Filter_Property" FunctionName="RealEstateModel.Store.Filter_Property">
             <ResultMapping>
               <ComplexTypeMapping TypeName="RealEstateModel.Filter_Property_Result">
@@ -1141,6 +1168,16 @@
                 <ScalarProperty Name="Area" ColumnName="Area" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
+=======
+          <FunctionImportMapping FunctionImportName="Get_All_Buys" FunctionName="RealEstateModel.Store.Get_All_Buys">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateModel.Get_All_Buys_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Client" ColumnName="Client" />
+                <ScalarProperty Name="Agent" ColumnName="Agent" />
+                <ScalarProperty Name="Comission" ColumnName="Comission" />
+                <ScalarProperty Name="SellDate" ColumnName="SellDate" />
+>>>>>>> Stashed changes
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

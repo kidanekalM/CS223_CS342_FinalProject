@@ -18,7 +18,7 @@ namespace Real_Estate_App.Model
 
     public partial class RealEstateEDM : DbContext
     {
-        public RealEstateEDM(string user)
+        public RealEstateEDM(string user )
             : base(user + "ConnectionString")
         {
         }
@@ -744,6 +744,7 @@ namespace Real_Estate_App.Model
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Search_Employee_By_Name_Result>("Search_Employee_By_Name", nameParameter);
         }
     
+<<<<<<< Updated upstream
         public virtual ObjectResult<Filter_Property_Result> Filter_Property(string address, Nullable<decimal> price, string type, Nullable<double> area, Nullable<bool> status, string description)
         {
             var addressParameter = address != null ?
@@ -771,6 +772,12 @@ namespace Real_Estate_App.Model
                 new ObjectParameter("Description", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Filter_Property_Result>("Filter_Property", addressParameter, priceParameter, typeParameter, areaParameter, statusParameter, descriptionParameter);
+=======
+        [EdmFunction("AdminConnectionString1", "Get_All_Buys")]
+        public virtual IQueryable<Get_All_Buys_Result> Get_All_Buys()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<Get_All_Buys_Result>("[AdminConnectionString1].[Get_All_Buys]()");
+>>>>>>> Stashed changes
         }
     }
 }

@@ -14,10 +14,7 @@
 3. Manage any property submitted by an agent  
 4. View agent details   
 5. View customer details 
-6. Payment system(how do customers pay)
-7. Loan system in order to buy (if possible, it is real world scenario in real estate system)
-8. discount rate(as it is attraction for customers )
-  
+6. Delete customer
 ### Employee (Role ) Agent  
   
 1. can view sold proerties  
@@ -29,6 +26,6 @@
   
 1.  Can add/edit a property by selecting the owner for this property
 2.  Can search for a property by entering the property's id
-3.  Can remove a property(better to say sold out)
+3.  Can remove a property
 4.  Can view all properties
 5.  Each property can be assigned a type based on the combo box

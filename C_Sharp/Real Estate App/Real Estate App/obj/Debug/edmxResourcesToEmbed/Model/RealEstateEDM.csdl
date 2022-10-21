@@ -241,6 +241,7 @@
     <FunctionImport Name="Search_Employee_By_Name" ReturnType="Collection(RealEstateModel.Search_Employee_By_Name_Result)">
       <Parameter Name="Name" Mode="In" Type="String" />
     </FunctionImport>
+<<<<<<< Updated upstream
     <FunctionImport Name="Filter_Property" ReturnType="Collection(RealEstateModel.Filter_Property_Result)">
       <Parameter Name="Address" Mode="In" Type="String" />
       <Parameter Name="Price" Mode="In" Type="Decimal" />
@@ -249,6 +250,9 @@
       <Parameter Name="Status" Mode="In" Type="Boolean" />
       <Parameter Name="Description" Mode="In" Type="String" />
     </FunctionImport>
+=======
+    <FunctionImport Name="Get_All_Buys" IsComposable="true" ReturnType="Collection(RealEstateModel.Get_All_Buys_Result)" />
+>>>>>>> Stashed changes
   </EntityContainer>
   <ComplexType Name="Search_Appointment_By_AgentID_Result">
     <Property Type="Int32" Name="ID" Nullable="false" />
@@ -441,6 +445,7 @@
   <ComplexType Name="Add_Appointment_Result">
     <Property Type="Decimal" Name="AppointmentID" Nullable="true" Precision="38" Scale="0" />
   </ComplexType>
+<<<<<<< Updated upstream
   <ComplexType Name="Filter_Property_Result">
     <Property Type="Int32" Name="ID" Nullable="false" />
     <Property Type="String" Name="Address" Nullable="false" MaxLength="100" />
@@ -449,5 +454,13 @@
     <Property Type="Double" Name="Area" Nullable="false" />
     <Property Type="Boolean" Name="Status" Nullable="false" />
     <Property Type="String" Name="Description" Nullable="false" MaxLength="100" />
+=======
+  <ComplexType Name="Get_All_Buys_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Client" Nullable="false" MaxLength="201" />
+    <Property Type="String" Name="Agent" Nullable="false" MaxLength="201" />
+    <Property Type="Decimal" Name="Comission" Nullable="true" Precision="19" Scale="4" />
+    <Property Type="DateTime" Name="SellDate" Nullable="false" Precision="23" />
+>>>>>>> Stashed changes
   </ComplexType>
 </Schema>
