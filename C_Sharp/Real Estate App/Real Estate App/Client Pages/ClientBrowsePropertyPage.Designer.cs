@@ -32,28 +32,26 @@
             this.pnl_BackgroundPanel = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.pnl_IdSearch = new System.Windows.Forms.Panel();
-            this.txt_id = new System.Windows.Forms.TextBox();
-            this.btn_IdSearch = new System.Windows.Forms.Button();
             this.pnl_FilterButtonPanel = new System.Windows.Forms.Panel();
             this.lbl_Filter = new System.Windows.Forms.Label();
             this.pnl_IdButtonPanel = new System.Windows.Forms.Panel();
             this.lbl_IdSearch = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pnl_IdSearch = new System.Windows.Forms.Panel();
+            this.txt_id = new System.Windows.Forms.TextBox();
+            this.btn_IdSearch = new System.Windows.Forms.Button();
             this.pnl_FilterSearch = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.cmbx_Address = new System.Windows.Forms.ComboBox();
-            this.cmbx_Type = new System.Windows.Forms.ComboBox();
             this.txt_Price = new System.Windows.Forms.TextBox();
             this.btn_FilterSearch = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnl_BackgroundPanel.SuspendLayout();
-            this.pnl_IdSearch.SuspendLayout();
             this.pnl_FilterButtonPanel.SuspendLayout();
             this.pnl_IdButtonPanel.SuspendLayout();
+            this.pnl_IdSearch.SuspendLayout();
             this.pnl_FilterSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
@@ -64,11 +62,11 @@
             this.pnl_BackgroundPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.pnl_BackgroundPanel.Controls.Add(this.label6);
             this.pnl_BackgroundPanel.Controls.Add(this.label5);
-            this.pnl_BackgroundPanel.Controls.Add(this.pnl_IdSearch);
             this.pnl_BackgroundPanel.Controls.Add(this.pnl_FilterButtonPanel);
             this.pnl_BackgroundPanel.Controls.Add(this.pnl_IdButtonPanel);
             this.pnl_BackgroundPanel.Controls.Add(this.label2);
             this.pnl_BackgroundPanel.Controls.Add(this.label1);
+            this.pnl_BackgroundPanel.Controls.Add(this.pnl_IdSearch);
             this.pnl_BackgroundPanel.Controls.Add(this.pnl_FilterSearch);
             this.pnl_BackgroundPanel.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnl_BackgroundPanel.Location = new System.Drawing.Point(-4, 0);
@@ -97,42 +95,6 @@
             this.label5.Size = new System.Drawing.Size(463, 21);
             this.label5.TabIndex = 9;
             this.label5.Text = "Helping our client find the suitable home is our priority. We\'ll";
-            // 
-            // pnl_IdSearch
-            // 
-            this.pnl_IdSearch.BackColor = System.Drawing.Color.Gainsboro;
-            this.pnl_IdSearch.Controls.Add(this.txt_id);
-            this.pnl_IdSearch.Controls.Add(this.btn_IdSearch);
-            this.pnl_IdSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnl_IdSearch.Location = new System.Drawing.Point(39, 402);
-            this.pnl_IdSearch.Name = "pnl_IdSearch";
-            this.pnl_IdSearch.Size = new System.Drawing.Size(566, 100);
-            this.pnl_IdSearch.TabIndex = 8;
-            // 
-            // txt_id
-            // 
-            this.txt_id.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_id.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txt_id.Location = new System.Drawing.Point(24, 34);
-            this.txt_id.Name = "txt_id";
-            this.txt_id.Size = new System.Drawing.Size(429, 31);
-            this.txt_id.TabIndex = 6;
-            this.txt_id.Text = "Property Id";
-            this.txt_id.Enter += new System.EventHandler(this.txt_id_Enter);
-            this.txt_id.Leave += new System.EventHandler(this.txt_id_Leave);
-            // 
-            // btn_IdSearch
-            // 
-            this.btn_IdSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(71)))), ((int)(((byte)(197)))));
-            this.btn_IdSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_IdSearch.ForeColor = System.Drawing.Color.White;
-            this.btn_IdSearch.Location = new System.Drawing.Point(453, 34);
-            this.btn_IdSearch.Name = "btn_IdSearch";
-            this.btn_IdSearch.Size = new System.Drawing.Size(86, 39);
-            this.btn_IdSearch.TabIndex = 5;
-            this.btn_IdSearch.Text = "Search";
-            this.btn_IdSearch.UseVisualStyleBackColor = false;
-            this.btn_IdSearch.Click += new System.EventHandler(this.btn_IdSearch_Click);
             // 
             // pnl_FilterButtonPanel
             // 
@@ -196,13 +158,47 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Buy Your Dream Home";
             // 
+            // pnl_IdSearch
+            // 
+            this.pnl_IdSearch.BackColor = System.Drawing.Color.Gainsboro;
+            this.pnl_IdSearch.Controls.Add(this.txt_id);
+            this.pnl_IdSearch.Controls.Add(this.btn_IdSearch);
+            this.pnl_IdSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnl_IdSearch.Location = new System.Drawing.Point(39, 402);
+            this.pnl_IdSearch.Name = "pnl_IdSearch";
+            this.pnl_IdSearch.Size = new System.Drawing.Size(566, 100);
+            this.pnl_IdSearch.TabIndex = 8;
+            // 
+            // txt_id
+            // 
+            this.txt_id.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_id.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txt_id.Location = new System.Drawing.Point(24, 34);
+            this.txt_id.Name = "txt_id";
+            this.txt_id.Size = new System.Drawing.Size(429, 31);
+            this.txt_id.TabIndex = 6;
+            this.txt_id.Text = "Property Id";
+            this.txt_id.Enter += new System.EventHandler(this.txt_id_Enter);
+            this.txt_id.Leave += new System.EventHandler(this.txt_id_Leave);
+            // 
+            // btn_IdSearch
+            // 
+            this.btn_IdSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(71)))), ((int)(((byte)(197)))));
+            this.btn_IdSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_IdSearch.ForeColor = System.Drawing.Color.White;
+            this.btn_IdSearch.Location = new System.Drawing.Point(453, 34);
+            this.btn_IdSearch.Name = "btn_IdSearch";
+            this.btn_IdSearch.Size = new System.Drawing.Size(86, 39);
+            this.btn_IdSearch.TabIndex = 5;
+            this.btn_IdSearch.Text = "Search";
+            this.btn_IdSearch.UseVisualStyleBackColor = false;
+            this.btn_IdSearch.Click += new System.EventHandler(this.btn_IdSearch_Click);
+            // 
             // pnl_FilterSearch
             // 
             this.pnl_FilterSearch.BackColor = System.Drawing.Color.Gainsboro;
             this.pnl_FilterSearch.Controls.Add(this.label4);
-            this.pnl_FilterSearch.Controls.Add(this.label3);
             this.pnl_FilterSearch.Controls.Add(this.cmbx_Address);
-            this.pnl_FilterSearch.Controls.Add(this.cmbx_Type);
             this.pnl_FilterSearch.Controls.Add(this.txt_Price);
             this.pnl_FilterSearch.Controls.Add(this.btn_FilterSearch);
             this.pnl_FilterSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -216,22 +212,11 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(176, 15);
+            this.label4.Location = new System.Drawing.Point(20, 15);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 21);
             this.label4.TabIndex = 7;
             this.label4.Text = "Address";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(20, 15);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 21);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Type";
             // 
             // cmbx_Address
             // 
@@ -240,6 +225,7 @@
             this.cmbx_Address.ForeColor = System.Drawing.Color.Black;
             this.cmbx_Address.FormattingEnabled = true;
             this.cmbx_Address.Items.AddRange(new object[] {
+            "(none)",
             "Addis Ketema",
             "Akaky Kaliti",
             "Arada",
@@ -248,36 +234,21 @@
             "Kirkos",
             "Kolfe",
             "Keranio",
-            "Lemi Kura",
             "Lideta",
             "Nifas Silk Lafto",
             "Yeka"});
-            this.cmbx_Address.Location = new System.Drawing.Point(180, 39);
+            this.cmbx_Address.Location = new System.Drawing.Point(24, 39);
             this.cmbx_Address.Name = "cmbx_Address";
-            this.cmbx_Address.Size = new System.Drawing.Size(149, 33);
+            this.cmbx_Address.Size = new System.Drawing.Size(217, 33);
             this.cmbx_Address.TabIndex = 5;
-            // 
-            // cmbx_Type
-            // 
-            this.cmbx_Type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbx_Type.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbx_Type.ForeColor = System.Drawing.Color.Black;
-            this.cmbx_Type.FormattingEnabled = true;
-            this.cmbx_Type.Items.AddRange(new object[] {
-            "Residential",
-            "Commercial"});
-            this.cmbx_Type.Location = new System.Drawing.Point(24, 39);
-            this.cmbx_Type.Name = "cmbx_Type";
-            this.cmbx_Type.Size = new System.Drawing.Size(149, 33);
-            this.cmbx_Type.TabIndex = 4;
             // 
             // txt_Price
             // 
             this.txt_Price.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Price.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txt_Price.Location = new System.Drawing.Point(335, 39);
+            this.txt_Price.Location = new System.Drawing.Point(261, 39);
             this.txt_Price.Name = "txt_Price";
-            this.txt_Price.Size = new System.Drawing.Size(118, 31);
+            this.txt_Price.Size = new System.Drawing.Size(164, 31);
             this.txt_Price.TabIndex = 3;
             this.txt_Price.Text = "Price";
             this.txt_Price.Enter += new System.EventHandler(this.txt_Price_Enter);
@@ -324,10 +295,10 @@
             this.Text = "ClientPropertyPage";
             this.pnl_BackgroundPanel.ResumeLayout(false);
             this.pnl_BackgroundPanel.PerformLayout();
-            this.pnl_IdSearch.ResumeLayout(false);
-            this.pnl_IdSearch.PerformLayout();
             this.pnl_FilterButtonPanel.ResumeLayout(false);
             this.pnl_IdButtonPanel.ResumeLayout(false);
+            this.pnl_IdSearch.ResumeLayout(false);
+            this.pnl_IdSearch.PerformLayout();
             this.pnl_FilterSearch.ResumeLayout(false);
             this.pnl_FilterSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -349,10 +320,8 @@
         private System.Windows.Forms.Panel pnl_FilterSearch;
         private System.Windows.Forms.Button btn_FilterSearch;
         private System.Windows.Forms.ComboBox cmbx_Address;
-        private System.Windows.Forms.ComboBox cmbx_Type;
         private System.Windows.Forms.TextBox txt_Price;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel pnl_IdSearch;
         private System.Windows.Forms.TextBox txt_id;
         private System.Windows.Forms.Button btn_IdSearch;

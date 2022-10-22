@@ -92,7 +92,6 @@
           <Parameter Name="Status" Type="bit" Mode="In" />
           <Parameter Name="Description" Type="varchar" Mode="In" />
         </Function>
-        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
         <Function Name="Get_All_Appointments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Appointments">
           <ReturnType>
             <CollectionType>
@@ -436,7 +435,7 @@
           <FunctionImport Name="Delete_Property_Photo_By_Id">
           <Parameter Name="PropertyId" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="Filter_Property" ReturnType="Collection(RealEstateModel.Filter_Property_Result)">
+          <FunctionImport Name="Filter_Property" ReturnType="Collection(RealEstateModel.Filter_Property_Result1)">
             <Parameter Name="Address" Mode="In" Type="String" />
             <Parameter Name="Price" Mode="In" Type="Decimal" />
             <Parameter Name="Type" Mode="In" Type="String" />
@@ -567,10 +566,18 @@
           </FunctionImport>
           <FunctionImport Name="Get_All_Departments" ReturnType="Collection(RealEstateModel.Get_All_Departments_Result)" />
           <FunctionImport Name="Search_Employee_By_ID" ReturnType="Collection(RealEstateModel.Search_Employee_By_ID_Result)">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
+          <Parameter Name="ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Search_Employee_By_Name" ReturnType="Collection(RealEstateModel.Search_Employee_By_Name_Result)">
-            <Parameter Name="Name" Mode="In" Type="String" />
+          <Parameter Name="Name" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Filter_Property1" ReturnType="Collection(RealEstateModel.Filter_Property1_Result)">
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="Price" Mode="In" Type="Decimal" />
+            <Parameter Name="Type" Mode="In" Type="String" />
+            <Parameter Name="Area" Mode="In" Type="Double" />
+            <Parameter Name="Status" Mode="In" Type="Boolean" />
+            <Parameter Name="Description" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="Filter_Property_Result">
@@ -773,6 +780,24 @@
         <ComplexType Name="Add_Appointment_Result">
           <Property Type="Decimal" Name="AppointmentID" Nullable="true" Precision="38" Scale="0" />
         </ComplexType>
+        <ComplexType Name="Filter_Property1_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Address" Nullable="false" MaxLength="100" />
+          <Property Type="Double" Name="Price" Nullable="false" />
+          <Property Type="String" Name="Type" Nullable="false" MaxLength="100" />
+          <Property Type="Double" Name="Area" Nullable="false" />
+          <Property Type="Boolean" Name="Status" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="Filter_Property_Result1">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Address" Nullable="false" MaxLength="100" />
+          <Property Type="Double" Name="Price" Nullable="false" />
+          <Property Type="String" Name="Type" Nullable="false" MaxLength="100" />
+          <Property Type="Double" Name="Area" Nullable="false" />
+          <Property Type="Boolean" Name="Status" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="100" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -836,19 +861,6 @@
           <FunctionImportMapping FunctionImportName="Delete_Property" FunctionName="RealEstateModel.Store.Delete_Property" />
           <FunctionImportMapping FunctionImportName="Delete_Property_Photo" FunctionName="RealEstateModel.Store.Delete_Property_Photo" />
           <FunctionImportMapping FunctionImportName="Delete_Property_Photo_By_Id" FunctionName="RealEstateModel.Store.Delete_Property_Photo_By_Id" />
-          <FunctionImportMapping FunctionImportName="Filter_Property" FunctionName="RealEstateModel.Store.Filter_Property">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Filter_Property_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Area" ColumnName="Area" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="Search_Appointment_By_AgentID" FunctionName="RealEstateModel.Store.Search_Appointment_By_AgentID">
             <ResultMapping>
               <ComplexTypeMapping TypeName="RealEstateModel.Search_Appointment_By_AgentID_Result">
@@ -1141,6 +1153,32 @@
             <ResultMapping>
               <ComplexTypeMapping TypeName="RealEstateModel.Add_Appointment_Result">
                 <ScalarProperty Name="AppointmentID" ColumnName="AppointmentID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Filter_Property1" FunctionName="RealEstateModel.Store.Filter_Property">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateModel.Filter_Property1_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Filter_Property" FunctionName="RealEstateModel.Store.Filter_Property">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RealEstateModel.Filter_Property_Result1">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

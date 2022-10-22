@@ -241,7 +241,13 @@
     <Compile Include="Model\Add_Property_Result.cs">
       <DependentUpon>RealEstateEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\Filter_Property1_Result.cs">
+      <DependentUpon>RealEstateEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Filter_Property_Result.cs">
+      <DependentUpon>RealEstateEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Filter_Property_Result1.cs">
       <DependentUpon>RealEstateEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Get_All_Appointments_Result.cs">
@@ -386,6 +392,12 @@
     <Compile Include="User Control\PlaceHolderTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Client Pages\PropertyDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client Pages\PropertyDetail.Designer.cs">
+      <DependentUpon>PropertyDetail.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin Pages\AdminShowAllEmployees.resx">
       <DependentUpon>AdminShowAllEmployees.cs</DependentUpon>
     </EmbeddedResource>
@@ -456,6 +468,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Control\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client Pages\PropertyDetail.resx">
+      <DependentUpon>PropertyDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model\RealEstateEDM.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

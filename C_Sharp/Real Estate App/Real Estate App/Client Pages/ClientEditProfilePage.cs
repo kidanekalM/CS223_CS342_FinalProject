@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using Real_Estate_App.Model;
+using System.IO;
+using System.Drawing.Imaging;
 
 namespace Real_Estate_App
 {
@@ -100,7 +102,7 @@ namespace Real_Estate_App
                     {
                         using (RealEstateEDM rm = new RealEstateEDM("Client"))
                         {
-                            rm.Update_Client(Id, txt_FirstName.Text, txt_LastName.Text, converterDemo(pic_ClientPic.Image), txt_PhoneNo.Text, txt_Email.Text, Password, AgentId);
+                            rm.Update_Client(Id, txt_FirstName.Text, txt_LastName.Text, ImageToByteArray(pic_ClientPic.Image), txt_PhoneNo.Text, txt_Email.Text, Password, AgentId);
 
                             MessageBox.Show("Update successfull!");
 
@@ -219,6 +221,17 @@ namespace Real_Estate_App
             ImageConverter _imageConverter = new ImageConverter();
             byte[] xByte = (byte[])_imageConverter.ConvertTo(x, typeof(byte[]));
             return xByte;
+        }
+        public byte[] ImageToByteArray(Image image)
+        {
+            Bitmap b = new Bitmap(image);
+
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                b.Save(memoryStream, ImageFormat.Png);
+                return memoryStream.ToArray();
+
+            }
         }
     }
 }
