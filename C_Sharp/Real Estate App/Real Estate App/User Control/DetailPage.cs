@@ -28,9 +28,9 @@ namespace Real_Estate_App.User_Control
         public int PropertyID
         {
             get { return _propertyID; }
-            set { _propertyID = value; txt_Id.Text = PropertyID+""; }
-        }        
-        public DetailPage(Model.Search_Property_By_ID_Result r,List< Model.Search_Property_Photo_By_ID_Result> ph, string userType,string userID, string appointmentID)
+            set { _propertyID = value; txt_Id.Text = PropertyID + ""; }
+        }
+        public DetailPage(Model.Search_Property_By_ID_Result r, List<Model.Search_Property_Photo_By_ID_Result> ph, string userType, string userID, string appointmentID)
         {
             UserType = userType;
             UserID = userID;
@@ -39,21 +39,28 @@ namespace Real_Estate_App.User_Control
             InitializeComponent();
             Editable(false);
             this.Show();
-            Display(r,ph);
-            
+            Display(r, ph);
+
+            if (userID == null)
+            {
+                btn_addToMyProperties.Enabled = false;
+                btn_addToMyProperties.Hide();
+            }
             if (UserType == null || UserType.Equals("Client"))
             {
                 pic_Edit.Hide();
-                pic_Edit_Click(this,null);
+                pic_Edit_Click(this, null);
+                btn_addToMyProperties.Show();
             }
-            else if(UserType == "Admin" || UserType == "Agent")
+            else if (UserType == "Admin" || UserType == "Agent")
             {
                 pic_Edit.Show();
                 pic_Edit.Enabled = true;
+                btn_addToMyProperties.Hide();
             }
             txt_Id.ReadOnly = true;
         }
-        public DetailPage( string userType, string userID,string TypeOfPage)
+        public DetailPage(string userType, string userID, string TypeOfPage)
         {
             UserType = userType;
             UserID = userID;
@@ -61,20 +68,27 @@ namespace Real_Estate_App.User_Control
             InitializeComponent();
             Editable(true);
             this.Show();
+            btn_addToMyProperties.Hide();
             btn_delete.Hide();
             pic_Edit.Hide();
             btn_save.Show();
-            
 
+            if (userID == null)
+            {
+                btn_addToMyProperties.Enabled = false;
+                btn_addToMyProperties.Hide();
+            }
             if (UserType == null || UserType.Equals("Client"))
             {
                 pic_Edit.Hide();
                 pic_Edit_Click(this, null);
+                btn_addToMyProperties.Show();
             }
             else if (UserType == "Admin" || UserType == "Agent")
             {
                 pic_Edit.Show();
                 pic_Edit.Enabled = true;
+                btn_addToMyProperties.Hide();
             }
             if (TypeOfPage.ToLower() == "addproperty")
             {
@@ -90,7 +104,7 @@ namespace Real_Estate_App.User_Control
         public void Display(Model.Search_Property_By_ID_Result r, List<Model.Search_Property_Photo_By_ID_Result> ph)
         {
             txt_Id.Text = r.ID.ToString();
-            cb_Address.SelectedItem = r.Address;
+            txt_Address.Text = r.Address;
             txt_Price.Text = r.Price.ToString();
             chk_Status.Checked = r.Status;
             if (chk_Status.Checked)
@@ -100,13 +114,15 @@ namespace Real_Estate_App.User_Control
             else
             {
                 chk_Status.Text = "Not Available";
+                btn_addToMyProperties.Hide();
             }
-            cb_Type.SelectedItem = r.Type;
+
+            txt_Type.Text = r.Type;
             txt_Description.Text = r.Description;
             txt_Area.Text = r.Area.ToString();
             int i = 0;
             foreach (var b in ph)
-            
+
             {
                 using (MemoryStream ms = new MemoryStream(b.Photo))
                 {
@@ -142,7 +158,7 @@ namespace Real_Estate_App.User_Control
             {
                 return false;
             }
-            for(int i =0; i < b1.Length; i++)
+            for (int i = 0; i < b1.Length; i++)
             {
                 if (b1[i] != b2[i])
                 {
@@ -154,13 +170,13 @@ namespace Real_Estate_App.User_Control
         private void pictureBoxEvent(PictureBox p)
         {
             if (Type != null)
-            if (PropertyID == 0 && Type.ToLower() == "addproperty")
-            {
-                MessageBox.Show("Please save the property to add pictures");
-                return;
-            }
+                if (PropertyID == 0 && Type.ToLower() == "addproperty")
+                {
+                    MessageBox.Show("Please save the property to add pictures");
+                    return;
+                }
             Image addImage = (Image)global::Real_Estate_App.Properties.Resources.Add2;
-            if (CompareImages( p.Image,addImage))
+            if (CompareImages(p.Image, addImage))
             {
                 OpenFileDialog op = new OpenFileDialog();
                 op.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
@@ -175,11 +191,11 @@ namespace Real_Estate_App.User_Control
                         r.Add_Property_Photo(int.Parse(txt_Id.Text), newImg);
                     }
                 }
-                
+
             }
             else
             {
-                    pic_BigPicture.Image = p.Image;
+                pic_BigPicture.Image = p.Image;
             }
 
         }
@@ -210,8 +226,9 @@ namespace Real_Estate_App.User_Control
 
         private void pic_Edit_Click(object sender, EventArgs e)
         {
+            btn_addToMyProperties.Hide();
 
-            if (!cb_Type.Enabled)
+            if (txt_Address.ReadOnly)
             {
                 btn_save.Hide();
                 Editable(true);
@@ -226,11 +243,11 @@ namespace Real_Estate_App.User_Control
         }
         public void Editable(bool value)
         {
-            cb_Address.Enabled = value;
+            txt_Address.ReadOnly = !value;
             txt_Area.ReadOnly = !value;
             txt_Description.ReadOnly = !value;
             txt_Price.ReadOnly = !value;
-            cb_Type.Enabled= value;
+            txt_Type.ReadOnly = !value;
             chk_Status.Enabled = value;
             if (value)
             {
@@ -274,12 +291,12 @@ namespace Real_Estate_App.User_Control
                     pictureBox5.Image = img;
                 }
 
-                    using (Model.RealEstateEDM r = new Model.RealEstateEDM("Admin"))
-                    {
-                        byte[] oldImg = ImageToByteArray(pic_BigPicture.Image);
-                        byte[] newImg = ImageToByteArray(new Bitmap(op.FileName));
-                        r.Update_Property_Photo(oldImg, newImg);
-                    }
+                using (Model.RealEstateEDM r = new Model.RealEstateEDM("Admin"))
+                {
+                    byte[] oldImg = ImageToByteArray(pic_BigPicture.Image);
+                    byte[] newImg = ImageToByteArray(new Bitmap(op.FileName));
+                    r.Update_Property_Photo(oldImg, newImg);
+                }
             }
         }
         public byte[] ImageToByteArray(Image image)
@@ -298,8 +315,8 @@ namespace Real_Estate_App.User_Control
         {
             Regex isDecimal = new Regex(@"^[0-9]+.[0-9]+$");
             if (Type != null)
-            if (Type.ToLower() == "addproperty")
-            {
+                if (Type.ToLower() == "addproperty")
+                {
                     if (!isDecimal.IsMatch(txt_Price.Text))
                     {
                         MessageBox.Show("price must be a decimal");
@@ -312,50 +329,50 @@ namespace Real_Estate_App.User_Control
                         txt_Price.Text = "";
                         return;
                     }
-                using (Model.RealEstateEDM r = new Model.RealEstateEDM("Admin"))
-                {
-                    try
+                    using (Model.RealEstateEDM r = new Model.RealEstateEDM("Admin"))
                     {
-                        decimal id = (decimal)0.0;
-                        foreach(var x in r.Add_Property(cb_Address.SelectedItem.ToString(), double.Parse(txt_Price.Text), cb_Type.SelectedItem.ToString(), double.Parse(txt_Area.Text), chk_Status.Checked, txt_Description.Text))
+                        try
                         {
-                            id =(decimal)x.PropertyID;
+                            decimal id = (decimal)0.0;
+                            foreach (var x in r.Add_Property(txt_Address.Text, double.Parse(txt_Price.Text), txt_Type.Text, double.Parse(txt_Area.Text), chk_Status.Checked, txt_Description.Text))
+                            {
+                                id = (decimal)x.PropertyID;
+                            }
+
+                            if (!(id == (decimal)0.0))
+                            {
+                                this.PropertyID = (int)id;
+                                MessageBox.Show("The property was added!");
+                                pic_Edit.Show();
+                            }
+                            else
+                            {
+                                MessageBox.Show("The Property was not added please try again");
+                            }
                         }
-                        
-                        if (!(id == (decimal)0.0))
+                        catch (Exception ex)
                         {
-                            this.PropertyID = (int)id;
-                            MessageBox.Show("The property was added!");
-                            pic_Edit.Show();
+                            MessageBox.Show(ex.Message + ex.InnerException);
                         }
-                        else
-                        {
-                            MessageBox.Show("The Property was not added please try again");
-                        }
+                        Type = "";
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message+ex.InnerException);
-                    }
-                    Type = "";   
                 }
-            }
-            else
-            {
-                using (Model.RealEstateEDM r = new Model.RealEstateEDM("Admin"))
+                else
                 {
-                    try 
+                    using (Model.RealEstateEDM r = new Model.RealEstateEDM("Admin"))
                     {
-                        r.Update_Property(int.Parse(txt_Id.Text), cb_Address.SelectedItem.ToString(), double.Parse(txt_Price.Text),cb_Type.SelectedItem.ToString() , double.Parse(txt_Area.Text), chk_Status.Checked, txt_Description.Text);
-                        pic_Edit_Click(sender, e);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message + ex.InnerException.Message);
-                    }
+                        try
+                        {
+                            r.Update_Property(int.Parse(txt_Id.Text), txt_Address.Text, double.Parse(txt_Price.Text), txt_Type.Text, double.Parse(txt_Area.Text), chk_Status.Checked, txt_Description.Text);
+                            pic_Edit_Click(sender, e);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message + ex.InnerException.Message);
+                        }
 
                     }
-            }
+                }
         }
 
         private void pic_Delete_Click(object sender, EventArgs e)
@@ -366,13 +383,13 @@ namespace Real_Estate_App.User_Control
             {
                 using (Model.RealEstateEDM r = new Model.RealEstateEDM("Admin"))
                 {
-                    try 
-                    { 
-                    r.Delete_Property(int.Parse(txt_Id.Text));
+                    try
+                    {
+                        r.Delete_Property(int.Parse(txt_Id.Text));
                     }
                     catch (Exception ex)
                     {
-                    MessageBox.Show(ex.Message + ex.InnerException.Message);
+                        MessageBox.Show(ex.Message + ex.InnerException.Message);
                     }
                 }
                 MessageBox.Show("Deleted");
