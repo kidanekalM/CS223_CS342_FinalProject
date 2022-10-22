@@ -6,30 +6,6 @@
 		cursor(as much we want //has no requirement)
 *****************************************************************************************/
 --Database creating
-EXEC [Add Department]'Sales'
-select * from Department
-EXEC [Add Employee]'Abebe', 'Teka', '0911223344', 'abe123', null, 'Agent', '2011-12-2', 1
-EXEC [Add Employee]'Bekele', 'Shimew', '0910223344', 'beke123', null, 'Agent', '2011-12-2', 1
-select * from Employee
-EXEC [Add Client] 'Eman', 'Eskindir', null, '0911223344', 'eman@gmail.com', 'eman1234'
-EXEC [Add Client] 'Bety', 'Belay', null, '0910223344', 'bety@gmail.com', 'bety1234'
-select * from Client
-select * from dbo.[Login Client](4,'ILY300');
-EXEC [Search Employee By ID] 2
-EXEC [Add Property] 'Bole',7000000,Residential,450,1,'A family home with 3 bedrooms, swimming pool, 3 balcony, and a basement for killing unwanted people'
-EXEC [Add Property] 'Gullele',10000000,Residential,506,1,'A Mansion with 4 bedrooms, service homes and 1 office'
-EXEC [Add Property] 'Lideta',4000000,Residential,720,1,'A home with a very beautiful view, 7th floor, 1 bedroom and 1 balcony'
-select * from Property
-EXEC [Add Buy]1,4,1,'2002-2-5',30000
-EXEC [Add Buy]2,4,1,'2002-2-5',30000
-EXEC [Add Buy]3,3,1,'2002-2-5',30000
-delete from Buy where ID = 2
-select * from Buy;
-Select * from [Get All Appointments]();
-EXEC [Search Appointment By ClientID]3;
-EXEC [Filter Property] default, 10, default, default, default, default
-
-
 USE MASTER 
 GO
 DROP DATABASE RealEstate
@@ -372,7 +348,7 @@ CREATE PROC [Search Property By ID]
 	BEGIN
 		SELECT ID,Address,Price,Type,Area,Status,Description
 		FROM Property
-		WHERE ID = @ID
+		WHERE ID LIKE '%'+CAST( @ID AS VARCHAR(20))+'%'
 	END
 GO
 
@@ -387,9 +363,9 @@ CREATE PROC [Search Property By Type]
 GO
 CREATE PROC [Filter Property]
 	@Address VARCHAR(100) = '',
-	@Price MONEY  = 9999999999999,
+	@Price MONEY  = 99999999999,
 	@Type VARCHAR(100) = '',
-	@Area FLOAT = 9999999999999,
+	@Area FLOAT = 999999999999,
 	@Status BIT = 1,
 	@Description VARCHAR(100) = ''
 	AS
@@ -405,7 +381,6 @@ CREATE PROC [Filter Property]
 			Description LIKE '%' + @Description + '%'
 	END
 GO
-EXEC [Filter Property] default, 3, default, default, default, default
 
 /********************************************************
          Property Photo Stored Procedures 
@@ -647,7 +622,7 @@ CREATE PROC [Search Appointment By ClientID]
 	BEGIN
 		SELECT ID,AppointmentDate,Comment,ClientID,AgentID
 		FROM Appointment
-		WHERE ClientID = @ClientID;
+		WHERE ClientID LIKE '%'+CAST( @ClientID AS VARCHAR(20))+'%'
 	END
 GO
 CREATE PROC [Search Appointment By AgentID]

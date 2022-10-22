@@ -136,6 +136,7 @@ namespace Real_Estate_App.Admin_Pages
                     using (Model.RealEstateEDM r = new Model.RealEstateEDM("Admin"))
                     {
                         r.Delete_Employee(Employee.ID);
+                        MessageBox.Show("Deleted");
                     }
                 }
                 catch (Exception ex)
@@ -170,6 +171,7 @@ namespace Real_Estate_App.Admin_Pages
                 using(Model.RealEstateEDM r = new Model.RealEstateEDM("Admin"))
                 {
                     r.Update_Employee(Employee.ID, txt_fname.Text, txt_lName.Text, txt_pNumber.Text, txt_pwd.Text, ImageToByteArray(pic_BigPicture.Image), txt_Type.Text, dateTimePicker1.Value, int.Parse( comboBox1.SelectedItem.ToString().Substring(0, comboBox1.SelectedItem.ToString().IndexOf(":")) ));
+                    MessageBox.Show("Updated Successfully");
                 }
             }
             catch(Exception ex)

@@ -21,7 +21,6 @@ namespace Real_Estate_App.Model
         public RealEstateEDM(string user)
             : base(user + "ConnectionString")
         {
-
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -319,7 +318,7 @@ namespace Real_Estate_App.Model
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Delete_Property_Photo_By_Id", propertyIdParameter);
         }
 
-        public virtual ObjectResult<Filter_Property_Result1> Filter_Property(string address, Nullable<decimal> price, string type, Nullable<double> area, Nullable<bool> status, string description)
+        public virtual ObjectResult<Filter_Property_Result> Filter_Property(string address, Nullable<decimal> price, string type, Nullable<double> area, Nullable<bool> status, string description)
         {
             var addressParameter = address != null ?
                 new ObjectParameter("Address", address) :
@@ -345,7 +344,7 @@ namespace Real_Estate_App.Model
                 new ObjectParameter("Description", description) :
                 new ObjectParameter("Description", typeof(string));
 
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Filter_Property_Result1>("Filter_Property", addressParameter, priceParameter, typeParameter, areaParameter, statusParameter, descriptionParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Filter_Property_Result>("Filter_Property", addressParameter, priceParameter, typeParameter, areaParameter, statusParameter, descriptionParameter);
         }
 
         public virtual ObjectResult<Search_Appointment_By_AgentID_Result> Search_Appointment_By_AgentID(Nullable<int> agentID)
@@ -774,33 +773,10 @@ namespace Real_Estate_App.Model
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Search_Employee_By_Name_Result>("Search_Employee_By_Name", nameParameter);
         }
 
-        public virtual ObjectResult<Filter_Property1_Result> Filter_Property1(string address, Nullable<decimal> price, string type, Nullable<double> area, Nullable<bool> status, string description)
+        [EdmFunction("AdminConnectionString1", "Get_All_Buys")]
+        public virtual IQueryable<Get_All_Buys_Result> Get_All_Buys()
         {
-            var addressParameter = address != null ?
-                new ObjectParameter("Address", address) :
-                new ObjectParameter("Address", typeof(string));
-
-            var priceParameter = price.HasValue ?
-                new ObjectParameter("Price", price) :
-                new ObjectParameter("Price", typeof(decimal));
-
-            var typeParameter = type != null ?
-                new ObjectParameter("Type", type) :
-                new ObjectParameter("Type", typeof(string));
-
-            var areaParameter = area.HasValue ?
-                new ObjectParameter("Area", area) :
-                new ObjectParameter("Area", typeof(double));
-
-            var statusParameter = status.HasValue ?
-                new ObjectParameter("Status", status) :
-                new ObjectParameter("Status", typeof(bool));
-
-            var descriptionParameter = description != null ?
-                new ObjectParameter("Description", description) :
-                new ObjectParameter("Description", typeof(string));
-
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Filter_Property1_Result>("Filter_Property1", addressParameter, priceParameter, typeParameter, areaParameter, statusParameter, descriptionParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<Get_All_Buys_Result>("[AdminConnectionString1].[Get_All_Buys]()");
         }
     }
 }

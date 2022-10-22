@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -36,15 +35,13 @@
             this.cmbx_SortBy = new System.Windows.Forms.ComboBox();
             this.lbl_SortBy = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.SearchButton = new System.Windows.Forms.Label();
             this.SearchtextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox_Search = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.SearchButton = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Exit
@@ -103,18 +100,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(230, 610);
             this.panel2.TabIndex = 14;
-            // 
-            // SearchButton
-            // 
-            this.SearchButton.BackColor = System.Drawing.Color.Silver;
-            this.SearchButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchButton.Location = new System.Drawing.Point(148, 544);
-            this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(71, 25);
-            this.SearchButton.TabIndex = 16;
-            this.SearchButton.Text = "Search";
-            this.SearchButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // SearchtextBox
             // 
@@ -177,9 +162,17 @@
             this.dataGridView1.Size = new System.Drawing.Size(966, 448);
             this.dataGridView1.TabIndex = 11;
             // 
-            // errorProvider1
+            // SearchButton
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.SearchButton.BackColor = System.Drawing.Color.Silver;
+            this.SearchButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchButton.Location = new System.Drawing.Point(148, 544);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(71, 25);
+            this.SearchButton.TabIndex = 16;
+            this.SearchButton.Text = "Search";
+            this.SearchButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // AdminShowAllProperties
             // 
@@ -198,7 +191,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -213,6 +205,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox_Search;
         private System.Windows.Forms.Label SearchButton;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

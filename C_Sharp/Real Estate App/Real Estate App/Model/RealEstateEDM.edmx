@@ -1,1208 +1,1203 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
-  <!-- EF Runtime content -->
-  <edmx:Runtime>
-    <!-- SSDL content -->
-    <edmx:StorageModels>
-    <Schema Namespace="RealEstateModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <Function Name="Add_Appointment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Add Appointment">
-          <Parameter Name="AppointmentDate" Type="datetime" Mode="In" />
-          <Parameter Name="Comment" Type="varchar" Mode="In" />
-          <Parameter Name="ClientId" Type="int" Mode="In" />
-          <Parameter Name="AgentId" Type="int" Mode="In" />
-        </Function>
-        <Function Name="Add_Buy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Add Buy">
-          <Parameter Name="PropertyId" Type="int" Mode="In" />
-          <Parameter Name="ClientId" Type="int" Mode="In" />
-          <Parameter Name="AgentId" Type="int" Mode="In" />
-          <Parameter Name="SellDate" Type="datetime" Mode="In" />
-          <Parameter Name="Comission" Type="money" Mode="In" />
-        </Function>
-        <Function Name="Add_Choosen_Property" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Add Choosen Property">
-          <Parameter Name="AppointmentId" Type="int" Mode="In" />
-          <Parameter Name="PropertyID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="Add_Client" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Add Client">
-          <Parameter Name="FirstName" Type="varchar" Mode="In" />
-          <Parameter Name="LastName" Type="varchar" Mode="In" />
-          <Parameter Name="Photo" Type="varbinary(max)" Mode="In" />
-          <Parameter Name="PhoneNumber" Type="varchar" Mode="In" />
-          <Parameter Name="Email" Type="varchar" Mode="In" />
-          <Parameter Name="Password" Type="varchar" Mode="In" />
-          <Parameter Name="EmpId" Type="int" Mode="In" />
-        </Function>
-        <Function Name="Add_Department" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Add Department">
-          <Parameter Name="Name" Type="varchar" Mode="In" />
-        </Function>
-        <Function Name="Add_Employee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Add Employee">
-          <Parameter Name="FirstName" Type="varchar" Mode="In" />
-          <Parameter Name="LastName" Type="varchar" Mode="In" />
-          <Parameter Name="PhoneNumber" Type="varchar" Mode="In" />
-          <Parameter Name="Password" Type="varchar" Mode="In" />
-          <Parameter Name="Photo" Type="varbinary(max)" Mode="In" />
-          <Parameter Name="EmpType" Type="varchar" Mode="In" />
-          <Parameter Name="EmpDate" Type="date" Mode="In" />
-          <Parameter Name="DepartmentID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="Add_Property" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Add Property">
-          <Parameter Name="Address" Type="varchar" Mode="In" />
-          <Parameter Name="Price" Type="float" Mode="In" />
-          <Parameter Name="Type" Type="varchar" Mode="In" />
-          <Parameter Name="Area" Type="float" Mode="In" />
-          <Parameter Name="Status" Type="bit" Mode="In" />
-          <Parameter Name="Description" Type="varchar" Mode="In" />
-        </Function>
-        <Function Name="Add_Property_Photo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Add Property Photo">
-          <Parameter Name="PropertyID" Type="int" Mode="In" />
-          <Parameter Name="Photo" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="Delete_Appointment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Delete Appointment">
-          <Parameter Name="ID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="Delete_Buy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Delete Buy">
-          <Parameter Name="ID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="Delete_Choosen_Property" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Delete Choosen Property">
-          <Parameter Name="AppointmentId" Type="int" Mode="In" />
-          <Parameter Name="PropertyId" Type="int" Mode="In" />
-        </Function>
-        <Function Name="Delete_Client" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Delete Client">
-          <Parameter Name="ID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="Delete_Department" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Delete Department">
-          <Parameter Name="ID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="Delete_Employee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Delete Employee">
-          <Parameter Name="ID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="Delete_Property" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Delete Property">
-          <Parameter Name="ID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="Delete_Property_Photo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Delete Property Photo">
-          <Parameter Name="Photo" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="Delete_Property_Photo_By_Id" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Delete Property Photo By Id">
-          <Parameter Name="PropertyId" Type="int" Mode="In" />
-        </Function>
-        <Function Name="Filter_Property" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Filter Property">
-          <Parameter Name="Address" Type="varchar" Mode="In" />
-          <Parameter Name="Price" Type="money" Mode="In" />
-          <Parameter Name="Type" Type="varchar" Mode="In" />
-          <Parameter Name="Area" Type="float" Mode="In" />
-          <Parameter Name="Status" Type="bit" Mode="In" />
-          <Parameter Name="Description" Type="varchar" Mode="In" />
-        </Function>
-        <Function Name="Get_All_Appointments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Appointments">
-          <ReturnType>
-            <CollectionType>
-              <RowType>
-                <Property Name="ID" Type="int" Nullable="false" />
-                <Property Name="Client" Type="varchar" MaxLength="201" Nullable="false" />
-                <Property Name="Agent" Type="varchar" MaxLength="201" Nullable="false" />
-                <Property Name="AppointmentDate" Type="datetime" Nullable="false" />
-                <Property Name="Comment" Type="nvarchar" MaxLength="53" />
-              </RowType>
-            </CollectionType>
-          </ReturnType>
-        </Function>
-        <Function Name="Get_All_Clients" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Clients">
-          <ReturnType>
-            <CollectionType>
-              <RowType>
-                <Property Name="ID" Type="int" Nullable="false" />
-                <Property Name="Photo" Type="varbinary(max)" />
-                <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
-                <Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
-                <Property Name="PhoneNumber" Type="varchar" MaxLength="11" />
-              </RowType>
-            </CollectionType>
-          </ReturnType>
-        </Function>
-        <Function Name="Get_All_Clients_By_Agent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Clients By Agent">
-          <Parameter Name="ID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="Get_All_Departments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Departments" />
-        <Function Name="Get_All_Employees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Employees">
-          <ReturnType>
-            <CollectionType>
-              <RowType>
-                <Property Name="ID" Type="int" Nullable="false" />
-                <Property Name="Photo" Type="varbinary(max)" />
-                <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
-                <Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
-                <Property Name="PhoneNumber" Type="varchar" MaxLength="11" />
-              </RowType>
-            </CollectionType>
-          </ReturnType>
-        </Function>
-        <Function Name="Get_All_Properties" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Properties">
-          <ReturnType>
-            <CollectionType>
-              <RowType>
-                <Property Name="ID" Type="int" />
-                <Property Name="Property Photo" Type="varbinary(max)" />
-                <Property Name="Address" Type="varchar" MaxLength="100" />
-                <Property Name="Price" Type="float" />
-                <Property Name="Status" Type="bit" />
-                <Property Name="Description" Type="varchar" MaxLength="53" />
-              </RowType>
-            </CollectionType>
-          </ReturnType>
-        </Function>
-        <Function Name="Login_Admin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Login Admin">
-          <Parameter Name="ID" Type="int" Mode="In" />
-          <Parameter Name="Upwd" Type="varchar" Mode="In" />
-          <ReturnType>
-            <CollectionType>
-              <RowType>
-                <Property Name="ID" Type="int" Nullable="false" />
-                <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
-                <Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
-                <Property Name="PhoneNumber" Type="varchar" MaxLength="11" />
-                <Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
-                <Property Name="Photo" Type="varbinary(max)" />
-                <Property Name="EmpType" Type="varchar" MaxLength="100" Nullable="false" />
-                <Property Name="EmpDate" Type="date" Nullable="false" />
-                <Property Name="DepartmentID" Type="int" />
-              </RowType>
-            </CollectionType>
-          </ReturnType>
-        </Function>
-        <Function Name="Login_Agent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Login Agent">
-          <Parameter Name="ID" Type="int" Mode="In" />
-          <Parameter Name="Upwd" Type="varchar" Mode="In" />
-          <ReturnType>
-            <CollectionType>
-              <RowType>
-                <Property Name="ID" Type="int" Nullable="false" />
-                <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
-                <Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
-                <Property Name="PhoneNumber" Type="varchar" MaxLength="11" />
-                <Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
-                <Property Name="Photo" Type="varbinary(max)" />
-                <Property Name="EmpType" Type="varchar" MaxLength="100" Nullable="false" />
-                <Property Name="EmpDate" Type="date" Nullable="false" />
-                <Property Name="DepartmentID" Type="int" />
-              </RowType>
-            </CollectionType>
-          </ReturnType>
-        </Function>
-        <Function Name="Login_Client" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Login Client">
-          <Parameter Name="ID" Type="int" Mode="In" />
-          <Parameter Name="Upwd" Type="varchar" Mode="In" />
-          <ReturnType>
-            <CollectionType>
-              <RowType>
-                <Property Name="ID" Type="int" Nullable="false" />
-                <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
-                <Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
-                <Property Name="Photo" Type="varbinary(max)" />
-                <Property Name="PhoneNumber" Type="varchar" MaxLength="11" />
-                <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
-                <Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
-                <Property Name="EmpId" Type="int" />
-              </RowType>
-            </CollectionType>
-          </ReturnType>
-        </Function>
-        <Function Name="Search_Appointment_By_AgentID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Appointment By AgentID">
-          <Parameter Name="AgentID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="Search_Appointment_By_ClientID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Appointment By ClientID">
-          <Parameter Name="ClientID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="Search_Appointment_By_Date" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Appointment By Date">
-          <Parameter Name="Date" Type="datetime" Mode="In" />
-        </Function>
-        <Function Name="Search_Appointment_By_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Appointment By ID">
-          <Parameter Name="ID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="Search_Buy_By_AgentId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Buy By AgentId">
-          <Parameter Name="AgentId" Type="int" Mode="In" />
-        </Function>
-        <Function Name="Search_Buy_By_ClientID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Buy By ClientID">
-          <Parameter Name="ClientID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="Search_Choosen_Property_By_Appintment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Choosen Property By Appintment">
-          <Parameter Name="AppointmentID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="Search_Choosen_Property_By_Property" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Choosen Property By Property">
-          <Parameter Name="PropertyID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="Search_Client_By_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Client By ID">
-          <Parameter Name="ID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="Search_Client_By_Name" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Client By Name">
-          <Parameter Name="Name" Type="varchar" Mode="In" />
-        </Function>
-        <Function Name="Search_Department_By_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Department By ID">
-          <Parameter Name="ID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="Search_Department_By_Name" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Department By Name">
-          <Parameter Name="Name" Type="varchar" Mode="In" />
-        </Function>
-        <Function Name="Search_Employee_By_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Employee By ID">
-          <Parameter Name="ID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="Search_Employee_By_Name" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Employee By Name">
-          <Parameter Name="Name" Type="varchar" Mode="In" />
-        </Function>
-        <Function Name="Search_Property_By_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Property By ID">
-          <Parameter Name="ID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="Search_Property_By_Type" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Property By Type">
-          <Parameter Name="Type" Type="varchar" Mode="In" />
-        </Function>
-        <Function Name="Search_Property_Photo_By_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Property Photo By ID">
-          <Parameter Name="PropertyID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="Search_Total_Sold_By_Employee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Total Sold By Employee">
-          <Parameter Name="EmpId" Type="varchar" Mode="In" />
-        </Function>
-        <Function Name="Update_Appointment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Update Appointment">
-          <Parameter Name="Id" Type="int" Mode="In" />
-          <Parameter Name="AppointmentDate" Type="datetime" Mode="In" />
-          <Parameter Name="Comment" Type="varchar" Mode="In" />
-          <Parameter Name="ClientId" Type="int" Mode="In" />
-          <Parameter Name="AgentId" Type="int" Mode="In" />
-        </Function>
-        <Function Name="Update_Buy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Update Buy">
-          <Parameter Name="ID" Type="int" Mode="In" />
-          <Parameter Name="PropertyId" Type="int" Mode="In" />
-          <Parameter Name="ClientId" Type="int" Mode="In" />
-          <Parameter Name="AgentId" Type="int" Mode="In" />
-          <Parameter Name="SellDate" Type="datetime" Mode="In" />
-          <Parameter Name="Comission" Type="money" Mode="In" />
-        </Function>
-        <Function Name="Update_Choosen_Property" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Update Choosen Property">
-          <Parameter Name="AppointmentId" Type="int" Mode="In" />
-          <Parameter Name="OldPropertyId" Type="int" Mode="In" />
-          <Parameter Name="NewPropertyId" Type="int" Mode="In" />
-        </Function>
-        <Function Name="Update_Client" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Update Client">
-          <Parameter Name="ID" Type="int" Mode="In" />
-          <Parameter Name="FirstName" Type="varchar" Mode="In" />
-          <Parameter Name="LastName" Type="varchar" Mode="In" />
-          <Parameter Name="Photo" Type="varbinary(max)" Mode="In" />
-          <Parameter Name="PhoneNumber" Type="varchar" Mode="In" />
-          <Parameter Name="Email" Type="varchar" Mode="In" />
-          <Parameter Name="Password" Type="varchar" Mode="In" />
-          <Parameter Name="EmpId" Type="int" Mode="In" />
-        </Function>
-        <Function Name="Update_Department" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Update Department">
-          <Parameter Name="Name" Type="varchar" Mode="In" />
-          <Parameter Name="ID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="Update_Employee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Update Employee">
-          <Parameter Name="ID" Type="int" Mode="In" />
-          <Parameter Name="FirstName" Type="varchar" Mode="In" />
-          <Parameter Name="LastName" Type="varchar" Mode="In" />
-          <Parameter Name="PhoneNumber" Type="varchar" Mode="In" />
-          <Parameter Name="Password" Type="varchar" Mode="In" />
-          <Parameter Name="Photo" Type="varbinary(max)" Mode="In" />
-          <Parameter Name="EmpType" Type="varchar" Mode="In" />
-          <Parameter Name="EmpDate" Type="date" Mode="In" />
-          <Parameter Name="DepartmentID" Type="int" Mode="In" />
-        </Function>
-        <Function Name="Update_Property" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Update Property">
-          <Parameter Name="ID" Type="int" Mode="In" />
-          <Parameter Name="Address" Type="varchar" Mode="In" />
-          <Parameter Name="Price" Type="float" Mode="In" />
-          <Parameter Name="Type" Type="varchar" Mode="In" />
-          <Parameter Name="Area" Type="float" Mode="In" />
-          <Parameter Name="Status" Type="bit" Mode="In" />
-          <Parameter Name="Description" Type="varchar" Mode="In" />
-        </Function>
-        <Function Name="Update_Property_Photo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Update Property Photo">
-          <Parameter Name="OldPhoto" Type="varbinary(max)" Mode="In" />
-          <Parameter Name="NewPhoto" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <EntityContainer Name="RealEstateModelStoreContainer" />
-      </Schema></edmx:StorageModels>
-    <!-- CSDL content -->
-    <edmx:ConceptualModels>
-      <Schema Namespace="RealEstateModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <ComplexType Name="Get_All_Appointments_Result">
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="Client" Type="String" MaxLength="201" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Agent" Type="String" MaxLength="201" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="AppointmentDate" Type="DateTime" Nullable="false" />
-          <Property Name="Comment" Type="String" MaxLength="53" FixedLength="false" Unicode="true" />
-        </ComplexType>
-        <ComplexType Name="Get_All_Clients_Result">
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
-        </ComplexType>
-        <ComplexType Name="Get_All_Employees_Result">
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
-        </ComplexType>
-        <ComplexType Name="Get_All_Properties_Result">
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="Property_Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Price" Type="Double" Nullable="false" />
-          <Property Name="Status" Type="Boolean" Nullable="false" />
-          <Property Name="Description" Type="String" MaxLength="53" FixedLength="false" Unicode="false" />
-        </ComplexType>
-        <EntityContainer Name="AdminConnectionString1" annotation:LazyLoadingEnabled="true">
-          <FunctionImport Name="Get_All_Appointments" IsComposable="true" ReturnType="Collection(RealEstateModel.Get_All_Appointments_Result)" />
-          <FunctionImport Name="Get_All_Clients" IsComposable="true" ReturnType="Collection(RealEstateModel.Get_All_Clients_Result)" />
-          <FunctionImport Name="Get_All_Employees" IsComposable="true" ReturnType="Collection(RealEstateModel.Get_All_Employees_Result)" />
-          <FunctionImport Name="Get_All_Properties" IsComposable="true" ReturnType="Collection(RealEstateModel.Get_All_Properties_Result)" />
-          <FunctionImport Name="Add_Appointment" ReturnType="Collection(RealEstateModel.Add_Appointment_Result)">
-            <Parameter Name="AppointmentDate" Mode="In" Type="DateTime" />
-            <Parameter Name="Comment" Mode="In" Type="String" />
-            <Parameter Name="ClientId" Mode="In" Type="Int32" />
-            <Parameter Name="AgentId" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Add_Buy">
-            <Parameter Name="PropertyId" Mode="In" Type="Int32" />
-            <Parameter Name="ClientId" Mode="In" Type="Int32" />
-            <Parameter Name="AgentId" Mode="In" Type="Int32" />
-            <Parameter Name="SellDate" Mode="In" Type="DateTime" />
-            <Parameter Name="Comission" Mode="In" Type="Decimal" />
-          </FunctionImport>
-          <FunctionImport Name="Add_Choosen_Property">
-            <Parameter Name="AppointmentId" Mode="In" Type="Int32" />
-            <Parameter Name="PropertyID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Add_Client" ReturnType="Collection(Decimal)">
-            <Parameter Name="FirstName" Mode="In" Type="String" />
-            <Parameter Name="LastName" Mode="In" Type="String" />
-            <Parameter Name="Photo" Mode="In" Type="Binary" />
-            <Parameter Name="PhoneNumber" Mode="In" Type="String" />
-            <Parameter Name="Email" Mode="In" Type="String" />
-            <Parameter Name="Password" Mode="In" Type="String" />
-            <Parameter Name="EmpId" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Add_Department" ReturnType="Collection(RealEstateModel.Add_Department_Result)">
-          <Parameter Name="Name" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="Add_Employee" ReturnType="Collection(RealEstateModel.Add_Employee_Result)">
-            <Parameter Name="FirstName" Mode="In" Type="String" />
-            <Parameter Name="LastName" Mode="In" Type="String" />
-            <Parameter Name="PhoneNumber" Mode="In" Type="String" />
-            <Parameter Name="Password" Mode="In" Type="String" />
-            <Parameter Name="Photo" Mode="In" Type="Binary" />
-            <Parameter Name="EmpType" Mode="In" Type="String" />
-            <Parameter Name="EmpDate" Mode="In" Type="DateTime" />
-            <Parameter Name="DepartmentID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Add_Property" ReturnType="Collection(RealEstateModel.Add_Property_Result)">
-            <Parameter Name="Address" Mode="In" Type="String" />
-            <Parameter Name="Price" Mode="In" Type="Double" />
-            <Parameter Name="Type" Mode="In" Type="String" />
-            <Parameter Name="Area" Mode="In" Type="Double" />
-            <Parameter Name="Status" Mode="In" Type="Boolean" />
-            <Parameter Name="Description" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="Add_Property_Photo">
-            <Parameter Name="PropertyID" Mode="In" Type="Int32" />
-            <Parameter Name="Photo" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="Delete_Appointment">
-          <Parameter Name="ID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Delete_Buy">
-          <Parameter Name="ID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Delete_Choosen_Property">
-            <Parameter Name="AppointmentId" Mode="In" Type="Int32" />
-            <Parameter Name="PropertyId" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Delete_Client">
-          <Parameter Name="ID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Delete_Department">
-          <Parameter Name="ID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Delete_Employee">
-          <Parameter Name="ID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Delete_Property">
-          <Parameter Name="ID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Delete_Property_Photo">
-          <Parameter Name="Photo" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="Delete_Property_Photo_By_Id">
-          <Parameter Name="PropertyId" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Filter_Property" ReturnType="Collection(RealEstateModel.Filter_Property_Result1)">
-            <Parameter Name="Address" Mode="In" Type="String" />
-            <Parameter Name="Price" Mode="In" Type="Decimal" />
-            <Parameter Name="Type" Mode="In" Type="String" />
-            <Parameter Name="Area" Mode="In" Type="Double" />
-            <Parameter Name="Status" Mode="In" Type="Boolean" />
-            <Parameter Name="Description" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="Search_Appointment_By_AgentID" ReturnType="Collection(RealEstateModel.Search_Appointment_By_AgentID_Result)">
-          <Parameter Name="AgentID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Search_Appointment_By_ClientID" ReturnType="Collection(RealEstateModel.Search_Appointment_By_ClientID_Result)">
-          <Parameter Name="ClientID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Search_Appointment_By_Date" ReturnType="Collection(RealEstateModel.Search_Appointment_By_Date_Result)">
-          <Parameter Name="Date" Mode="In" Type="DateTime" />
-          </FunctionImport>
-          <FunctionImport Name="Search_Appointment_By_ID" ReturnType="Collection(RealEstateModel.Search_Appointment_By_ID_Result)">
-          <Parameter Name="ID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Search_Buy_By_AgentId" ReturnType="Collection(RealEstateModel.Search_Buy_By_AgentId_Result)">
-          <Parameter Name="AgentId" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Search_Buy_By_ClientID" ReturnType="Collection(RealEstateModel.Search_Buy_By_ClientID_Result)">
-          <Parameter Name="ClientID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Search_Choosen_Property_By_Appintment" ReturnType="Collection(RealEstateModel.Search_Choosen_Property_By_Appintment_Result)">
-          <Parameter Name="AppointmentID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Search_Choosen_Property_By_Property" ReturnType="Collection(RealEstateModel.Search_Choosen_Property_By_Property_Result)">
-          <Parameter Name="PropertyID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Search_Client_By_ID" ReturnType="Collection(RealEstateModel.Search_Client_By_ID_Result)">
-          <Parameter Name="ID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Search_Client_By_Name" ReturnType="Collection(RealEstateModel.Search_Client_By_Name_Result)">
-          <Parameter Name="Name" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="Search_Department_By_ID" ReturnType="Collection(RealEstateModel.Search_Department_By_ID_Result)">
-          <Parameter Name="ID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Search_Department_By_Name" ReturnType="Collection(RealEstateModel.Search_Department_By_Name_Result)">
-          <Parameter Name="Name" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="Search_Property_By_ID" ReturnType="Collection(RealEstateModel.Search_Property_By_ID_Result)">
-          <Parameter Name="ID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Search_Property_By_Type" ReturnType="Collection(RealEstateModel.Search_Property_By_Type_Result)">
-          <Parameter Name="Type" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="Search_Property_Photo_By_ID" ReturnType="Collection(RealEstateModel.Search_Property_Photo_By_ID_Result)">
-          <Parameter Name="PropertyID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Search_Total_Sold_By_Employee" ReturnType="Collection(Int32)">
-          <Parameter Name="EmpId" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="Update_Appointment">
-            <Parameter Name="Id" Mode="In" Type="Int32" />
-            <Parameter Name="AppointmentDate" Mode="In" Type="DateTime" />
-            <Parameter Name="Comment" Mode="In" Type="String" />
-            <Parameter Name="ClientId" Mode="In" Type="Int32" />
-            <Parameter Name="AgentId" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Update_Buy">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
-            <Parameter Name="PropertyId" Mode="In" Type="Int32" />
-            <Parameter Name="ClientId" Mode="In" Type="Int32" />
-            <Parameter Name="AgentId" Mode="In" Type="Int32" />
-            <Parameter Name="SellDate" Mode="In" Type="DateTime" />
-            <Parameter Name="Comission" Mode="In" Type="Decimal" />
-          </FunctionImport>
-          <FunctionImport Name="Update_Choosen_Property">
-            <Parameter Name="AppointmentId" Mode="In" Type="Int32" />
-            <Parameter Name="OldPropertyId" Mode="In" Type="Int32" />
-            <Parameter Name="NewPropertyId" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Update_Client">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
-            <Parameter Name="FirstName" Mode="In" Type="String" />
-            <Parameter Name="LastName" Mode="In" Type="String" />
-            <Parameter Name="Photo" Mode="In" Type="Binary" />
-            <Parameter Name="PhoneNumber" Mode="In" Type="String" />
-            <Parameter Name="Email" Mode="In" Type="String" />
-            <Parameter Name="Password" Mode="In" Type="String" />
-            <Parameter Name="EmpId" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Update_Department">
-            <Parameter Name="Name" Mode="In" Type="String" />
-            <Parameter Name="ID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Update_Employee">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
-            <Parameter Name="FirstName" Mode="In" Type="String" />
-            <Parameter Name="LastName" Mode="In" Type="String" />
-            <Parameter Name="PhoneNumber" Mode="In" Type="String" />
-            <Parameter Name="Password" Mode="In" Type="String" />
-            <Parameter Name="Photo" Mode="In" Type="Binary" />
-            <Parameter Name="EmpType" Mode="In" Type="String" />
-            <Parameter Name="EmpDate" Mode="In" Type="DateTime" />
-            <Parameter Name="DepartmentID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Update_Property">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
-            <Parameter Name="Address" Mode="In" Type="String" />
-            <Parameter Name="Price" Mode="In" Type="Double" />
-            <Parameter Name="Type" Mode="In" Type="String" />
-            <Parameter Name="Area" Mode="In" Type="Double" />
-            <Parameter Name="Status" Mode="In" Type="Boolean" />
-            <Parameter Name="Description" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="Update_Property_Photo">
-            <Parameter Name="OldPhoto" Mode="In" Type="Binary" />
-            <Parameter Name="NewPhoto" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="Get_All_Clients_By_Agent" ReturnType="Collection(RealEstateModel.Get_All_Clients_By_Agent_Result1)">
-          <Parameter Name="ID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Login_Admin" IsComposable="true" ReturnType="Collection(RealEstateModel.Login_Admin_Result)">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
-            <Parameter Name="Upwd" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="Login_Agent" IsComposable="true" ReturnType="Collection(RealEstateModel.Login_Agent_Result)">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
-            <Parameter Name="Upwd" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="Login_Client" IsComposable="true" ReturnType="Collection(RealEstateModel.Login_Client_Result)">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
-            <Parameter Name="Upwd" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="Get_All_Departments" ReturnType="Collection(RealEstateModel.Get_All_Departments_Result)" />
-          <FunctionImport Name="Search_Employee_By_ID" ReturnType="Collection(RealEstateModel.Search_Employee_By_ID_Result)">
-          <Parameter Name="ID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="Search_Employee_By_Name" ReturnType="Collection(RealEstateModel.Search_Employee_By_Name_Result)">
-          <Parameter Name="Name" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="Filter_Property1" ReturnType="Collection(RealEstateModel.Filter_Property1_Result)">
-            <Parameter Name="Address" Mode="In" Type="String" />
-            <Parameter Name="Price" Mode="In" Type="Decimal" />
-            <Parameter Name="Type" Mode="In" Type="String" />
-            <Parameter Name="Area" Mode="In" Type="Double" />
-            <Parameter Name="Status" Mode="In" Type="Boolean" />
-            <Parameter Name="Description" Mode="In" Type="String" />
-          </FunctionImport>
-        </EntityContainer>
-        <ComplexType Name="Filter_Property_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Address" Nullable="false" MaxLength="100" />
-          <Property Type="Double" Name="Price" Nullable="false" />
-          <Property Type="String" Name="Type" Nullable="false" MaxLength="100" />
-          <Property Type="Double" Name="Area" Nullable="false" />
-          <Property Type="Boolean" Name="Status" Nullable="false" />
-          <Property Type="String" Name="Description" Nullable="false" MaxLength="100" />
-        </ComplexType>
-        <ComplexType Name="Search_Appointment_By_AgentID_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="DateTime" Name="AppointmentDate" Nullable="false" Precision="23" />
-          <Property Type="String" Name="Comment" Nullable="false" MaxLength="100" />
-          <Property Type="Int32" Name="ClientID" Nullable="false" />
-          <Property Type="Int32" Name="AgentID" Nullable="false" />
-        </ComplexType>
-        <ComplexType Name="Search_Appointment_By_ClientID_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="DateTime" Name="AppointmentDate" Nullable="false" Precision="23" />
-          <Property Type="String" Name="Comment" Nullable="false" MaxLength="100" />
-          <Property Type="Int32" Name="ClientID" Nullable="false" />
-          <Property Type="Int32" Name="AgentID" Nullable="false" />
-        </ComplexType>
-        <ComplexType Name="Search_Appointment_By_Date_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="DateTime" Name="AppointmentDate" Nullable="false" Precision="23" />
-          <Property Type="String" Name="Comment" Nullable="false" MaxLength="100" />
-          <Property Type="Int32" Name="ClientID" Nullable="false" />
-          <Property Type="Int32" Name="AgentID" Nullable="false" />
-        </ComplexType>
-        <ComplexType Name="Search_Appointment_By_ID_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="DateTime" Name="AppointmentDate" Nullable="false" Precision="23" />
-          <Property Type="String" Name="Comment" Nullable="false" MaxLength="100" />
-          <Property Type="Int32" Name="ClientID" Nullable="false" />
-          <Property Type="Int32" Name="AgentID" Nullable="false" />
-        </ComplexType>
-        <ComplexType Name="Search_Buy_By_AgentId_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="Int32" Name="PropertyID" Nullable="false" />
-          <Property Type="Int32" Name="ClientID" Nullable="false" />
-          <Property Type="Int32" Name="AgentID" Nullable="false" />
-          <Property Type="DateTime" Name="SellDate" Nullable="false" Precision="23" />
-          <Property Type="Decimal" Name="Comission" Nullable="true" Precision="19" />
-        </ComplexType>
-        <ComplexType Name="Search_Buy_By_ClientID_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="Int32" Name="PropertyID" Nullable="false" />
-          <Property Type="Int32" Name="ClientID" Nullable="false" />
-          <Property Type="Int32" Name="AgentID" Nullable="false" />
-          <Property Type="DateTime" Name="SellDate" Nullable="false" Precision="23" />
-          <Property Type="Decimal" Name="Comission" Nullable="true" Precision="19" />
-        </ComplexType>
-        <ComplexType Name="Search_Choosen_Property_By_Appintment_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="Int32" Name="PropertyID" Nullable="false" />
-        </ComplexType>
-        <ComplexType Name="Search_Choosen_Property_By_Property_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="Int32" Name="PropertyID" Nullable="false" />
-        </ComplexType>
-        <ComplexType Name="Search_Client_By_ID_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
-          <Property Type="Binary" Name="Photo" Nullable="true" />
-          <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
-          <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
-          <Property Type="Int32" Name="EmpId" Nullable="false" />
-        </ComplexType>
-        <ComplexType Name="Search_Client_By_Name_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
-          <Property Type="Binary" Name="Photo" Nullable="true" />
-          <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
-          <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
-          <Property Type="Int32" Name="EmpId" Nullable="false" />
-        </ComplexType>
-        <ComplexType Name="Search_Department_By_ID_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
-        </ComplexType>
-        <ComplexType Name="Search_Department_By_Name_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
-        </ComplexType>
-        <ComplexType Name="Search_Property_By_ID_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Address" Nullable="false" MaxLength="100" />
-          <Property Type="Double" Name="Price" Nullable="false" />
-          <Property Type="String" Name="Type" Nullable="false" MaxLength="100" />
-          <Property Type="Double" Name="Area" Nullable="false" />
-          <Property Type="Boolean" Name="Status" Nullable="false" />
-          <Property Type="String" Name="Description" Nullable="false" MaxLength="100" />
-        </ComplexType>
-        <ComplexType Name="Search_Property_By_Type_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Address" Nullable="false" MaxLength="100" />
-          <Property Type="Double" Name="Price" Nullable="false" />
-          <Property Type="String" Name="Type" Nullable="false" MaxLength="100" />
-          <Property Type="Double" Name="Area" Nullable="false" />
-          <Property Type="Boolean" Name="Status" Nullable="false" />
-          <Property Type="String" Name="Description" Nullable="false" MaxLength="100" />
-        </ComplexType>
-        <ComplexType Name="Search_Property_Photo_By_ID_Result">
-          <Property Type="Int32" Name="PropertyID" Nullable="false" />
-          <Property Type="Binary" Name="Photo" Nullable="false" />
-        </ComplexType>
-        <ComplexType Name="Get_All_Clients_By_Agent_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="Binary" Name="Photo" Nullable="true" />
-          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
-          <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
-        </ComplexType>
-        <ComplexType Name="Get_All_Clients_By_Agent_Result1">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="Binary" Name="Photo" Nullable="true" />
-          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
-          <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
-        </ComplexType>
-        <ComplexType Name="Login_Admin_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
-          <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
-          <Property Type="Binary" Name="Photo" Nullable="true" />
-          <Property Type="String" Name="EmpType" Nullable="false" MaxLength="100" />
-          <Property Type="DateTime" Name="EmpDate" Nullable="false" Precision="10" />
-          <Property Type="Int32" Name="DepartmentID" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="Login_Agent_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
-          <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
-          <Property Type="Binary" Name="Photo" Nullable="true" />
-          <Property Type="String" Name="EmpType" Nullable="false" MaxLength="100" />
-          <Property Type="DateTime" Name="EmpDate" Nullable="false" Precision="10" />
-          <Property Type="Int32" Name="DepartmentID" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="Login_Client_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
-          <Property Type="Binary" Name="Photo" Nullable="true" />
-          <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
-          <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
-          <Property Type="Int32" Name="EmpId" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="Add_Property_Result">
-        <Property Type="Decimal" Name="PropertyID" Nullable="true" Precision="38" Scale="0" />
-        </ComplexType>
-        <ComplexType Name="Get_All_Departments_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
-        </ComplexType>
-        <ComplexType Name="Search_Employee_By_ID_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
-          <Property Type="Binary" Name="Photo" Nullable="true" />
-          <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
-          <Property Type="String" Name="EmpType" Nullable="false" MaxLength="100" />
-          <Property Type="DateTime" Name="EmpDate" Nullable="false" />
-          <Property Type="Int32" Name="DepartmentID" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="Search_Employee_By_Name_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
-          <Property Type="Binary" Name="Photo" Nullable="true" />
-          <Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
-          <Property Type="String" Name="EmpType" Nullable="false" MaxLength="100" />
-          <Property Type="DateTime" Name="EmpDate" Nullable="false" />
-          <Property Type="Int32" Name="DepartmentID" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="Add_Employee_Result">
-          <Property Type="Decimal" Name="EmployeeID" Nullable="true" Precision="38" Scale="0" />
-        </ComplexType>
-        <ComplexType Name="Add_Department_Result">
-          <Property Type="Decimal" Name="DepartmentID" Nullable="true" Precision="38" Scale="0" />
-        </ComplexType>
-        <ComplexType Name="Add_Client_Result">
-          <Property Type="Decimal" Name="ClientID" Nullable="true" Precision="38" Scale="0" />
-        </ComplexType>
-        <ComplexType Name="Add_Appointment_Result">
-          <Property Type="Decimal" Name="AppointmentID" Nullable="true" Precision="38" Scale="0" />
-        </ComplexType>
-        <ComplexType Name="Filter_Property1_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Address" Nullable="false" MaxLength="100" />
-          <Property Type="Double" Name="Price" Nullable="false" />
-          <Property Type="String" Name="Type" Nullable="false" MaxLength="100" />
-          <Property Type="Double" Name="Area" Nullable="false" />
-          <Property Type="Boolean" Name="Status" Nullable="false" />
-          <Property Type="String" Name="Description" Nullable="false" MaxLength="100" />
-        </ComplexType>
-        <ComplexType Name="Filter_Property_Result1">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Address" Nullable="false" MaxLength="100" />
-          <Property Type="Double" Name="Price" Nullable="false" />
-          <Property Type="String" Name="Type" Nullable="false" MaxLength="100" />
-          <Property Type="Double" Name="Area" Nullable="false" />
-          <Property Type="Boolean" Name="Status" Nullable="false" />
-          <Property Type="String" Name="Description" Nullable="false" MaxLength="100" />
-        </ComplexType>
-      </Schema>
-    </edmx:ConceptualModels>
-    <!-- C-S mapping content -->
-    <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="RealEstateModelStoreContainer" CdmEntityContainer="AdminConnectionString1">
-          <FunctionImportMapping FunctionName="RealEstateModel.Store.Get_All_Appointments" FunctionImportName="Get_All_Appointments">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Get_All_Appointments_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Client" ColumnName="Client" />
-                <ScalarProperty Name="Agent" ColumnName="Agent" />
-                <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
-                <ScalarProperty Name="Comment" ColumnName="Comment" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionName="RealEstateModel.Store.Get_All_Clients" FunctionImportName="Get_All_Clients">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Get_All_Clients_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Photo" ColumnName="Photo" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionName="RealEstateModel.Store.Get_All_Employees" FunctionImportName="Get_All_Employees">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Get_All_Employees_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Photo" ColumnName="Photo" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionName="RealEstateModel.Store.Get_All_Properties" FunctionImportName="Get_All_Properties">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Get_All_Properties_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Property_Photo" ColumnName="Property Photo" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Add_Buy" FunctionName="RealEstateModel.Store.Add_Buy" />
-          <FunctionImportMapping FunctionImportName="Add_Choosen_Property" FunctionName="RealEstateModel.Store.Add_Choosen_Property" />
-          <FunctionImportMapping FunctionImportName="Add_Property_Photo" FunctionName="RealEstateModel.Store.Add_Property_Photo" />
-          <FunctionImportMapping FunctionImportName="Delete_Appointment" FunctionName="RealEstateModel.Store.Delete_Appointment" />
-          <FunctionImportMapping FunctionImportName="Delete_Buy" FunctionName="RealEstateModel.Store.Delete_Buy" />
-          <FunctionImportMapping FunctionImportName="Delete_Choosen_Property" FunctionName="RealEstateModel.Store.Delete_Choosen_Property" />
-          <FunctionImportMapping FunctionImportName="Delete_Client" FunctionName="RealEstateModel.Store.Delete_Client" />
-          <FunctionImportMapping FunctionImportName="Delete_Department" FunctionName="RealEstateModel.Store.Delete_Department" />
-          <FunctionImportMapping FunctionImportName="Delete_Employee" FunctionName="RealEstateModel.Store.Delete_Employee" />
-          <FunctionImportMapping FunctionImportName="Delete_Property" FunctionName="RealEstateModel.Store.Delete_Property" />
-          <FunctionImportMapping FunctionImportName="Delete_Property_Photo" FunctionName="RealEstateModel.Store.Delete_Property_Photo" />
-          <FunctionImportMapping FunctionImportName="Delete_Property_Photo_By_Id" FunctionName="RealEstateModel.Store.Delete_Property_Photo_By_Id" />
-          <FunctionImportMapping FunctionImportName="Search_Appointment_By_AgentID" FunctionName="RealEstateModel.Store.Search_Appointment_By_AgentID">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Search_Appointment_By_AgentID_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
-                <ScalarProperty Name="Comment" ColumnName="Comment" />
-                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
-                <ScalarProperty Name="AgentID" ColumnName="AgentID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Search_Appointment_By_ClientID" FunctionName="RealEstateModel.Store.Search_Appointment_By_ClientID">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Search_Appointment_By_ClientID_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
-                <ScalarProperty Name="Comment" ColumnName="Comment" />
-                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
-                <ScalarProperty Name="AgentID" ColumnName="AgentID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Search_Appointment_By_Date" FunctionName="RealEstateModel.Store.Search_Appointment_By_Date">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Search_Appointment_By_Date_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
-                <ScalarProperty Name="Comment" ColumnName="Comment" />
-                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
-                <ScalarProperty Name="AgentID" ColumnName="AgentID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Search_Appointment_By_ID" FunctionName="RealEstateModel.Store.Search_Appointment_By_ID">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Search_Appointment_By_ID_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
-                <ScalarProperty Name="Comment" ColumnName="Comment" />
-                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
-                <ScalarProperty Name="AgentID" ColumnName="AgentID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Search_Buy_By_AgentId" FunctionName="RealEstateModel.Store.Search_Buy_By_AgentId">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Search_Buy_By_AgentId_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
-                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
-                <ScalarProperty Name="AgentID" ColumnName="AgentID" />
-                <ScalarProperty Name="SellDate" ColumnName="SellDate" />
-                <ScalarProperty Name="Comission" ColumnName="Comission" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Search_Buy_By_ClientID" FunctionName="RealEstateModel.Store.Search_Buy_By_ClientID">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Search_Buy_By_ClientID_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
-                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
-                <ScalarProperty Name="AgentID" ColumnName="AgentID" />
-                <ScalarProperty Name="SellDate" ColumnName="SellDate" />
-                <ScalarProperty Name="Comission" ColumnName="Comission" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Search_Choosen_Property_By_Appintment" FunctionName="RealEstateModel.Store.Search_Choosen_Property_By_Appintment">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Search_Choosen_Property_By_Appintment_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Search_Choosen_Property_By_Property" FunctionName="RealEstateModel.Store.Search_Choosen_Property_By_Property">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Search_Choosen_Property_By_Property_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Search_Client_By_ID" FunctionName="RealEstateModel.Store.Search_Client_By_ID">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Search_Client_By_ID_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="Photo" ColumnName="Photo" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Search_Client_By_Name" FunctionName="RealEstateModel.Store.Search_Client_By_Name">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Search_Client_By_Name_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="Photo" ColumnName="Photo" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Search_Department_By_ID" FunctionName="RealEstateModel.Store.Search_Department_By_ID">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Search_Department_By_ID_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Search_Department_By_Name" FunctionName="RealEstateModel.Store.Search_Department_By_Name">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Search_Department_By_Name_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Search_Property_By_ID" FunctionName="RealEstateModel.Store.Search_Property_By_ID">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Search_Property_By_ID_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Area" ColumnName="Area" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Search_Property_By_Type" FunctionName="RealEstateModel.Store.Search_Property_By_Type">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Search_Property_By_Type_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Area" ColumnName="Area" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Search_Property_Photo_By_ID" FunctionName="RealEstateModel.Store.Search_Property_Photo_By_ID">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Search_Property_Photo_By_ID_Result">
-                <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
-                <ScalarProperty Name="Photo" ColumnName="Photo" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Search_Total_Sold_By_Employee" FunctionName="RealEstateModel.Store.Search_Total_Sold_By_Employee" />
-          <FunctionImportMapping FunctionImportName="Update_Appointment" FunctionName="RealEstateModel.Store.Update_Appointment" />
-          <FunctionImportMapping FunctionImportName="Update_Buy" FunctionName="RealEstateModel.Store.Update_Buy" />
-          <FunctionImportMapping FunctionImportName="Update_Choosen_Property" FunctionName="RealEstateModel.Store.Update_Choosen_Property" />
-          <FunctionImportMapping FunctionImportName="Update_Client" FunctionName="RealEstateModel.Store.Update_Client" />
-          <FunctionImportMapping FunctionImportName="Update_Department" FunctionName="RealEstateModel.Store.Update_Department" />
-          <FunctionImportMapping FunctionImportName="Update_Employee" FunctionName="RealEstateModel.Store.Update_Employee" />
-          <FunctionImportMapping FunctionImportName="Update_Property" FunctionName="RealEstateModel.Store.Update_Property" />
-          <FunctionImportMapping FunctionImportName="Update_Property_Photo" FunctionName="RealEstateModel.Store.Update_Property_Photo" />
-          <FunctionImportMapping FunctionImportName="Get_All_Clients_By_Agent" FunctionName="RealEstateModel.Store.Get_All_Clients_By_Agent">
-          <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Get_All_Clients_By_Agent_Result1">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Photo" ColumnName="Photo" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Login_Admin" FunctionName="RealEstateModel.Store.Login_Admin">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Login_Admin_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Photo" ColumnName="Photo" />
-                <ScalarProperty Name="EmpType" ColumnName="EmpType" />
-                <ScalarProperty Name="EmpDate" ColumnName="EmpDate" />
-                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Login_Agent" FunctionName="RealEstateModel.Store.Login_Agent">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Login_Agent_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Photo" ColumnName="Photo" />
-                <ScalarProperty Name="EmpType" ColumnName="EmpType" />
-                <ScalarProperty Name="EmpDate" ColumnName="EmpDate" />
-                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Login_Client" FunctionName="RealEstateModel.Store.Login_Client">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Login_Client_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="Photo" ColumnName="Photo" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Add_Property" FunctionName="RealEstateModel.Store.Add_Property">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Add_Property_Result">
-              <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Get_All_Departments" FunctionName="RealEstateModel.Store.Get_All_Departments">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Get_All_Departments_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Search_Employee_By_ID" FunctionName="RealEstateModel.Store.Search_Employee_By_ID">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Search_Employee_By_ID_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="Photo" ColumnName="Photo" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="EmpType" ColumnName="EmpType" />
-                <ScalarProperty Name="EmpDate" ColumnName="EmpDate" />
-                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Search_Employee_By_Name" FunctionName="RealEstateModel.Store.Search_Employee_By_Name">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Search_Employee_By_Name_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="Photo" ColumnName="Photo" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="EmpType" ColumnName="EmpType" />
-                <ScalarProperty Name="EmpDate" ColumnName="EmpDate" />
-                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Add_Employee" FunctionName="RealEstateModel.Store.Add_Employee">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Add_Employee_Result">
-                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Add_Department" FunctionName="RealEstateModel.Store.Add_Department">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Add_Department_Result">
-                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Add_Client" FunctionName="RealEstateModel.Store.Add_Client">
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Add_Appointment" FunctionName="RealEstateModel.Store.Add_Appointment">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Add_Appointment_Result">
-                <ScalarProperty Name="AppointmentID" ColumnName="AppointmentID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Filter_Property1" FunctionName="RealEstateModel.Store.Filter_Property">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Filter_Property1_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Area" ColumnName="Area" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Filter_Property" FunctionName="RealEstateModel.Store.Filter_Property">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="RealEstateModel.Filter_Property_Result1">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Area" ColumnName="Area" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
-  </edmx:Runtime>
-  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
-  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
-    <Connection>
-      <DesignerInfoPropertySet>
-        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
-      </DesignerInfoPropertySet>
-    </Connection>
-    <Options>
-      <DesignerInfoPropertySet>
-        <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="true" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
-      </DesignerInfoPropertySet>
-    </Options>
-    <!-- Diagram content (shape and connector positions) -->
-    <Diagrams></Diagrams>
-  </Designer>
+	<!-- EF Runtime content -->
+	<edmx:Runtime>
+		<!-- SSDL content -->
+		<edmx:StorageModels>
+			<Schema Namespace="RealEstateModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+				<Function Name="Add_Appointment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Add Appointment">
+					<Parameter Name="AppointmentDate" Type="datetime" Mode="In" />
+					<Parameter Name="Comment" Type="varchar" Mode="In" />
+					<Parameter Name="ClientId" Type="int" Mode="In" />
+					<Parameter Name="AgentId" Type="int" Mode="In" />
+				</Function>
+				<Function Name="Add_Buy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Add Buy">
+					<Parameter Name="PropertyId" Type="int" Mode="In" />
+					<Parameter Name="ClientId" Type="int" Mode="In" />
+					<Parameter Name="AgentId" Type="int" Mode="In" />
+					<Parameter Name="SellDate" Type="datetime" Mode="In" />
+					<Parameter Name="Comission" Type="money" Mode="In" />
+				</Function>
+				<Function Name="Add_Choosen_Property" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Add Choosen Property">
+					<Parameter Name="AppointmentId" Type="int" Mode="In" />
+					<Parameter Name="PropertyID" Type="int" Mode="In" />
+				</Function>
+				<Function Name="Add_Client" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Add Client">
+					<Parameter Name="FirstName" Type="varchar" Mode="In" />
+					<Parameter Name="LastName" Type="varchar" Mode="In" />
+					<Parameter Name="Photo" Type="varbinary(max)" Mode="In" />
+					<Parameter Name="PhoneNumber" Type="varchar" Mode="In" />
+					<Parameter Name="Email" Type="varchar" Mode="In" />
+					<Parameter Name="Password" Type="varchar" Mode="In" />
+					<Parameter Name="EmpId" Type="int" Mode="In" />
+				</Function>
+				<Function Name="Add_Department" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Add Department">
+					<Parameter Name="Name" Type="varchar" Mode="In" />
+				</Function>
+				<Function Name="Add_Employee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Add Employee">
+					<Parameter Name="FirstName" Type="varchar" Mode="In" />
+					<Parameter Name="LastName" Type="varchar" Mode="In" />
+					<Parameter Name="PhoneNumber" Type="varchar" Mode="In" />
+					<Parameter Name="Password" Type="varchar" Mode="In" />
+					<Parameter Name="Photo" Type="varbinary(max)" Mode="In" />
+					<Parameter Name="EmpType" Type="varchar" Mode="In" />
+					<Parameter Name="EmpDate" Type="date" Mode="In" />
+					<Parameter Name="DepartmentID" Type="int" Mode="In" />
+				</Function>
+				<Function Name="Add_Property" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Add Property">
+					<Parameter Name="Address" Type="varchar" Mode="In" />
+					<Parameter Name="Price" Type="float" Mode="In" />
+					<Parameter Name="Type" Type="varchar" Mode="In" />
+					<Parameter Name="Area" Type="float" Mode="In" />
+					<Parameter Name="Status" Type="bit" Mode="In" />
+					<Parameter Name="Description" Type="varchar" Mode="In" />
+				</Function>
+				<Function Name="Add_Property_Photo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Add Property Photo">
+					<Parameter Name="PropertyID" Type="int" Mode="In" />
+					<Parameter Name="Photo" Type="varbinary(max)" Mode="In" />
+				</Function>
+				<Function Name="Delete_Appointment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Delete Appointment">
+					<Parameter Name="ID" Type="int" Mode="In" />
+				</Function>
+				<Function Name="Delete_Buy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Delete Buy">
+					<Parameter Name="ID" Type="int" Mode="In" />
+				</Function>
+				<Function Name="Delete_Choosen_Property" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Delete Choosen Property">
+					<Parameter Name="AppointmentId" Type="int" Mode="In" />
+					<Parameter Name="PropertyId" Type="int" Mode="In" />
+				</Function>
+				<Function Name="Delete_Client" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Delete Client">
+					<Parameter Name="ID" Type="int" Mode="In" />
+				</Function>
+				<Function Name="Delete_Department" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Delete Department">
+					<Parameter Name="ID" Type="int" Mode="In" />
+				</Function>
+				<Function Name="Delete_Employee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Delete Employee">
+					<Parameter Name="ID" Type="int" Mode="In" />
+				</Function>
+				<Function Name="Delete_Property" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Delete Property">
+					<Parameter Name="ID" Type="int" Mode="In" />
+				</Function>
+				<Function Name="Delete_Property_Photo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Delete Property Photo">
+					<Parameter Name="Photo" Type="varbinary(max)" Mode="In" />
+				</Function>
+				<Function Name="Delete_Property_Photo_By_Id" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Delete Property Photo By Id">
+					<Parameter Name="PropertyId" Type="int" Mode="In" />
+				</Function>
+				<Function Name="Filter_Property" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Filter Property">
+					<Parameter Name="Address" Type="varchar" Mode="In" />
+					<Parameter Name="Price" Type="money" Mode="In" />
+					<Parameter Name="Type" Type="varchar" Mode="In" />
+					<Parameter Name="Area" Type="float" Mode="In" />
+					<Parameter Name="Status" Type="bit" Mode="In" />
+					<Parameter Name="Description" Type="varchar" Mode="In" />
+				</Function>
+				<Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+				<Function Name="Get_All_Appointments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Appointments">
+					<ReturnType>
+						<CollectionType>
+							<RowType>
+								<Property Name="ID" Type="int" Nullable="false" />
+								<Property Name="Client" Type="varchar" MaxLength="201" Nullable="false" />
+								<Property Name="Agent" Type="varchar" MaxLength="201" Nullable="false" />
+								<Property Name="AppointmentDate" Type="datetime" Nullable="false" />
+								<Property Name="Comment" Type="nvarchar" MaxLength="53" />
+							</RowType>
+						</CollectionType>
+					</ReturnType>
+				</Function>
+				<Function Name="Get_All_Buys" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Buys">
+					<ReturnType>
+						<CollectionType>
+							<RowType>
+								<Property Name="ID" Type="int" Nullable="false" />
+								<Property Name="Client" Type="varchar" MaxLength="201" Nullable="false" />
+								<Property Name="Agent" Type="varchar" MaxLength="201" Nullable="false" />
+								<Property Name="Comission" Type="money" />
+								<Property Name="SellDate" Type="datetime" Nullable="false" />
+							</RowType>
+						</CollectionType>
+					</ReturnType>
+				</Function>
+				<Function Name="Get_All_Clients" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Clients">
+					<ReturnType>
+						<CollectionType>
+							<RowType>
+								<Property Name="ID" Type="int" Nullable="false" />
+								<Property Name="Photo" Type="varbinary(max)" />
+								<Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
+								<Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
+								<Property Name="PhoneNumber" Type="varchar" MaxLength="11" />
+							</RowType>
+						</CollectionType>
+					</ReturnType>
+				</Function>
+				<Function Name="Get_All_Clients_By_Agent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Clients By Agent">
+					<Parameter Name="ID" Type="int" Mode="In" />
+				</Function>
+				<Function Name="Get_All_Departments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Departments" />
+				<Function Name="Get_All_Employees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Employees">
+					<ReturnType>
+						<CollectionType>
+							<RowType>
+								<Property Name="ID" Type="int" Nullable="false" />
+								<Property Name="Photo" Type="varbinary(max)" />
+								<Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
+								<Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
+								<Property Name="PhoneNumber" Type="varchar" MaxLength="11" />
+							</RowType>
+						</CollectionType>
+					</ReturnType>
+				</Function>
+				<Function Name="Get_All_Properties" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Properties">
+					<ReturnType>
+						<CollectionType>
+							<RowType>
+								<Property Name="ID" Type="int" />
+								<Property Name="Property Photo" Type="varbinary(max)" />
+								<Property Name="Address" Type="varchar" MaxLength="100" />
+								<Property Name="Price" Type="float" />
+								<Property Name="Status" Type="bit" />
+								<Property Name="Description" Type="varchar" MaxLength="53" />
+							</RowType>
+						</CollectionType>
+					</ReturnType>
+				</Function>
+				<Function Name="Login_Admin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Login Admin">
+					<Parameter Name="ID" Type="int" Mode="In" />
+					<Parameter Name="Upwd" Type="varchar" Mode="In" />
+					<ReturnType>
+						<CollectionType>
+							<RowType>
+								<Property Name="ID" Type="int" Nullable="false" />
+								<Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
+								<Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
+								<Property Name="PhoneNumber" Type="varchar" MaxLength="11" />
+								<Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
+								<Property Name="Photo" Type="varbinary(max)" />
+								<Property Name="EmpType" Type="varchar" MaxLength="100" Nullable="false" />
+								<Property Name="EmpDate" Type="date" Nullable="false" />
+								<Property Name="DepartmentID" Type="int" />
+							</RowType>
+						</CollectionType>
+					</ReturnType>
+				</Function>
+				<Function Name="Login_Agent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Login Agent">
+					<Parameter Name="ID" Type="int" Mode="In" />
+					<Parameter Name="Upwd" Type="varchar" Mode="In" />
+					<ReturnType>
+						<CollectionType>
+							<RowType>
+								<Property Name="ID" Type="int" Nullable="false" />
+								<Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
+								<Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
+								<Property Name="PhoneNumber" Type="varchar" MaxLength="11" />
+								<Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
+								<Property Name="Photo" Type="varbinary(max)" />
+								<Property Name="EmpType" Type="varchar" MaxLength="100" Nullable="false" />
+								<Property Name="EmpDate" Type="date" Nullable="false" />
+								<Property Name="DepartmentID" Type="int" />
+							</RowType>
+						</CollectionType>
+					</ReturnType>
+				</Function>
+				<Function Name="Login_Client" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Login Client">
+					<Parameter Name="ID" Type="int" Mode="In" />
+					<Parameter Name="Upwd" Type="varchar" Mode="In" />
+					<ReturnType>
+						<CollectionType>
+							<RowType>
+								<Property Name="ID" Type="int" Nullable="false" />
+								<Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
+								<Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
+								<Property Name="Photo" Type="varbinary(max)" />
+								<Property Name="PhoneNumber" Type="varchar" MaxLength="11" />
+								<Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+								<Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
+								<Property Name="EmpId" Type="int" />
+							</RowType>
+						</CollectionType>
+					</ReturnType>
+				</Function>
+				<Function Name="Search_Appointment_By_AgentID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Appointment By AgentID">
+					<Parameter Name="AgentID" Type="int" Mode="In" />
+				</Function>
+				<Function Name="Search_Appointment_By_ClientID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Appointment By ClientID">
+					<Parameter Name="ClientID" Type="int" Mode="In" />
+				</Function>
+				<Function Name="Search_Appointment_By_Date" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Appointment By Date">
+					<Parameter Name="Date" Type="datetime" Mode="In" />
+				</Function>
+				<Function Name="Search_Appointment_By_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Appointment By ID">
+					<Parameter Name="ID" Type="int" Mode="In" />
+				</Function>
+				<Function Name="Search_Buy_By_AgentId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Buy By AgentId">
+					<Parameter Name="AgentId" Type="int" Mode="In" />
+				</Function>
+				<Function Name="Search_Buy_By_ClientID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Buy By ClientID">
+					<Parameter Name="ClientID" Type="int" Mode="In" />
+				</Function>
+				<Function Name="Search_Choosen_Property_By_Appintment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Choosen Property By Appintment">
+					<Parameter Name="AppointmentID" Type="int" Mode="In" />
+				</Function>
+				<Function Name="Search_Choosen_Property_By_Property" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Choosen Property By Property">
+					<Parameter Name="PropertyID" Type="int" Mode="In" />
+				</Function>
+				<Function Name="Search_Client_By_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Client By ID">
+					<Parameter Name="ID" Type="int" Mode="In" />
+				</Function>
+				<Function Name="Search_Client_By_Name" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Client By Name">
+					<Parameter Name="Name" Type="varchar" Mode="In" />
+				</Function>
+				<Function Name="Search_Department_By_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Department By ID">
+					<Parameter Name="ID" Type="int" Mode="In" />
+				</Function>
+				<Function Name="Search_Department_By_Name" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Department By Name">
+					<Parameter Name="Name" Type="varchar" Mode="In" />
+				</Function>
+				<Function Name="Search_Employee_By_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Employee By ID">
+					<Parameter Name="ID" Type="int" Mode="In" />
+				</Function>
+				<Function Name="Search_Employee_By_Name" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Employee By Name">
+					<Parameter Name="Name" Type="varchar" Mode="In" />
+				</Function>
+				<Function Name="Search_Property_By_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Property By ID">
+					<Parameter Name="ID" Type="int" Mode="In" />
+				</Function>
+				<Function Name="Search_Property_By_Type" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Property By Type">
+					<Parameter Name="Type" Type="varchar" Mode="In" />
+				</Function>
+				<Function Name="Search_Property_Photo_By_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Property Photo By ID">
+					<Parameter Name="PropertyID" Type="int" Mode="In" />
+				</Function>
+				<Function Name="Search_Total_Sold_By_Employee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Search Total Sold By Employee">
+					<Parameter Name="EmpId" Type="varchar" Mode="In" />
+				</Function>
+				<Function Name="Update_Appointment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Update Appointment">
+					<Parameter Name="Id" Type="int" Mode="In" />
+					<Parameter Name="AppointmentDate" Type="datetime" Mode="In" />
+					<Parameter Name="Comment" Type="varchar" Mode="In" />
+					<Parameter Name="ClientId" Type="int" Mode="In" />
+					<Parameter Name="AgentId" Type="int" Mode="In" />
+				</Function>
+				<Function Name="Update_Buy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Update Buy">
+					<Parameter Name="ID" Type="int" Mode="In" />
+					<Parameter Name="PropertyId" Type="int" Mode="In" />
+					<Parameter Name="ClientId" Type="int" Mode="In" />
+					<Parameter Name="AgentId" Type="int" Mode="In" />
+					<Parameter Name="SellDate" Type="datetime" Mode="In" />
+					<Parameter Name="Comission" Type="money" Mode="In" />
+				</Function>
+				<Function Name="Update_Choosen_Property" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Update Choosen Property">
+					<Parameter Name="AppointmentId" Type="int" Mode="In" />
+					<Parameter Name="OldPropertyId" Type="int" Mode="In" />
+					<Parameter Name="NewPropertyId" Type="int" Mode="In" />
+				</Function>
+				<Function Name="Update_Client" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Update Client">
+					<Parameter Name="ID" Type="int" Mode="In" />
+					<Parameter Name="FirstName" Type="varchar" Mode="In" />
+					<Parameter Name="LastName" Type="varchar" Mode="In" />
+					<Parameter Name="Photo" Type="varbinary(max)" Mode="In" />
+					<Parameter Name="PhoneNumber" Type="varchar" Mode="In" />
+					<Parameter Name="Email" Type="varchar" Mode="In" />
+					<Parameter Name="Password" Type="varchar" Mode="In" />
+					<Parameter Name="EmpId" Type="int" Mode="In" />
+				</Function>
+				<Function Name="Update_Department" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Update Department">
+					<Parameter Name="Name" Type="varchar" Mode="In" />
+					<Parameter Name="ID" Type="int" Mode="In" />
+				</Function>
+				<Function Name="Update_Employee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Update Employee">
+					<Parameter Name="ID" Type="int" Mode="In" />
+					<Parameter Name="FirstName" Type="varchar" Mode="In" />
+					<Parameter Name="LastName" Type="varchar" Mode="In" />
+					<Parameter Name="PhoneNumber" Type="varchar" Mode="In" />
+					<Parameter Name="Password" Type="varchar" Mode="In" />
+					<Parameter Name="Photo" Type="varbinary(max)" Mode="In" />
+					<Parameter Name="EmpType" Type="varchar" Mode="In" />
+					<Parameter Name="EmpDate" Type="date" Mode="In" />
+					<Parameter Name="DepartmentID" Type="int" Mode="In" />
+				</Function>
+				<Function Name="Update_Property" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Update Property">
+					<Parameter Name="ID" Type="int" Mode="In" />
+					<Parameter Name="Address" Type="varchar" Mode="In" />
+					<Parameter Name="Price" Type="float" Mode="In" />
+					<Parameter Name="Type" Type="varchar" Mode="In" />
+					<Parameter Name="Area" Type="float" Mode="In" />
+					<Parameter Name="Status" Type="bit" Mode="In" />
+					<Parameter Name="Description" Type="varchar" Mode="In" />
+				</Function>
+				<Function Name="Update_Property_Photo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Update Property Photo">
+					<Parameter Name="OldPhoto" Type="varbinary(max)" Mode="In" />
+					<Parameter Name="NewPhoto" Type="varbinary(max)" Mode="In" />
+				</Function>
+				<EntityContainer Name="RealEstateModelStoreContainer" />
+			</Schema>
+		</edmx:StorageModels>
+		<!-- CSDL content -->
+		<edmx:ConceptualModels>
+			<Schema Namespace="RealEstateModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+				<ComplexType Name="Get_All_Appointments_Result">
+					<Property Name="ID" Type="Int32" Nullable="false" />
+					<Property Name="Client" Type="String" MaxLength="201" FixedLength="false" Unicode="false" Nullable="false" />
+					<Property Name="Agent" Type="String" MaxLength="201" FixedLength="false" Unicode="false" Nullable="false" />
+					<Property Name="AppointmentDate" Type="DateTime" Nullable="false" />
+					<Property Name="Comment" Type="String" MaxLength="53" FixedLength="false" Unicode="true" />
+				</ComplexType>
+				<ComplexType Name="Get_All_Clients_Result">
+					<Property Name="ID" Type="Int32" Nullable="false" />
+					<Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+					<Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+					<Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+					<Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+				</ComplexType>
+				<ComplexType Name="Get_All_Employees_Result">
+					<Property Name="ID" Type="Int32" Nullable="false" />
+					<Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+					<Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+					<Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+					<Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+				</ComplexType>
+				<ComplexType Name="Get_All_Properties_Result">
+					<Property Name="ID" Type="Int32" Nullable="false" />
+					<Property Name="Property_Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+					<Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+					<Property Name="Price" Type="Double" Nullable="false" />
+					<Property Name="Status" Type="Boolean" Nullable="false" />
+					<Property Name="Description" Type="String" MaxLength="53" FixedLength="false" Unicode="false" />
+				</ComplexType>
+				<EntityContainer Name="AdminConnectionString1" annotation:LazyLoadingEnabled="true">
+					<FunctionImport Name="Get_All_Appointments" IsComposable="true" ReturnType="Collection(RealEstateModel.Get_All_Appointments_Result)" />
+					<FunctionImport Name="Get_All_Clients" IsComposable="true" ReturnType="Collection(RealEstateModel.Get_All_Clients_Result)" />
+					<FunctionImport Name="Get_All_Employees" IsComposable="true" ReturnType="Collection(RealEstateModel.Get_All_Employees_Result)" />
+					<FunctionImport Name="Get_All_Properties" IsComposable="true" ReturnType="Collection(RealEstateModel.Get_All_Properties_Result)" />
+					<FunctionImport Name="Add_Appointment" ReturnType="Collection(RealEstateModel.Add_Appointment_Result)">
+						<Parameter Name="AppointmentDate" Mode="In" Type="DateTime" />
+						<Parameter Name="Comment" Mode="In" Type="String" />
+						<Parameter Name="ClientId" Mode="In" Type="Int32" />
+						<Parameter Name="AgentId" Mode="In" Type="Int32" />
+					</FunctionImport>
+					<FunctionImport Name="Add_Buy">
+						<Parameter Name="PropertyId" Mode="In" Type="Int32" />
+						<Parameter Name="ClientId" Mode="In" Type="Int32" />
+						<Parameter Name="AgentId" Mode="In" Type="Int32" />
+						<Parameter Name="SellDate" Mode="In" Type="DateTime" />
+						<Parameter Name="Comission" Mode="In" Type="Decimal" />
+					</FunctionImport>
+					<FunctionImport Name="Add_Choosen_Property">
+						<Parameter Name="AppointmentId" Mode="In" Type="Int32" />
+						<Parameter Name="PropertyID" Mode="In" Type="Int32" />
+					</FunctionImport>
+					<FunctionImport Name="Add_Client" ReturnType="Collection(Decimal)">
+						<Parameter Name="FirstName" Mode="In" Type="String" />
+						<Parameter Name="LastName" Mode="In" Type="String" />
+						<Parameter Name="Photo" Mode="In" Type="Binary" />
+						<Parameter Name="PhoneNumber" Mode="In" Type="String" />
+						<Parameter Name="Email" Mode="In" Type="String" />
+						<Parameter Name="Password" Mode="In" Type="String" />
+						<Parameter Name="EmpId" Mode="In" Type="Int32" />
+					</FunctionImport>
+					<FunctionImport Name="Add_Department" ReturnType="Collection(RealEstateModel.Add_Department_Result)">
+						<Parameter Name="Name" Mode="In" Type="String" />
+					</FunctionImport>
+					<FunctionImport Name="Add_Employee" ReturnType="Collection(RealEstateModel.Add_Employee_Result)">
+						<Parameter Name="FirstName" Mode="In" Type="String" />
+						<Parameter Name="LastName" Mode="In" Type="String" />
+						<Parameter Name="PhoneNumber" Mode="In" Type="String" />
+						<Parameter Name="Password" Mode="In" Type="String" />
+						<Parameter Name="Photo" Mode="In" Type="Binary" />
+						<Parameter Name="EmpType" Mode="In" Type="String" />
+						<Parameter Name="EmpDate" Mode="In" Type="DateTime" />
+						<Parameter Name="DepartmentID" Mode="In" Type="Int32" />
+					</FunctionImport>
+					<FunctionImport Name="Add_Property" ReturnType="Collection(RealEstateModel.Add_Property_Result)">
+						<Parameter Name="Address" Mode="In" Type="String" />
+						<Parameter Name="Price" Mode="In" Type="Double" />
+						<Parameter Name="Type" Mode="In" Type="String" />
+						<Parameter Name="Area" Mode="In" Type="Double" />
+						<Parameter Name="Status" Mode="In" Type="Boolean" />
+						<Parameter Name="Description" Mode="In" Type="String" />
+					</FunctionImport>
+					<FunctionImport Name="Add_Property_Photo">
+						<Parameter Name="PropertyID" Mode="In" Type="Int32" />
+						<Parameter Name="Photo" Mode="In" Type="Binary" />
+					</FunctionImport>
+					<FunctionImport Name="Delete_Appointment">
+						<Parameter Name="ID" Mode="In" Type="Int32" />
+					</FunctionImport>
+					<FunctionImport Name="Delete_Buy">
+						<Parameter Name="ID" Mode="In" Type="Int32" />
+					</FunctionImport>
+					<FunctionImport Name="Delete_Choosen_Property">
+						<Parameter Name="AppointmentId" Mode="In" Type="Int32" />
+						<Parameter Name="PropertyId" Mode="In" Type="Int32" />
+					</FunctionImport>
+					<FunctionImport Name="Delete_Client">
+						<Parameter Name="ID" Mode="In" Type="Int32" />
+					</FunctionImport>
+					<FunctionImport Name="Delete_Department">
+						<Parameter Name="ID" Mode="In" Type="Int32" />
+					</FunctionImport>
+					<FunctionImport Name="Delete_Employee">
+						<Parameter Name="ID" Mode="In" Type="Int32" />
+					</FunctionImport>
+					<FunctionImport Name="Delete_Property">
+						<Parameter Name="ID" Mode="In" Type="Int32" />
+					</FunctionImport>
+					<FunctionImport Name="Delete_Property_Photo">
+						<Parameter Name="Photo" Mode="In" Type="Binary" />
+					</FunctionImport>
+					<FunctionImport Name="Delete_Property_Photo_By_Id">
+						<Parameter Name="PropertyId" Mode="In" Type="Int32" />
+					</FunctionImport>
+					<FunctionImport Name="Filter_Property" ReturnType="Collection(RealEstateModel.Filter_Property_Result)">
+						<Parameter Name="Address" Mode="In" Type="String" />
+						<Parameter Name="Price" Mode="In" Type="Decimal" />
+						<Parameter Name="Type" Mode="In" Type="String" />
+						<Parameter Name="Area" Mode="In" Type="Double" />
+						<Parameter Name="Status" Mode="In" Type="Boolean" />
+						<Parameter Name="Description" Mode="In" Type="String" />
+					</FunctionImport>
+					<FunctionImport Name="Search_Appointment_By_AgentID" ReturnType="Collection(RealEstateModel.Search_Appointment_By_AgentID_Result)">
+						<Parameter Name="AgentID" Mode="In" Type="Int32" />
+					</FunctionImport>
+					<FunctionImport Name="Search_Appointment_By_ClientID" ReturnType="Collection(RealEstateModel.Search_Appointment_By_ClientID_Result)">
+						<Parameter Name="ClientID" Mode="In" Type="Int32" />
+					</FunctionImport>
+					<FunctionImport Name="Search_Appointment_By_Date" ReturnType="Collection(RealEstateModel.Search_Appointment_By_Date_Result)">
+						<Parameter Name="Date" Mode="In" Type="DateTime" />
+					</FunctionImport>
+					<FunctionImport Name="Search_Appointment_By_ID" ReturnType="Collection(RealEstateModel.Search_Appointment_By_ID_Result)">
+						<Parameter Name="ID" Mode="In" Type="Int32" />
+					</FunctionImport>
+					<FunctionImport Name="Search_Buy_By_AgentId" ReturnType="Collection(RealEstateModel.Search_Buy_By_AgentId_Result)">
+						<Parameter Name="AgentId" Mode="In" Type="Int32" />
+					</FunctionImport>
+					<FunctionImport Name="Search_Buy_By_ClientID" ReturnType="Collection(RealEstateModel.Search_Buy_By_ClientID_Result)">
+						<Parameter Name="ClientID" Mode="In" Type="Int32" />
+					</FunctionImport>
+					<FunctionImport Name="Search_Choosen_Property_By_Appintment" ReturnType="Collection(RealEstateModel.Search_Choosen_Property_By_Appintment_Result)">
+						<Parameter Name="AppointmentID" Mode="In" Type="Int32" />
+					</FunctionImport>
+					<FunctionImport Name="Search_Choosen_Property_By_Property" ReturnType="Collection(RealEstateModel.Search_Choosen_Property_By_Property_Result)">
+						<Parameter Name="PropertyID" Mode="In" Type="Int32" />
+					</FunctionImport>
+					<FunctionImport Name="Search_Client_By_ID" ReturnType="Collection(RealEstateModel.Search_Client_By_ID_Result)">
+						<Parameter Name="ID" Mode="In" Type="Int32" />
+					</FunctionImport>
+					<FunctionImport Name="Search_Client_By_Name" ReturnType="Collection(RealEstateModel.Search_Client_By_Name_Result)">
+						<Parameter Name="Name" Mode="In" Type="String" />
+					</FunctionImport>
+					<FunctionImport Name="Search_Department_By_ID" ReturnType="Collection(RealEstateModel.Search_Department_By_ID_Result)">
+						<Parameter Name="ID" Mode="In" Type="Int32" />
+					</FunctionImport>
+					<FunctionImport Name="Search_Department_By_Name" ReturnType="Collection(RealEstateModel.Search_Department_By_Name_Result)">
+						<Parameter Name="Name" Mode="In" Type="String" />
+					</FunctionImport>
+					<FunctionImport Name="Search_Property_By_ID" ReturnType="Collection(RealEstateModel.Search_Property_By_ID_Result)">
+						<Parameter Name="ID" Mode="In" Type="Int32" />
+					</FunctionImport>
+					<FunctionImport Name="Search_Property_By_Type" ReturnType="Collection(RealEstateModel.Search_Property_By_Type_Result)">
+						<Parameter Name="Type" Mode="In" Type="String" />
+					</FunctionImport>
+					<FunctionImport Name="Search_Property_Photo_By_ID" ReturnType="Collection(RealEstateModel.Search_Property_Photo_By_ID_Result)">
+						<Parameter Name="PropertyID" Mode="In" Type="Int32" />
+					</FunctionImport>
+					<FunctionImport Name="Search_Total_Sold_By_Employee" ReturnType="Collection(Int32)">
+						<Parameter Name="EmpId" Mode="In" Type="String" />
+					</FunctionImport>
+					<FunctionImport Name="Update_Appointment">
+						<Parameter Name="Id" Mode="In" Type="Int32" />
+						<Parameter Name="AppointmentDate" Mode="In" Type="DateTime" />
+						<Parameter Name="Comment" Mode="In" Type="String" />
+						<Parameter Name="ClientId" Mode="In" Type="Int32" />
+						<Parameter Name="AgentId" Mode="In" Type="Int32" />
+					</FunctionImport>
+					<FunctionImport Name="Update_Buy">
+						<Parameter Name="ID" Mode="In" Type="Int32" />
+						<Parameter Name="PropertyId" Mode="In" Type="Int32" />
+						<Parameter Name="ClientId" Mode="In" Type="Int32" />
+						<Parameter Name="AgentId" Mode="In" Type="Int32" />
+						<Parameter Name="SellDate" Mode="In" Type="DateTime" />
+						<Parameter Name="Comission" Mode="In" Type="Decimal" />
+					</FunctionImport>
+					<FunctionImport Name="Update_Choosen_Property">
+						<Parameter Name="AppointmentId" Mode="In" Type="Int32" />
+						<Parameter Name="OldPropertyId" Mode="In" Type="Int32" />
+						<Parameter Name="NewPropertyId" Mode="In" Type="Int32" />
+					</FunctionImport>
+					<FunctionImport Name="Update_Client">
+						<Parameter Name="ID" Mode="In" Type="Int32" />
+						<Parameter Name="FirstName" Mode="In" Type="String" />
+						<Parameter Name="LastName" Mode="In" Type="String" />
+						<Parameter Name="Photo" Mode="In" Type="Binary" />
+						<Parameter Name="PhoneNumber" Mode="In" Type="String" />
+						<Parameter Name="Email" Mode="In" Type="String" />
+						<Parameter Name="Password" Mode="In" Type="String" />
+						<Parameter Name="EmpId" Mode="In" Type="Int32" />
+					</FunctionImport>
+					<FunctionImport Name="Update_Department">
+						<Parameter Name="Name" Mode="In" Type="String" />
+						<Parameter Name="ID" Mode="In" Type="Int32" />
+					</FunctionImport>
+					<FunctionImport Name="Update_Employee">
+						<Parameter Name="ID" Mode="In" Type="Int32" />
+						<Parameter Name="FirstName" Mode="In" Type="String" />
+						<Parameter Name="LastName" Mode="In" Type="String" />
+						<Parameter Name="PhoneNumber" Mode="In" Type="String" />
+						<Parameter Name="Password" Mode="In" Type="String" />
+						<Parameter Name="Photo" Mode="In" Type="Binary" />
+						<Parameter Name="EmpType" Mode="In" Type="String" />
+						<Parameter Name="EmpDate" Mode="In" Type="DateTime" />
+						<Parameter Name="DepartmentID" Mode="In" Type="Int32" />
+					</FunctionImport>
+					<FunctionImport Name="Update_Property">
+						<Parameter Name="ID" Mode="In" Type="Int32" />
+						<Parameter Name="Address" Mode="In" Type="String" />
+						<Parameter Name="Price" Mode="In" Type="Double" />
+						<Parameter Name="Type" Mode="In" Type="String" />
+						<Parameter Name="Area" Mode="In" Type="Double" />
+						<Parameter Name="Status" Mode="In" Type="Boolean" />
+						<Parameter Name="Description" Mode="In" Type="String" />
+					</FunctionImport>
+					<FunctionImport Name="Update_Property_Photo">
+						<Parameter Name="OldPhoto" Mode="In" Type="Binary" />
+						<Parameter Name="NewPhoto" Mode="In" Type="Binary" />
+					</FunctionImport>
+					<FunctionImport Name="Get_All_Clients_By_Agent" ReturnType="Collection(RealEstateModel.Get_All_Clients_By_Agent_Result1)">
+						<Parameter Name="ID" Mode="In" Type="Int32" />
+					</FunctionImport>
+					<FunctionImport Name="Login_Admin" IsComposable="true" ReturnType="Collection(RealEstateModel.Login_Admin_Result)">
+						<Parameter Name="ID" Mode="In" Type="Int32" />
+						<Parameter Name="Upwd" Mode="In" Type="String" />
+					</FunctionImport>
+					<FunctionImport Name="Login_Agent" IsComposable="true" ReturnType="Collection(RealEstateModel.Login_Agent_Result)">
+						<Parameter Name="ID" Mode="In" Type="Int32" />
+						<Parameter Name="Upwd" Mode="In" Type="String" />
+					</FunctionImport>
+					<FunctionImport Name="Login_Client" IsComposable="true" ReturnType="Collection(RealEstateModel.Login_Client_Result)">
+						<Parameter Name="ID" Mode="In" Type="Int32" />
+						<Parameter Name="Upwd" Mode="In" Type="String" />
+					</FunctionImport>
+					<FunctionImport Name="Get_All_Departments" ReturnType="Collection(RealEstateModel.Get_All_Departments_Result)" />
+					<FunctionImport Name="Search_Employee_By_ID" ReturnType="Collection(RealEstateModel.Search_Employee_By_ID_Result)">
+						<Parameter Name="ID" Mode="In" Type="Int32" />
+					</FunctionImport>
+					<FunctionImport Name="Search_Employee_By_Name" ReturnType="Collection(RealEstateModel.Search_Employee_By_Name_Result)">
+						<Parameter Name="Name" Mode="In" Type="String" />
+					</FunctionImport>
+					<FunctionImport Name="Get_All_Buys" IsComposable="true" ReturnType="Collection(RealEstateModel.Get_All_Buys_Result)" />
+				</EntityContainer>
+				<ComplexType Name="Filter_Property_Result">
+					<Property Type="Int32" Name="ID" Nullable="false" />
+					<Property Type="String" Name="Address" Nullable="false" MaxLength="100" />
+					<Property Type="Double" Name="Price" Nullable="false" />
+					<Property Type="String" Name="Type" Nullable="false" MaxLength="100" />
+					<Property Type="Double" Name="Area" Nullable="false" />
+					<Property Type="Boolean" Name="Status" Nullable="false" />
+					<Property Type="String" Name="Description" Nullable="false" MaxLength="100" />
+				</ComplexType>
+				<ComplexType Name="Search_Appointment_By_AgentID_Result">
+					<Property Type="Int32" Name="ID" Nullable="false" />
+					<Property Type="DateTime" Name="AppointmentDate" Nullable="false" Precision="23" />
+					<Property Type="String" Name="Comment" Nullable="false" MaxLength="100" />
+					<Property Type="Int32" Name="ClientID" Nullable="false" />
+					<Property Type="Int32" Name="AgentID" Nullable="false" />
+				</ComplexType>
+				<ComplexType Name="Search_Appointment_By_ClientID_Result">
+					<Property Type="Int32" Name="ID" Nullable="false" />
+					<Property Type="DateTime" Name="AppointmentDate" Nullable="false" Precision="23" />
+					<Property Type="String" Name="Comment" Nullable="false" MaxLength="100" />
+					<Property Type="Int32" Name="ClientID" Nullable="false" />
+					<Property Type="Int32" Name="AgentID" Nullable="false" />
+				</ComplexType>
+				<ComplexType Name="Search_Appointment_By_Date_Result">
+					<Property Type="Int32" Name="ID" Nullable="false" />
+					<Property Type="DateTime" Name="AppointmentDate" Nullable="false" Precision="23" />
+					<Property Type="String" Name="Comment" Nullable="false" MaxLength="100" />
+					<Property Type="Int32" Name="ClientID" Nullable="false" />
+					<Property Type="Int32" Name="AgentID" Nullable="false" />
+				</ComplexType>
+				<ComplexType Name="Search_Appointment_By_ID_Result">
+					<Property Type="Int32" Name="ID" Nullable="false" />
+					<Property Type="DateTime" Name="AppointmentDate" Nullable="false" Precision="23" />
+					<Property Type="String" Name="Comment" Nullable="false" MaxLength="100" />
+					<Property Type="Int32" Name="ClientID" Nullable="false" />
+					<Property Type="Int32" Name="AgentID" Nullable="false" />
+				</ComplexType>
+				<ComplexType Name="Search_Buy_By_AgentId_Result">
+					<Property Type="Int32" Name="ID" Nullable="false" />
+					<Property Type="Int32" Name="PropertyID" Nullable="false" />
+					<Property Type="Int32" Name="ClientID" Nullable="false" />
+					<Property Type="Int32" Name="AgentID" Nullable="false" />
+					<Property Type="DateTime" Name="SellDate" Nullable="false" Precision="23" />
+					<Property Type="Decimal" Name="Comission" Nullable="true" Precision="19" />
+				</ComplexType>
+				<ComplexType Name="Search_Buy_By_ClientID_Result">
+					<Property Type="Int32" Name="ID" Nullable="false" />
+					<Property Type="Int32" Name="PropertyID" Nullable="false" />
+					<Property Type="Int32" Name="ClientID" Nullable="false" />
+					<Property Type="Int32" Name="AgentID" Nullable="false" />
+					<Property Type="DateTime" Name="SellDate" Nullable="false" Precision="23" />
+					<Property Type="Decimal" Name="Comission" Nullable="true" Precision="19" />
+				</ComplexType>
+				<ComplexType Name="Search_Choosen_Property_By_Appintment_Result">
+					<Property Type="Int32" Name="ID" Nullable="false" />
+					<Property Type="Int32" Name="PropertyID" Nullable="false" />
+				</ComplexType>
+				<ComplexType Name="Search_Choosen_Property_By_Property_Result">
+					<Property Type="Int32" Name="ID" Nullable="false" />
+					<Property Type="Int32" Name="PropertyID" Nullable="false" />
+				</ComplexType>
+				<ComplexType Name="Search_Client_By_ID_Result">
+					<Property Type="Int32" Name="ID" Nullable="false" />
+					<Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+					<Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
+					<Property Type="Binary" Name="Photo" Nullable="true" />
+					<Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
+					<Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+					<Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
+					<Property Type="Int32" Name="EmpId" Nullable="false" />
+				</ComplexType>
+				<ComplexType Name="Search_Client_By_Name_Result">
+					<Property Type="Int32" Name="ID" Nullable="false" />
+					<Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+					<Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
+					<Property Type="Binary" Name="Photo" Nullable="true" />
+					<Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
+					<Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+					<Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
+					<Property Type="Int32" Name="EmpId" Nullable="false" />
+				</ComplexType>
+				<ComplexType Name="Search_Department_By_ID_Result">
+					<Property Type="Int32" Name="ID" Nullable="false" />
+					<Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+				</ComplexType>
+				<ComplexType Name="Search_Department_By_Name_Result">
+					<Property Type="Int32" Name="ID" Nullable="false" />
+					<Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+				</ComplexType>
+				<ComplexType Name="Search_Property_By_ID_Result">
+					<Property Type="Int32" Name="ID" Nullable="false" />
+					<Property Type="String" Name="Address" Nullable="false" MaxLength="100" />
+					<Property Type="Double" Name="Price" Nullable="false" />
+					<Property Type="String" Name="Type" Nullable="false" MaxLength="100" />
+					<Property Type="Double" Name="Area" Nullable="false" />
+					<Property Type="Boolean" Name="Status" Nullable="false" />
+					<Property Type="String" Name="Description" Nullable="false" MaxLength="100" />
+				</ComplexType>
+				<ComplexType Name="Search_Property_By_Type_Result">
+					<Property Type="Int32" Name="ID" Nullable="false" />
+					<Property Type="String" Name="Address" Nullable="false" MaxLength="100" />
+					<Property Type="Double" Name="Price" Nullable="false" />
+					<Property Type="String" Name="Type" Nullable="false" MaxLength="100" />
+					<Property Type="Double" Name="Area" Nullable="false" />
+					<Property Type="Boolean" Name="Status" Nullable="false" />
+					<Property Type="String" Name="Description" Nullable="false" MaxLength="100" />
+				</ComplexType>
+				<ComplexType Name="Search_Property_Photo_By_ID_Result">
+					<Property Type="Int32" Name="PropertyID" Nullable="false" />
+					<Property Type="Binary" Name="Photo" Nullable="false" />
+				</ComplexType>
+				<ComplexType Name="Get_All_Clients_By_Agent_Result">
+					<Property Type="Int32" Name="ID" Nullable="false" />
+					<Property Type="Binary" Name="Photo" Nullable="true" />
+					<Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+					<Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
+					<Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
+					<Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+				</ComplexType>
+				<ComplexType Name="Get_All_Clients_By_Agent_Result1">
+					<Property Type="Int32" Name="ID" Nullable="false" />
+					<Property Type="Binary" Name="Photo" Nullable="true" />
+					<Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+					<Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
+					<Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
+					<Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+				</ComplexType>
+				<ComplexType Name="Login_Admin_Result">
+					<Property Type="Int32" Name="ID" Nullable="false" />
+					<Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+					<Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
+					<Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
+					<Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
+					<Property Type="Binary" Name="Photo" Nullable="true" />
+					<Property Type="String" Name="EmpType" Nullable="false" MaxLength="100" />
+					<Property Type="DateTime" Name="EmpDate" Nullable="false" Precision="10" />
+					<Property Type="Int32" Name="DepartmentID" Nullable="true" />
+				</ComplexType>
+				<ComplexType Name="Login_Agent_Result">
+					<Property Type="Int32" Name="ID" Nullable="false" />
+					<Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+					<Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
+					<Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
+					<Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
+					<Property Type="Binary" Name="Photo" Nullable="true" />
+					<Property Type="String" Name="EmpType" Nullable="false" MaxLength="100" />
+					<Property Type="DateTime" Name="EmpDate" Nullable="false" Precision="10" />
+					<Property Type="Int32" Name="DepartmentID" Nullable="true" />
+				</ComplexType>
+				<ComplexType Name="Login_Client_Result">
+					<Property Type="Int32" Name="ID" Nullable="false" />
+					<Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+					<Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
+					<Property Type="Binary" Name="Photo" Nullable="true" />
+					<Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
+					<Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+					<Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
+					<Property Type="Int32" Name="EmpId" Nullable="true" />
+				</ComplexType>
+				<ComplexType Name="Add_Property_Result">
+					<Property Type="Decimal" Name="PropertyID" Nullable="true" Precision="38" Scale="0" />
+				</ComplexType>
+				<ComplexType Name="Get_All_Departments_Result">
+					<Property Type="Int32" Name="ID" Nullable="false" />
+					<Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+				</ComplexType>
+				<ComplexType Name="Search_Employee_By_ID_Result">
+					<Property Type="Int32" Name="ID" Nullable="false" />
+					<Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+					<Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
+					<Property Type="Binary" Name="Photo" Nullable="true" />
+					<Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
+					<Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
+					<Property Type="String" Name="EmpType" Nullable="false" MaxLength="100" />
+					<Property Type="DateTime" Name="EmpDate" Nullable="false" />
+					<Property Type="Int32" Name="DepartmentID" Nullable="true" />
+				</ComplexType>
+				<ComplexType Name="Search_Employee_By_Name_Result">
+					<Property Type="Int32" Name="ID" Nullable="false" />
+					<Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+					<Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
+					<Property Type="Binary" Name="Photo" Nullable="true" />
+					<Property Type="String" Name="Password" Nullable="false" MaxLength="100" />
+					<Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="11" />
+					<Property Type="String" Name="EmpType" Nullable="false" MaxLength="100" />
+					<Property Type="DateTime" Name="EmpDate" Nullable="false" />
+					<Property Type="Int32" Name="DepartmentID" Nullable="true" />
+				</ComplexType>
+				<ComplexType Name="Add_Employee_Result">
+					<Property Type="Decimal" Name="EmployeeID" Nullable="true" Precision="38" Scale="0" />
+				</ComplexType>
+				<ComplexType Name="Add_Department_Result">
+					<Property Type="Decimal" Name="DepartmentID" Nullable="true" Precision="38" Scale="0" />
+				</ComplexType>
+				<ComplexType Name="Add_Client_Result">
+					<Property Type="Decimal" Name="ClientID" Nullable="true" Precision="38" Scale="0" />
+				</ComplexType>
+				<ComplexType Name="Add_Appointment_Result">
+					<Property Type="Decimal" Name="AppointmentID" Nullable="true" Precision="38" Scale="0" />
+				</ComplexType>
+				<ComplexType Name="Get_All_Buys_Result">
+					<Property Type="Int32" Name="ID" Nullable="false" />
+					<Property Type="String" Name="Client" Nullable="false" MaxLength="201" />
+					<Property Type="String" Name="Agent" Nullable="false" MaxLength="201" />
+					<Property Type="Decimal" Name="Comission" Nullable="true" Precision="19" Scale="4" />
+					<Property Type="DateTime" Name="SellDate" Nullable="false" Precision="23" />
+				</ComplexType>
+			</Schema>
+		</edmx:ConceptualModels>
+		<!-- C-S mapping content -->
+		<edmx:Mappings>
+			<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+				<EntityContainerMapping StorageEntityContainer="RealEstateModelStoreContainer" CdmEntityContainer="AdminConnectionString1">
+					<FunctionImportMapping FunctionName="RealEstateModel.Store.Get_All_Appointments" FunctionImportName="Get_All_Appointments">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Get_All_Appointments_Result">
+								<ScalarProperty Name="ID" ColumnName="ID" />
+								<ScalarProperty Name="Client" ColumnName="Client" />
+								<ScalarProperty Name="Agent" ColumnName="Agent" />
+								<ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
+								<ScalarProperty Name="Comment" ColumnName="Comment" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionName="RealEstateModel.Store.Get_All_Clients" FunctionImportName="Get_All_Clients">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Get_All_Clients_Result">
+								<ScalarProperty Name="ID" ColumnName="ID" />
+								<ScalarProperty Name="Photo" ColumnName="Photo" />
+								<ScalarProperty Name="FirstName" ColumnName="FirstName" />
+								<ScalarProperty Name="LastName" ColumnName="LastName" />
+								<ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionName="RealEstateModel.Store.Get_All_Employees" FunctionImportName="Get_All_Employees">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Get_All_Employees_Result">
+								<ScalarProperty Name="ID" ColumnName="ID" />
+								<ScalarProperty Name="Photo" ColumnName="Photo" />
+								<ScalarProperty Name="FirstName" ColumnName="FirstName" />
+								<ScalarProperty Name="LastName" ColumnName="LastName" />
+								<ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionName="RealEstateModel.Store.Get_All_Properties" FunctionImportName="Get_All_Properties">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Get_All_Properties_Result">
+								<ScalarProperty Name="ID" ColumnName="ID" />
+								<ScalarProperty Name="Property_Photo" ColumnName="Property Photo" />
+								<ScalarProperty Name="Address" ColumnName="Address" />
+								<ScalarProperty Name="Price" ColumnName="Price" />
+								<ScalarProperty Name="Status" ColumnName="Status" />
+								<ScalarProperty Name="Description" ColumnName="Description" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionImportName="Add_Buy" FunctionName="RealEstateModel.Store.Add_Buy" />
+					<FunctionImportMapping FunctionImportName="Add_Choosen_Property" FunctionName="RealEstateModel.Store.Add_Choosen_Property" />
+					<FunctionImportMapping FunctionImportName="Add_Property_Photo" FunctionName="RealEstateModel.Store.Add_Property_Photo" />
+					<FunctionImportMapping FunctionImportName="Delete_Appointment" FunctionName="RealEstateModel.Store.Delete_Appointment" />
+					<FunctionImportMapping FunctionImportName="Delete_Buy" FunctionName="RealEstateModel.Store.Delete_Buy" />
+					<FunctionImportMapping FunctionImportName="Delete_Choosen_Property" FunctionName="RealEstateModel.Store.Delete_Choosen_Property" />
+					<FunctionImportMapping FunctionImportName="Delete_Client" FunctionName="RealEstateModel.Store.Delete_Client" />
+					<FunctionImportMapping FunctionImportName="Delete_Department" FunctionName="RealEstateModel.Store.Delete_Department" />
+					<FunctionImportMapping FunctionImportName="Delete_Employee" FunctionName="RealEstateModel.Store.Delete_Employee" />
+					<FunctionImportMapping FunctionImportName="Delete_Property" FunctionName="RealEstateModel.Store.Delete_Property" />
+					<FunctionImportMapping FunctionImportName="Delete_Property_Photo" FunctionName="RealEstateModel.Store.Delete_Property_Photo" />
+					<FunctionImportMapping FunctionImportName="Delete_Property_Photo_By_Id" FunctionName="RealEstateModel.Store.Delete_Property_Photo_By_Id" />
+					<FunctionImportMapping FunctionImportName="Filter_Property" FunctionName="RealEstateModel.Store.Filter_Property">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Filter_Property_Result">
+								<ScalarProperty Name="ID" ColumnName="ID" />
+								<ScalarProperty Name="Address" ColumnName="Address" />
+								<ScalarProperty Name="Price" ColumnName="Price" />
+								<ScalarProperty Name="Type" ColumnName="Type" />
+								<ScalarProperty Name="Area" ColumnName="Area" />
+								<ScalarProperty Name="Status" ColumnName="Status" />
+								<ScalarProperty Name="Description" ColumnName="Description" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionImportName="Search_Appointment_By_AgentID" FunctionName="RealEstateModel.Store.Search_Appointment_By_AgentID">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Search_Appointment_By_AgentID_Result">
+								<ScalarProperty Name="ID" ColumnName="ID" />
+								<ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
+								<ScalarProperty Name="Comment" ColumnName="Comment" />
+								<ScalarProperty Name="ClientID" ColumnName="ClientID" />
+								<ScalarProperty Name="AgentID" ColumnName="AgentID" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionImportName="Search_Appointment_By_ClientID" FunctionName="RealEstateModel.Store.Search_Appointment_By_ClientID">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Search_Appointment_By_ClientID_Result">
+								<ScalarProperty Name="ID" ColumnName="ID" />
+								<ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
+								<ScalarProperty Name="Comment" ColumnName="Comment" />
+								<ScalarProperty Name="ClientID" ColumnName="ClientID" />
+								<ScalarProperty Name="AgentID" ColumnName="AgentID" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionImportName="Search_Appointment_By_Date" FunctionName="RealEstateModel.Store.Search_Appointment_By_Date">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Search_Appointment_By_Date_Result">
+								<ScalarProperty Name="ID" ColumnName="ID" />
+								<ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
+								<ScalarProperty Name="Comment" ColumnName="Comment" />
+								<ScalarProperty Name="ClientID" ColumnName="ClientID" />
+								<ScalarProperty Name="AgentID" ColumnName="AgentID" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionImportName="Search_Appointment_By_ID" FunctionName="RealEstateModel.Store.Search_Appointment_By_ID">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Search_Appointment_By_ID_Result">
+								<ScalarProperty Name="ID" ColumnName="ID" />
+								<ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
+								<ScalarProperty Name="Comment" ColumnName="Comment" />
+								<ScalarProperty Name="ClientID" ColumnName="ClientID" />
+								<ScalarProperty Name="AgentID" ColumnName="AgentID" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionImportName="Search_Buy_By_AgentId" FunctionName="RealEstateModel.Store.Search_Buy_By_AgentId">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Search_Buy_By_AgentId_Result">
+								<ScalarProperty Name="ID" ColumnName="ID" />
+								<ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+								<ScalarProperty Name="ClientID" ColumnName="ClientID" />
+								<ScalarProperty Name="AgentID" ColumnName="AgentID" />
+								<ScalarProperty Name="SellDate" ColumnName="SellDate" />
+								<ScalarProperty Name="Comission" ColumnName="Comission" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionImportName="Search_Buy_By_ClientID" FunctionName="RealEstateModel.Store.Search_Buy_By_ClientID">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Search_Buy_By_ClientID_Result">
+								<ScalarProperty Name="ID" ColumnName="ID" />
+								<ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+								<ScalarProperty Name="ClientID" ColumnName="ClientID" />
+								<ScalarProperty Name="AgentID" ColumnName="AgentID" />
+								<ScalarProperty Name="SellDate" ColumnName="SellDate" />
+								<ScalarProperty Name="Comission" ColumnName="Comission" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionImportName="Search_Choosen_Property_By_Appintment" FunctionName="RealEstateModel.Store.Search_Choosen_Property_By_Appintment">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Search_Choosen_Property_By_Appintment_Result">
+								<ScalarProperty Name="ID" ColumnName="ID" />
+								<ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionImportName="Search_Choosen_Property_By_Property" FunctionName="RealEstateModel.Store.Search_Choosen_Property_By_Property">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Search_Choosen_Property_By_Property_Result">
+								<ScalarProperty Name="ID" ColumnName="ID" />
+								<ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionImportName="Search_Client_By_ID" FunctionName="RealEstateModel.Store.Search_Client_By_ID">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Search_Client_By_ID_Result">
+								<ScalarProperty Name="ID" ColumnName="ID" />
+								<ScalarProperty Name="FirstName" ColumnName="FirstName" />
+								<ScalarProperty Name="LastName" ColumnName="LastName" />
+								<ScalarProperty Name="Photo" ColumnName="Photo" />
+								<ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+								<ScalarProperty Name="Email" ColumnName="Email" />
+								<ScalarProperty Name="Password" ColumnName="Password" />
+								<ScalarProperty Name="EmpId" ColumnName="EmpId" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionImportName="Search_Client_By_Name" FunctionName="RealEstateModel.Store.Search_Client_By_Name">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Search_Client_By_Name_Result">
+								<ScalarProperty Name="ID" ColumnName="ID" />
+								<ScalarProperty Name="FirstName" ColumnName="FirstName" />
+								<ScalarProperty Name="LastName" ColumnName="LastName" />
+								<ScalarProperty Name="Photo" ColumnName="Photo" />
+								<ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+								<ScalarProperty Name="Email" ColumnName="Email" />
+								<ScalarProperty Name="Password" ColumnName="Password" />
+								<ScalarProperty Name="EmpId" ColumnName="EmpId" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionImportName="Search_Department_By_ID" FunctionName="RealEstateModel.Store.Search_Department_By_ID">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Search_Department_By_ID_Result">
+								<ScalarProperty Name="ID" ColumnName="ID" />
+								<ScalarProperty Name="Name" ColumnName="Name" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionImportName="Search_Department_By_Name" FunctionName="RealEstateModel.Store.Search_Department_By_Name">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Search_Department_By_Name_Result">
+								<ScalarProperty Name="ID" ColumnName="ID" />
+								<ScalarProperty Name="Name" ColumnName="Name" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionImportName="Search_Property_By_ID" FunctionName="RealEstateModel.Store.Search_Property_By_ID">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Search_Property_By_ID_Result">
+								<ScalarProperty Name="ID" ColumnName="ID" />
+								<ScalarProperty Name="Address" ColumnName="Address" />
+								<ScalarProperty Name="Price" ColumnName="Price" />
+								<ScalarProperty Name="Type" ColumnName="Type" />
+								<ScalarProperty Name="Area" ColumnName="Area" />
+								<ScalarProperty Name="Status" ColumnName="Status" />
+								<ScalarProperty Name="Description" ColumnName="Description" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionImportName="Search_Property_By_Type" FunctionName="RealEstateModel.Store.Search_Property_By_Type">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Search_Property_By_Type_Result">
+								<ScalarProperty Name="ID" ColumnName="ID" />
+								<ScalarProperty Name="Address" ColumnName="Address" />
+								<ScalarProperty Name="Price" ColumnName="Price" />
+								<ScalarProperty Name="Type" ColumnName="Type" />
+								<ScalarProperty Name="Area" ColumnName="Area" />
+								<ScalarProperty Name="Status" ColumnName="Status" />
+								<ScalarProperty Name="Description" ColumnName="Description" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionImportName="Search_Property_Photo_By_ID" FunctionName="RealEstateModel.Store.Search_Property_Photo_By_ID">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Search_Property_Photo_By_ID_Result">
+								<ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+								<ScalarProperty Name="Photo" ColumnName="Photo" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionImportName="Search_Total_Sold_By_Employee" FunctionName="RealEstateModel.Store.Search_Total_Sold_By_Employee" />
+					<FunctionImportMapping FunctionImportName="Update_Appointment" FunctionName="RealEstateModel.Store.Update_Appointment" />
+					<FunctionImportMapping FunctionImportName="Update_Buy" FunctionName="RealEstateModel.Store.Update_Buy" />
+					<FunctionImportMapping FunctionImportName="Update_Choosen_Property" FunctionName="RealEstateModel.Store.Update_Choosen_Property" />
+					<FunctionImportMapping FunctionImportName="Update_Client" FunctionName="RealEstateModel.Store.Update_Client" />
+					<FunctionImportMapping FunctionImportName="Update_Department" FunctionName="RealEstateModel.Store.Update_Department" />
+					<FunctionImportMapping FunctionImportName="Update_Employee" FunctionName="RealEstateModel.Store.Update_Employee" />
+					<FunctionImportMapping FunctionImportName="Update_Property" FunctionName="RealEstateModel.Store.Update_Property" />
+					<FunctionImportMapping FunctionImportName="Update_Property_Photo" FunctionName="RealEstateModel.Store.Update_Property_Photo" />
+					<FunctionImportMapping FunctionImportName="Get_All_Clients_By_Agent" FunctionName="RealEstateModel.Store.Get_All_Clients_By_Agent">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Get_All_Clients_By_Agent_Result1">
+								<ScalarProperty Name="ID" ColumnName="ID" />
+								<ScalarProperty Name="Photo" ColumnName="Photo" />
+								<ScalarProperty Name="FirstName" ColumnName="FirstName" />
+								<ScalarProperty Name="LastName" ColumnName="LastName" />
+								<ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+								<ScalarProperty Name="Email" ColumnName="Email" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionImportName="Login_Admin" FunctionName="RealEstateModel.Store.Login_Admin">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Login_Admin_Result">
+								<ScalarProperty Name="ID" ColumnName="ID" />
+								<ScalarProperty Name="FirstName" ColumnName="FirstName" />
+								<ScalarProperty Name="LastName" ColumnName="LastName" />
+								<ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+								<ScalarProperty Name="Password" ColumnName="Password" />
+								<ScalarProperty Name="Photo" ColumnName="Photo" />
+								<ScalarProperty Name="EmpType" ColumnName="EmpType" />
+								<ScalarProperty Name="EmpDate" ColumnName="EmpDate" />
+								<ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionImportName="Login_Agent" FunctionName="RealEstateModel.Store.Login_Agent">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Login_Agent_Result">
+								<ScalarProperty Name="ID" ColumnName="ID" />
+								<ScalarProperty Name="FirstName" ColumnName="FirstName" />
+								<ScalarProperty Name="LastName" ColumnName="LastName" />
+								<ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+								<ScalarProperty Name="Password" ColumnName="Password" />
+								<ScalarProperty Name="Photo" ColumnName="Photo" />
+								<ScalarProperty Name="EmpType" ColumnName="EmpType" />
+								<ScalarProperty Name="EmpDate" ColumnName="EmpDate" />
+								<ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionImportName="Login_Client" FunctionName="RealEstateModel.Store.Login_Client">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Login_Client_Result">
+								<ScalarProperty Name="ID" ColumnName="ID" />
+								<ScalarProperty Name="FirstName" ColumnName="FirstName" />
+								<ScalarProperty Name="LastName" ColumnName="LastName" />
+								<ScalarProperty Name="Photo" ColumnName="Photo" />
+								<ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+								<ScalarProperty Name="Email" ColumnName="Email" />
+								<ScalarProperty Name="Password" ColumnName="Password" />
+								<ScalarProperty Name="EmpId" ColumnName="EmpId" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionImportName="Add_Property" FunctionName="RealEstateModel.Store.Add_Property">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Add_Property_Result">
+								<ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionImportName="Get_All_Departments" FunctionName="RealEstateModel.Store.Get_All_Departments">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Get_All_Departments_Result">
+								<ScalarProperty Name="ID" ColumnName="ID" />
+								<ScalarProperty Name="Name" ColumnName="Name" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionImportName="Search_Employee_By_ID" FunctionName="RealEstateModel.Store.Search_Employee_By_ID">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Search_Employee_By_ID_Result">
+								<ScalarProperty Name="ID" ColumnName="ID" />
+								<ScalarProperty Name="FirstName" ColumnName="FirstName" />
+								<ScalarProperty Name="LastName" ColumnName="LastName" />
+								<ScalarProperty Name="Photo" ColumnName="Photo" />
+								<ScalarProperty Name="Password" ColumnName="Password" />
+								<ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+								<ScalarProperty Name="EmpType" ColumnName="EmpType" />
+								<ScalarProperty Name="EmpDate" ColumnName="EmpDate" />
+								<ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionImportName="Search_Employee_By_Name" FunctionName="RealEstateModel.Store.Search_Employee_By_Name">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Search_Employee_By_Name_Result">
+								<ScalarProperty Name="ID" ColumnName="ID" />
+								<ScalarProperty Name="FirstName" ColumnName="FirstName" />
+								<ScalarProperty Name="LastName" ColumnName="LastName" />
+								<ScalarProperty Name="Photo" ColumnName="Photo" />
+								<ScalarProperty Name="Password" ColumnName="Password" />
+								<ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+								<ScalarProperty Name="EmpType" ColumnName="EmpType" />
+								<ScalarProperty Name="EmpDate" ColumnName="EmpDate" />
+								<ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionImportName="Add_Employee" FunctionName="RealEstateModel.Store.Add_Employee">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Add_Employee_Result">
+								<ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionImportName="Add_Department" FunctionName="RealEstateModel.Store.Add_Department">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Add_Department_Result">
+								<ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionImportName="Add_Client" FunctionName="RealEstateModel.Store.Add_Client">
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionImportName="Add_Appointment" FunctionName="RealEstateModel.Store.Add_Appointment">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Add_Appointment_Result">
+								<ScalarProperty Name="AppointmentID" ColumnName="AppointmentID" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+					<FunctionImportMapping FunctionImportName="Get_All_Buys" FunctionName="RealEstateModel.Store.Get_All_Buys">
+						<ResultMapping>
+							<ComplexTypeMapping TypeName="RealEstateModel.Get_All_Buys_Result">
+								<ScalarProperty Name="ID" ColumnName="ID" />
+								<ScalarProperty Name="Client" ColumnName="Client" />
+								<ScalarProperty Name="Agent" ColumnName="Agent" />
+								<ScalarProperty Name="Comission" ColumnName="Comission" />
+								<ScalarProperty Name="SellDate" ColumnName="SellDate" />
+							</ComplexTypeMapping>
+						</ResultMapping>
+					</FunctionImportMapping>
+				</EntityContainerMapping>
+			</Mapping>
+		</edmx:Mappings>
+	</edmx:Runtime>
+	<!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+	<Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+		<Connection>
+			<DesignerInfoPropertySet>
+				<DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+			</DesignerInfoPropertySet>
+		</Connection>
+		<Options>
+			<DesignerInfoPropertySet>
+				<DesignerProperty Name="ValidateOnBuild" Value="true" />
+				<DesignerProperty Name="EnablePluralization" Value="true" />
+				<DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+				<DesignerProperty Name="UseLegacyProvider" Value="true" />
+				<DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+			</DesignerInfoPropertySet>
+		</Options>
+		<!-- Diagram content (shape and connector positions) -->
+		<Diagrams></Diagrams>
+	</Designer>
 </edmx:Edmx>

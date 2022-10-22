@@ -1,10 +1,12 @@
   
 ### Customer   
   
-1. Customers can buy a house/property  
-2. Customers can create an account  
-3. Customers can browse properties  
-4. Customers can remove an account
+1. Customers can create an account  
+2. Customers can search properties
+3. Customers can make an appointment to buy a house/property
+4. Customers can view already owned properties
+5. Customers can view and edit thier profile information
+6. Customers can view thier agent
 
   
 ### Employee (Role ) Admin  
@@ -14,10 +16,7 @@
 3. Manage any property submitted by an agent  
 4. View agent details   
 5. View customer details 
-6. Payment system(how do customers pay)
-7. Loan system in order to buy (if possible, it is real world scenario in real estate system)
-8. discount rate(as it is attraction for customers )
-  
+6. Delete customer
 ### Employee (Role ) Agent  
   
 1. can view sold proerties  
@@ -29,6 +28,6 @@
   
 1.  Can add/edit a property by selecting the owner for this property
 2.  Can search for a property by entering the property's id
-3.  Can remove a property(better to say sold out)
+3.  Can remove a property
 4.  Can view all properties
 5.  Each property can be assigned a type based on the combo box

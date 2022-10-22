@@ -33,14 +33,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txt_Id = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_Address = new System.Windows.Forms.TextBox();
             this.txt_Price = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_Description = new System.Windows.Forms.TextBox();
-            this.txt_Type = new System.Windows.Forms.TextBox();
             this.Area = new System.Windows.Forms.Label();
             this.txt_Area = new System.Windows.Forms.TextBox();
             this.chk_Status = new System.Windows.Forms.CheckBox();
@@ -51,11 +49,12 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pic_BigPicture = new System.Windows.Forms.PictureBox();
             this.btn_save = new System.Windows.Forms.Button();
-            this.btn_addToMyProperties = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.ReplaceImage = new Real_Estate_App.User_Control.CircularPictureBox();
             this.pic_Edit = new Real_Estate_App.User_Control.CircularPictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.cb_Type = new System.Windows.Forms.ComboBox();
+            this.cb_Address = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -78,17 +77,17 @@
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.txt_Id, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txt_Address, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txt_Price, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.txt_Description, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.txt_Type, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.Area, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.txt_Area, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.chk_Status, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.cb_Type, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.cb_Address, 1, 1);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(43, 337);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -133,18 +132,10 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "ID:";
             // 
-            // txt_Address
-            // 
-            this.txt_Address.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Address.Location = new System.Drawing.Point(173, 38);
-            this.txt_Address.Name = "txt_Address";
-            this.txt_Address.Size = new System.Drawing.Size(251, 29);
-            this.txt_Address.TabIndex = 3;
-            // 
             // txt_Price
             // 
             this.txt_Price.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Price.Location = new System.Drawing.Point(173, 73);
+            this.txt_Price.Location = new System.Drawing.Point(173, 65);
             this.txt_Price.Name = "txt_Price";
             this.txt_Price.Size = new System.Drawing.Size(251, 29);
             this.txt_Price.TabIndex = 4;
@@ -154,7 +145,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 70);
+            this.label3.Location = new System.Drawing.Point(3, 62);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 24);
             this.label3.TabIndex = 5;
@@ -165,7 +156,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 105);
+            this.label4.Location = new System.Drawing.Point(3, 97);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 24);
             this.label4.TabIndex = 6;
@@ -176,7 +167,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 139);
+            this.label5.Location = new System.Drawing.Point(3, 131);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 24);
             this.label5.TabIndex = 7;
@@ -187,7 +178,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 174);
+            this.label6.Location = new System.Drawing.Point(3, 158);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(121, 24);
             this.label6.TabIndex = 10;
@@ -196,25 +187,17 @@
             // txt_Description
             // 
             this.txt_Description.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Description.Location = new System.Drawing.Point(173, 177);
+            this.txt_Description.Location = new System.Drawing.Point(173, 161);
             this.txt_Description.Multiline = true;
             this.txt_Description.Name = "txt_Description";
             this.txt_Description.Size = new System.Drawing.Size(251, 63);
             this.txt_Description.TabIndex = 11;
             // 
-            // txt_Type
-            // 
-            this.txt_Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Type.Location = new System.Drawing.Point(173, 142);
-            this.txt_Type.Name = "txt_Type";
-            this.txt_Type.Size = new System.Drawing.Size(251, 29);
-            this.txt_Type.TabIndex = 9;
-            // 
             // Area
             // 
             this.Area.AutoSize = true;
             this.Area.BackColor = System.Drawing.Color.White;
-            this.Area.Location = new System.Drawing.Point(3, 243);
+            this.Area.Location = new System.Drawing.Point(3, 227);
             this.Area.Name = "Area";
             this.Area.Size = new System.Drawing.Size(60, 24);
             this.Area.TabIndex = 12;
@@ -222,7 +205,7 @@
             // 
             // txt_Area
             // 
-            this.txt_Area.Location = new System.Drawing.Point(173, 246);
+            this.txt_Area.Location = new System.Drawing.Point(173, 230);
             this.txt_Area.Name = "txt_Area";
             this.txt_Area.Size = new System.Drawing.Size(251, 29);
             this.txt_Area.TabIndex = 13;
@@ -231,7 +214,7 @@
             // 
             this.chk_Status.AutoSize = true;
             this.chk_Status.BackColor = System.Drawing.Color.White;
-            this.chk_Status.Location = new System.Drawing.Point(173, 108);
+            this.chk_Status.Location = new System.Drawing.Point(173, 100);
             this.chk_Status.Name = "chk_Status";
             this.chk_Status.Size = new System.Drawing.Size(127, 28);
             this.chk_Status.TabIndex = 14;
@@ -318,17 +301,6 @@
             this.btn_save.UseVisualStyleBackColor = true;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
-            // btn_addToMyProperties
-            // 
-            this.btn_addToMyProperties.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_addToMyProperties.Location = new System.Drawing.Point(282, 622);
-            this.btn_addToMyProperties.Name = "btn_addToMyProperties";
-            this.btn_addToMyProperties.Size = new System.Drawing.Size(188, 33);
-            this.btn_addToMyProperties.TabIndex = 8;
-            this.btn_addToMyProperties.Text = "Add to my properties";
-            this.btn_addToMyProperties.UseVisualStyleBackColor = true;
-            this.btn_addToMyProperties.Click += new System.EventHandler(this.btn_addToMyProperties_Click);
-            // 
             // btn_delete
             // 
             this.btn_delete.BackColor = System.Drawing.Color.Red;
@@ -389,6 +361,37 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(51, 225);
             this.tableLayoutPanel2.TabIndex = 10;
             // 
+            // cb_Type
+            // 
+            this.cb_Type.FormattingEnabled = true;
+            this.cb_Type.Items.AddRange(new object[] {
+            "Residential",
+            "Commercial"});
+            this.cb_Type.Location = new System.Drawing.Point(173, 134);
+            this.cb_Type.Name = "cb_Type";
+            this.cb_Type.Size = new System.Drawing.Size(186, 32);
+            this.cb_Type.TabIndex = 15;
+            // 
+            // cb_Address
+            // 
+            this.cb_Address.FormattingEnabled = true;
+            this.cb_Address.Items.AddRange(new object[] {
+            "Addis Ketema",
+            "Akaky Kaliti",
+            "Arada",
+            "Bole",
+            "Gullele",
+            "Kirkos",
+            "Kolfe",
+            "Keranio",
+            "Lideta",
+            "Nifas Silk Lafto",
+            "Yeka"});
+            this.cb_Address.Location = new System.Drawing.Point(173, 38);
+            this.cb_Address.Name = "cb_Address";
+            this.cb_Address.Size = new System.Drawing.Size(121, 32);
+            this.cb_Address.TabIndex = 16;
+            // 
             // DetailPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -397,7 +400,6 @@
             this.ClientSize = new System.Drawing.Size(521, 669);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.btn_delete);
-            this.Controls.Add(this.btn_addToMyProperties);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.ReplaceImage);
             this.Controls.Add(this.pic_Edit);
@@ -427,12 +429,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_Id;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt_Address;
         private System.Windows.Forms.TextBox txt_Price;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt_Type;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txt_Description;
         private System.Windows.Forms.PictureBox pictureBox5;
@@ -446,9 +446,10 @@
         private System.Windows.Forms.TextBox txt_Area;
         private System.Windows.Forms.CheckBox chk_Status;
         private System.Windows.Forms.Button btn_save;
-        private System.Windows.Forms.Button btn_addToMyProperties;
         private System.Windows.Forms.Button btn_delete;
         private CircularPictureBox pic_Edit;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.ComboBox cb_Type;
+        private System.Windows.Forms.ComboBox cb_Address;
     }
 }
