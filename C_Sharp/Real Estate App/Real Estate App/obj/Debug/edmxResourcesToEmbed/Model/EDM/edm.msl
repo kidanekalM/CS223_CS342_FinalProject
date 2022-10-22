@@ -1,0 +1,578 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RealEstateModelStoreContainer" CdmEntityContainer="RealEstateEntities">
+    <FunctionImportMapping FunctionName="RealEstateModel.Store.Get_All_Appointments" FunctionImportName="Get_All_Appointments">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.Get_All_Appointments_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Client" ColumnName="Client" />
+          <ScalarProperty Name="Agent" ColumnName="Agent" />
+          <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="RealEstateModel.Store.Get_All_Clients" FunctionImportName="Get_All_Clients">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.Get_All_Clients_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="RealEstateModel.Store.Get_All_Employees" FunctionImportName="Get_All_Employees">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.Get_All_Employees_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="RealEstateModel.Store.Get_All_Properties" FunctionImportName="Get_All_Properties">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.Get_All_Properties_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Property_Photo" ColumnName="Property Photo" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Add_Appointment" FunctionName="RealEstateModel.Store.Add_Appointment" />
+    <FunctionImportMapping FunctionImportName="Add_Buy" FunctionName="RealEstateModel.Store.Add_Buy" />
+    <FunctionImportMapping FunctionImportName="Add_Choosen_Property" FunctionName="RealEstateModel.Store.Add_Choosen_Property" />
+    <FunctionImportMapping FunctionImportName="Add_Client" FunctionName="RealEstateModel.Store.Add_Client" />
+    <FunctionImportMapping FunctionImportName="Add_Contractor" FunctionName="RealEstateModel.Store.Add_Contractor" />
+    <FunctionImportMapping FunctionImportName="Add_Department" FunctionName="RealEstateModel.Store.Add_Department" />
+    <FunctionImportMapping FunctionImportName="Add_Employee" FunctionName="RealEstateModel.Store.Add_Employee" />
+    <FunctionImportMapping FunctionImportName="Add_Property" FunctionName="RealEstateModel.Store.Add_Property" />
+    <FunctionImportMapping FunctionImportName="Add_Property_Photo" FunctionName="RealEstateModel.Store.Add_Property_Photo" />
+    <FunctionImportMapping FunctionImportName="AddAppointment" FunctionName="RealEstateModel.Store.AddAppointment" />
+    <FunctionImportMapping FunctionImportName="AddBuy" FunctionName="RealEstateModel.Store.AddBuy" />
+    <FunctionImportMapping FunctionImportName="AddChoosenProperty" FunctionName="RealEstateModel.Store.AddChoosenProperty" />
+    <FunctionImportMapping FunctionImportName="AddClient" FunctionName="RealEstateModel.Store.AddClient" />
+    <FunctionImportMapping FunctionImportName="AddContractor" FunctionName="RealEstateModel.Store.AddContractor" />
+    <FunctionImportMapping FunctionImportName="AddDepartment" FunctionName="RealEstateModel.Store.AddDepartment" />
+    <FunctionImportMapping FunctionImportName="AddEmployee" FunctionName="RealEstateModel.Store.AddEmployee" />
+    <FunctionImportMapping FunctionImportName="AddProperty" FunctionName="RealEstateModel.Store.AddProperty" />
+    <FunctionImportMapping FunctionImportName="AddPropertyPhoto" FunctionName="RealEstateModel.Store.AddPropertyPhoto" />
+    <FunctionImportMapping FunctionImportName="Delete_Appointment" FunctionName="RealEstateModel.Store.Delete_Appointment" />
+    <FunctionImportMapping FunctionImportName="Delete_Buy" FunctionName="RealEstateModel.Store.Delete_Buy" />
+    <FunctionImportMapping FunctionImportName="Delete_Choosen_Property" FunctionName="RealEstateModel.Store.Delete_Choosen_Property" />
+    <FunctionImportMapping FunctionImportName="Delete_Client" FunctionName="RealEstateModel.Store.Delete_Client" />
+    <FunctionImportMapping FunctionImportName="Delete_Contractor" FunctionName="RealEstateModel.Store.Delete_Contractor" />
+    <FunctionImportMapping FunctionImportName="Delete_Department" FunctionName="RealEstateModel.Store.Delete_Department" />
+    <FunctionImportMapping FunctionImportName="Delete_Employee" FunctionName="RealEstateModel.Store.Delete_Employee" />
+    <FunctionImportMapping FunctionImportName="Delete_Property" FunctionName="RealEstateModel.Store.Delete_Property" />
+    <FunctionImportMapping FunctionImportName="Delete_Property_Photo" FunctionName="RealEstateModel.Store.Delete_Property_Photo" />
+    <FunctionImportMapping FunctionImportName="Delete_Property_Photo_By_Id" FunctionName="RealEstateModel.Store.Delete_Property_Photo_By_Id" />
+    <FunctionImportMapping FunctionImportName="DeleteAppointment" FunctionName="RealEstateModel.Store.DeleteAppointment" />
+    <FunctionImportMapping FunctionImportName="DeleteBuy" FunctionName="RealEstateModel.Store.DeleteBuy" />
+    <FunctionImportMapping FunctionImportName="DeleteChoosenProperty" FunctionName="RealEstateModel.Store.DeleteChoosenProperty" />
+    <FunctionImportMapping FunctionImportName="DeleteClient" FunctionName="RealEstateModel.Store.DeleteClient" />
+    <FunctionImportMapping FunctionImportName="DeleteDepartment" FunctionName="RealEstateModel.Store.DeleteDepartment" />
+    <FunctionImportMapping FunctionImportName="DeleteEmployee" FunctionName="RealEstateModel.Store.DeleteEmployee" />
+    <FunctionImportMapping FunctionImportName="DeleteProperty" FunctionName="RealEstateModel.Store.DeleteProperty" />
+    <FunctionImportMapping FunctionImportName="DeletePropertyPhotoById" FunctionName="RealEstateModel.Store.DeletePropertyPhotoById" />
+    <FunctionImportMapping FunctionImportName="DropContractor" FunctionName="RealEstateModel.Store.DropContractor" />
+    <FunctionImportMapping FunctionImportName="DropDepartment" FunctionName="RealEstateModel.Store.DropDepartment" />
+    <FunctionImportMapping FunctionImportName="Filter_Property" FunctionName="RealEstateModel.Store.Filter_Property">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.Filter_Property_Result1">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ContractorID" ColumnName="ContractorID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="FilterProperty" FunctionName="RealEstateModel.Store.FilterProperty">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.FilterProperty_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ContractorID" ColumnName="ContractorID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Search_Appointment_By_AgentID" FunctionName="RealEstateModel.Store.Search_Appointment_By_AgentID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.Search_Appointment_By_AgentID_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Search_Appointment_By_ClientID" FunctionName="RealEstateModel.Store.Search_Appointment_By_ClientID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.Search_Appointment_By_ClientID_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Search_Appointment_By_Date" FunctionName="RealEstateModel.Store.Search_Appointment_By_Date">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.Search_Appointment_By_Date_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Search_Appointment_By_ID" FunctionName="RealEstateModel.Store.Search_Appointment_By_ID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.Search_Appointment_By_ID_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Search_Buy_By_AgentId" FunctionName="RealEstateModel.Store.Search_Buy_By_AgentId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.Search_Buy_By_AgentId_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+          <ScalarProperty Name="SellDate" ColumnName="SellDate" />
+          <ScalarProperty Name="Comission" ColumnName="Comission" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Search_Buy_By_ClientID" FunctionName="RealEstateModel.Store.Search_Buy_By_ClientID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.Search_Buy_By_ClientID_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+          <ScalarProperty Name="SellDate" ColumnName="SellDate" />
+          <ScalarProperty Name="Comission" ColumnName="Comission" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Search_Choosen_Property_By_Appintment" FunctionName="RealEstateModel.Store.Search_Choosen_Property_By_Appintment">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.Search_Choosen_Property_By_Appintment_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Search_Choosen_Property_By_Property" FunctionName="RealEstateModel.Store.Search_Choosen_Property_By_Property">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.Search_Choosen_Property_By_Property_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Search_Client_By_ID" FunctionName="RealEstateModel.Store.Search_Client_By_ID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.Search_Client_By_ID_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Search_Client_By_Name" FunctionName="RealEstateModel.Store.Search_Client_By_Name">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.Search_Client_By_Name_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Search_Contractor_By_Id" FunctionName="RealEstateModel.Store.Search_Contractor_By_Id">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.Search_Contractor_By_Id_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Search_Contractor_By_Name" FunctionName="RealEstateModel.Store.Search_Contractor_By_Name">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.Search_Contractor_By_Name_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Search_Department_By_ID" FunctionName="RealEstateModel.Store.Search_Department_By_ID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.Search_Department_By_ID_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Search_Department_By_Name" FunctionName="RealEstateModel.Store.Search_Department_By_Name">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.Search_Department_By_Name_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Search_Employee_By_ID" FunctionName="RealEstateModel.Store.Search_Employee_By_ID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.Search_Employee_By_ID_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PhoneNumber1" ColumnName="PhoneNumber1" />
+          <ScalarProperty Name="EmpType" ColumnName="EmpType" />
+          <ScalarProperty Name="EmpDate" ColumnName="EmpDate" />
+          <ScalarProperty Name="DepartementID" ColumnName="DepartementID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Search_Employee_By_Name" FunctionName="RealEstateModel.Store.Search_Employee_By_Name">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.Search_Employee_By_Name_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PhoneNumber1" ColumnName="PhoneNumber1" />
+          <ScalarProperty Name="EmpType" ColumnName="EmpType" />
+          <ScalarProperty Name="EmpDate" ColumnName="EmpDate" />
+          <ScalarProperty Name="DepartementID" ColumnName="DepartementID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Search_Property_By_ID" FunctionName="RealEstateModel.Store.Search_Property_By_ID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.Search_Property_By_ID_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ContractorID" ColumnName="ContractorID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Search_Property_By_Type" FunctionName="RealEstateModel.Store.Search_Property_By_Type">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.Search_Property_By_Type_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ContractorID" ColumnName="ContractorID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Search_Property_Photo_By_ID" FunctionName="RealEstateModel.Store.Search_Property_Photo_By_ID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.Search_Property_Photo_By_ID_Result">
+          <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Search_Total_Sold_By_Employee" FunctionName="RealEstateModel.Store.Search_Total_Sold_By_Employee" />
+    <FunctionImportMapping FunctionImportName="SearchAppointmentByAgentID" FunctionName="RealEstateModel.Store.SearchAppointmentByAgentID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.SearchAppointmentByAgentID_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SearchAppointmentByClientID" FunctionName="RealEstateModel.Store.SearchAppointmentByClientID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.SearchAppointmentByClientID_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SearchAppointmentByDate" FunctionName="RealEstateModel.Store.SearchAppointmentByDate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.SearchAppointmentByDate_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SearchAppointmentByID" FunctionName="RealEstateModel.Store.SearchAppointmentByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.SearchAppointmentByID_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SearchBuyByAgentId" FunctionName="RealEstateModel.Store.SearchBuyByAgentId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.SearchBuyByAgentId_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+          <ScalarProperty Name="SellDate" ColumnName="SellDate" />
+          <ScalarProperty Name="Comission" ColumnName="Comission" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SearchBuyByClientID" FunctionName="RealEstateModel.Store.SearchBuyByClientID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.SearchBuyByClientID_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+          <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+          <ScalarProperty Name="AgentID" ColumnName="AgentID" />
+          <ScalarProperty Name="SellDate" ColumnName="SellDate" />
+          <ScalarProperty Name="Comission" ColumnName="Comission" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SearchChoosenPropertyByAppintment" FunctionName="RealEstateModel.Store.SearchChoosenPropertyByAppintment">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.SearchChoosenPropertyByAppintment_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SearchChoosenPropertyByProperty" FunctionName="RealEstateModel.Store.SearchChoosenPropertyByProperty">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.SearchChoosenPropertyByProperty_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SearchClientByID" FunctionName="RealEstateModel.Store.SearchClientByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.SearchClientByID_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SearchClientByName" FunctionName="RealEstateModel.Store.SearchClientByName">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.SearchClientByName_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SearchContractorById" FunctionName="RealEstateModel.Store.SearchContractorById">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.SearchContractorById_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SearchContractorByName" FunctionName="RealEstateModel.Store.SearchContractorByName">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.SearchContractorByName_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SearchDepartmentByID" FunctionName="RealEstateModel.Store.SearchDepartmentByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.SearchDepartmentByID_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SearchDepartmentByName" FunctionName="RealEstateModel.Store.SearchDepartmentByName">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.SearchDepartmentByName_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SearchEmployeeByID" FunctionName="RealEstateModel.Store.SearchEmployeeByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.SearchEmployeeByID_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PhoneNumber1" ColumnName="PhoneNumber1" />
+          <ScalarProperty Name="EmpType" ColumnName="EmpType" />
+          <ScalarProperty Name="EmpDate" ColumnName="EmpDate" />
+          <ScalarProperty Name="DepartementID" ColumnName="DepartementID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SearchEmployeeByName" FunctionName="RealEstateModel.Store.SearchEmployeeByName">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.SearchEmployeeByName_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PhoneNumber1" ColumnName="PhoneNumber1" />
+          <ScalarProperty Name="EmpType" ColumnName="EmpType" />
+          <ScalarProperty Name="EmpDate" ColumnName="EmpDate" />
+          <ScalarProperty Name="DepartementID" ColumnName="DepartementID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SearchPropertyByID" FunctionName="RealEstateModel.Store.SearchPropertyByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.SearchPropertyByID_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ContractorID" ColumnName="ContractorID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SearchPropertyByType" FunctionName="RealEstateModel.Store.SearchPropertyByType">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.SearchPropertyByType_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ContractorID" ColumnName="ContractorID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SearchPropertyPhotoByID" FunctionName="RealEstateModel.Store.SearchPropertyPhotoByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.SearchPropertyPhotoByID_Result">
+          <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="RealEstateModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="RealEstateModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="RealEstateModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="RealEstateModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="RealEstateModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RealEstateModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="RealEstateModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="Update_Appointment" FunctionName="RealEstateModel.Store.Update_Appointment" />
+    <FunctionImportMapping FunctionImportName="Update_Buy" FunctionName="RealEstateModel.Store.Update_Buy" />
+    <FunctionImportMapping FunctionImportName="Update_Choosen_Property" FunctionName="RealEstateModel.Store.Update_Choosen_Property" />
+    <FunctionImportMapping FunctionImportName="Update_Client" FunctionName="RealEstateModel.Store.Update_Client" />
+    <FunctionImportMapping FunctionImportName="Update_Contractor" FunctionName="RealEstateModel.Store.Update_Contractor" />
+    <FunctionImportMapping FunctionImportName="Update_Department" FunctionName="RealEstateModel.Store.Update_Department" />
+    <FunctionImportMapping FunctionImportName="Update_Employee" FunctionName="RealEstateModel.Store.Update_Employee" />
+    <FunctionImportMapping FunctionImportName="Update_Property" FunctionName="RealEstateModel.Store.Update_Property" />
+    <FunctionImportMapping FunctionImportName="Update_Property_Photo" FunctionName="RealEstateModel.Store.Update_Property_Photo" />
+    <FunctionImportMapping FunctionImportName="UpdateAppointment" FunctionName="RealEstateModel.Store.UpdateAppointment" />
+    <FunctionImportMapping FunctionImportName="UpdateBuy" FunctionName="RealEstateModel.Store.UpdateBuy" />
+    <FunctionImportMapping FunctionImportName="UpdateChoosenProperty" FunctionName="RealEstateModel.Store.UpdateChoosenProperty" />
+    <FunctionImportMapping FunctionImportName="UpdateClient" FunctionName="RealEstateModel.Store.UpdateClient" />
+    <FunctionImportMapping FunctionImportName="UpdateContractor" FunctionName="RealEstateModel.Store.UpdateContractor" />
+    <FunctionImportMapping FunctionImportName="UpdateDepartment" FunctionName="RealEstateModel.Store.UpdateDepartment" />
+    <FunctionImportMapping FunctionImportName="UpdateEmployee" FunctionName="RealEstateModel.Store.UpdateEmployee" />
+    <FunctionImportMapping FunctionImportName="UpdateProperty" FunctionName="RealEstateModel.Store.UpdateProperty" />
+    <FunctionImportMapping FunctionImportName="UpdatePropertyPhoto" FunctionName="RealEstateModel.Store.UpdatePropertyPhoto" />
+  </EntityContainerMapping>
+</Mapping>

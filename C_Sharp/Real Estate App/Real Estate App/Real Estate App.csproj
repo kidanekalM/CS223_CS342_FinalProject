@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+﻿@ -241,9 +241,15 @@
+=======
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -130,11 +133,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin Pages\AdminGetAllEmployees.cs">
+    <Compile Include="Admin Pages\AdminShowAllEmployees.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin Pages\AdminGetAllEmployees.Designer.cs">
-      <DependentUpon>AdminGetAllEmployees.cs</DependentUpon>
+    <Compile Include="Admin Pages\AdminShowAllEmployees.Designer.cs">
+      <DependentUpon>AdminShowAllEmployees.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin Pages\AdminHomePage.cs">
       <SubType>Form</SubType>
@@ -147,12 +150,6 @@
     </Compile>
     <Compile Include="Admin Pages\EmployeeDetail.Designer.cs">
       <DependentUpon>EmployeeDetail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin Pages\SoldProperties.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin Pages\SoldProperties.Designer.cs">
-      <DependentUpon>SoldProperties.cs</DependentUpon>
     </Compile>
     <Compile Include="Client Pages\AgentProfilePage.cs">
       <SubType>Form</SubType>
@@ -244,18 +241,25 @@
     <Compile Include="Model\Add_Employee_Result.cs">
       <DependentUpon>RealEstateEDM.tt</DependentUpon>
     </Compile>
+>>>>>>> parent of 937dea6 (Merge branch 'main' of https://github.com/kidanekalM/CS223_CS342_FinalProject)
     <Compile Include="Model\Add_Property_Result.cs">
+      <DependentUpon>RealEstateEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Filter_Property1_Result.cs">
       <DependentUpon>RealEstateEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Filter_Property_Result.cs">
       <DependentUpon>RealEstateEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\Filter_Property_Result1.cs">
+      <DependentUpon>RealEstateEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Get_All_Appointments_Result.cs">
       <DependentUpon>RealEstateEDM.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Get_All_Buys_Result.cs">
-      <DependentUpon>RealEstateEDM.tt</DependentUpon>
-    </Compile>
+<<<<<<< HEAD
+@ -386,6 +392,12 @@
+=======
     <Compile Include="Model\Get_All_Clients_By_Agent_Result.cs">
       <DependentUpon>RealEstateEDM.tt</DependentUpon>
     </Compile>
@@ -392,20 +396,26 @@
     <Compile Include="User Control\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+>>>>>>> parent of 937dea6 (Merge branch 'main' of https://github.com/kidanekalM/CS223_CS342_FinalProject)
     <Compile Include="User Control\PlaceHolderTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="Admin Pages\AdminGetAllEmployees.resx">
-      <DependentUpon>AdminGetAllEmployees.cs</DependentUpon>
+    <Compile Include="Client Pages\PropertyDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client Pages\PropertyDetail.Designer.cs">
+      <DependentUpon>PropertyDetail.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Admin Pages\AdminShowAllEmployees.resx">
+      <DependentUpon>AdminShowAllEmployees.cs</DependentUpon>
+<<<<<<< HEAD
+=======
     </EmbeddedResource>
     <EmbeddedResource Include="Admin Pages\AdminHomePage.resx">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin Pages\EmployeeDetail.resx">
       <DependentUpon>EmployeeDetail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin Pages\SoldProperties.resx">
-      <DependentUpon>SoldProperties.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Client Pages\AgentProfilePage.resx">
       <DependentUpon>AgentProfilePage.cs</DependentUpon>
@@ -465,99 +475,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Control\DisplayProperty.resx">
       <DependentUpon>DisplayProperty.cs</DependentUpon>
+>>>>>>> parent of 937dea6 (Merge branch 'main' of https://github.com/kidanekalM/CS223_CS342_FinalProject)
     </EmbeddedResource>
+@ -457,6 +469,9 @@
     <EmbeddedResource Include="User Control\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client Pages\PropertyDetail.resx">
+      <DependentUpon>PropertyDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model\RealEstateEDM.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>RealEstateEDM.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Model\RealEstateEDM.edmx.diagram">
-      <DependentUpon>RealEstateEDM.edmx</DependentUpon>
-    </None>
-    <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\blue-home-icon.png" />
-    <None Include="Resources\blue-folder-icon.png" />
-    <None Include="Resources\blue-ok-icon.png" />
-    <None Include="Resources\blue-user-icon.png" />
-    <None Include="Resources\blue-chart-icon.png" />
-    <Content Include="Model\RealEstateEDM.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>RealEstateEDM.edmx</DependentUpon>
-      <LastGenOutput>RealEstateEDM.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model\RealEstateEDM.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>RealEstateEDM.edmx</DependentUpon>
-      <LastGenOutput>RealEstateEDM.cs</LastGenOutput>
-    </Content>
-    <Content Include="RealEstate-App-Icon.ico" />
-    <None Include="Resources\Add.jpg" />
-    <None Include="Resources\Add2.jpg" />
-    <Content Include="Resources\cole-keister-CqUYwVZzJrw-unsplash.jpg" />
-    <Content Include="Resources\etienne-beauregard-riverin-B0aCvAVSX8E-unsplash.jpg" />
-    <Content Include="Resources\fernando-meloni-j_gnGCDQRew-unsplash.jpg" />
-    <Content Include="Resources\filip-zrnzevic-Ceuh97A6OYM-unsplash.jpg" />
-    <Content Include="Resources\hide.com.png" />
-    <None Include="Resources\istockphoto-1192403701-170667a.jpg" />
-    <None Include="Resources\icons8-menu-bar-24.png" />
-    <None Include="Resources\istockphoto-172200613-170667a.jpg" />
-    <None Include="Resources\istockphoto-1324561334-612x612.jpg" />
-    <None Include="Resources\istockphoto-1192518093-612x612.jpg" />
-    <None Include="Resources\istockphoto-1192524192-170667a.jpg" />
-    <None Include="Resources\istockphoto-1192600456-170667a.jpg" />
-    <Content Include="Resources\jannis-lucas-KsL8WZJ0CLA-unsplash.jpg" />
-    <Content Include="Resources\jason-dent-w3eFhqXjkZE-unsplash.jpg" />
-    <Content Include="Resources\jeremy-bishop-G9i_plbfDgk-unsplash.jpg" />
-    <Content Include="Resources\jeremy-bishop-G9i_plbfDgk-unsplash1.jpg" />
-    <Content Include="Resources\keenan-barber-pPfJN6wfYC0-unsplash.jpg" />
-    <Content Include="Resources\keenan-barber-pPfJN6wfYC0-unsplash1.jpg" />
-    <Content Include="Resources\kindpng_1541056.png" />
-    <Content Include="Resources\luke-chesser-pJadQetzTkI-unsplash.jpg" />
-    <Content Include="Resources\m.jpg" />
-    <Content Include="Resources\menna-ahmed-aBJ5EoAtRyw-unsplash.jpg" />
-    <Content Include="Resources\michael-Wk3P6vL9m40-unsplash.jpg" />
-    <Content Include="Resources\naomi-august-wI55e75C5TY-unsplash.jpg" />
-    <None Include="Resources\naomi-august-wI55e75C5TY-unsplash1.jpg" />
-    <Content Include="Resources\nick-Y9lUSUhhd58-unsplash.jpg" />
-    <None Include="Resources\photo-1491466424936-e304919aada7.jpg" />
-    <Content Include="Resources\r-architecture-JvQ0Q5IkeMM-unsplash.jpg" />
-    <None Include="Resources\RealEstate App Icon.png" />
-    <Content Include="Resources\sean-pollock-PhYq704ffdA-unsplash.jpg" />
-    <Content Include="Resources\SeekPng.com_profile-icon-png_9665493.png" />
-    <Content Include="Resources\tiard-schulz-b8dA3eY5VrY-unsplash.jpg" />
-    <Content Include="Resources\Unhide.com.png" />
-    <Content Include="Resources\x.com.png" />
-    <Content Include="Resources\yoal-desurmont-1uyPsrWxefI-unsplash.jpg" />
-    <Content Include="Resources\zac-ong-B3Vr6hA8Vj8-unsplash.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Agent Pages\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.3.0.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.3.0.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Data.SqlClient.SNI.3.0.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Data.SqlClient.SNI.3.0.0\build\net46\Microsoft.Data.SqlClient.SNI.targets'))" />
-  </Target>
-</Project>

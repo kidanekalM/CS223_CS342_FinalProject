@@ -87,7 +87,6 @@
     <Parameter Name="Status" Type="bit" Mode="In" />
     <Parameter Name="Description" Type="varchar" Mode="In" />
   </Function>
-  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
   <Function Name="Get_All_Appointments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Appointments">
     <ReturnType>
       <CollectionType>
@@ -97,19 +96,6 @@
           <Property Name="Agent" Type="varchar" MaxLength="201" Nullable="false" />
           <Property Name="AppointmentDate" Type="datetime" Nullable="false" />
           <Property Name="Comment" Type="nvarchar" MaxLength="53" />
-        </RowType>
-      </CollectionType>
-    </ReturnType>
-  </Function>
-  <Function Name="Get_All_Buys" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Buys">
-    <ReturnType>
-      <CollectionType>
-        <RowType>
-          <Property Name="ID" Type="int" Nullable="false" />
-          <Property Name="Client" Type="varchar" MaxLength="201" Nullable="false" />
-          <Property Name="Agent" Type="varchar" MaxLength="201" Nullable="false" />
-          <Property Name="Comission" Type="money" />
-          <Property Name="SellDate" Type="datetime" Nullable="false" />
         </RowType>
       </CollectionType>
     </ReturnType>
