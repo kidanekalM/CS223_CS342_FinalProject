@@ -45,15 +45,15 @@
             this.txt_pNumber = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txt_pwd = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.txt_Type = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_edit = new System.Windows.Forms.Button();
             this.ReplaceImage = new Real_Estate_App.User_Control.CircularPictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.btn_Exit = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pic_BigPicture)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReplaceImage)).BeginInit();
@@ -63,7 +63,7 @@
             // pic_BigPicture
             // 
             this.pic_BigPicture.Location = new System.Drawing.Point(169, 74);
-            this.pic_BigPicture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pic_BigPicture.Margin = new System.Windows.Forms.Padding(4);
             this.pic_BigPicture.Name = "pic_BigPicture";
             this.pic_BigPicture.Size = new System.Drawing.Size(281, 281);
             this.pic_BigPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -93,7 +93,7 @@
             this.tableLayoutPanel1.Controls.Add(this.dateTimePicker1, 1, 7);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(44, 375);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 8;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -111,7 +111,7 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(207, 229);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(312, 38);
             this.comboBox1.TabIndex = 13;
@@ -159,7 +159,7 @@
             // txt_id
             // 
             this.txt_id.Location = new System.Drawing.Point(207, 4);
-            this.txt_id.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_id.Margin = new System.Windows.Forms.Padding(4);
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(312, 37);
             this.txt_id.TabIndex = 2;
@@ -167,7 +167,7 @@
             // txt_fname
             // 
             this.txt_fname.Location = new System.Drawing.Point(207, 49);
-            this.txt_fname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_fname.Margin = new System.Windows.Forms.Padding(4);
             this.txt_fname.Name = "txt_fname";
             this.txt_fname.Size = new System.Drawing.Size(312, 37);
             this.txt_fname.TabIndex = 10;
@@ -195,7 +195,7 @@
             // txt_lName
             // 
             this.txt_lName.Location = new System.Drawing.Point(207, 94);
-            this.txt_lName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_lName.Margin = new System.Windows.Forms.Padding(4);
             this.txt_lName.Name = "txt_lName";
             this.txt_lName.Size = new System.Drawing.Size(312, 37);
             this.txt_lName.TabIndex = 11;
@@ -203,7 +203,7 @@
             // txt_pNumber
             // 
             this.txt_pNumber.Location = new System.Drawing.Point(207, 139);
-            this.txt_pNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_pNumber.Margin = new System.Windows.Forms.Padding(4);
             this.txt_pNumber.Name = "txt_pNumber";
             this.txt_pNumber.Size = new System.Drawing.Size(312, 37);
             this.txt_pNumber.TabIndex = 12;
@@ -221,10 +221,18 @@
             // txt_pwd
             // 
             this.txt_pwd.Location = new System.Drawing.Point(207, 184);
-            this.txt_pwd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_pwd.Margin = new System.Windows.Forms.Padding(4);
             this.txt_pwd.Name = "txt_pwd";
             this.txt_pwd.Size = new System.Drawing.Size(312, 37);
             this.txt_pwd.TabIndex = 13;
+            // 
+            // txt_Type
+            // 
+            this.txt_Type.Location = new System.Drawing.Point(207, 275);
+            this.txt_Type.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Type.Name = "txt_Type";
+            this.txt_Type.Size = new System.Drawing.Size(312, 37);
+            this.txt_Type.TabIndex = 15;
             // 
             // label5
             // 
@@ -237,19 +245,18 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Date";
             // 
-            // txt_Type
+            // dateTimePicker1
             // 
-            this.txt_Type.Location = new System.Drawing.Point(207, 275);
-            this.txt_Type.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txt_Type.Name = "txt_Type";
-            this.txt_Type.Size = new System.Drawing.Size(312, 37);
-            this.txt_Type.TabIndex = 15;
+            this.dateTimePicker1.Location = new System.Drawing.Point(206, 319);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(306, 37);
+            this.dateTimePicker1.TabIndex = 16;
             // 
             // btn_save
             // 
             this.btn_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.Location = new System.Drawing.Point(469, 773);
-            this.btn_save.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_save.Margin = new System.Windows.Forms.Padding(4);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(88, 39);
             this.btn_save.TabIndex = 8;
@@ -266,7 +273,7 @@
             this.btn_delete.Image = global::Real_Estate_App.Properties.Resources.delete_icon;
             this.btn_delete.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btn_delete.Location = new System.Drawing.Point(44, 774);
-            this.btn_delete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_delete.Margin = new System.Windows.Forms.Padding(4);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(29, 41);
             this.btn_delete.TabIndex = 10;
@@ -279,7 +286,7 @@
             this.btn_edit.BackgroundImage = global::Real_Estate_App.Properties.Resources.edit_icon;
             this.btn_edit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_edit.Location = new System.Drawing.Point(516, 53);
-            this.btn_edit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_edit.Margin = new System.Windows.Forms.Padding(4);
             this.btn_edit.Name = "btn_edit";
             this.btn_edit.Size = new System.Drawing.Size(41, 41);
             this.btn_edit.TabIndex = 11;
@@ -291,7 +298,7 @@
             this.ReplaceImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ReplaceImage.BackgroundImage")));
             this.ReplaceImage.Image = ((System.Drawing.Image)(resources.GetObject("ReplaceImage.Image")));
             this.ReplaceImage.Location = new System.Drawing.Point(341, 287);
-            this.ReplaceImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ReplaceImage.Margin = new System.Windows.Forms.Padding(4);
             this.ReplaceImage.Name = "ReplaceImage";
             this.ReplaceImage.Size = new System.Drawing.Size(48, 48);
             this.ReplaceImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -318,13 +325,6 @@
             this.btn_Exit.UseVisualStyleBackColor = false;
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(206, 319);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(306, 37);
-            this.dateTimePicker1.TabIndex = 16;
-            // 
             // EmployeeDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -340,7 +340,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.pic_BigPicture);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EmployeeDetail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmployeeDetail";

@@ -21,6 +21,8 @@ namespace MyRealEstate
     {
         private int v;
 
+        public Real_Estate_App.Model.Search_Employee_By_ID_Result Admin { get; set; }
+
         public AdminHomePage(int v)
         {
             InitializeComponent();
@@ -32,6 +34,7 @@ namespace MyRealEstate
 
         public List<Real_Estate_App.Model.Get_All_Employees_Result> Employees { get; set; }
         public List<Real_Estate_App.Model.Get_All_Properties_Result> Properties { get; set; }
+        public List<Real_Estate_App.Model.Get_All_Clients_Result> Clients { get; set; }
 
 
         private void HomeButton_Click(object sender, EventArgs e)
@@ -157,7 +160,7 @@ namespace MyRealEstate
 
             idtext.Text = IDlbl.Text;
             fullnametext.Text = NAMElbl.Text;
-            emailtext.Text = EMAILlbl.Text;
+            phonetext.Text = PHONElbl.Text;
 
         }
         private void addPropertyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -349,7 +352,7 @@ namespace MyRealEstate
 
         private void SaveProfile_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(idtext.Text) || string.IsNullOrEmpty(fullnametext.Text) || string.IsNullOrEmpty(emailtext.Text))
+            if (string.IsNullOrEmpty(idtext.Text) || string.IsNullOrEmpty(fullnametext.Text) || string.IsNullOrEmpty(phonetext.Text) || string.IsNullOrEmpty(pwdtext.Text))
             {
                 if (string.IsNullOrEmpty(idtext.Text))
                 {
@@ -367,20 +370,29 @@ namespace MyRealEstate
                 {
                     errorProvider1.SetError(fullnametext, "");
                 }
-                if (string.IsNullOrEmpty(emailtext.Text))
+                if (string.IsNullOrEmpty(phonetext.Text))
                 {
-                    errorProvider1.SetError(emailtext, "E-mail is required!!");
+                    errorProvider1.SetError(phonetext, "Phone is required!!");
                 }
                 else
                 {
-                    errorProvider1.SetError(emailtext, "");
+                    errorProvider1.SetError(phonetext, "");
+                }
+                if (string.IsNullOrEmpty(pwdtext.Text))
+                {
+                    errorProvider1.SetError(pwdtext, "Password is required!!");
+                }
+                else
+                {
+                    errorProvider1.SetError(pwdtext, "");
                 }
             }
             else
             {
                 IDlbl.Text = idtext.Text;
                 NAMElbl.Text = fullnametext.Text;
-                EMAILlbl.Text = emailtext.Text;
+                PHONElbl.Text = phonetext.Text;
+                Admin.Password = pwdtext.Text;
                 clear2();
             }
 
@@ -389,7 +401,7 @@ namespace MyRealEstate
         {
             idtext.Text = "";
             fullnametext.Text = "";
-            emailtext.Text = "";
+            phonetext.Text = "";
         }
 
         private void addempToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -421,7 +433,46 @@ namespace MyRealEstate
             ShowAllEmpPanel.Visible = true;
             ShowAllPropPanel.Visible = false;
             ShowAllCustPanel.Visible = false;
+            using (Real_Estate_App.Model.RealEstateEDM r = new Real_Estate_App.Model.RealEstateEDM("Admin"))
+            {
+                cb_Department.Items.Clear();
+                try
+                {
+                    foreach (var dep in r.Get_All_Departments())
+                    {
+                        cb_Department.Items.Add(dep.ID + ": " + dep.Name);
+                    }
+                }
+                catch (Exception ex)
+                {
 
+                    MessageBox.Show(ex.Message);
+                }
+                try
+                {
+                    var SearchEmployees = r.Get_All_Employees();
+                    Employees = SearchEmployees.ToList<Real_Estate_App.Model.Get_All_Employees_Result>();
+                    if (SearchEmployees == null)
+                    {
+                        lbl_SearchMessage.Text = "There are no Employees found";
+                    }
+                    else
+                    {
+                        lbl_SearchMessage.Text = "Employees";
+                        tableLayoutPanel2.Controls.Clear();
+                        foreach (var employee in SearchEmployees)
+                        {
+                            Real_Estate_App.User_Control.DisplayPerson d = new Real_Estate_App.User_Control.DisplayPerson(employee);
+                            d.Click += EmployeeClicked;
+                            tableLayoutPanel2.Controls.Add(d);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + ex.InnerException.Message);
+                }
+            }
         }
 
         private void BarShowButton_Click_1(object sender, EventArgs e)
@@ -464,7 +515,7 @@ namespace MyRealEstate
             {
                 using (Real_Estate_App.Model.RealEstateEDM r = new Real_Estate_App.Model.RealEstateEDM("Admin"))
                 {
-                    var d = r.Add_Employee(txt_firstName.Text, txt_LastName.Text, txt_PhoneNumber.Text, txt_Password.Text, ImageToByteArray(pic_BigPicture.Image), txt_empType.Text, dateTimePicker1.Value, int.Parse(cb_Department.SelectedItem.ToString()/*.Substring(0, cb_Department.SelectedItem.ToString().IndexOf(':'))*/));
+                    var d = r.Add_Employee(txt_firstName.Text, txt_LastName.Text, txt_PhoneNumber.Text, txt_Password.Text, ImageToByteArray(pic_BigPicture.Image), txt_empType.Text, dateTimePicker1.Value, int.Parse(cb_Department.SelectedItem.ToString().Substring(0, cb_Department.SelectedItem.ToString().IndexOf(':'))));
                     MessageBox.Show(d.First().EmployeeID.ToString() + "is the ID, Use this ID to login in the future");
 
                 }
@@ -493,7 +544,47 @@ namespace MyRealEstate
 
         private void PropRefresh_lbl_Click(object sender, EventArgs e)
         {
+            using (Real_Estate_App.Model.RealEstateEDM r = new Real_Estate_App.Model.RealEstateEDM("Admin"))
+            {
+                cb_Department.Items.Clear();
+                try
+                {
+                    foreach (var dep in r.Get_All_Departments())
+                    {
+                        cb_Department.Items.Add(dep.ID + ": " + dep.Name);
+                    }
+                }
+                catch (Exception ex)
+                {
 
+                    MessageBox.Show(ex.Message);
+                }
+                try
+                {
+                    var SearchProperties = r.Get_All_Properties();
+                    Properties = SearchProperties.ToList<Real_Estate_App.Model.Get_All_Properties_Result>();
+                    if (SearchProperties == null)
+                    {
+                        label28.Text = "There are no Properties found";
+                    }
+                    else
+                    {
+                        label28.Text = "Properties";
+                        tableLayoutPanel1.Controls.Clear();
+                        foreach (var property in SearchProperties)
+                        {
+                            Real_Estate_App.User_Control.DisplayProperties d = new DisplayProperties();
+                            /*d.Click += EmployeeClicked;*/
+                            tableLayoutPanel1.Controls.Add(d);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + ex.InnerException.Message);
+                }
+            }
+            ShowAllPropPanel.Refresh();
         }
 
         private void circularPictureBox3_Click(object sender, EventArgs e)
@@ -542,7 +633,7 @@ namespace MyRealEstate
             {
                 if (Employees != null)
                 {
-                    var SearchRsult = Employees.Where(emp => emp.FirstName.ToLower().Contains(SearchtextBox.Text.ToLower()) || emp.LastName.ToLower().Contains(SearchtextBox.Text.ToLower())).ToList();
+                    var SearchRsult = Employees.Where(emp => emp.FirstName.ToLower().Contains(SearchtextBox2.Text.ToLower()) || emp.LastName.ToLower().Contains(SearchtextBox2.Text.ToLower())).ToList();
                     if (SearchRsult == null || SearchRsult.ToArray().Length == 0)
                     {
                         lbl_SearchMessage.Text = "There are no Employees found";
@@ -551,12 +642,12 @@ namespace MyRealEstate
                     else
                     {
                         lbl_SearchMessage.Text = "Employees";
-                        tableLayoutPanel1.Controls.Clear();
-                        foreach (var employee in Employees.Where(emp => emp.FirstName.ToLower().Contains(SearchtextBox.Text.ToLower()) || emp.LastName.ToLower().Contains(SearchtextBox.Text.ToLower())).ToList())
+                        tableLayoutPanel2.Controls.Clear();
+                        foreach (var employee in Employees.Where(emp => emp.FirstName.ToLower().Contains(SearchtextBox2.Text.ToLower()) || emp.LastName.ToLower().Contains(SearchtextBox2.Text.ToLower())).ToList())
                         {
                             Real_Estate_App.User_Control.DisplayPerson d = new Real_Estate_App.User_Control.DisplayPerson(employee);
                             d.Click += EmployeeClicked;
-                            tableLayoutPanel1.Controls.Add(d);
+                            tableLayoutPanel2.Controls.Add(d);
                         }
                     }
                 }
@@ -619,6 +710,46 @@ namespace MyRealEstate
             ShowAllEmpPanel.Visible = false;
             ShowAllPropPanel.Visible = false;
             ShowAllCustPanel.Visible = true;
+            using (Real_Estate_App.Model.RealEstateEDM r = new Real_Estate_App.Model.RealEstateEDM("Admin"))
+            {
+                cb_Department.Items.Clear();
+                try
+                {
+                    foreach (var dep in r.Get_All_Departments())
+                    {
+                        cb_Department.Items.Add(dep.ID + ": " + dep.Name);
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
+                try
+                {
+                    var SearchEmployees = r.Get_All_Clients();
+                    Clients = SearchEmployees.ToList<Real_Estate_App.Model.Get_All_Clients_Result>();
+                    if (SearchEmployees == null)
+                    {
+                        label31.Text = "There are no Customers found";
+                    }
+                    else
+                    {
+                        label31.Text = "Customers";
+                        tableLayoutPanel4.Controls.Clear();
+                        foreach (var employee in SearchEmployees)
+                        {
+                            Real_Estate_App.User_Control.DisplayPerson d = new Real_Estate_App.User_Control.DisplayPerson(employee);
+                            d.Click += CustomerClicked;
+                            tableLayoutPanel4.Controls.Add(d);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + ex.InnerException.Message);
+                }
+            }
         }
 
         private void PropertyClicked(object sender, EventArgs e)
@@ -680,6 +811,7 @@ namespace MyRealEstate
                         foreach (var employee in SearchEmployees)
                         {
                             Real_Estate_App.User_Control.DisplayPerson d = new Real_Estate_App.User_Control.DisplayPerson(employee);
+                            d.Click += EmployeeClicked;
                             tableLayoutPanel2.Controls.Add(d);
                         }
                     }
@@ -691,6 +823,141 @@ namespace MyRealEstate
             }
             ShowAllEmpPanel.Refresh();
 
+        }
+
+        private void textBox2_TextChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Clients != null)
+                {
+                    var SearchRsult = Clients.Where(emp => emp.FirstName.ToLower().Contains(textBox2.Text.ToLower()) || emp.LastName.ToLower().Contains(textBox2.Text.ToLower())).ToList();
+                    if (SearchRsult == null || SearchRsult.ToArray().Length == 0)
+                    {
+                        label31.Text = "There are no Customers found";
+                        return;
+                    }
+                    else
+                    {
+                        label31.Text = "Customers";
+                        tableLayoutPanel4.Controls.Clear();
+                        foreach (var employee in Clients.Where(emp => emp.FirstName.ToLower().Contains(textBox2.Text.ToLower()) || emp.LastName.ToLower().Contains(textBox2.Text.ToLower())).ToList())
+                        {
+                            Real_Estate_App.User_Control.DisplayPerson d = new Real_Estate_App.User_Control.DisplayPerson(employee);
+                            d.Click += CustomerClicked;
+                            tableLayoutPanel4.Controls.Add(d);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void CustRefresh_lbl_Click(object sender, EventArgs e)
+        {
+            using (Real_Estate_App.Model.RealEstateEDM r = new Real_Estate_App.Model.RealEstateEDM("Admin"))
+            {
+                cb_Department.Items.Clear();
+                try
+                {
+                    foreach (var dep in r.Get_All_Departments())
+                    {
+                        cb_Department.Items.Add(dep.ID + ": " + dep.Name);
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
+                try
+                {
+                    var SearchEmployees = r.Get_All_Clients();
+                    Clients = SearchEmployees.ToList<Real_Estate_App.Model.Get_All_Clients_Result>();
+                    if (SearchEmployees == null)
+                    {
+                        label31.Text = "There are no Customers found";
+                    }
+                    else
+                    {
+                        label31.Text = "Customers";
+                        tableLayoutPanel4.Controls.Clear();
+                        foreach (var employee in SearchEmployees)
+                        {
+                            Real_Estate_App.User_Control.DisplayPerson d = new Real_Estate_App.User_Control.DisplayPerson(employee);
+                            d.Click += CustomerClicked;
+                            tableLayoutPanel4.Controls.Add(d);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + ex.InnerException.Message);
+                }
+                ShowAllCustPanel.Refresh();
+            }
+        }
+
+        private void HomePanel_Paint(object sender, PaintEventArgs e)
+        {
+            if (this.Admin != null)
+            {
+                IDlbl.Text = Admin.ID.ToString();
+                NAMElbl.Text = Admin.FirstName + " " + Admin.LastName;
+                PHONElbl.Text = Admin.PhoneNumber;
+                idtext.Text = Admin.ID.ToString();
+                fullnametext.Text = Admin.FirstName + " " + Admin.LastName;
+                phonetext.Text = Admin.PhoneNumber;
+                pwdtext.Text = Admin.Password;
+
+                try
+                {
+                    if (Admin.Photo != null && !Admin.Photo.All(bit1 => bit1 == 0))
+                    {
+                        using (MemoryStream ms = new MemoryStream(Admin.Photo))
+                        {
+                            circularPictureBox1.Image = Image.FromStream(ms);
+                        }
+                    }
+                    else
+                    {
+                        circularPictureBox1.Image = global::Real_Estate_App.Properties.Resources.Default_Profile;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    pic_BigPicture.Image = global::Real_Estate_App.Properties.Resources.Default_Profile;
+                    MessageBox.Show(ex.Message + ex.InnerException.Message);
+                }
+                /*try
+                {
+                    using (Real_Estate_App.Model.RealEstateEDM r = new Real_Estate_App.Model.RealEstateEDM("Admin"))
+                    {
+                        comboBox1.Items.Clear();
+                        foreach (var dep in r.Get_All_Employees())
+                        {
+                            comboBox1.Items.Add(dep.ID + ": " + dep.FirstName);
+                        }
+                        foreach (var dep in r.Search_Employee_By_ID(Customer.EmpId))
+                        {
+                            comboBox1.SelectedItem = dep.ID + ": " + dep.FirstName;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    comboBox1.Items.Add(Customer.EmpId.ToString() + ":");
+                    MessageBox.Show(ex.Message + ex.InnerException.Message);
+                }
+                comboBox1.Enabled = false;
+                btn_delete.Hide();
+                btn_save.Hide();
+                ReplaceImage.Hide();
+                */
+            }
         }
     }
 
