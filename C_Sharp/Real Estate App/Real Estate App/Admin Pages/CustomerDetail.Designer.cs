@@ -32,32 +32,30 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerDetail));
             this.btn_save = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.ibl_id = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_id = new System.Windows.Forms.TextBox();
-            this.txt_fname = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txt_lName = new System.Windows.Forms.TextBox();
-            this.txt_pNumber = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txt_pwd = new System.Windows.Forms.TextBox();
-            this.txt_Type = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btn_delete = new System.Windows.Forms.Button();
-            this.pic_BigPicture = new Real_Estate_App.User_Control.CircularPictureBox();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.btn_edit = new System.Windows.Forms.Button();
-            this.ReplaceImage = new Real_Estate_App.User_Control.CircularPictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txt_Email = new System.Windows.Forms.TextBox();
+            this.txt_pwd = new System.Windows.Forms.TextBox();
+            this.txt_pNumber = new System.Windows.Forms.TextBox();
+            this.txt_lName = new System.Windows.Forms.TextBox();
+            this.txt_fname = new System.Windows.Forms.TextBox();
+            this.txt_id = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.ReplaceImage = new Real_Estate_App.User_Control.CircularPictureBox();
+            this.pic_BigPicture = new Real_Estate_App.User_Control.CircularPictureBox();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_BigPicture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ReplaceImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReplaceImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_BigPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_save
@@ -90,11 +88,9 @@
             this.tableLayoutPanel1.Controls.Add(this.txt_pNumber, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.label9, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.txt_pwd, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.txt_Type, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker1, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.txt_Email, 1, 6);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(47, 360);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(47, 372);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 8;
@@ -106,17 +102,8 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(512, 372);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(512, 318);
             this.tableLayoutPanel1.TabIndex = 11;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(207, 229);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(312, 38);
-            this.comboBox1.TabIndex = 13;
             // 
             // label8
             // 
@@ -158,31 +145,15 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "First Name";
             // 
-            // txt_id
-            // 
-            this.txt_id.Location = new System.Drawing.Point(207, 4);
-            this.txt_id.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_id.Name = "txt_id";
-            this.txt_id.Size = new System.Drawing.Size(312, 37);
-            this.txt_id.TabIndex = 2;
-            // 
-            // txt_fname
-            // 
-            this.txt_fname.Location = new System.Drawing.Point(207, 49);
-            this.txt_fname.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_fname.Name = "txt_fname";
-            this.txt_fname.Size = new System.Drawing.Size(312, 37);
-            this.txt_fname.TabIndex = 10;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(4, 225);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(156, 31);
+            this.label4.Size = new System.Drawing.Size(134, 31);
             this.label4.TabIndex = 4;
-            this.label4.Text = "Department";
+            this.label4.Text = "Employee";
             // 
             // label3
             // 
@@ -194,64 +165,15 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Last Name";
             // 
-            // txt_lName
-            // 
-            this.txt_lName.Location = new System.Drawing.Point(207, 94);
-            this.txt_lName.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_lName.Name = "txt_lName";
-            this.txt_lName.Size = new System.Drawing.Size(312, 37);
-            this.txt_lName.TabIndex = 11;
-            // 
-            // txt_pNumber
-            // 
-            this.txt_pNumber.Location = new System.Drawing.Point(207, 139);
-            this.txt_pNumber.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_pNumber.Name = "txt_pNumber";
-            this.txt_pNumber.Size = new System.Drawing.Size(312, 37);
-            this.txt_pNumber.TabIndex = 12;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(4, 271);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(75, 31);
+            this.label9.Size = new System.Drawing.Size(90, 31);
             this.label9.TabIndex = 9;
-            this.label9.Text = "Type";
-            // 
-            // txt_pwd
-            // 
-            this.txt_pwd.Location = new System.Drawing.Point(207, 184);
-            this.txt_pwd.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_pwd.Name = "txt_pwd";
-            this.txt_pwd.Size = new System.Drawing.Size(312, 37);
-            this.txt_pwd.TabIndex = 13;
-            // 
-            // txt_Type
-            // 
-            this.txt_Type.Location = new System.Drawing.Point(207, 275);
-            this.txt_Type.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_Type.Name = "txt_Type";
-            this.txt_Type.Size = new System.Drawing.Size(312, 37);
-            this.txt_Type.TabIndex = 15;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(4, 316);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 31);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Date";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(206, 319);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(306, 37);
-            this.dateTimePicker1.TabIndex = 16;
+            this.label9.Text = "E-mail";
             // 
             // btn_delete
             // 
@@ -268,16 +190,6 @@
             this.btn_delete.TabIndex = 14;
             this.btn_delete.UseVisualStyleBackColor = false;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
-            // 
-            // pic_BigPicture
-            // 
-            this.pic_BigPicture.Location = new System.Drawing.Point(172, 59);
-            this.pic_BigPicture.Margin = new System.Windows.Forms.Padding(4);
-            this.pic_BigPicture.Name = "pic_BigPicture";
-            this.pic_BigPicture.Size = new System.Drawing.Size(281, 281);
-            this.pic_BigPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_BigPicture.TabIndex = 12;
-            this.pic_BigPicture.TabStop = false;
             // 
             // btn_Exit
             // 
@@ -308,6 +220,67 @@
             this.btn_edit.UseVisualStyleBackColor = false;
             this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // txt_Email
+            // 
+            this.txt_Email.Location = new System.Drawing.Point(207, 275);
+            this.txt_Email.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Email.Name = "txt_Email";
+            this.txt_Email.Size = new System.Drawing.Size(312, 37);
+            this.txt_Email.TabIndex = 15;
+            // 
+            // txt_pwd
+            // 
+            this.txt_pwd.Location = new System.Drawing.Point(207, 184);
+            this.txt_pwd.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_pwd.Name = "txt_pwd";
+            this.txt_pwd.Size = new System.Drawing.Size(312, 37);
+            this.txt_pwd.TabIndex = 13;
+            // 
+            // txt_pNumber
+            // 
+            this.txt_pNumber.Location = new System.Drawing.Point(207, 139);
+            this.txt_pNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_pNumber.Name = "txt_pNumber";
+            this.txt_pNumber.Size = new System.Drawing.Size(312, 37);
+            this.txt_pNumber.TabIndex = 12;
+            // 
+            // txt_lName
+            // 
+            this.txt_lName.Location = new System.Drawing.Point(207, 94);
+            this.txt_lName.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_lName.Name = "txt_lName";
+            this.txt_lName.Size = new System.Drawing.Size(312, 37);
+            this.txt_lName.TabIndex = 11;
+            // 
+            // txt_fname
+            // 
+            this.txt_fname.Location = new System.Drawing.Point(207, 49);
+            this.txt_fname.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_fname.Name = "txt_fname";
+            this.txt_fname.Size = new System.Drawing.Size(312, 37);
+            this.txt_fname.TabIndex = 10;
+            // 
+            // txt_id
+            // 
+            this.txt_id.Location = new System.Drawing.Point(207, 4);
+            this.txt_id.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_id.Name = "txt_id";
+            this.txt_id.Size = new System.Drawing.Size(312, 37);
+            this.txt_id.TabIndex = 2;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(207, 229);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(312, 38);
+            this.comboBox1.TabIndex = 13;
+            // 
             // ReplaceImage
             // 
             this.ReplaceImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ReplaceImage.BackgroundImage")));
@@ -321,9 +294,15 @@
             this.ReplaceImage.TabStop = false;
             this.ReplaceImage.Click += new System.EventHandler(this.ReplaceImage_Click);
             // 
-            // errorProvider1
+            // pic_BigPicture
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.pic_BigPicture.Location = new System.Drawing.Point(172, 59);
+            this.pic_BigPicture.Margin = new System.Windows.Forms.Padding(4);
+            this.pic_BigPicture.Name = "pic_BigPicture";
+            this.pic_BigPicture.Size = new System.Drawing.Size(281, 281);
+            this.pic_BigPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_BigPicture.TabIndex = 12;
+            this.pic_BigPicture.TabStop = false;
             // 
             // CustomerDetail
             // 
@@ -342,11 +321,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CustomerDetail";
             this.Text = "CustomerDetail";
+            this.Load += new System.EventHandler(this.CustomerDetail_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_BigPicture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ReplaceImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReplaceImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_BigPicture)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -356,26 +336,24 @@
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label ibl_id;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt_id;
-        private System.Windows.Forms.TextBox txt_fname;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt_lName;
-        private System.Windows.Forms.TextBox txt_pNumber;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txt_pwd;
-        private System.Windows.Forms.TextBox txt_Type;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private User_Control.CircularPictureBox pic_BigPicture;
         private System.Windows.Forms.Button btn_Exit;
         private System.Windows.Forms.Button btn_edit;
         private User_Control.CircularPictureBox ReplaceImage;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txt_id;
+        private System.Windows.Forms.TextBox txt_fname;
+        private System.Windows.Forms.TextBox txt_lName;
+        private System.Windows.Forms.TextBox txt_pNumber;
+        private System.Windows.Forms.TextBox txt_pwd;
+        private System.Windows.Forms.TextBox txt_Email;
     }
 }

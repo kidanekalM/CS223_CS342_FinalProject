@@ -49,9 +49,8 @@ namespace Real_Estate_App.Admin_Pages
                 txt_lName.ReadOnly = false;
                 txt_pNumber.ReadOnly = false;
                 txt_pwd.ReadOnly = false;
-                txt_Type.ReadOnly = false;
+                txt_Email.ReadOnly = false;
                 comboBox1.Enabled = true;
-                dateTimePicker1.Enabled = true;
             }
             else
             {
@@ -62,9 +61,8 @@ namespace Real_Estate_App.Admin_Pages
                 txt_lName.ReadOnly = true;
                 txt_pNumber.ReadOnly = true;
                 txt_pwd.ReadOnly = true;
-                txt_Type.ReadOnly = true;
+                txt_Email.ReadOnly = true;
                 comboBox1.Enabled = false;
-                dateTimePicker1.Enabled = false;
             }
         }
 
@@ -124,7 +122,7 @@ namespace Real_Estate_App.Admin_Pages
             {
                 using (Model.RealEstateEDM r = new Model.RealEstateEDM("Admin"))
                 {
-                    r.Update_Employee(Customer.ID, txt_fname.Text, txt_lName.Text, txt_pNumber.Text, txt_pwd.Text, ImageToByteArray(pic_BigPicture.Image), txt_Type.Text, dateTimePicker1.Value, int.Parse(comboBox1.SelectedItem.ToString().Substring(0, comboBox1.SelectedItem.ToString().IndexOf(":"))));
+                    r.Update_Client(Customer.ID, txt_fname.Text, txt_lName.Text, ImageToByteArray(pic_BigPicture.Image), txt_pNumber.Text, txt_Email.Text, txt_pwd.Text, int.Parse(comboBox1.SelectedItem.ToString().Substring(0, comboBox1.SelectedItem.ToString().IndexOf(":"))));
                 }
             }
             catch (Exception ex)
@@ -141,6 +139,68 @@ namespace Real_Estate_App.Admin_Pages
                 b.Save(memoryStream, ImageFormat.Png);
                 return memoryStream.ToArray();
 
+            }
+        }
+
+        private void CustomerDetail_Load(object sender, EventArgs e)
+        {
+            if (this.Customer != null)
+            {
+                txt_id.Text = Customer.ID.ToString();
+                txt_id.ReadOnly = true;
+                txt_fname.Text = Customer.FirstName;
+                txt_fname.ReadOnly = true;
+                txt_lName.Text = Customer.LastName;
+                txt_lName.ReadOnly = true;
+                txt_pwd.Text = Customer.Password;
+                txt_pwd.ReadOnly = true;
+                txt_Email.Text = Customer.Email;
+                txt_Email.ReadOnly = true;
+                txt_pNumber.Text = Customer.PhoneNumber;
+                txt_pNumber.ReadOnly = true;
+                try
+                {
+                    if (Customer.Photo != null && !Customer.Photo.All(bit1 => bit1 == 0))
+                    {
+                        using (MemoryStream ms = new MemoryStream(Customer.Photo))
+                        {
+                            pic_BigPicture.Image = Image.FromStream(ms);
+                        }
+                    }
+                    else
+                    {
+                        pic_BigPicture.Image = global::Real_Estate_App.Properties.Resources.Default_Profile;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    pic_BigPicture.Image = global::Real_Estate_App.Properties.Resources.Default_Profile;
+                    MessageBox.Show(ex.Message + ex.InnerException.Message);
+                }
+                try
+                {
+                    using (Model.RealEstateEDM r = new Model.RealEstateEDM("Admin"))
+                    {
+                        comboBox1.Items.Clear();
+                        foreach (var dep in r.Get_All_Employees())
+                        {
+                            comboBox1.Items.Add(dep.ID + ": " + dep.FirstName);
+                        }
+                        foreach (var dep in r.Search_Employee_By_ID(Customer.EmpId))
+                        {
+                            comboBox1.SelectedItem = dep.ID + ": " + dep.FirstName;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    comboBox1.Items.Add(Customer.EmpId.ToString() + ":");
+                    MessageBox.Show(ex.Message + ex.InnerException.Message);
+                }
+                comboBox1.Enabled = false;
+                btn_delete.Hide();
+                btn_save.Hide();
+                ReplaceImage.Hide();
             }
         }
     }

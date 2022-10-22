@@ -37,6 +37,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.HomeButton = new System.Windows.Forms.Button();
             this.WelcomePanel = new System.Windows.Forms.Panel();
+            this.circularPictureBox2 = new Real_Estate_App.User_Control.CircularPictureBox();
             this.UserNameLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.BarHideButton = new System.Windows.Forms.Button();
@@ -54,7 +55,7 @@
             this.deleteAgentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EditProfilePanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pwdtext = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
@@ -62,7 +63,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.idtext = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.emailtext = new System.Windows.Forms.TextBox();
+            this.phonetext = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.fullnametext = new System.Windows.Forms.TextBox();
             this.Search_errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
@@ -76,7 +77,12 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.CustomersPanel = new System.Windows.Forms.Panel();
             this.ShowAllCustPanel = new System.Windows.Forms.Panel();
+            this.label31 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.displayPerson3 = new Real_Estate_App.User_Control.DisplayPerson();
+            this.CustRefresh_lbl = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
@@ -84,12 +90,15 @@
             this.showToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.PropertiesPanel = new System.Windows.Forms.Panel();
             this.ShowAllPropPanel = new System.Windows.Forms.Panel();
+            this.label28 = new System.Windows.Forms.Label();
             this.PropRefresh_lbl = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.displayProperty1 = new Real_Estate_App.User_Control.DisplayProperty();
             this.SearchButton = new System.Windows.Forms.Label();
             this.SearchtextBox = new System.Windows.Forms.TextBox();
             this.AddPropertyPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.circularPictureBox3 = new Real_Estate_App.User_Control.CircularPictureBox();
             this.txtType = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.AddPropertyButton = new System.Windows.Forms.Button();
@@ -112,6 +121,7 @@
             this.ShowAllEmpPanel = new System.Windows.Forms.Panel();
             this.EmpRefresh_lbl = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.displayPerson1 = new Real_Estate_App.User_Control.DisplayPerson();
             this.label21 = new System.Windows.Forms.Label();
             this.SearchtextBox2 = new System.Windows.Forms.TextBox();
             this.lbl_SearchMessage = new System.Windows.Forms.Label();
@@ -120,6 +130,12 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.cb_Department = new System.Windows.Forms.ComboBox();
             this.btn_Save = new System.Windows.Forms.Button();
+            this.txt_empType = new Real_Estate_App.User_Control.PlaceHolderTextBox();
+            this.pic_BigPicture = new Real_Estate_App.User_Control.CircularPictureBox();
+            this.txt_Password = new Real_Estate_App.User_Control.PlaceHolderTextBox();
+            this.txt_PhoneNumber = new Real_Estate_App.User_Control.PlaceHolderTextBox();
+            this.txt_LastName = new Real_Estate_App.User_Control.PlaceHolderTextBox();
+            this.txt_firstName = new Real_Estate_App.User_Control.PlaceHolderTextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -133,31 +149,19 @@
             this.showToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.HomePanel = new System.Windows.Forms.Panel();
             this.LogOutButton = new System.Windows.Forms.Button();
-            this.label22 = new System.Windows.Forms.Label();
-            this.EMAILlbl = new System.Windows.Forms.Label();
+            this.circularPictureBox1 = new Real_Estate_App.User_Control.CircularPictureBox();
+            this.PHONElbl = new System.Windows.Forms.Label();
             this.NAMElbl = new System.Windows.Forms.Label();
             this.IDlbl = new System.Windows.Forms.Label();
             this.EditProfileButton = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.displayProperty1 = new Real_Estate_App.User_Control.DisplayProperty();
-            this.circularPictureBox3 = new Real_Estate_App.User_Control.CircularPictureBox();
-            this.displayPerson1 = new Real_Estate_App.User_Control.DisplayPerson();
-            this.txt_empType = new Real_Estate_App.User_Control.PlaceHolderTextBox();
-            this.pic_BigPicture = new Real_Estate_App.User_Control.CircularPictureBox();
-            this.txt_Password = new Real_Estate_App.User_Control.PlaceHolderTextBox();
-            this.txt_PhoneNumber = new Real_Estate_App.User_Control.PlaceHolderTextBox();
-            this.txt_LastName = new Real_Estate_App.User_Control.PlaceHolderTextBox();
-            this.txt_firstName = new Real_Estate_App.User_Control.PlaceHolderTextBox();
-            this.displayPerson3 = new Real_Estate_App.User_Control.DisplayPerson();
-            this.circularPictureBox1 = new Real_Estate_App.User_Control.CircularPictureBox();
-            this.circularPictureBox2 = new Real_Estate_App.User_Control.CircularPictureBox();
             this.LeftPanel.SuspendLayout();
             this.SidePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.WelcomePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox2)).BeginInit();
             this.AppointmentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.EditProfilePanel.SuspendLayout();
@@ -173,18 +177,17 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.AddPropertyPanel.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox3)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.EmployeesPanel.SuspendLayout();
             this.ShowAllEmpPanel.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.AddEmployeePanel.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_BigPicture)).BeginInit();
             this.menuStrip2.SuspendLayout();
             this.HomePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_BigPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // LeftPanel
@@ -219,22 +222,22 @@
             // partlbl
             // 
             this.partlbl.AutoSize = true;
-            this.partlbl.Font = new System.Drawing.Font("Lucida Handwriting", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.partlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(60)))), ((int)(((byte)(150)))));
-            this.partlbl.Location = new System.Drawing.Point(56, 633);
+            this.partlbl.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.partlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(60)))), ((int)(((byte)(160)))));
+            this.partlbl.Location = new System.Drawing.Point(63, 633);
             this.partlbl.Name = "partlbl";
-            this.partlbl.Size = new System.Drawing.Size(84, 29);
+            this.partlbl.Size = new System.Drawing.Size(65, 27);
             this.partlbl.TabIndex = 11;
             this.partlbl.Text = "PART";
             // 
             // adminlbl
             // 
             this.adminlbl.AutoSize = true;
-            this.adminlbl.Font = new System.Drawing.Font("Lucida Handwriting", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(60)))), ((int)(((byte)(150)))));
-            this.adminlbl.Location = new System.Drawing.Point(45, 595);
+            this.adminlbl.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(60)))), ((int)(((byte)(160)))));
+            this.adminlbl.Location = new System.Drawing.Point(52, 595);
             this.adminlbl.Name = "adminlbl";
-            this.adminlbl.Size = new System.Drawing.Size(110, 29);
+            this.adminlbl.Size = new System.Drawing.Size(89, 27);
             this.adminlbl.TabIndex = 9;
             this.adminlbl.Text = "ADMIN";
             // 
@@ -280,6 +283,18 @@
             this.WelcomePanel.Name = "WelcomePanel";
             this.WelcomePanel.Size = new System.Drawing.Size(200, 108);
             this.WelcomePanel.TabIndex = 1;
+            // 
+            // circularPictureBox2
+            // 
+            this.circularPictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox2.Image = global::Real_Estate_App.Properties.Resources.SeekPng_com_profile_icon_png_9665493;
+            this.circularPictureBox2.Location = new System.Drawing.Point(14, 15);
+            this.circularPictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.circularPictureBox2.Name = "circularPictureBox2";
+            this.circularPictureBox2.Size = new System.Drawing.Size(74, 74);
+            this.circularPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.circularPictureBox2.TabIndex = 8;
+            this.circularPictureBox2.TabStop = false;
             // 
             // UserNameLabel
             // 
@@ -467,7 +482,7 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.pwdtext);
             this.panel2.Controls.Add(this.label26);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.label12);
@@ -475,7 +490,7 @@
             this.panel2.Controls.Add(this.label19);
             this.panel2.Controls.Add(this.idtext);
             this.panel2.Controls.Add(this.label23);
-            this.panel2.Controls.Add(this.emailtext);
+            this.panel2.Controls.Add(this.phonetext);
             this.panel2.Controls.Add(this.label24);
             this.panel2.Controls.Add(this.fullnametext);
             this.panel2.Location = new System.Drawing.Point(118, 151);
@@ -484,14 +499,14 @@
             this.panel2.Size = new System.Drawing.Size(509, 387);
             this.panel2.TabIndex = 27;
             // 
-            // textBox1
+            // pwdtext
             // 
-            this.textBox1.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(96, 265);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(390, 29);
-            this.textBox1.TabIndex = 28;
+            this.pwdtext.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pwdtext.Location = new System.Drawing.Point(96, 265);
+            this.pwdtext.Margin = new System.Windows.Forms.Padding(4);
+            this.pwdtext.Name = "pwdtext";
+            this.pwdtext.Size = new System.Drawing.Size(390, 29);
+            this.pwdtext.TabIndex = 28;
             // 
             // label26
             // 
@@ -580,14 +595,14 @@
             this.label23.TabIndex = 12;
             this.label23.Text = "Full Name:";
             // 
-            // emailtext
+            // phonetext
             // 
-            this.emailtext.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailtext.Location = new System.Drawing.Point(79, 214);
-            this.emailtext.Margin = new System.Windows.Forms.Padding(4);
-            this.emailtext.Name = "emailtext";
-            this.emailtext.Size = new System.Drawing.Size(407, 29);
-            this.emailtext.TabIndex = 21;
+            this.phonetext.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phonetext.Location = new System.Drawing.Point(79, 214);
+            this.phonetext.Margin = new System.Windows.Forms.Padding(4);
+            this.phonetext.Name = "phonetext";
+            this.phonetext.Size = new System.Drawing.Size(407, 29);
+            this.phonetext.TabIndex = 21;
             // 
             // label24
             // 
@@ -597,9 +612,9 @@
             this.label24.Location = new System.Drawing.Point(21, 221);
             this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(52, 16);
+            this.label24.Size = new System.Drawing.Size(50, 16);
             this.label24.TabIndex = 22;
-            this.label24.Text = "E-mail:";
+            this.label24.Text = "Phone:";
             // 
             // fullnametext
             // 
@@ -691,12 +706,29 @@
             // ShowAllCustPanel
             // 
             this.ShowAllCustPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ShowAllCustPanel.Controls.Add(this.label31);
             this.ShowAllCustPanel.Controls.Add(this.tableLayoutPanel4);
+            this.ShowAllCustPanel.Controls.Add(this.CustRefresh_lbl);
+            this.ShowAllCustPanel.Controls.Add(this.textBox2);
+            this.ShowAllCustPanel.Controls.Add(this.label33);
             this.ShowAllCustPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ShowAllCustPanel.Location = new System.Drawing.Point(0, 30);
             this.ShowAllCustPanel.Name = "ShowAllCustPanel";
             this.ShowAllCustPanel.Size = new System.Drawing.Size(744, 654);
             this.ShowAllCustPanel.TabIndex = 11;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.BackColor = System.Drawing.Color.Transparent;
+            this.label31.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.ForeColor = System.Drawing.SystemColors.Control;
+            this.label31.Location = new System.Drawing.Point(461, 39);
+            this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(113, 23);
+            this.label31.TabIndex = 35;
+            this.label31.Text = "Customers";
             // 
             // tableLayoutPanel4
             // 
@@ -713,6 +745,53 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.Size = new System.Drawing.Size(629, 555);
             this.tableLayoutPanel4.TabIndex = 21;
+            // 
+            // displayPerson3
+            // 
+            this.displayPerson3.BackColor = System.Drawing.Color.BurlyWood;
+            this.displayPerson3.FullName = null;
+            this.displayPerson3.ID = 0;
+            this.displayPerson3.Location = new System.Drawing.Point(4, 4);
+            this.displayPerson3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.displayPerson3.Name = "displayPerson3";
+            this.displayPerson3.PersonPhoto = null;
+            this.displayPerson3.PhoneNumber = null;
+            this.displayPerson3.Size = new System.Drawing.Size(649, 217);
+            this.displayPerson3.TabIndex = 0;
+            this.displayPerson3.Click += new System.EventHandler(this.CustomerClicked);
+            // 
+            // CustRefresh_lbl
+            // 
+            this.CustRefresh_lbl.BackColor = System.Drawing.Color.BurlyWood;
+            this.CustRefresh_lbl.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustRefresh_lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(60)))), ((int)(((byte)(150)))));
+            this.CustRefresh_lbl.Location = new System.Drawing.Point(371, 39);
+            this.CustRefresh_lbl.Name = "CustRefresh_lbl";
+            this.CustRefresh_lbl.Size = new System.Drawing.Size(71, 25);
+            this.CustRefresh_lbl.TabIndex = 34;
+            this.CustRefresh_lbl.Text = "Refresh";
+            this.CustRefresh_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CustRefresh_lbl.Click += new System.EventHandler(this.CustRefresh_lbl_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(58, 41);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(209, 24);
+            this.textBox2.TabIndex = 32;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
+            // 
+            // label33
+            // 
+            this.label33.BackColor = System.Drawing.Color.BurlyWood;
+            this.label33.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(60)))), ((int)(((byte)(150)))));
+            this.label33.Location = new System.Drawing.Point(290, 39);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(71, 25);
+            this.label33.TabIndex = 33;
+            this.label33.Text = "Search";
+            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label29
             // 
@@ -790,6 +869,7 @@
             // ShowAllPropPanel
             // 
             this.ShowAllPropPanel.BackColor = System.Drawing.Color.SteelBlue;
+            this.ShowAllPropPanel.Controls.Add(this.label28);
             this.ShowAllPropPanel.Controls.Add(this.PropRefresh_lbl);
             this.ShowAllPropPanel.Controls.Add(this.tableLayoutPanel1);
             this.ShowAllPropPanel.Controls.Add(this.SearchButton);
@@ -800,12 +880,25 @@
             this.ShowAllPropPanel.Size = new System.Drawing.Size(744, 654);
             this.ShowAllPropPanel.TabIndex = 30;
             // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.BackColor = System.Drawing.Color.Transparent;
+            this.label28.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.SystemColors.Control;
+            this.label28.Location = new System.Drawing.Point(452, 78);
+            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(105, 23);
+            this.label28.TabIndex = 31;
+            this.label28.Text = "Properties";
+            // 
             // PropRefresh_lbl
             // 
             this.PropRefresh_lbl.BackColor = System.Drawing.SystemColors.ControlText;
             this.PropRefresh_lbl.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PropRefresh_lbl.ForeColor = System.Drawing.SystemColors.Control;
-            this.PropRefresh_lbl.Location = new System.Drawing.Point(607, 80);
+            this.PropRefresh_lbl.Location = new System.Drawing.Point(362, 78);
             this.PropRefresh_lbl.Name = "PropRefresh_lbl";
             this.PropRefresh_lbl.Size = new System.Drawing.Size(71, 25);
             this.PropRefresh_lbl.TabIndex = 21;
@@ -828,6 +921,22 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.Size = new System.Drawing.Size(629, 506);
             this.tableLayoutPanel1.TabIndex = 20;
+            // 
+            // displayProperty1
+            // 
+            this.displayProperty1.Address = null;
+            this.displayProperty1.Availability = false;
+            this.displayProperty1.BackColor = System.Drawing.SystemColors.Control;
+            this.displayProperty1.Description = null;
+            this.displayProperty1.Id = null;
+            this.displayProperty1.Location = new System.Drawing.Point(5, 4);
+            this.displayProperty1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.displayProperty1.Name = "displayProperty1";
+            this.displayProperty1.Photo = ((System.Drawing.Image)(resources.GetObject("displayProperty1.Photo")));
+            this.displayProperty1.Price = null;
+            this.displayProperty1.Size = new System.Drawing.Size(657, 233);
+            this.displayProperty1.TabIndex = 0;
+            this.displayProperty1.Click += new System.EventHandler(this.PropertyClicked);
             // 
             // SearchButton
             // 
@@ -880,6 +989,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(572, 593);
             this.panel1.TabIndex = 26;
+            // 
+            // circularPictureBox3
+            // 
+            this.circularPictureBox3.Image = global::Real_Estate_App.Properties.Resources.RealEstate_App_Icon;
+            this.circularPictureBox3.Location = new System.Drawing.Point(199, -1);
+            this.circularPictureBox3.Name = "circularPictureBox3";
+            this.circularPictureBox3.Size = new System.Drawing.Size(179, 179);
+            this.circularPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.circularPictureBox3.TabIndex = 29;
+            this.circularPictureBox3.TabStop = false;
+            this.circularPictureBox3.Click += new System.EventHandler(this.circularPictureBox3_Click);
             // 
             // txtType
             // 
@@ -1143,6 +1263,20 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(654, 531);
             this.tableLayoutPanel2.TabIndex = 29;
             // 
+            // displayPerson1
+            // 
+            this.displayPerson1.BackColor = System.Drawing.Color.Transparent;
+            this.displayPerson1.FullName = null;
+            this.displayPerson1.ID = 0;
+            this.displayPerson1.Location = new System.Drawing.Point(5, 5);
+            this.displayPerson1.Margin = new System.Windows.Forms.Padding(5);
+            this.displayPerson1.Name = "displayPerson1";
+            this.displayPerson1.PersonPhoto = null;
+            this.displayPerson1.PhoneNumber = null;
+            this.displayPerson1.Size = new System.Drawing.Size(718, 217);
+            this.displayPerson1.TabIndex = 0;
+            this.displayPerson1.DoubleClick += new System.EventHandler(this.EmployeeClicked);
+            // 
             // label21
             // 
             this.label21.BackColor = System.Drawing.Color.Silver;
@@ -1171,7 +1305,7 @@
             this.lbl_SearchMessage.BackColor = System.Drawing.Color.Transparent;
             this.lbl_SearchMessage.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_SearchMessage.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbl_SearchMessage.Location = new System.Drawing.Point(579, 55);
+            this.lbl_SearchMessage.Location = new System.Drawing.Point(440, 55);
             this.lbl_SearchMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_SearchMessage.Name = "lbl_SearchMessage";
             this.lbl_SearchMessage.Size = new System.Drawing.Size(117, 23);
@@ -1218,7 +1352,7 @@
             // 
             this.cb_Department.FormattingEnabled = true;
             this.cb_Department.Items.AddRange(new object[] {
-            "OK"});
+            "1"});
             this.cb_Department.Location = new System.Drawing.Point(21, 379);
             this.cb_Department.Margin = new System.Windows.Forms.Padding(4);
             this.cb_Department.Name = "cb_Department";
@@ -1238,6 +1372,83 @@
             this.btn_Save.Text = "Save";
             this.btn_Save.UseVisualStyleBackColor = false;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            // 
+            // txt_empType
+            // 
+            this.txt_empType.BackColor = System.Drawing.Color.LightGray;
+            this.txt_empType.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_empType.ForeColor = System.Drawing.Color.Gray;
+            this.txt_empType.Location = new System.Drawing.Point(21, 472);
+            this.txt_empType.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_empType.Name = "txt_empType";
+            this.txt_empType.PlaceHolder = "Type";
+            this.txt_empType.Size = new System.Drawing.Size(491, 28);
+            this.txt_empType.TabIndex = 20;
+            this.txt_empType.Text = "Type";
+            // 
+            // pic_BigPicture
+            // 
+            this.pic_BigPicture.Image = global::Real_Estate_App.Properties.Resources.Default_Profile;
+            this.pic_BigPicture.Location = new System.Drawing.Point(183, 16);
+            this.pic_BigPicture.Margin = new System.Windows.Forms.Padding(4);
+            this.pic_BigPicture.Name = "pic_BigPicture";
+            this.pic_BigPicture.Size = new System.Drawing.Size(163, 163);
+            this.pic_BigPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_BigPicture.TabIndex = 19;
+            this.pic_BigPicture.TabStop = false;
+            this.pic_BigPicture.Click += new System.EventHandler(this.pic_BigPicture_Click);
+            // 
+            // txt_Password
+            // 
+            this.txt_Password.BackColor = System.Drawing.Color.LightGray;
+            this.txt_Password.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Password.ForeColor = System.Drawing.Color.Gray;
+            this.txt_Password.Location = new System.Drawing.Point(18, 337);
+            this.txt_Password.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Password.Name = "txt_Password";
+            this.txt_Password.PlaceHolder = "Password";
+            this.txt_Password.Size = new System.Drawing.Size(494, 28);
+            this.txt_Password.TabIndex = 18;
+            this.txt_Password.Text = "Password";
+            // 
+            // txt_PhoneNumber
+            // 
+            this.txt_PhoneNumber.BackColor = System.Drawing.Color.LightGray;
+            this.txt_PhoneNumber.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_PhoneNumber.ForeColor = System.Drawing.Color.Gray;
+            this.txt_PhoneNumber.Location = new System.Drawing.Point(18, 295);
+            this.txt_PhoneNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_PhoneNumber.Name = "txt_PhoneNumber";
+            this.txt_PhoneNumber.PlaceHolder = "Phone Number";
+            this.txt_PhoneNumber.Size = new System.Drawing.Size(494, 28);
+            this.txt_PhoneNumber.TabIndex = 17;
+            this.txt_PhoneNumber.Text = "Phone Number";
+            // 
+            // txt_LastName
+            // 
+            this.txt_LastName.BackColor = System.Drawing.Color.LightGray;
+            this.txt_LastName.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_LastName.ForeColor = System.Drawing.Color.Gray;
+            this.txt_LastName.Location = new System.Drawing.Point(18, 251);
+            this.txt_LastName.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_LastName.Name = "txt_LastName";
+            this.txt_LastName.PlaceHolder = "Last Name";
+            this.txt_LastName.Size = new System.Drawing.Size(494, 28);
+            this.txt_LastName.TabIndex = 16;
+            this.txt_LastName.Text = "Last Name";
+            // 
+            // txt_firstName
+            // 
+            this.txt_firstName.BackColor = System.Drawing.Color.LightGray;
+            this.txt_firstName.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_firstName.ForeColor = System.Drawing.Color.Gray;
+            this.txt_firstName.Location = new System.Drawing.Point(18, 211);
+            this.txt_firstName.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_firstName.Name = "txt_firstName";
+            this.txt_firstName.PlaceHolder = "First Name";
+            this.txt_firstName.Size = new System.Drawing.Size(494, 28);
+            this.txt_firstName.TabIndex = 15;
+            this.txt_firstName.Text = "First Name";
             // 
             // label25
             // 
@@ -1376,13 +1587,11 @@
             this.HomePanel.BackgroundImage = global::Real_Estate_App.Properties.Resources.istockphoto_1192403701_170667a;
             this.HomePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.HomePanel.Controls.Add(this.LogOutButton);
-            this.HomePanel.Controls.Add(this.label22);
             this.HomePanel.Controls.Add(this.circularPictureBox1);
-            this.HomePanel.Controls.Add(this.EMAILlbl);
+            this.HomePanel.Controls.Add(this.PHONElbl);
             this.HomePanel.Controls.Add(this.NAMElbl);
             this.HomePanel.Controls.Add(this.IDlbl);
             this.HomePanel.Controls.Add(this.EditProfileButton);
-            this.HomePanel.Controls.Add(this.label6);
             this.HomePanel.Controls.Add(this.label5);
             this.HomePanel.Controls.Add(this.label4);
             this.HomePanel.Controls.Add(this.label3);
@@ -1392,12 +1601,13 @@
             this.HomePanel.Name = "HomePanel";
             this.HomePanel.Size = new System.Drawing.Size(744, 684);
             this.HomePanel.TabIndex = 0;
+            this.HomePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.HomePanel_Paint);
             // 
             // LogOutButton
             // 
             this.LogOutButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogOutButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(60)))), ((int)(((byte)(150)))));
-            this.LogOutButton.Location = new System.Drawing.Point(557, 466);
+            this.LogOutButton.Location = new System.Drawing.Point(432, 446);
             this.LogOutButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.LogOutButton.Name = "LogOutButton";
             this.LogOutButton.Size = new System.Drawing.Size(102, 34);
@@ -1406,31 +1616,29 @@
             this.LogOutButton.UseVisualStyleBackColor = true;
             this.LogOutButton.Click += new System.EventHandler(this.LogOutButton_Click);
             // 
-            // label22
+            // circularPictureBox1
             // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.Black;
-            this.label22.Location = new System.Drawing.Point(317, 419);
-            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(116, 23);
-            this.label22.TabIndex = 13;
-            this.label22.Text = "16/10/2022";
+            this.circularPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox1.Image = global::Real_Estate_App.Properties.Resources.SeekPng_com_profile_icon_png_9665493;
+            this.circularPictureBox1.Location = new System.Drawing.Point(266, 30);
+            this.circularPictureBox1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.circularPictureBox1.Name = "circularPictureBox1";
+            this.circularPictureBox1.Size = new System.Drawing.Size(200, 200);
+            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.circularPictureBox1.TabIndex = 12;
+            this.circularPictureBox1.TabStop = false;
             // 
-            // EMAILlbl
+            // PHONElbl
             // 
-            this.EMAILlbl.AutoSize = true;
-            this.EMAILlbl.BackColor = System.Drawing.Color.Transparent;
-            this.EMAILlbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EMAILlbl.ForeColor = System.Drawing.Color.Black;
-            this.EMAILlbl.Location = new System.Drawing.Point(230, 361);
-            this.EMAILlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.EMAILlbl.Name = "EMAILlbl";
-            this.EMAILlbl.Size = new System.Drawing.Size(277, 23);
-            this.EMAILlbl.TabIndex = 10;
-            this.EMAILlbl.Text = "hamza.abdo19@gmail.com";
+            this.PHONElbl.AutoSize = true;
+            this.PHONElbl.BackColor = System.Drawing.Color.Transparent;
+            this.PHONElbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PHONElbl.ForeColor = System.Drawing.Color.Black;
+            this.PHONElbl.Location = new System.Drawing.Point(230, 361);
+            this.PHONElbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.PHONElbl.Name = "PHONElbl";
+            this.PHONElbl.Size = new System.Drawing.Size(0, 23);
+            this.PHONElbl.TabIndex = 10;
             // 
             // NAMElbl
             // 
@@ -1441,9 +1649,8 @@
             this.NAMElbl.Location = new System.Drawing.Point(270, 305);
             this.NAMElbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NAMElbl.Name = "NAMElbl";
-            this.NAMElbl.Size = new System.Drawing.Size(150, 23);
+            this.NAMElbl.Size = new System.Drawing.Size(0, 23);
             this.NAMElbl.TabIndex = 9;
-            this.NAMElbl.Text = "Hamzah Abdo";
             // 
             // IDlbl
             // 
@@ -1454,15 +1661,14 @@
             this.IDlbl.Location = new System.Drawing.Point(189, 252);
             this.IDlbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.IDlbl.Name = "IDlbl";
-            this.IDlbl.Size = new System.Drawing.Size(43, 23);
+            this.IDlbl.Size = new System.Drawing.Size(0, 23);
             this.IDlbl.TabIndex = 8;
-            this.IDlbl.Text = "101";
             // 
             // EditProfileButton
             // 
             this.EditProfileButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditProfileButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(60)))), ((int)(((byte)(150)))));
-            this.EditProfileButton.Location = new System.Drawing.Point(425, 466);
+            this.EditProfileButton.Location = new System.Drawing.Point(217, 446);
             this.EditProfileButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.EditProfileButton.Name = "EditProfileButton";
             this.EditProfileButton.Size = new System.Drawing.Size(102, 34);
@@ -1470,18 +1676,6 @@
             this.EditProfileButton.Text = "Edit Profile";
             this.EditProfileButton.UseVisualStyleBackColor = true;
             this.EditProfileButton.Click += new System.EventHandler(this.EditProfileButton_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(147, 419);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(156, 23);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Date Modiified:";
             // 
             // label5
             // 
@@ -1491,9 +1685,9 @@
             this.label5.Location = new System.Drawing.Point(147, 361);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 23);
+            this.label5.Size = new System.Drawing.Size(77, 23);
             this.label5.TabIndex = 3;
-            this.label5.Text = "E-mail:";
+            this.label5.Text = "Phone:";
             // 
             // label4
             // 
@@ -1519,162 +1713,6 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "ID:";
             // 
-            // displayProperty1
-            // 
-            this.displayProperty1.Address = null;
-            this.displayProperty1.Availability = false;
-            this.displayProperty1.BackColor = System.Drawing.SystemColors.Control;
-            this.displayProperty1.Description = null;
-            this.displayProperty1.Id = null;
-            this.displayProperty1.Location = new System.Drawing.Point(5, 4);
-            this.displayProperty1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.displayProperty1.Name = "displayProperty1";
-            this.displayProperty1.Photo = ((System.Drawing.Image)(resources.GetObject("displayProperty1.Photo")));
-            this.displayProperty1.Price = null;
-            this.displayProperty1.Size = new System.Drawing.Size(657, 233);
-            this.displayProperty1.TabIndex = 0;
-            this.displayProperty1.Click += new System.EventHandler(this.PropertyClicked);
-            // 
-            // circularPictureBox3
-            // 
-            this.circularPictureBox3.Image = global::Real_Estate_App.Properties.Resources.RealEstate_App_Icon;
-            this.circularPictureBox3.Location = new System.Drawing.Point(199, -1);
-            this.circularPictureBox3.Name = "circularPictureBox3";
-            this.circularPictureBox3.Size = new System.Drawing.Size(179, 179);
-            this.circularPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.circularPictureBox3.TabIndex = 29;
-            this.circularPictureBox3.TabStop = false;
-            this.circularPictureBox3.Click += new System.EventHandler(this.circularPictureBox3_Click);
-            // 
-            // displayPerson1
-            // 
-            this.displayPerson1.BackColor = System.Drawing.SystemColors.Control;
-            this.displayPerson1.FullName = null;
-            this.displayPerson1.ID = 0;
-            this.displayPerson1.Location = new System.Drawing.Point(5, 5);
-            this.displayPerson1.Margin = new System.Windows.Forms.Padding(5);
-            this.displayPerson1.Name = "displayPerson1";
-            this.displayPerson1.PersonPhoto = null;
-            this.displayPerson1.PhoneNumber = null;
-            this.displayPerson1.Size = new System.Drawing.Size(641, 217);
-            this.displayPerson1.TabIndex = 0;
-            this.displayPerson1.Click += new System.EventHandler(this.EmployeeClicked);
-            // 
-            // txt_empType
-            // 
-            this.txt_empType.BackColor = System.Drawing.Color.LightGray;
-            this.txt_empType.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_empType.ForeColor = System.Drawing.Color.Gray;
-            this.txt_empType.Location = new System.Drawing.Point(21, 472);
-            this.txt_empType.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_empType.Name = "txt_empType";
-            this.txt_empType.PlaceHolder = "Type";
-            this.txt_empType.Size = new System.Drawing.Size(491, 28);
-            this.txt_empType.TabIndex = 20;
-            this.txt_empType.Text = "Type";
-            // 
-            // pic_BigPicture
-            // 
-            this.pic_BigPicture.Image = global::Real_Estate_App.Properties.Resources.Default_Profile;
-            this.pic_BigPicture.Location = new System.Drawing.Point(183, 16);
-            this.pic_BigPicture.Margin = new System.Windows.Forms.Padding(4);
-            this.pic_BigPicture.Name = "pic_BigPicture";
-            this.pic_BigPicture.Size = new System.Drawing.Size(163, 163);
-            this.pic_BigPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_BigPicture.TabIndex = 19;
-            this.pic_BigPicture.TabStop = false;
-            this.pic_BigPicture.Click += new System.EventHandler(this.pic_BigPicture_Click);
-            // 
-            // txt_Password
-            // 
-            this.txt_Password.BackColor = System.Drawing.Color.LightGray;
-            this.txt_Password.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Password.ForeColor = System.Drawing.Color.Gray;
-            this.txt_Password.Location = new System.Drawing.Point(18, 337);
-            this.txt_Password.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_Password.Name = "txt_Password";
-            this.txt_Password.PlaceHolder = "Password";
-            this.txt_Password.Size = new System.Drawing.Size(494, 28);
-            this.txt_Password.TabIndex = 18;
-            this.txt_Password.Text = "Password";
-            // 
-            // txt_PhoneNumber
-            // 
-            this.txt_PhoneNumber.BackColor = System.Drawing.Color.LightGray;
-            this.txt_PhoneNumber.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_PhoneNumber.ForeColor = System.Drawing.Color.Gray;
-            this.txt_PhoneNumber.Location = new System.Drawing.Point(18, 295);
-            this.txt_PhoneNumber.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_PhoneNumber.Name = "txt_PhoneNumber";
-            this.txt_PhoneNumber.PlaceHolder = "Phone Number";
-            this.txt_PhoneNumber.Size = new System.Drawing.Size(494, 28);
-            this.txt_PhoneNumber.TabIndex = 17;
-            this.txt_PhoneNumber.Text = "Phone Number";
-            // 
-            // txt_LastName
-            // 
-            this.txt_LastName.BackColor = System.Drawing.Color.LightGray;
-            this.txt_LastName.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_LastName.ForeColor = System.Drawing.Color.Gray;
-            this.txt_LastName.Location = new System.Drawing.Point(18, 251);
-            this.txt_LastName.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_LastName.Name = "txt_LastName";
-            this.txt_LastName.PlaceHolder = "Last Name";
-            this.txt_LastName.Size = new System.Drawing.Size(494, 28);
-            this.txt_LastName.TabIndex = 16;
-            this.txt_LastName.Text = "Last Name";
-            // 
-            // txt_firstName
-            // 
-            this.txt_firstName.BackColor = System.Drawing.Color.LightGray;
-            this.txt_firstName.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_firstName.ForeColor = System.Drawing.Color.Gray;
-            this.txt_firstName.Location = new System.Drawing.Point(18, 211);
-            this.txt_firstName.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_firstName.Name = "txt_firstName";
-            this.txt_firstName.PlaceHolder = "First Name";
-            this.txt_firstName.Size = new System.Drawing.Size(494, 28);
-            this.txt_firstName.TabIndex = 15;
-            this.txt_firstName.Text = "First Name";
-            // 
-            // displayPerson3
-            // 
-            this.displayPerson3.BackColor = System.Drawing.Color.BurlyWood;
-            this.displayPerson3.FullName = null;
-            this.displayPerson3.ID = 0;
-            this.displayPerson3.Location = new System.Drawing.Point(4, 4);
-            this.displayPerson3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.displayPerson3.Name = "displayPerson3";
-            this.displayPerson3.PersonPhoto = null;
-            this.displayPerson3.PhoneNumber = null;
-            this.displayPerson3.Size = new System.Drawing.Size(649, 217);
-            this.displayPerson3.TabIndex = 0;
-            this.displayPerson3.Click += new System.EventHandler(this.CustomerClicked);
-            // 
-            // circularPictureBox1
-            // 
-            this.circularPictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.circularPictureBox1.Image = global::Real_Estate_App.Properties.Resources.SeekPng_com_profile_icon_png_9665493;
-            this.circularPictureBox1.Location = new System.Drawing.Point(266, 30);
-            this.circularPictureBox1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.circularPictureBox1.Name = "circularPictureBox1";
-            this.circularPictureBox1.Size = new System.Drawing.Size(200, 200);
-            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.circularPictureBox1.TabIndex = 12;
-            this.circularPictureBox1.TabStop = false;
-            // 
-            // circularPictureBox2
-            // 
-            this.circularPictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.circularPictureBox2.Image = global::Real_Estate_App.Properties.Resources.SeekPng_com_profile_icon_png_9665493;
-            this.circularPictureBox2.Location = new System.Drawing.Point(14, 15);
-            this.circularPictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.circularPictureBox2.Name = "circularPictureBox2";
-            this.circularPictureBox2.Size = new System.Drawing.Size(74, 74);
-            this.circularPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.circularPictureBox2.TabIndex = 8;
-            this.circularPictureBox2.TabStop = false;
-            // 
             // AdminHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -1682,9 +1720,9 @@
             this.ClientSize = new System.Drawing.Size(946, 684);
             this.Controls.Add(this.EditProfilePanel);
             this.Controls.Add(this.HomePanel);
+            this.Controls.Add(this.CustomersPanel);
             this.Controls.Add(this.PropertiesPanel);
             this.Controls.Add(this.EmployeesPanel);
-            this.Controls.Add(this.CustomersPanel);
             this.Controls.Add(this.AppointmentPanel);
             this.Controls.Add(this.LeftPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1700,6 +1738,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.WelcomePanel.ResumeLayout(false);
             this.WelcomePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox2)).EndInit();
             this.AppointmentPanel.ResumeLayout(false);
             this.AppointmentPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -1711,6 +1750,7 @@
             this.CustomersPanel.ResumeLayout(false);
             this.CustomersPanel.PerformLayout();
             this.ShowAllCustPanel.ResumeLayout(false);
+            this.ShowAllCustPanel.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.menuStrip3.ResumeLayout(false);
             this.menuStrip3.PerformLayout();
@@ -1722,6 +1762,7 @@
             this.AddPropertyPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox3)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.EmployeesPanel.ResumeLayout(false);
@@ -1732,14 +1773,12 @@
             this.AddEmployeePanel.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_BigPicture)).EndInit();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             this.HomePanel.ResumeLayout(false);
             this.HomePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_BigPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1761,7 +1800,6 @@
         private System.Windows.Forms.Panel EmployeesPanel;
         private System.Windows.Forms.Panel PropertiesPanel;
         private System.Windows.Forms.Panel HomePanel;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -1773,7 +1811,7 @@
         private System.Windows.Forms.ToolStripMenuItem agentToolStripMenuItem;
         private System.Windows.Forms.Button LogOutButton;
         private System.Windows.Forms.Button EditProfileButton;
-        private System.Windows.Forms.Label EMAILlbl;
+        private System.Windows.Forms.Label PHONElbl;
         private System.Windows.Forms.Label NAMElbl;
         private System.Windows.Forms.Label IDlbl;
         private System.Windows.Forms.Panel EditProfilePanel;
@@ -1816,11 +1854,10 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox idtext;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox emailtext;
+        private System.Windows.Forms.TextBox phonetext;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox fullnametext;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Panel AddEmployeePanel;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
@@ -1834,7 +1871,7 @@
         private Real_Estate_App.User_Control.PlaceHolderTextBox txt_firstName;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Button BarShowButton;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox pwdtext;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Panel ShowAllPropPanel;
         private System.Windows.Forms.Label SearchButton;
@@ -1871,6 +1908,11 @@
         private Real_Estate_App.User_Control.DisplayPerson displayPerson3;
         private System.Windows.Forms.Label partlbl;
         private System.Windows.Forms.Label adminlbl;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label CustRefresh_lbl;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label33;
     }
 }
 

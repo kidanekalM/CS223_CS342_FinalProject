@@ -113,7 +113,7 @@ namespace Real_Estate_App
 
         private void btn_AdminLogin_Click(object sender, EventArgs e)
         {
-            bool hasError = false;
+            /*bool hasError = false;
             errorProvider.Clear();
 
             if (txt_AdminId.Text == "Admin Id")
@@ -131,8 +131,8 @@ namespace Real_Estate_App
                 AdminHomePage a = new AdminHomePage();
                 a.Show();
                 this.Hide();
-            }
-            /*try
+            }*/
+            try
             {
                 using (RealEstateEDM r = new RealEstateEDM("Admin"))
                 {
@@ -153,7 +153,7 @@ namespace Real_Estate_App
             catch (Exception ex)
             {
                 MessageBox.Show("An error occured! \n" + ex.Message);
-            }*/
+            }
         }
 
         /*

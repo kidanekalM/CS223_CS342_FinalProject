@@ -8,7 +8,6 @@
 --Database creating
 USE MASTER 
 GO
-DROP DATABASE RealEstate
 CREATE DATABASE RealEstate
 GO
 --Change Database
@@ -695,10 +694,9 @@ RETURN (
 		ON B.ClientID = C.ID JOIN Property P
 		ON P.ID = B.PropertyID
 		)
-
 --login Admin function
 GO
-CREATE FUNCTION [Login Admin](@ID INT, @Upwd VARCHAR(100))
+Alter FUNCTION [Login Admin](@ID INT, @Upwd VARCHAR(100))
 RETURNS TABLE
 AS
 	RETURN(
