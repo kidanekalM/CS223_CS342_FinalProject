@@ -101,6 +101,19 @@
       </CollectionType>
     </ReturnType>
   </Function>
+  <Function Name="Get_All_Buys" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Buys">
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Client" Type="varchar" MaxLength="201" Nullable="false" />
+          <Property Name="Agent" Type="varchar" MaxLength="201" Nullable="false" />
+          <Property Name="Comission" Type="money" />
+          <Property Name="SellDate" Type="datetime" Nullable="false" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
   <Function Name="Get_All_Clients" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Clients">
     <ReturnType>
       <CollectionType>

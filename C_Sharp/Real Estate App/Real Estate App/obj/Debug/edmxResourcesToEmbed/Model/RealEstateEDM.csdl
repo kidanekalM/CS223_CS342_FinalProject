@@ -249,6 +249,7 @@
     <FunctionImport Name="Search_Employee_By_Name" ReturnType="Collection(RealEstateModel.Search_Employee_By_Name_Result)">
       <Parameter Name="Name" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="Get_All_Buys" IsComposable="true" ReturnType="Collection(RealEstateModel.Get_All_Buys_Result)" />
   </EntityContainer>
   <ComplexType Name="Filter_Property_Result">
     <Property Type="Int32" Name="ID" Nullable="false" />
@@ -449,5 +450,12 @@
   </ComplexType>
   <ComplexType Name="Add_Appointment_Result">
     <Property Type="Decimal" Name="AppointmentID" Nullable="true" Precision="38" Scale="0" />
+  </ComplexType>
+  <ComplexType Name="Get_All_Buys_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Client" Nullable="false" MaxLength="201" />
+    <Property Type="String" Name="Agent" Nullable="false" MaxLength="201" />
+    <Property Type="Decimal" Name="Comission" Nullable="true" Precision="19" Scale="4" />
+    <Property Type="DateTime" Name="SellDate" Nullable="false" Precision="23" />
   </ComplexType>
 </Schema>

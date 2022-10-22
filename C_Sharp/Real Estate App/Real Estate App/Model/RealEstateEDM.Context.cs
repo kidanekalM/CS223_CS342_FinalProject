@@ -15,14 +15,14 @@ namespace Real_Estate_App.Model
     using System.Data.Objects;
     using System.Data.Objects.DataClasses;
     using System.Linq;
-    
+
     public partial class RealEstateEDM : DbContext
     {
         public RealEstateEDM(string user)
             : base(user + "ConnectionString")
         {
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
@@ -771,6 +771,12 @@ namespace Real_Estate_App.Model
                 new ObjectParameter("Name", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Search_Employee_By_Name_Result>("Search_Employee_By_Name", nameParameter);
+        }
+    
+        [EdmFunction("AdminConnectionString1", "Get_All_Buys")]
+        public virtual IQueryable<Get_All_Buys_Result> Get_All_Buys()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<Get_All_Buys_Result>("[AdminConnectionString1].[Get_All_Buys]()");
         }
     }
 }

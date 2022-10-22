@@ -148,6 +148,12 @@
     <Compile Include="Admin Pages\EmployeeDetail.Designer.cs">
       <DependentUpon>EmployeeDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin Pages\SoldProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Pages\SoldProperties.Designer.cs">
+      <DependentUpon>SoldProperties.cs</DependentUpon>
+    </Compile>
     <Compile Include="Client Pages\AgentProfilePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +245,9 @@
       <DependentUpon>RealEstateEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Get_All_Appointments_Result.cs">
+      <DependentUpon>RealEstateEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Get_All_Buys_Result.cs">
       <DependentUpon>RealEstateEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Get_All_Clients_By_Agent_Result.cs">
