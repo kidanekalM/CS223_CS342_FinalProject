@@ -12,6 +12,7 @@ namespace Real_Estate_App.Agent_pages
 {
     public partial class AgentContainor : Form
     {
+        public Model.Login_Agent_Result Agent { get; set; }
         public AgentContainor()
         {
             InitializeComponent();
@@ -19,6 +20,7 @@ namespace Real_Estate_App.Agent_pages
         public AgentContainor(Model.Login_Agent_Result agent)
         {
             InitializeComponent();
+            Agent = agent;
         }
 
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -26,7 +28,7 @@ namespace Real_Estate_App.Agent_pages
             if (ActiveMdiChild != null)
                 ActiveMdiChild.Close();
 
-            AgentHomePage agentPage = new AgentHomePage();
+            AgentHomePage agentPage = new AgentHomePage( Agent);
             agentPage.MdiParent = this;
             agentPage.Show();
 
@@ -48,7 +50,7 @@ namespace Real_Estate_App.Agent_pages
             if (ActiveMdiChild != null)
                 ActiveMdiChild.Close();
 
-            AgentHomePage agentPage = new AgentHomePage();
+            AgentHomePage agentPage = new AgentHomePage( Agent);
             agentPage.MdiParent = this;
             agentPage.Show();
         }
@@ -70,7 +72,7 @@ namespace Real_Estate_App.Agent_pages
             if (ActiveMdiChild != null)
                 ActiveMdiChild.Close();
 
-            AgentAppointment app = new AgentAppointment();
+            AgentAppointment app = new AgentAppointment(Agent);
             app.MdiParent = this;
             app.Show();
 
@@ -110,15 +112,8 @@ namespace Real_Estate_App.Agent_pages
 
         }
 
-        private void deleteRecordToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (ActiveMdiChild != null)
-                ActiveMdiChild.Close();
+        
 
-            //DeleteRecord Deletesale = new DeleteRecord();
-            //Deletesale.MdiParent = this;
-            //Deletesale.Show();
 
-        }
     }
 }

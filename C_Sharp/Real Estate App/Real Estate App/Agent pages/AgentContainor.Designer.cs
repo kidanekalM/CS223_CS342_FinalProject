@@ -32,12 +32,11 @@
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.propertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.linkedClientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.appointmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saleRecordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.linkedClientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.appointmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,13 +79,26 @@
             this.clientsToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.clientsToolStripMenuItem.Text = "Clients";
             // 
+            // linkedClientsToolStripMenuItem
+            // 
+            this.linkedClientsToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.linkedClientsToolStripMenuItem.Name = "linkedClientsToolStripMenuItem";
+            this.linkedClientsToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.linkedClientsToolStripMenuItem.Text = "Linked Clients";
+            // 
+            // appointmentsToolStripMenuItem
+            // 
+            this.appointmentsToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.appointmentsToolStripMenuItem.Name = "appointmentsToolStripMenuItem";
+            this.appointmentsToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.appointmentsToolStripMenuItem.Text = "Appointments";
+            // 
             // saleRecordsToolStripMenuItem
             // 
             this.saleRecordsToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.saleRecordsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addRecordToolStripMenuItem,
-            this.editRecordToolStripMenuItem,
-            this.deleteRecordToolStripMenuItem});
+            this.editRecordToolStripMenuItem});
             this.saleRecordsToolStripMenuItem.Name = "saleRecordsToolStripMenuItem";
             this.saleRecordsToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
             this.saleRecordsToolStripMenuItem.Text = "Sale Records";
@@ -106,28 +118,6 @@
             this.editRecordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editRecordToolStripMenuItem.Text = "Edit Record";
             this.editRecordToolStripMenuItem.Click += new System.EventHandler(this.editRecordToolStripMenuItem_Click);
-            // 
-            // deleteRecordToolStripMenuItem
-            // 
-            this.deleteRecordToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.deleteRecordToolStripMenuItem.Name = "deleteRecordToolStripMenuItem";
-            this.deleteRecordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.deleteRecordToolStripMenuItem.Text = "Delete Record";
-            this.deleteRecordToolStripMenuItem.Click += new System.EventHandler(this.deleteRecordToolStripMenuItem_Click);
-            // 
-            // linkedClientsToolStripMenuItem
-            // 
-            this.linkedClientsToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.linkedClientsToolStripMenuItem.Name = "linkedClientsToolStripMenuItem";
-            this.linkedClientsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.linkedClientsToolStripMenuItem.Text = "Linked Clients";
-            // 
-            // appointmentsToolStripMenuItem
-            // 
-            this.appointmentsToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.appointmentsToolStripMenuItem.Name = "appointmentsToolStripMenuItem";
-            this.appointmentsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.appointmentsToolStripMenuItem.Text = "Appointments";
             // 
             // AgentContainor
             // 
@@ -159,6 +149,5 @@
         private System.Windows.Forms.ToolStripMenuItem saleRecordsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addRecordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editRecordToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteRecordToolStripMenuItem;
     }
 }

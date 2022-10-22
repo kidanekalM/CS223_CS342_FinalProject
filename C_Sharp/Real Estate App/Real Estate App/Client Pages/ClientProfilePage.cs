@@ -73,5 +73,7 @@ namespace Real_Estate_App
                 MessageBox.Show("An error occured. Couldn't load Clients Data!\n" + ex.Message);
             }
         }
+
+
     }
 }

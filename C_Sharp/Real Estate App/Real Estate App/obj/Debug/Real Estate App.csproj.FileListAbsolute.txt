@@ -300,3 +300,84 @@ C:\Users\HP Elite BOOK\Documents\GitHub\CS223_CS342_FinalProject-new\C_Sharp\Rea
 C:\Users\HP Elite BOOK\Documents\GitHub\CS223_CS342_FinalProject-new\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\HP Elite BOOK\Documents\GitHub\CS223_CS342_FinalProject-new\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.ValueTuple.xml
 C:\Users\HP Elite BOOK\Documents\GitHub\CS223_CS342_FinalProject-new\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real Estate App.csproj.CopyComplete
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real Estate App.csproj.AssemblyReference.cache
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Admin_Pages.AdminShowAllEmployees.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\MyRealEstate.AdminHomePage.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Admin_Pages.EmployeeDetail.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Agent_pages.AddRecord.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Agent_pages.AgentAppointment.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Agent_pages.AgentContainor.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Agent_pages.AgentHomePage.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Agent_pages.AgentPageProperties.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Agent_pages.ClientsLinkedtoAgent.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Agent_pages.EditRecord.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Agent_pages.SaleRecords.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Client_Pages.AgentProfilePage.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Admin_Pages.AdminShowAllProperties.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Client_Pages.ClientAppointmentPage.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Client_Pages.ClientBrowsePropertyPage.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.ClientContainer.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.ClientCreateAccountPage.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.ClientEditProfilePage.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.ClientHomePage.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.ClientPasswordPage.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.ClientProfilePage.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Client_Pages.ClientPropertyPage.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Client_Pages.ClientSearchResultPage.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.LoginPage.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Properties.Resources.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.User_Control.CircularPictureBox.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.User_Control.DetailPage.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.User_Control.DisplayPerson.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.User_Control.DisplayProperties.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.User_Control.DisplayProperty.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.User_Control.Test_User_Control.resources
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real Estate App.csproj.GenerateResource.cache
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real Estate App.csproj.CoreCompileInputs.cache
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real Estate App.exe
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real Estate App.pdb
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\Real Estate App.exe.config
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\Real Estate App.exe
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\Real Estate App.pdb
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\Azure.Core.dll
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\Azure.Identity.dll
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\EntityFramework.dll
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\Newtonsoft.Json.dll
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.Buffers.dll
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.Memory.Data.dll
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.Memory.dll
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.Security.AccessControl.dll
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.Security.Permissions.dll
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.Text.Json.dll
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.ValueTuple.dll
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\Azure.Core.xml
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\Azure.Identity.xml
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\EntityFramework.xml
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\Newtonsoft.Json.xml
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.Buffers.xml
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.Memory.xml
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.Memory.Data.xml
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.Security.AccessControl.xml
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.Security.Permissions.xml
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.Text.Json.xml
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\bin\Debug\System.ValueTuple.xml
+C:\Users\21fin\Documents\GitHub\New\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real Estate App.csproj.CopyComplete

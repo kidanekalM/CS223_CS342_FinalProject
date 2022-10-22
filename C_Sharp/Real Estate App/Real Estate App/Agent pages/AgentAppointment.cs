@@ -12,9 +12,19 @@ namespace Real_Estate_App.Agent_pages
 {
     public partial class AgentAppointment : Form
     {
-        public AgentAppointment()
+        public Model.Login_Agent_Result Agent { get; set; }
+        public AgentAppointment(Model.Login_Agent_Result agent)
         {
             InitializeComponent();
+            Agent = agent;
+        }
+
+        private void AgentAppointment_Load(object sender, EventArgs e)
+        {
+            using (Model.RealEstateEDM r = new Model.RealEstateEDM("Admin"))
+            {
+                dgvAgentAppointment.DataSource = r.Get_All_Clients_By_Agent(Agent.ID);
+            }
         }
     }
 }

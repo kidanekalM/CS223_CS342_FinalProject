@@ -569,6 +569,8 @@
     <Content Include="RealEstate-App-Icon.ico" />
     <None Include="Resources\Add.jpg" />
     <None Include="Resources\Add2.jpg" />
+    <Content Include="Resources\Appointment.png" />
+    <Content Include="Resources\Clients.png" />
     <Content Include="Resources\cole-keister-CqUYwVZzJrw-unsplash.jpg" />
     <Content Include="Resources\etienne-beauregard-riverin-B0aCvAVSX8E-unsplash.jpg" />
     <Content Include="Resources\fernando-meloni-j_gnGCDQRew-unsplash.jpg" />
@@ -581,6 +583,7 @@
     <None Include="Resources\istockphoto-1192518093-612x612.jpg" />
     <None Include="Resources\istockphoto-1192524192-170667a.jpg" />
     <None Include="Resources\istockphoto-1192600456-170667a.jpg" />
+    <Content Include="Resources\Home.png" />
     <Content Include="Resources\jannis-lucas-KsL8WZJ0CLA-unsplash.jpg" />
     <Content Include="Resources\jason-dent-w3eFhqXjkZE-unsplash.jpg" />
     <Content Include="Resources\jeremy-bishop-G9i_plbfDgk-unsplash.jpg" />
@@ -596,8 +599,10 @@
     <None Include="Resources\naomi-august-wI55e75C5TY-unsplash1.jpg" />
     <Content Include="Resources\nick-Y9lUSUhhd58-unsplash.jpg" />
     <None Include="Resources\photo-1491466424936-e304919aada7.jpg" />
+    <Content Include="Resources\Properties.png" />
     <Content Include="Resources\r-architecture-JvQ0Q5IkeMM-unsplash.jpg" />
     <None Include="Resources\RealEstate App Icon.png" />
+    <Content Include="Resources\Sale.png" />
     <Content Include="Resources\sean-pollock-PhYq704ffdA-unsplash.jpg" />
     <Content Include="Resources\SeekPng.com_profile-icon-png_9665493.png" />
     <Content Include="Resources\tiard-schulz-b8dA3eY5VrY-unsplash.jpg" />
