@@ -44,56 +44,52 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.displayProperty2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.displayProperty1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 5);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(903, 629);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(600, 400);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // displayProperty2
             // 
-            this.displayProperty2.PropertyAddress = null;
-            this.displayProperty2.Availablity = null;
+            this.displayProperty2.Address = null;
+            this.displayProperty2.Availability = false;
             this.displayProperty2.BackColor = System.Drawing.SystemColors.Control;
-            this.displayProperty2.PropertyDescription = null;
-            this.displayProperty2.ID = null;
-            this.displayProperty2.Location = new System.Drawing.Point(6, 315);
-            this.displayProperty2.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.displayProperty2.Description = null;
+            this.displayProperty2.Id = null;
+            this.displayProperty2.Location = new System.Drawing.Point(3, 198);
             this.displayProperty2.Name = "displayProperty2";
             this.displayProperty2.Photo = ((System.Drawing.Image)(resources.GetObject("displayProperty2.Photo")));
-            this.displayProperty2.PropertyPrice = null;
-            this.displayProperty2.Size = new System.Drawing.Size(891, 306);
+            this.displayProperty2.Price = null;
+            this.displayProperty2.Size = new System.Drawing.Size(594, 199);
             this.displayProperty2.TabIndex = 1;
             // 
             // displayProperty1
             // 
-            this.displayProperty1.PropertyAddress = null;
-            this.displayProperty1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.displayProperty1.Address = null;
+            this.displayProperty1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.displayProperty1.Availablity = null;
+            this.displayProperty1.Availability = false;
             this.displayProperty1.BackColor = System.Drawing.SystemColors.Control;
-            this.displayProperty1.PropertyDescription = null;
-            this.displayProperty1.ID = null;
-            this.displayProperty1.Location = new System.Drawing.Point(6, 8);
-            this.displayProperty1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.displayProperty1.Description = null;
+            this.displayProperty1.Id = null;
+            this.displayProperty1.Location = new System.Drawing.Point(3, 3);
             this.displayProperty1.Name = "displayProperty1";
             this.displayProperty1.Photo = ((System.Drawing.Image)(resources.GetObject("displayProperty1.Photo")));
-            this.displayProperty1.PropertyPrice = null;
-            this.displayProperty1.Size = new System.Drawing.Size(915, 291);
+            this.displayProperty1.Price = null;
+            this.displayProperty1.Size = new System.Drawing.Size(594, 189);
             this.displayProperty1.TabIndex = 0;
             // 
             // DisplayProperties
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "DisplayProperties";
-            this.Size = new System.Drawing.Size(860, 277);
+            this.Size = new System.Drawing.Size(608, 214);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -103,7 +99,7 @@
         #endregion
 
         private DisplayProperty displayProperty2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private DisplayProperty displayProperty1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

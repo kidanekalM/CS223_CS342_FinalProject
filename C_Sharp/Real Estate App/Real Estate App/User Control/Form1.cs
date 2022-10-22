@@ -23,8 +23,8 @@ namespace Real_Estate_App.User_Control
             }
             */
             InitializeComponent();
-            //circularButton1.BackColor = Color.Transparent;
-
+            circularButton1.BackColor = Color.Transparent;
+         
             /*
             using (Model.RealEstateEDM r = new Model.RealEstateEDM("Admin"))
             {
@@ -36,10 +36,6 @@ namespace Real_Estate_App.User_Control
                 }
             }
             */
-            using (Model.RealEstateEDM r = new Model.RealEstateEDM("Client"))
-            {
-                displayProperties1.Properties = r.Get_All_Properties();
-            }
         }
         public void personClicked(object o, EventArgs e)
         {
@@ -54,13 +50,13 @@ namespace Real_Estate_App.User_Control
 
         private void displayPerson1_DoubleClick(object sender, EventArgs e)
         {
-            DisplayPerson s = (DisplayPerson)sender;
+            DisplayPerson s = (DisplayPerson) sender;
             MessageBox.Show($"{s.Name} Was Clicked");
         }
 
         private void displayPerson1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(sender.ToString());
+            MessageBox.Show(sender.ToString());             
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -97,17 +93,6 @@ namespace Real_Estate_App.User_Control
             ImageConverter _imageConverter = new ImageConverter();
             byte[] xByte = (byte[])_imageConverter.ConvertTo(x, typeof(byte[]));
             return xByte;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            displayProperties1.UserType = "Client";
-            displayProperties1.UserID = "4";
-            displayProperties1.AppointmentID = "1";
-            using (Model.RealEstateEDM r = new Model.RealEstateEDM("Client"))
-            {
-                displayProperties1.Properties = r.Get_All_Properties();
-            }
         }
     }
 }

@@ -11,14 +11,12 @@ namespace Real_Estate_App.Model
 {
     using System;
     
-    public partial class Filter_Property1_Result
+    public partial class Get_All_Buys_Result
     {
         public int ID { get; set; }
-        public string Address { get; set; }
-        public double Price { get; set; }
-        public string Type { get; set; }
-        public double Area { get; set; }
-        public bool Status { get; set; }
-        public string Description { get; set; }
+        public string Client { get; set; }
+        public string Agent { get; set; }
+        public Nullable<decimal> Comission { get; set; }
+        public System.DateTime SellDate { get; set; }
     }
 }

@@ -303,12 +303,13 @@ namespace Real_Estate_App
                 {
                     using (RealEstateEDM r = new RealEstateEDM("Client"))
                     {
-                        var result = r.Login_Client(Convert.ToInt32(txt_ClientId.Text), txt_ClientPassword.Text).FirstOrDefault();
-
-                        if (result != null && result.ID == int.Parse(txt_ClientId.Text) && result.Password == txt_ClientPassword.Text)
+                        var result = 3; //r.Login_Client(Convert.ToInt32(txt_ClientId.Text), txt_ClientPassword.Text).FirstOrDefault();
+                        if (result != null)
                         {
-                            MessageBox.Show("Login successfull! \nWelcome " + result.FirstName + " " + result.LastName);
+                            //MessageBox.Show("Login successfull! \nWelcome back " + result.FirstName);
+                            MessageBox.Show("Login successfull!");
 
+                            //ClientContainer containerPage = new ClientContainer(result.ID, result.FirstName, result.LastName, result.Photo, result.PhoneNumber, result.Email, result.Password, Convert.ToInt32(result.EmpId));
                             ClientContainer containerPage = new ClientContainer(int.Parse(txt_ClientId.Text));
                             containerPage.Show();
                             this.Hide();

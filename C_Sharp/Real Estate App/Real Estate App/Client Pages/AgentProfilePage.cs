@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +16,6 @@ namespace Real_Estate_App.Client_Pages
         public AgentProfilePage(int id)
         {
             InitializeComponent();
-
             int AgentId = GetAgentId(id);
             PopulateData(AgentId);
         }
@@ -59,17 +57,6 @@ namespace Real_Estate_App.Client_Pages
                     {
                         foreach (var item in result)
                         {
-                            using (MemoryStream s = new MemoryStream(item.Photo))
-                            {
-                                try
-                                {
-                                    pic_AgentPic.Image = Image.FromStream(s);
-                                }
-                                catch (Exception e)
-                                {
-                                    MessageBox.Show(e.ToString());
-                                }
-                            }
                             lbl_Firstname.Text = item.FirstName;
                             lbl_Lastname.Text = item.LastName;
                             lbl_PhoneNo.Text = item.PhoneNumber;

@@ -11,11 +11,24 @@ using System.Windows.Forms;
 
 namespace Real_Estate_App.Admin_Pages
 {
-    public partial class AdminShowAllEmployees : Form
+    public partial class AdminGetAllEmployees : Form
     {
-        public AdminShowAllEmployees()
+        public AdminGetAllEmployees()
         {
             InitializeComponent();
+        }
+        public AdminGetAllEmployees(string userName)
+        {
+            InitializeComponent();
+            if (userName != null)
+                this.UserName = userName;   
+        }
+        private string _userName;
+
+        public string UserName
+        {
+            get { return _userName; }
+            set { _userName = value; lbl_Name.Text = _userName; }
         }
 
         public List<Model.Get_All_Employees_Result> Employees { get; set; } 
@@ -26,44 +39,7 @@ namespace Real_Estate_App.Admin_Pages
 
         private void SearchtextBox_TextChanged(object sender, EventArgs e)
         {
-            /*
-            if (comboBox_Search.SelectedItem.ToString().ToLower() == "id")
-            {
-                using (Model.RealEstateEDM r = new Model.RealEstateEDM("Admin"))
-                {
-                    try
-                    {
-                        var emp = r.Search_Employee_By_ID(int.Parse(SearchtextBox.Text));
-                        if (emp == null)
-                        {
-                            lbl_SearchMessage.Text = "There are no Employees found";
-                            return;
-                        }
-                        tableLayoutPanel1.Controls.Clear();
-                        foreach (var item in emp)
-                        {
-                            User_Control.DisplayPerson d = new User_Control.DisplayPerson();
-                            
-                                d.Name = item.FirstName + " " + item.LastName;
-                            d.PhoneNumber = item.PhoneNumber;
-
-                        };
-                        tableLayoutPanel1.Controls.Add(d);
-                    
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message + ex.InnerException.Message);
-                    }
-                }   
-            }
             
-            else
-            {
-                MessageBox.Show("You must choose a type first");
-            }
-            */
             try
             {
                 if (Employees != null)
@@ -113,8 +89,9 @@ namespace Real_Estate_App.Admin_Pages
                     MessageBox.Show(ex.Message + ex.InnerException.Message);
                 }
             }
+            AdminGetAllEmployees_Load(sender, e);
         }
-        public void AdminGetAllEmployees_Load(object sender, EventArgs e)
+        private void AdminGetAllEmployees_Load(object sender, EventArgs e)
         {
             using (Model.RealEstateEDM r = new Model.RealEstateEDM("Admin"))
             {
@@ -146,6 +123,7 @@ namespace Real_Estate_App.Admin_Pages
                         foreach (var employee in SearchEmployees)
                         {
                             User_Control.DisplayPerson d = new User_Control.DisplayPerson(employee);
+                            d.Click += EmployeeClicked;
                             tableLayoutPanel1.Controls.Add(d);
                         }
                     }
