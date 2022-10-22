@@ -16,5 +16,13 @@ namespace Real_Estate_App.Agent_pages
         {
             InitializeComponent();
         }
+
+        private void AgentPageProperties_Load(object sender, EventArgs e)
+        {
+            using (Model.RealEstateEDM r = new Model.RealEstateEDM("Agent"))
+            {
+                this.displayProperties1.Properties = r.Get_All_Properties();
+            }
+        }
     }
 }

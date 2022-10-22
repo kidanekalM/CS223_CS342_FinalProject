@@ -111,9 +111,5 @@ namespace Real_Estate_App.Agent_pages
             editsale.Show();
 
         }
-
-        
-
-
     }
 }

@@ -219,7 +219,7 @@ namespace Real_Estate_App
                     if(agent != null && agent.ID==int.Parse(txt_AgentId.Text) && agent.Password == txt_AgentPassword.Text)
                     {
                         MessageBox.Show("Login successful! \nWelcome " + agent.FirstName + " " + agent.LastName);
-                        Agent_pages.AgentContainor agentPage = new Agent_pages.AgentContainor();
+                        Agent_pages.AgentContainor agentPage = new Agent_pages.AgentContainor(agent);
                         agentPage.Show();
                         this.Hide();
 

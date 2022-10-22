@@ -41,22 +41,15 @@ namespace Real_Estate_App.User_Control
             this.Show();
             Display(r,ph);
             
-            if(userID == null)
-            {
-                btn_addToMyProperties.Enabled = false;
-                btn_addToMyProperties.Hide();
-            }
             if (UserType == null || UserType.Equals("Client"))
             {
                 pic_Edit.Hide();
                 pic_Edit_Click(this,null);
-                btn_addToMyProperties.Show();
             }
             else if(UserType == "Admin" || UserType == "Agent")
             {
                 pic_Edit.Show();
                 pic_Edit.Enabled = true;
-                btn_addToMyProperties.Hide();
             }
             txt_Id.ReadOnly = true;
         }
@@ -68,27 +61,20 @@ namespace Real_Estate_App.User_Control
             InitializeComponent();
             Editable(true);
             this.Show();
-            btn_addToMyProperties.Hide();
             btn_delete.Hide();
             pic_Edit.Hide();
             btn_save.Show();
             
-            if (userID == null)
-            {
-                btn_addToMyProperties.Enabled = false;
-                btn_addToMyProperties.Hide();
-            }
+
             if (UserType == null || UserType.Equals("Client"))
             {
                 pic_Edit.Hide();
                 pic_Edit_Click(this, null);
-                btn_addToMyProperties.Show();
             }
             else if (UserType == "Admin" || UserType == "Agent")
             {
                 pic_Edit.Show();
                 pic_Edit.Enabled = true;
-                btn_addToMyProperties.Hide();
             }
             if (TypeOfPage.ToLower() == "addproperty")
             {
@@ -104,7 +90,7 @@ namespace Real_Estate_App.User_Control
         public void Display(Model.Search_Property_By_ID_Result r, List<Model.Search_Property_Photo_By_ID_Result> ph)
         {
             txt_Id.Text = r.ID.ToString();
-            txt_Address.Text = r.Address;
+            cb_Address.SelectedItem = r.Address;
             txt_Price.Text = r.Price.ToString();
             chk_Status.Checked = r.Status;
             if (chk_Status.Checked)
@@ -114,10 +100,8 @@ namespace Real_Estate_App.User_Control
             else
             {
                 chk_Status.Text = "Not Available";
-                btn_addToMyProperties.Hide();
             }
-
-            txt_Type.Text = r.Type;
+            cb_Type.SelectedItem = r.Type;
             txt_Description.Text = r.Description;
             txt_Area.Text = r.Area.ToString();
             int i = 0;
@@ -226,9 +210,8 @@ namespace Real_Estate_App.User_Control
 
         private void pic_Edit_Click(object sender, EventArgs e)
         {
-            btn_addToMyProperties.Hide();
 
-            if (txt_Address.ReadOnly)
+            if (!cb_Type.Enabled)
             {
                 btn_save.Hide();
                 Editable(true);
@@ -243,11 +226,11 @@ namespace Real_Estate_App.User_Control
         }
         public void Editable(bool value)
         {
-            txt_Address.ReadOnly = !value;
+            cb_Address.Enabled = value;
             txt_Area.ReadOnly = !value;
             txt_Description.ReadOnly = !value;
             txt_Price.ReadOnly = !value;
-            txt_Type.ReadOnly = !value;
+            cb_Type.Enabled= value;
             chk_Status.Enabled = value;
             if (value)
             {
@@ -334,7 +317,7 @@ namespace Real_Estate_App.User_Control
                     try
                     {
                         decimal id = (decimal)0.0;
-                        foreach(var x in r.Add_Property(txt_Address.Text, double.Parse(txt_Price.Text), txt_Type.Text, double.Parse(txt_Area.Text), chk_Status.Checked, txt_Description.Text))
+                        foreach(var x in r.Add_Property(cb_Address.SelectedItem.ToString(), double.Parse(txt_Price.Text), cb_Type.SelectedItem.ToString(), double.Parse(txt_Area.Text), chk_Status.Checked, txt_Description.Text))
                         {
                             id =(decimal)x.PropertyID;
                         }
@@ -363,7 +346,7 @@ namespace Real_Estate_App.User_Control
                 {
                     try 
                     {
-                        r.Update_Property(int.Parse(txt_Id.Text), txt_Address.Text, double.Parse(txt_Price.Text), txt_Type.Text, double.Parse(txt_Area.Text), chk_Status.Checked, txt_Description.Text);
+                        r.Update_Property(int.Parse(txt_Id.Text), cb_Address.SelectedItem.ToString(), double.Parse(txt_Price.Text),cb_Type.SelectedItem.ToString() , double.Parse(txt_Area.Text), chk_Status.Checked, txt_Description.Text);
                         pic_Edit_Click(sender, e);
                     }
                     catch (Exception ex)

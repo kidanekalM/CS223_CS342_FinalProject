@@ -31,7 +31,7 @@ namespace Real_Estate_App.User_Control
             set { _propertyClicked = value; }
         }
         public string AppointmentID { get; set; }
-        public string UserType { get; set; }
+        public string UserType { get; set; } = "agent";
         public string UserID { get; set; }
         private IQueryable<Model.Get_All_Properties_Result> _properties;
         public IQueryable<Model.Get_All_Properties_Result> Properties
@@ -50,7 +50,7 @@ namespace Real_Estate_App.User_Control
                 d.Size = displayProperty1.Size;
                 tableLayoutPanel1.Controls.Add(d);
             }
-            if (UserType.ToLower().Contains( "agent") || UserType.ToLower().Contains( "dmin"))
+            if (UserType.ToLower().Contains( "agent") || UserType.ToLower().Contains( "admin"))
             {
                 CircularButton cb = new CircularButton();
                 cb.Image = global::Real_Estate_App.Properties.Resources.Add2;
