@@ -142,8 +142,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.displayProperty1 = new Real_Estate_App.User_Control.DisplayProperty();
-            this.circularPictureBox3 = new Real_Estate_App.User_Control.CircularPictureBox();
             this.displayPerson1 = new Real_Estate_App.User_Control.DisplayPerson();
             this.txt_empType = new Real_Estate_App.User_Control.PlaceHolderTextBox();
             this.pic_BigPicture = new Real_Estate_App.User_Control.CircularPictureBox();
@@ -153,6 +151,8 @@
             this.txt_firstName = new Real_Estate_App.User_Control.PlaceHolderTextBox();
             this.displayPerson3 = new Real_Estate_App.User_Control.DisplayPerson();
             this.circularPictureBox1 = new Real_Estate_App.User_Control.CircularPictureBox();
+            this.displayProperty1 = new Real_Estate_App.User_Control.DisplayProperty();
+            this.circularPictureBox3 = new Real_Estate_App.User_Control.CircularPictureBox();
             this.circularPictureBox2 = new Real_Estate_App.User_Control.CircularPictureBox();
             this.LeftPanel.SuspendLayout();
             this.SidePanel.SuspendLayout();
@@ -181,9 +181,9 @@
             this.panel4.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.HomePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_BigPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1109,9 +1109,9 @@
             this.ShowAllEmpPanel.Controls.Add(this.SearchtextBox2);
             this.ShowAllEmpPanel.Controls.Add(this.lbl_SearchMessage);
             this.ShowAllEmpPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ShowAllEmpPanel.Location = new System.Drawing.Point(0, 30);
+            this.ShowAllEmpPanel.Location = new System.Drawing.Point(0, 24);
             this.ShowAllEmpPanel.Name = "ShowAllEmpPanel";
-            this.ShowAllEmpPanel.Size = new System.Drawing.Size(744, 654);
+            this.ShowAllEmpPanel.Size = new System.Drawing.Size(744, 660);
             this.ShowAllEmpPanel.TabIndex = 24;
             // 
             // EmpRefresh_lbl
@@ -1183,9 +1183,9 @@
             this.AddEmployeePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(60)))), ((int)(((byte)(100)))));
             this.AddEmployeePanel.Controls.Add(this.panel4);
             this.AddEmployeePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddEmployeePanel.Location = new System.Drawing.Point(0, 30);
+            this.AddEmployeePanel.Location = new System.Drawing.Point(0, 24);
             this.AddEmployeePanel.Name = "AddEmployeePanel";
-            this.AddEmployeePanel.Size = new System.Drawing.Size(744, 654);
+            this.AddEmployeePanel.Size = new System.Drawing.Size(744, 660);
             this.AddEmployeePanel.TabIndex = 12;
             // 
             // panel4
@@ -1218,7 +1218,7 @@
             // 
             this.cb_Department.FormattingEnabled = true;
             this.cb_Department.Items.AddRange(new object[] {
-            "OK"});
+            "1"});
             this.cb_Department.Location = new System.Drawing.Point(21, 379);
             this.cb_Department.Margin = new System.Windows.Forms.Padding(4);
             this.cb_Department.Name = "cb_Department";
@@ -1340,7 +1340,7 @@
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip2.Size = new System.Drawing.Size(744, 30);
+            this.menuStrip2.Size = new System.Drawing.Size(744, 24);
             this.menuStrip2.TabIndex = 0;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -1349,7 +1349,7 @@
             this.homeToolStripMenuItem2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeToolStripMenuItem2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(60)))), ((int)(((byte)(126)))));
             this.homeToolStripMenuItem2.Name = "homeToolStripMenuItem2";
-            this.homeToolStripMenuItem2.Size = new System.Drawing.Size(58, 26);
+            this.homeToolStripMenuItem2.Size = new System.Drawing.Size(58, 20);
             this.homeToolStripMenuItem2.Text = "Home";
             this.homeToolStripMenuItem2.Click += new System.EventHandler(this.homeToolStripMenuItem2_Click);
             // 
@@ -1358,7 +1358,7 @@
             this.manageToolStripMenuItem2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manageToolStripMenuItem2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(60)))), ((int)(((byte)(126)))));
             this.manageToolStripMenuItem2.Name = "manageToolStripMenuItem2";
-            this.manageToolStripMenuItem2.Size = new System.Drawing.Size(117, 26);
+            this.manageToolStripMenuItem2.Size = new System.Drawing.Size(117, 20);
             this.manageToolStripMenuItem2.Text = "Add Employee";
             this.manageToolStripMenuItem2.Click += new System.EventHandler(this.addempToolStripMenuItem2_Click);
             // 
@@ -1367,7 +1367,7 @@
             this.showToolStripMenuItem2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.showToolStripMenuItem2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(60)))), ((int)(((byte)(126)))));
             this.showToolStripMenuItem2.Name = "showToolStripMenuItem2";
-            this.showToolStripMenuItem2.Size = new System.Drawing.Size(150, 26);
+            this.showToolStripMenuItem2.Size = new System.Drawing.Size(150, 20);
             this.showToolStripMenuItem2.Text = "Show All Employees";
             this.showToolStripMenuItem2.Click += new System.EventHandler(this.showToolStripMenuItem2_Click);
             // 
@@ -1519,33 +1519,6 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "ID:";
             // 
-            // displayProperty1
-            // 
-            this.displayProperty1.Address = null;
-            this.displayProperty1.Availability = false;
-            this.displayProperty1.BackColor = System.Drawing.SystemColors.Control;
-            this.displayProperty1.Description = null;
-            this.displayProperty1.Id = null;
-            this.displayProperty1.Location = new System.Drawing.Point(5, 4);
-            this.displayProperty1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.displayProperty1.Name = "displayProperty1";
-            this.displayProperty1.Photo = ((System.Drawing.Image)(resources.GetObject("displayProperty1.Photo")));
-            this.displayProperty1.Price = null;
-            this.displayProperty1.Size = new System.Drawing.Size(657, 233);
-            this.displayProperty1.TabIndex = 0;
-            this.displayProperty1.Click += new System.EventHandler(this.PropertyClicked);
-            // 
-            // circularPictureBox3
-            // 
-            this.circularPictureBox3.Image = global::Real_Estate_App.Properties.Resources.RealEstate_App_Icon;
-            this.circularPictureBox3.Location = new System.Drawing.Point(199, -1);
-            this.circularPictureBox3.Name = "circularPictureBox3";
-            this.circularPictureBox3.Size = new System.Drawing.Size(179, 179);
-            this.circularPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.circularPictureBox3.TabIndex = 29;
-            this.circularPictureBox3.TabStop = false;
-            this.circularPictureBox3.Click += new System.EventHandler(this.circularPictureBox3_Click);
-            // 
             // displayPerson1
             // 
             this.displayPerson1.BackColor = System.Drawing.SystemColors.Control;
@@ -1558,7 +1531,7 @@
             this.displayPerson1.PhoneNumber = null;
             this.displayPerson1.Size = new System.Drawing.Size(641, 217);
             this.displayPerson1.TabIndex = 0;
-            this.displayPerson1.Click += new System.EventHandler(this.EmployeeClicked);
+            this.displayPerson1.Load += new System.EventHandler(this.EmployeeClicked);
             // 
             // txt_empType
             // 
@@ -1663,6 +1636,33 @@
             this.circularPictureBox1.TabIndex = 12;
             this.circularPictureBox1.TabStop = false;
             // 
+            // displayProperty1
+            // 
+            this.displayProperty1.Address = null;
+            this.displayProperty1.Availability = false;
+            this.displayProperty1.BackColor = System.Drawing.SystemColors.Control;
+            this.displayProperty1.Description = null;
+            this.displayProperty1.Id = null;
+            this.displayProperty1.Location = new System.Drawing.Point(5, 4);
+            this.displayProperty1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.displayProperty1.Name = "displayProperty1";
+            this.displayProperty1.Photo = ((System.Drawing.Image)(resources.GetObject("displayProperty1.Photo")));
+            this.displayProperty1.Price = null;
+            this.displayProperty1.Size = new System.Drawing.Size(657, 233);
+            this.displayProperty1.TabIndex = 0;
+            this.displayProperty1.Click += new System.EventHandler(this.PropertyClicked);
+            // 
+            // circularPictureBox3
+            // 
+            this.circularPictureBox3.Image = global::Real_Estate_App.Properties.Resources.RealEstate_App_Icon;
+            this.circularPictureBox3.Location = new System.Drawing.Point(199, -1);
+            this.circularPictureBox3.Name = "circularPictureBox3";
+            this.circularPictureBox3.Size = new System.Drawing.Size(179, 179);
+            this.circularPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.circularPictureBox3.TabIndex = 29;
+            this.circularPictureBox3.TabStop = false;
+            this.circularPictureBox3.Click += new System.EventHandler(this.circularPictureBox3_Click);
+            // 
             // circularPictureBox2
             // 
             this.circularPictureBox2.BackColor = System.Drawing.Color.Transparent;
@@ -1680,11 +1680,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(946, 684);
+            this.Controls.Add(this.EmployeesPanel);
+            this.Controls.Add(this.CustomersPanel);
             this.Controls.Add(this.EditProfilePanel);
             this.Controls.Add(this.HomePanel);
             this.Controls.Add(this.PropertiesPanel);
-            this.Controls.Add(this.EmployeesPanel);
-            this.Controls.Add(this.CustomersPanel);
             this.Controls.Add(this.AppointmentPanel);
             this.Controls.Add(this.LeftPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1736,9 +1736,9 @@
             this.menuStrip2.PerformLayout();
             this.HomePanel.ResumeLayout(false);
             this.HomePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_BigPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox2)).EndInit();
             this.ResumeLayout(false);
 

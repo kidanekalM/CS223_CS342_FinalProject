@@ -21,16 +21,14 @@ namespace MyRealEstate
     {
         private int v;
 
-        public AdminHomePage()
-        {
-            InitializeComponent();
-
-        }
-
         public AdminHomePage(int v)
         {
+            InitializeComponent();
             this.v = v;
+
         }
+
+
 
         public List<Real_Estate_App.Model.Get_All_Employees_Result> Employees { get; set; }
         public List<Real_Estate_App.Model.Get_All_Properties_Result> Properties { get; set; }
@@ -465,8 +463,8 @@ namespace MyRealEstate
             try
             {
                 using (Real_Estate_App.Model.RealEstateEDM r = new Real_Estate_App.Model.RealEstateEDM("Admin"))
-                { 
-                    var d = r.Add_Employee(txt_firstName.Text, txt_LastName.Text, txt_PhoneNumber.Text, txt_Password.Text, ImageToByteArray(pic_BigPicture.Image), txt_empType.Text, dateTimePicker1.Value, int.Parse(cb_Department.SelectedItem.ToString().Substring(0, cb_Department.SelectedItem.ToString().IndexOf(':'))));
+                {
+                    var d = r.Add_Employee(txt_firstName.Text, txt_LastName.Text, txt_PhoneNumber.Text, txt_Password.Text, ImageToByteArray(pic_BigPicture.Image), txt_empType.Text, dateTimePicker1.Value, int.Parse(cb_Department.SelectedItem.ToString()/*.Substring(0, cb_Department.SelectedItem.ToString().IndexOf(':'))*/));
                     MessageBox.Show(d.First().EmployeeID.ToString() + "is the ID, Use this ID to login in the future");
 
                 }
