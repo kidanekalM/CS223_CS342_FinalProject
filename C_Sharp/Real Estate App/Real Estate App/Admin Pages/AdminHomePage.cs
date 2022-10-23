@@ -19,15 +19,14 @@ namespace MyRealEstate
 {
     public partial class AdminHomePage : Form
     {
-        private int v;
 
         public Real_Estate_App.Model.Search_Employee_By_ID_Result Admin { get; set; }
 
-        public AdminHomePage(int v)
+        public AdminHomePage(int v,string password)
         {
             InitializeComponent();
-            this.v = v;
-
+            IDlbl.Text = v.ToString();
+            PWDlbl.Text = password;
         }
 
 
@@ -44,7 +43,6 @@ namespace MyRealEstate
             AppointmentPanel.Visible = false;
             HomePanel.Visible = true;
             CustomersPanel.Visible = false;
-            EditProfilePanel.Visible = false;
             AddPropertyPanel.Visible = false;
             AddEmployeePanel.Visible = false;
             ShowAllCustPanel.Visible = false;
@@ -63,7 +61,6 @@ namespace MyRealEstate
             EmployeesPanel.Visible = false;
             CustomersPanel.Visible = false;
             AppointmentPanel.Visible = false;
-            EditProfilePanel.Visible = false;
             AddPropertyPanel.Visible = false;
             AddEmployeePanel.Visible = false;
             ShowAllEmpPanel.Visible = false;
@@ -82,7 +79,6 @@ namespace MyRealEstate
             PropertiesPanel.Visible = false;
             AppointmentPanel.Visible = false;
             CustomersPanel.Visible = false;
-            EditProfilePanel.Visible = false;
             AddPropertyPanel.Visible = false;
             AddEmployeePanel.Visible = false;
             ShowAllEmpPanel.Visible = false;
@@ -101,7 +97,6 @@ namespace MyRealEstate
             PropertiesPanel.Visible = false;
             AppointmentPanel.Visible = false;
             CustomersPanel.Visible = true;
-            EditProfilePanel.Visible = false;
             AddPropertyPanel.Visible = false;
             AddEmployeePanel.Visible = false;
             ShowAllEmpPanel.Visible = false;
@@ -120,7 +115,6 @@ namespace MyRealEstate
             PropertiesPanel.Visible = false;
             AppointmentPanel.Visible = true;
             CustomersPanel.Visible = false;
-            EditProfilePanel.Visible = false;
             AddPropertyPanel.Visible = false;
             AddEmployeePanel.Visible = false;
             ShowAllEmpPanel.Visible = false;
@@ -144,25 +138,6 @@ namespace MyRealEstate
 
         }
 
-        private void EditProfileButton_Click(object sender, EventArgs e)
-        {
-            PropertiesPanel.Visible = false;
-            EmployeesPanel.Visible = false;
-            AppointmentPanel.Visible = false;
-            HomePanel.Visible = false;
-            CustomersPanel.Visible = false;
-            AddPropertyPanel.Visible = false;
-            EditProfilePanel.Visible = true;
-            AddEmployeePanel.Visible = false;
-            ShowAllEmpPanel.Visible = false;
-            ShowAllPropPanel.Visible = false;
-            ShowAllCustPanel.Visible = false;
-
-            idtext.Text = IDlbl.Text;
-            fullnametext.Text = NAMElbl.Text;
-            phonetext.Text = PHONElbl.Text;
-
-        }
         private void addPropertyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             /* visibility part */
@@ -172,7 +147,6 @@ namespace MyRealEstate
             AppointmentPanel.Visible = false;
             HomePanel.Visible = false;
             CustomersPanel.Visible = false;
-            EditProfilePanel.Visible = false;
             AddPropertyPanel.Visible = true;
             AddEmployeePanel.Visible = false;
             ShowAllEmpPanel.Visible = false;
@@ -188,7 +162,6 @@ namespace MyRealEstate
             EmployeesPanel.Visible = false;
             CustomersPanel.Visible = false;
             AppointmentPanel.Visible = false;
-            EditProfilePanel.Visible = false;
             AddPropertyPanel.Visible = false;
             AddEmployeePanel.Visible = false;
             ShowAllEmpPanel.Visible = false;
@@ -290,7 +263,6 @@ namespace MyRealEstate
             AppointmentPanel.Visible = false;
             HomePanel.Visible = true;
             CustomersPanel.Visible = false;
-            EditProfilePanel.Visible = false;
             AddPropertyPanel.Visible = false;
             ShowAllEmpPanel.Visible = false;
             ShowAllPropPanel.Visible = false;
@@ -306,7 +278,6 @@ namespace MyRealEstate
             EmployeesPanel.Visible = false;
             CustomersPanel.Visible = false;
             AppointmentPanel.Visible = false;
-            EditProfilePanel.Visible = false;
             ShowAllEmpPanel.Visible = false;
             ShowAllPropPanel.Visible = false;
             ShowAllCustPanel.Visible = false;
@@ -323,7 +294,6 @@ namespace MyRealEstate
             EmployeesPanel.Visible = false;
             CustomersPanel.Visible = false;
             AppointmentPanel.Visible = false;
-            EditProfilePanel.Visible = false;
             ShowAllEmpPanel.Visible = false;
             AddPropertyPanel.Visible = false;
             ShowAllCustPanel.Visible = false;
@@ -341,67 +311,12 @@ namespace MyRealEstate
             AppointmentPanel.Visible = false;
             HomePanel.Visible = true;
             CustomersPanel.Visible = false;
-            EditProfilePanel.Visible = false;
             AddPropertyPanel.Visible = false;
             AddEmployeePanel.Visible = false;
             ShowAllEmpPanel.Visible = false;
             ShowAllPropPanel.Visible = false;
             ShowAllCustPanel.Visible = false;
 
-        }
-
-        private void SaveProfile_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(idtext.Text) || string.IsNullOrEmpty(fullnametext.Text) || string.IsNullOrEmpty(phonetext.Text) || string.IsNullOrEmpty(pwdtext.Text))
-            {
-                if (string.IsNullOrEmpty(idtext.Text))
-                {
-                    errorProvider1.SetError(idtext, "ID is required!!");
-                }
-                else
-                {
-                    errorProvider1.SetError(idtext, "");
-                }
-                if (string.IsNullOrEmpty(fullnametext.Text))
-                {
-                    errorProvider1.SetError(fullnametext, "Name is required!!");
-                }
-                else
-                {
-                    errorProvider1.SetError(fullnametext, "");
-                }
-                if (string.IsNullOrEmpty(phonetext.Text))
-                {
-                    errorProvider1.SetError(phonetext, "Phone is required!!");
-                }
-                else
-                {
-                    errorProvider1.SetError(phonetext, "");
-                }
-                if (string.IsNullOrEmpty(pwdtext.Text))
-                {
-                    errorProvider1.SetError(pwdtext, "Password is required!!");
-                }
-                else
-                {
-                    errorProvider1.SetError(pwdtext, "");
-                }
-            }
-            else
-            {
-                IDlbl.Text = idtext.Text;
-                NAMElbl.Text = fullnametext.Text;
-                PHONElbl.Text = phonetext.Text;
-                Admin.Password = pwdtext.Text;
-                clear2();
-            }
-
-        }
-        void clear2()
-        {
-            idtext.Text = "";
-            fullnametext.Text = "";
-            phonetext.Text = "";
         }
 
         private void addempToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -411,7 +326,6 @@ namespace MyRealEstate
             PropertiesPanel.Visible = false;
             AppointmentPanel.Visible = false;
             CustomersPanel.Visible = false;
-            EditProfilePanel.Visible = false;
             AddPropertyPanel.Visible = false;
             AddEmployeePanel.Visible = true;
             ShowAllEmpPanel.Visible = false;
@@ -427,7 +341,6 @@ namespace MyRealEstate
             PropertiesPanel.Visible = false;
             AppointmentPanel.Visible = false;
             CustomersPanel.Visible = false;
-            EditProfilePanel.Visible = false;
             AddPropertyPanel.Visible = false;
             AddEmployeePanel.Visible = false;
             ShowAllEmpPanel.Visible = true;
@@ -688,7 +601,6 @@ namespace MyRealEstate
             PropertiesPanel.Visible = false;
             AppointmentPanel.Visible = false;
             CustomersPanel.Visible = false;
-            EditProfilePanel.Visible = false;
             AddPropertyPanel.Visible = false;
             AddEmployeePanel.Visible = false;
             ShowAllEmpPanel.Visible = false;
@@ -704,7 +616,6 @@ namespace MyRealEstate
             PropertiesPanel.Visible = false;
             AppointmentPanel.Visible = false;
             CustomersPanel.Visible = true;
-            EditProfilePanel.Visible = false;
             AddPropertyPanel.Visible = false;
             AddEmployeePanel.Visible = false;
             ShowAllEmpPanel.Visible = false;
@@ -901,64 +812,7 @@ namespace MyRealEstate
             }
         }
 
-        private void HomePanel_Paint(object sender, PaintEventArgs e)
-        {
-            if (this.Admin != null)
-            {
-                IDlbl.Text = Admin.ID.ToString();
-                NAMElbl.Text = Admin.FirstName + " " + Admin.LastName;
-                PHONElbl.Text = Admin.PhoneNumber;
-                idtext.Text = Admin.ID.ToString();
-                fullnametext.Text = Admin.FirstName + " " + Admin.LastName;
-                phonetext.Text = Admin.PhoneNumber;
-                pwdtext.Text = Admin.Password;
 
-                try
-                {
-                    if (Admin.Photo != null && !Admin.Photo.All(bit1 => bit1 == 0))
-                    {
-                        using (MemoryStream ms = new MemoryStream(Admin.Photo))
-                        {
-                            circularPictureBox1.Image = Image.FromStream(ms);
-                        }
-                    }
-                    else
-                    {
-                        circularPictureBox1.Image = global::Real_Estate_App.Properties.Resources.Default_Profile;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    pic_BigPicture.Image = global::Real_Estate_App.Properties.Resources.Default_Profile;
-                    MessageBox.Show(ex.Message + ex.InnerException.Message);
-                }
-                /*try
-                {
-                    using (Real_Estate_App.Model.RealEstateEDM r = new Real_Estate_App.Model.RealEstateEDM("Admin"))
-                    {
-                        comboBox1.Items.Clear();
-                        foreach (var dep in r.Get_All_Employees())
-                        {
-                            comboBox1.Items.Add(dep.ID + ": " + dep.FirstName);
-                        }
-                        foreach (var dep in r.Search_Employee_By_ID(Customer.EmpId))
-                        {
-                            comboBox1.SelectedItem = dep.ID + ": " + dep.FirstName;
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    comboBox1.Items.Add(Customer.EmpId.ToString() + ":");
-                    MessageBox.Show(ex.Message + ex.InnerException.Message);
-                }
-                comboBox1.Enabled = false;
-                btn_delete.Hide();
-                btn_save.Hide();
-                ReplaceImage.Hide();
-                */
-            }
-        }
     }
 
 
