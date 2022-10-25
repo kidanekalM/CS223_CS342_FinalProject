@@ -21,7 +21,7 @@ namespace Real_Estate_App.Agent_pages
 
         private void AgentAppointment_Load(object sender, EventArgs e)
         {
-            using (Model.RealEstateEDM r = new Model.RealEstateEDM("Admin"))
+            using (Model.RealEstateEDM r = new Model.RealEstateEDM("Agent"))
             {
                 dgvAgentAppointment.DataSource = r.Get_All_Clients_By_Agent(Agent.ID);
             }

@@ -61,7 +61,7 @@ namespace Real_Estate_App.Agent_pages
             if (ActiveMdiChild != null)
                 ActiveMdiChild.Close();
 
-            ClientsLinkedtoAgent Client = new ClientsLinkedtoAgent();
+            ClientsLinkedtoAgent Client = new ClientsLinkedtoAgent(Agent);
             Client.MdiParent = this;
             Client.Show();
 
