@@ -1,5 +1,6 @@
 ﻿using Real_Estate_App;
 using Real_Estate_App.Admin_Pages;
+using Real_Estate_App.Model;
 using Real_Estate_App.User_Control;
 using System;
 using System.Collections.Generic;
@@ -20,18 +21,23 @@ namespace MyRealEstate
     public partial class AdminHomePage : Form
     {
 
-        public Real_Estate_App.Model.Search_Employee_By_ID_Result Admin { get; set; }
 
-        public AdminHomePage(int v,string password)
+         
+        public AdminHomePage(int v,string phone,string fullname,string password)
         {
             InitializeComponent();
             IDlbl.Text = v.ToString();
-            PWDlbl.Text = password;
+            PHONElbl.Text = phone;
+            FULLtxt.Text = fullname;
+
+            /*Real_Estate_App.User_Control.DisplayProperties d = (Real_Estate_App.User_Control.DisplayProperties)sender;
+            d.PropertyClicked += PropertyClicked;*/
         }
 
 
 
         public List<Real_Estate_App.Model.Get_All_Employees_Result> Employees { get; set; }
+
         public List<Real_Estate_App.Model.Get_All_Properties_Result> Properties { get; set; }
         public List<Real_Estate_App.Model.Get_All_Clients_Result> Clients { get; set; }
 
@@ -46,7 +52,8 @@ namespace MyRealEstate
             AddPropertyPanel.Visible = false;
             AddEmployeePanel.Visible = false;
             ShowAllCustPanel.Visible = false;
-
+            EditProfilePanel.Visible = false;
+            HomePanel.Refresh();
 
             pictureBox2.Top = 88;
             pictureBox2.Height = 112;
@@ -66,6 +73,7 @@ namespace MyRealEstate
             ShowAllEmpPanel.Visible = false;
             ShowAllPropPanel.Visible = false;
             ShowAllCustPanel.Visible = false;
+            EditProfilePanel.Visible = false;
 
             pictureBox2.Top = 199;
             pictureBox2.Height = 88;
@@ -84,6 +92,7 @@ namespace MyRealEstate
             ShowAllEmpPanel.Visible = false;
             ShowAllPropPanel.Visible = false;
             ShowAllCustPanel.Visible = false;
+            EditProfilePanel.Visible = false;
 
             pictureBox2.Top = 288;
             pictureBox2.Height = 88;
@@ -102,6 +111,7 @@ namespace MyRealEstate
             ShowAllEmpPanel.Visible = false;
             ShowAllPropPanel.Visible = false;
             ShowAllCustPanel.Visible = false;
+            EditProfilePanel.Visible = false;
 
             pictureBox2.Top = 377;
             pictureBox2.Height = 88;
@@ -120,6 +130,7 @@ namespace MyRealEstate
             ShowAllEmpPanel.Visible = false;
             ShowAllPropPanel.Visible = false;
             ShowAllCustPanel.Visible = false;
+            EditProfilePanel.Visible = false;
 
             pictureBox2.Top = 467;
             pictureBox2.Height = 88;
@@ -152,6 +163,7 @@ namespace MyRealEstate
             ShowAllEmpPanel.Visible = false;
             ShowAllPropPanel.Visible = false;
             ShowAllCustPanel.Visible = false;
+            EditProfilePanel.Visible = false;
 
         }
 
@@ -167,6 +179,7 @@ namespace MyRealEstate
             ShowAllEmpPanel.Visible = false;
             ShowAllPropPanel.Visible = false;
             ShowAllCustPanel.Visible = false;
+            EditProfilePanel.Visible = false;
 
         }
 
@@ -267,6 +280,7 @@ namespace MyRealEstate
             ShowAllEmpPanel.Visible = false;
             ShowAllPropPanel.Visible = false;
             ShowAllCustPanel.Visible = false;
+            EditProfilePanel.Visible = false;
 
             pictureBox2.Top = 88;
         }
@@ -281,6 +295,8 @@ namespace MyRealEstate
             ShowAllEmpPanel.Visible = false;
             ShowAllPropPanel.Visible = false;
             ShowAllCustPanel.Visible = false;
+            EditProfilePanel.Visible = false;
+
             if (PropertiesPanel.Visible == true)
             {
                 AddPropertyPanel.Visible = true;
@@ -297,6 +313,7 @@ namespace MyRealEstate
             ShowAllEmpPanel.Visible = false;
             AddPropertyPanel.Visible = false;
             ShowAllCustPanel.Visible = false;
+            EditProfilePanel.Visible = false;
 
             if (PropertiesPanel.Visible == true)
             {
@@ -316,6 +333,7 @@ namespace MyRealEstate
             ShowAllEmpPanel.Visible = false;
             ShowAllPropPanel.Visible = false;
             ShowAllCustPanel.Visible = false;
+            EditProfilePanel.Visible = false;
 
         }
 
@@ -331,6 +349,7 @@ namespace MyRealEstate
             ShowAllEmpPanel.Visible = false;
             ShowAllPropPanel.Visible = false;
             ShowAllCustPanel.Visible = false;
+            EditProfilePanel.Visible = false;
 
         }
 
@@ -346,6 +365,8 @@ namespace MyRealEstate
             ShowAllEmpPanel.Visible = true;
             ShowAllPropPanel.Visible = false;
             ShowAllCustPanel.Visible = false;
+            EditProfilePanel.Visible = false;
+
             using (Real_Estate_App.Model.RealEstateEDM r = new Real_Estate_App.Model.RealEstateEDM("Admin"))
             {
                 cb_Department.Items.Clear();
@@ -606,6 +627,7 @@ namespace MyRealEstate
             ShowAllEmpPanel.Visible = false;
             ShowAllPropPanel.Visible = false;
             ShowAllCustPanel.Visible = false;
+            EditProfilePanel.Visible = false;
 
         }
 
@@ -621,6 +643,8 @@ namespace MyRealEstate
             ShowAllEmpPanel.Visible = false;
             ShowAllPropPanel.Visible = false;
             ShowAllCustPanel.Visible = true;
+            EditProfilePanel.Visible = false;
+
             using (Real_Estate_App.Model.RealEstateEDM r = new Real_Estate_App.Model.RealEstateEDM("Admin"))
             {
                 cb_Department.Items.Clear();
@@ -665,7 +689,24 @@ namespace MyRealEstate
 
         private void PropertyClicked(object sender, EventArgs e)
         {
-
+           /* using (Real_Estate_App.Model.RealEstateEDM r = new Real_Estate_App.Model.RealEstateEDM("Admin"))
+            {
+                try
+                {
+                    var customer = r.Search_Property_By_ID();
+                    DetailPage custD = new DetailPage();
+                    foreach (var cust in customer)
+                    {
+                        custD = new DetailPage(cust);
+                    }
+                    if (custD != null)
+                        custD.Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + ex.InnerException.Message);
+                }
+            }*/
         }
 
         private void CustomerClicked(object sender, EventArgs e)
@@ -812,8 +853,146 @@ namespace MyRealEstate
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show("Are you sure you want to Log Out?", "Log Out", buttons);
+            if (result == DialogResult.Yes)
+            {
+                LoginPage loginPage = new LoginPage();
+                this.Hide();
+                loginPage.Show();
+            }
+        }
 
+        private void button2_Click_2(object sender, EventArgs e)
+        {
+            using (Real_Estate_App.Model.RealEstateEDM r = new Real_Estate_App.Model.RealEstateEDM("Admin"))
+            {
+                try
+                {
+                    var result = r.Search_Employee_By_ID(int.Parse(IDlbl.Text)).FirstOrDefault();
+                    firstnametxt.Text = result.FirstName;
+                    lastnametxt.Text = result.LastName;
+                    typetxt.Text = result.EmpType;
+                    dateTimePicker2.Value = result.EmpDate;
+                    phonetxt.Text = result.PhoneNumber;
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message + ex.InnerException.Message);
+                }
+
+            }
+            EditProfilePanel.Visible = true;
+            PropertiesPanel.Visible = false;
+            EmployeesPanel.Visible = false;
+            AppointmentPanel.Visible = false;
+            HomePanel.Visible = true;
+            CustomersPanel.Visible = false;
+            AddPropertyPanel.Visible = false;
+            ShowAllEmpPanel.Visible = false;
+            ShowAllPropPanel.Visible = false;
+            ShowAllCustPanel.Visible = false;
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            PropertiesPanel.Visible = false;
+            EmployeesPanel.Visible = false;
+            AppointmentPanel.Visible = false;
+            CustomersPanel.Visible = false;
+            AddPropertyPanel.Visible = false;
+            ShowAllEmpPanel.Visible = false;
+            ShowAllPropPanel.Visible = false;
+            ShowAllCustPanel.Visible = false;
+            EditProfilePanel.Visible = false;
+        }
+
+        private void SaveProfile_click(object sender, EventArgs e)
+        {
+                errorProvider1.Clear();
+                Regex name = new Regex(@"^[A-Za-z]{1,50}$");
+                Regex phone = new Regex(@"^[0-9]{10}$");
+                if (!name.IsMatch(firstnametxt.Text))
+                {
+                    errorProvider1.SetError(firstnametxt, "Only characters A-Z are allowed!");
+                    return;
+                }
+                if (!name.IsMatch(lastnametxt.Text))
+                {
+                    errorProvider1.SetError(lastnametxt, "Only characters A-Z are allowed!");
+                    return;
+                }
+                if (!phone.IsMatch(phonetxt.Text))
+                {
+                    errorProvider1.SetError(phonetxt, "Only numbers of 10 digits are allowed!");
+                    return;
+                }
+                if (!phone.IsMatch(phonetxt.Text))
+                {
+                    errorProvider1.SetError(phonetxt, "Only numbers of 10 digits are allowed!");
+                    return;
+                }
+                if (string.IsNullOrEmpty(newpwdtxt.Text) || string.IsNullOrEmpty(typetxt.Text))
+                {
+
+                    if (string.IsNullOrEmpty(newpwdtxt.Text))
+                    {
+                        errorProvider1.SetError(newpwdtxt, "New Password is required!!");
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(newpwdtxt, "");
+                    }
+                    if (string.IsNullOrEmpty(typetxt.Text))
+                    {
+                        errorProvider1.SetError(typetxt, "Type is required!!");
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(typetxt, "");
+                    }
+
+
+                }
+                else
+                {
+                    try
+                    {
+                        using (Real_Estate_App.Model.RealEstateEDM r1 = new Real_Estate_App.Model.RealEstateEDM("Admin"))
+                        {
+                            r1.Update_Employee(int.Parse(IDlbl.Text), firstnametxt.Text, lastnametxt.Text, phonetxt.Text, newpwdtxt.Text, ImageToByteArray(circularPictureBox1.Image), typetxt.Text, dateTimePicker2.Value, 1);
+                            MessageBox.Show("Profile Edited successfully!!");
+
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        if (ex.InnerException != null)
+                            MessageBox.Show(ex.Message + ex.InnerException.Message);
+                        else
+                            MessageBox.Show(ex.Message);
+                    }
+                }
+            clear4();
+            }
+        void clear4()
+        {
+            firstnametxt.Text = "";
+            lastnametxt.Text = "";
+            phonetxt.Text = "";
+            typetxt.Text = "";
+            newpwdtxt.Text = "";
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            SoldProperties s = new SoldProperties();
+            s.Show();
+        }
+    }
     }
 
 
-}
+

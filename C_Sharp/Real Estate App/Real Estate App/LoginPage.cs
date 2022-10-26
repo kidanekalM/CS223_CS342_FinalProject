@@ -142,7 +142,7 @@ namespace Real_Estate_App
                     {
                         MessageBox.Show("Login successfull! \nWelcome " + result.FirstName + " " + result.LastName);
 
-                        AdminHomePage containerPage = new AdminHomePage(int.Parse(txt_AdminId.Text),txt_AdminPassword.Text);
+                        AdminHomePage containerPage = new AdminHomePage(int.Parse(txt_AdminId.Text),result.PhoneNumber,result.FirstName + " " + result.LastName,result.Password);
                         containerPage.Show();
                         this.Hide();
                     }

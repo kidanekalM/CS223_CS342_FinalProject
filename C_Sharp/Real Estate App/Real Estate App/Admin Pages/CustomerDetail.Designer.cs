@@ -32,24 +32,24 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerDetail));
             this.btn_save = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.ibl_id = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txt_id = new System.Windows.Forms.TextBox();
+            this.txt_fname = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.txt_lName = new System.Windows.Forms.TextBox();
+            this.txt_pNumber = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.txt_pwd = new System.Windows.Forms.TextBox();
+            this.txt_Email = new System.Windows.Forms.TextBox();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.btn_edit = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txt_Email = new System.Windows.Forms.TextBox();
-            this.txt_pwd = new System.Windows.Forms.TextBox();
-            this.txt_pNumber = new System.Windows.Forms.TextBox();
-            this.txt_lName = new System.Windows.Forms.TextBox();
-            this.txt_fname = new System.Windows.Forms.TextBox();
-            this.txt_id = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.ReplaceImage = new Real_Estate_App.User_Control.CircularPictureBox();
             this.pic_BigPicture = new Real_Estate_App.User_Control.CircularPictureBox();
             this.tableLayoutPanel1.SuspendLayout();
@@ -105,6 +105,15 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(512, 318);
             this.tableLayoutPanel1.TabIndex = 11;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(207, 229);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(312, 38);
+            this.comboBox1.TabIndex = 13;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -145,6 +154,22 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "First Name";
             // 
+            // txt_id
+            // 
+            this.txt_id.Location = new System.Drawing.Point(207, 4);
+            this.txt_id.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_id.Name = "txt_id";
+            this.txt_id.Size = new System.Drawing.Size(312, 37);
+            this.txt_id.TabIndex = 2;
+            // 
+            // txt_fname
+            // 
+            this.txt_fname.Location = new System.Drawing.Point(207, 49);
+            this.txt_fname.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_fname.Name = "txt_fname";
+            this.txt_fname.Size = new System.Drawing.Size(312, 37);
+            this.txt_fname.TabIndex = 10;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -165,6 +190,22 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Last Name";
             // 
+            // txt_lName
+            // 
+            this.txt_lName.Location = new System.Drawing.Point(207, 94);
+            this.txt_lName.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_lName.Name = "txt_lName";
+            this.txt_lName.Size = new System.Drawing.Size(312, 37);
+            this.txt_lName.TabIndex = 11;
+            // 
+            // txt_pNumber
+            // 
+            this.txt_pNumber.Location = new System.Drawing.Point(207, 139);
+            this.txt_pNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_pNumber.Name = "txt_pNumber";
+            this.txt_pNumber.Size = new System.Drawing.Size(312, 37);
+            this.txt_pNumber.TabIndex = 12;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -174,6 +215,22 @@
             this.label9.Size = new System.Drawing.Size(90, 31);
             this.label9.TabIndex = 9;
             this.label9.Text = "E-mail";
+            // 
+            // txt_pwd
+            // 
+            this.txt_pwd.Location = new System.Drawing.Point(207, 184);
+            this.txt_pwd.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_pwd.Name = "txt_pwd";
+            this.txt_pwd.Size = new System.Drawing.Size(312, 37);
+            this.txt_pwd.TabIndex = 13;
+            // 
+            // txt_Email
+            // 
+            this.txt_Email.Location = new System.Drawing.Point(207, 275);
+            this.txt_Email.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Email.Name = "txt_Email";
+            this.txt_Email.Size = new System.Drawing.Size(312, 37);
+            this.txt_Email.TabIndex = 15;
             // 
             // btn_delete
             // 
@@ -224,63 +281,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // txt_Email
-            // 
-            this.txt_Email.Location = new System.Drawing.Point(207, 275);
-            this.txt_Email.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_Email.Name = "txt_Email";
-            this.txt_Email.Size = new System.Drawing.Size(312, 37);
-            this.txt_Email.TabIndex = 15;
-            // 
-            // txt_pwd
-            // 
-            this.txt_pwd.Location = new System.Drawing.Point(207, 184);
-            this.txt_pwd.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_pwd.Name = "txt_pwd";
-            this.txt_pwd.Size = new System.Drawing.Size(312, 37);
-            this.txt_pwd.TabIndex = 13;
-            // 
-            // txt_pNumber
-            // 
-            this.txt_pNumber.Location = new System.Drawing.Point(207, 139);
-            this.txt_pNumber.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_pNumber.Name = "txt_pNumber";
-            this.txt_pNumber.Size = new System.Drawing.Size(312, 37);
-            this.txt_pNumber.TabIndex = 12;
-            // 
-            // txt_lName
-            // 
-            this.txt_lName.Location = new System.Drawing.Point(207, 94);
-            this.txt_lName.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_lName.Name = "txt_lName";
-            this.txt_lName.Size = new System.Drawing.Size(312, 37);
-            this.txt_lName.TabIndex = 11;
-            // 
-            // txt_fname
-            // 
-            this.txt_fname.Location = new System.Drawing.Point(207, 49);
-            this.txt_fname.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_fname.Name = "txt_fname";
-            this.txt_fname.Size = new System.Drawing.Size(312, 37);
-            this.txt_fname.TabIndex = 10;
-            // 
-            // txt_id
-            // 
-            this.txt_id.Location = new System.Drawing.Point(207, 4);
-            this.txt_id.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_id.Name = "txt_id";
-            this.txt_id.Size = new System.Drawing.Size(312, 37);
-            this.txt_id.TabIndex = 2;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(207, 229);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(312, 38);
-            this.comboBox1.TabIndex = 13;
-            // 
             // ReplaceImage
             // 
             this.ReplaceImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ReplaceImage.BackgroundImage")));
@@ -320,6 +320,7 @@
             this.Controls.Add(this.pic_BigPicture);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CustomerDetail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CustomerDetail";
             this.Load += new System.EventHandler(this.CustomerDetail_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

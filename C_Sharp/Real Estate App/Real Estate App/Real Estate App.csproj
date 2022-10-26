@@ -398,6 +398,9 @@
     <EmbeddedResource Include="Admin Pages\EmployeeDetail.resx">
       <DependentUpon>EmployeeDetail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin Pages\SoldProperties.resx">
+      <DependentUpon>SoldProperties.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Client Pages\AgentProfilePage.resx">
       <DependentUpon>AgentProfilePage.cs</DependentUpon>
     </EmbeddedResource>

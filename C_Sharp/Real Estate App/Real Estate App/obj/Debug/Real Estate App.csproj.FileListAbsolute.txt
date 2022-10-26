@@ -216,3 +216,4 @@ C:\Users\ASUS\Documents\GitHub\CS223_CS342_FinalProject\C_Sharp\Real Estate App\
 C:\Users\ASUS\Documents\GitHub\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real Estate App.pdb
 C:\Users\ASUS\Documents\GitHub\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Admin_Pages.CustomerDetail.resources
 C:\Users\hp\Desktop\New folder\code\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Admin_Pages.CustomerDetail.resources
+C:\Users\ASUS\Documents\GitHub\CS223_CS342_FinalProject\C_Sharp\Real Estate App\Real Estate App\obj\Debug\Real_Estate_App.Admin_Pages.SoldProperties.resources

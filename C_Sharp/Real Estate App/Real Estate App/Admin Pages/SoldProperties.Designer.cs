@@ -39,10 +39,10 @@
             this.btn_Exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Exit.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Exit.Location = new System.Drawing.Point(732, 11);
+            this.btn_Exit.Location = new System.Drawing.Point(854, 14);
             this.btn_Exit.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(57, 26);
+            this.btn_Exit.Size = new System.Drawing.Size(66, 32);
             this.btn_Exit.TabIndex = 18;
             this.btn_Exit.Text = "X";
             this.btn_Exit.UseVisualStyleBackColor = false;
@@ -52,23 +52,27 @@
             // 
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(60, 79);
+            this.dataGridView1.Location = new System.Drawing.Point(70, 97);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(643, 156);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(750, 192);
             this.dataGridView1.TabIndex = 19;
             // 
             // SoldProperties
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Real_Estate_App.Properties.Resources.istockphoto_1192524192_170667a;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 332);
+            this.ClientSize = new System.Drawing.Size(933, 409);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_Exit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SoldProperties";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SoldProperties";
             this.Load += new System.EventHandler(this.SoldProperties_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
