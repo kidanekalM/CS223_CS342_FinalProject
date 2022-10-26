@@ -28,7 +28,7 @@ namespace Real_Estate_App.Agent_pages
             if (ActiveMdiChild != null)
                 ActiveMdiChild.Close();
 
-            AgentHomePage agentPage = new AgentHomePage( Agent);
+            AgentHomePage agentPage = new AgentHomePage( Agent );
             agentPage.MdiParent = this;
             agentPage.Show();
 
@@ -50,7 +50,7 @@ namespace Real_Estate_App.Agent_pages
             if (ActiveMdiChild != null)
                 ActiveMdiChild.Close();
 
-            AgentHomePage agentPage = new AgentHomePage( Agent);
+            AgentHomePage agentPage = new AgentHomePage( Agent );
             agentPage.MdiParent = this;
             agentPage.Show();
         }
@@ -111,5 +111,9 @@ namespace Real_Estate_App.Agent_pages
             editsale.Show();
 
         }
+
+        
+
+
     }
 }
