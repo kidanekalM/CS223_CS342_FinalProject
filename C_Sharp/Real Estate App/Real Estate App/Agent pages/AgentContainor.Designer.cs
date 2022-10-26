@@ -107,7 +107,7 @@
             // 
             this.addRecordToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.addRecordToolStripMenuItem.Name = "addRecordToolStripMenuItem";
-            this.addRecordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addRecordToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.addRecordToolStripMenuItem.Text = "Add Record";
             this.addRecordToolStripMenuItem.Click += new System.EventHandler(this.addRecordToolStripMenuItem_Click);
             // 
@@ -115,7 +115,7 @@
             // 
             this.editRecordToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.editRecordToolStripMenuItem.Name = "editRecordToolStripMenuItem";
-            this.editRecordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editRecordToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.editRecordToolStripMenuItem.Text = "Edit Record";
             this.editRecordToolStripMenuItem.Click += new System.EventHandler(this.editRecordToolStripMenuItem_Click);
             // 

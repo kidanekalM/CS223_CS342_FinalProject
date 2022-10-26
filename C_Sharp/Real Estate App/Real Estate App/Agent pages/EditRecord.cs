@@ -26,7 +26,7 @@ namespace Real_Estate_App.Agent_pages
         }
         void populatedatagridview()
         {
-            using (RealEstateEDM m = new RealEstateEDM(" agent "))
+            using (RealEstateEDM m = new RealEstateEDM("Agent"))
             {
                 dgvsalerecord.DataSource = m.Search_Buy_By_AgentId(1);
             }
@@ -38,7 +38,7 @@ namespace Real_Estate_App.Agent_pages
 
         private void btnedit_Click(object sender, EventArgs e)
         {
-            using (RealEstateEDM rs = new RealEstateEDM(" agent "))
+            using (RealEstateEDM rs = new RealEstateEDM("Agent"))
             {
 
                 rs.Update_Buy(x.ID, x.PropertyID, x.ClientID, x.AgentID, x.SellDate, x.Comission);
@@ -76,7 +76,7 @@ namespace Real_Estate_App.Agent_pages
         {
             if(MessageBox.Show("are you sure to delete the record?","crud operation", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                using(RealEstateEDM y = new RealEstateEDM(" agent "))
+                using(RealEstateEDM y = new RealEstateEDM("Agent"))
                 {
                     y.Delete_Buy(x.ID);
 
