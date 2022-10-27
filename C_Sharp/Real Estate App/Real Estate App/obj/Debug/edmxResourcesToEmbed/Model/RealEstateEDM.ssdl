@@ -87,7 +87,6 @@
     <Parameter Name="Status" Type="bit" Mode="In" />
     <Parameter Name="Description" Type="varchar" Mode="In" />
   </Function>
-  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
   <Function Name="Get_All_Appointments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="Get All Appointments">
     <ReturnType>
       <CollectionType>
