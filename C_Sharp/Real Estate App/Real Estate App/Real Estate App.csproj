@@ -241,7 +241,13 @@
     <Compile Include="Model\Add_Property_Result.cs">
       <DependentUpon>RealEstateEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\Filter_Property1_Result.cs">
+      <DependentUpon>RealEstateEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Filter_Property_Result.cs">
+      <DependentUpon>RealEstateEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Filter_Property_Result1.cs">
       <DependentUpon>RealEstateEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Get_All_Appointments_Result.cs">
@@ -371,10 +377,10 @@
     <Compile Include="User Control\DisplayProperties.Designer.cs">
       <DependentUpon>DisplayProperties.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Control\DisplayProperty.cs">
+    <Compile Include="Client Pages\DisplayProperty.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Control\DisplayProperty.Designer.cs">
+    <Compile Include="Client Pages\DisplayProperty.Designer.cs">
       <DependentUpon>DisplayProperty.cs</DependentUpon>
     </Compile>
     <Compile Include="User Control\Form1.cs">
@@ -385,6 +391,12 @@
     </Compile>
     <Compile Include="User Control\PlaceHolderTextBox.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Client Pages\PropertyDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client Pages\PropertyDetail.Designer.cs">
+      <DependentUpon>PropertyDetail.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Admin Pages\AdminShowAllEmployees.resx">
       <DependentUpon>AdminShowAllEmployees.cs</DependentUpon>
@@ -451,11 +463,14 @@
     <EmbeddedResource Include="User Control\DisplayProperties.resx">
       <DependentUpon>DisplayProperties.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Control\DisplayProperty.resx">
+    <EmbeddedResource Include="Client Pages\DisplayProperty.resx">
       <DependentUpon>DisplayProperty.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Control\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client Pages\PropertyDetail.resx">
+      <DependentUpon>PropertyDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model\RealEstateEDM.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

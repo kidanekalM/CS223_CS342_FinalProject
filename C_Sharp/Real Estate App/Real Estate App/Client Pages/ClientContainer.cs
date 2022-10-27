@@ -1,12 +1,5 @@
 ﻿using Real_Estate_App.Client_Pages;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Real_Estate_App
@@ -14,7 +7,6 @@ namespace Real_Estate_App
     public partial class ClientContainer : Form
     {
         private int Id;
-        private int AgentId;
         public ClientContainer(int id)
         {
             InitializeComponent();
@@ -31,7 +23,7 @@ namespace Real_Estate_App
             homePage.Show();
         }
 
-
+        //Calls client profile page
         private void editProfileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (ActiveMdiChild != null)
@@ -42,6 +34,7 @@ namespace Real_Estate_App
             profilePage.Show();
         }
 
+        //Calls the page for changing passwords
         private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (ActiveMdiChild != null)
@@ -52,6 +45,7 @@ namespace Real_Estate_App
             passwordPage.Show();
         }
 
+        //Used for logging out
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
@@ -66,36 +60,40 @@ namespace Real_Estate_App
             }
         }
 
+        //Calls the appointment page
         private void appointmentToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (ActiveMdiChild != null)
                 ActiveMdiChild.Close();
 
-            ClientAppointmentPage appointmentPage = new ClientAppointmentPage();
+            ClientAppointmentPage appointmentPage = new ClientAppointmentPage(this, Id);
             appointmentPage.MdiParent = this;
             appointmentPage.Show();
         }
 
+        //Calls the search property page
         private void browsePropertyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (ActiveMdiChild != null)
                 ActiveMdiChild.Close();
 
-            ClientBrowsePropertyPage browsePage = new ClientBrowsePropertyPage(this);
+            ClientBrowsePropertyPage browsePage = new ClientBrowsePropertyPage(this, Id);
             browsePage.MdiParent = this;
             browsePage.Show();
         }
 
+        //Calls the owned property page
         private void ownedToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (ActiveMdiChild != null)
                 ActiveMdiChild.Close();
 
-            ClientPropertyPage propertyPage = new ClientPropertyPage();
+            ClientPropertyPage propertyPage = new ClientPropertyPage(Id);
             propertyPage.MdiParent = this;
             propertyPage.Show();
         }
 
+        //Home page
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (ActiveMdiChild != null)
@@ -106,6 +104,7 @@ namespace Real_Estate_App
             homePage.Show();
         }
 
+        //Used to call the agent page
         private void agentToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (ActiveMdiChild != null)
