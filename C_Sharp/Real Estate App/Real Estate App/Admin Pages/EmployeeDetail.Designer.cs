@@ -321,6 +321,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.pic_BigPicture);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EmployeeDetail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmployeeDetail";

@@ -23,13 +23,21 @@ namespace MyRealEstate
 
 
          
-        public AdminHomePage(int v,string phone,string fullname,string password)
+        public AdminHomePage(Login_Admin_Result l)
         {
             InitializeComponent();
-            IDlbl.Text = v.ToString();
-            PHONElbl.Text = phone;
-            FULLtxt.Text = fullname;
-
+            IDlbl.Text = l.ID.ToString();
+            PHONElbl.Text = l.PhoneNumber;
+            FULLtxt.Text = l.FirstName + " "+ l.LastName;
+            UserNameLabel.Text = l.FirstName;
+            if(l.Photo != null)
+                if(!l.Photo.All(b => b == 0))
+                {
+                    using(MemoryStream ms = new MemoryStream(l.Photo))
+                    {
+                        circularPictureBox2.Image = Image.FromStream(ms);
+                    }
+                }
             /*Real_Estate_App.User_Control.DisplayProperties d = (Real_Estate_App.User_Control.DisplayProperties)sender;
             d.PropertyClicked += PropertyClicked;*/
         }
@@ -41,7 +49,10 @@ namespace MyRealEstate
         public List<Real_Estate_App.Model.Get_All_Properties_Result> Properties { get; set; }
         public List<Real_Estate_App.Model.Get_All_Clients_Result> Clients { get; set; }
 
+        private void AdminLoad(object sender,EventArgs e)
+        {
 
+        }
         private void HomeButton_Click(object sender, EventArgs e)
         {
             PropertiesPanel.Visible = false;

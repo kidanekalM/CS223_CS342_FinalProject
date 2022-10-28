@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddAppointment));
             this.btn_Exit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txt_Comment = new Real_Estate_App.User_Control.PlaceHolderTextBox();
@@ -160,6 +161,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_Exit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddAppointment";
             this.Text = "AddAppointment";
             this.panel1.ResumeLayout(false);

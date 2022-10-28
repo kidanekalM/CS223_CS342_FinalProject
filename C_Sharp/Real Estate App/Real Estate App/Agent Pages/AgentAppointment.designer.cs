@@ -66,6 +66,7 @@
             this.Controls.Add(this.titleAppointment);
             this.Controls.Add(this.dgvAgentAppointment);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AgentAppointment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgentAppointment";

@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.displayProperties1 = new Real_Estate_App.User_Control.DisplayProperties("Agent","","");
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgentPageProperties));
+            this.displayProperties1 = new Real_Estate_App.User_Control.DisplayProperties();
             this.txt_Search = new Real_Estate_App.User_Control.PlaceHolderTextBox();
             this.SuspendLayout();
             // 
@@ -68,6 +69,7 @@
             this.Controls.Add(this.txt_Search);
             this.Controls.Add(this.displayProperties1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AgentPageProperties";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgentPageProperties";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(My_Clients));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.txt_Search = new Real_Estate_App.User_Control.PlaceHolderTextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -80,6 +81,7 @@
             this.Controls.Add(this.txt_Search);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "My_Clients";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "My_Clients";

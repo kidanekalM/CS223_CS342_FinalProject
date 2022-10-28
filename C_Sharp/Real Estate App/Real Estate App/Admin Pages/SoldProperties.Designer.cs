@@ -39,7 +39,7 @@
             this.btn_Exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Exit.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Exit.Location = new System.Drawing.Point(628, 11);
+            this.btn_Exit.Location = new System.Drawing.Point(573, 11);
             this.btn_Exit.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Size = new System.Drawing.Size(57, 26);
@@ -51,12 +51,13 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 42);
+            this.dataGridView1.Location = new System.Drawing.Point(28, 42);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(661, 246);
+            this.dataGridView1.Size = new System.Drawing.Size(567, 246);
             this.dataGridView1.TabIndex = 19;
             // 
             // SoldProperties
@@ -65,7 +66,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Real_Estate_App.Properties.Resources.istockphoto_1192524192_170667a;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(718, 332);
+            this.ClientSize = new System.Drawing.Size(639, 332);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_Exit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

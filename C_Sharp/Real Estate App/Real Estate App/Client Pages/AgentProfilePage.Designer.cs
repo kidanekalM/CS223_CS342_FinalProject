@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgentProfilePage));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pic_AgentPic = new Real_Estate_App.User_Control.CircularPictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,9 +44,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Real_Estate_App.Properties.Resources.ClientAgentPage_4;
-            this.pictureBox1.Location = new System.Drawing.Point(0, -5);
+            this.pictureBox1.Location = new System.Drawing.Point(0, -3);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(399, 604);
+            this.pictureBox1.Size = new System.Drawing.Size(266, 393);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -53,9 +55,10 @@
             // pic_AgentPic
             // 
             this.pic_AgentPic.Image = global::Real_Estate_App.Properties.Resources.Default_Profile;
-            this.pic_AgentPic.Location = new System.Drawing.Point(638, 119);
+            this.pic_AgentPic.Location = new System.Drawing.Point(425, 77);
+            this.pic_AgentPic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pic_AgentPic.Name = "pic_AgentPic";
-            this.pic_AgentPic.Size = new System.Drawing.Size(152, 152);
+            this.pic_AgentPic.Size = new System.Drawing.Size(99, 99);
             this.pic_AgentPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_AgentPic.TabIndex = 1;
             this.pic_AgentPic.TabStop = false;
@@ -64,9 +67,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(564, 329);
+            this.label1.Location = new System.Drawing.Point(376, 214);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 26);
+            this.label1.Size = new System.Drawing.Size(95, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "First Name : ";
             // 
@@ -74,9 +78,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(564, 369);
+            this.label2.Location = new System.Drawing.Point(376, 240);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 26);
+            this.label2.Size = new System.Drawing.Size(96, 18);
             this.label2.TabIndex = 3;
             this.label2.Text = "Last Name : ";
             // 
@@ -84,9 +89,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(564, 410);
+            this.label4.Location = new System.Drawing.Point(376, 266);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(132, 26);
+            this.label4.Size = new System.Drawing.Size(91, 18);
             this.label4.TabIndex = 5;
             this.label4.Text = "Phone No : ";
             // 
@@ -94,9 +100,10 @@
             // 
             this.lbl_Firstname.AutoSize = true;
             this.lbl_Firstname.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Firstname.Location = new System.Drawing.Point(700, 329);
+            this.lbl_Firstname.Location = new System.Drawing.Point(467, 214);
+            this.lbl_Firstname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Firstname.Name = "lbl_Firstname";
-            this.lbl_Firstname.Size = new System.Drawing.Size(110, 26);
+            this.lbl_Firstname.Size = new System.Drawing.Size(76, 18);
             this.lbl_Firstname.TabIndex = 6;
             this.lbl_Firstname.Text = "Unknown";
             // 
@@ -104,9 +111,10 @@
             // 
             this.lbl_Lastname.AutoSize = true;
             this.lbl_Lastname.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Lastname.Location = new System.Drawing.Point(700, 369);
+            this.lbl_Lastname.Location = new System.Drawing.Point(467, 240);
+            this.lbl_Lastname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Lastname.Name = "lbl_Lastname";
-            this.lbl_Lastname.Size = new System.Drawing.Size(110, 26);
+            this.lbl_Lastname.Size = new System.Drawing.Size(76, 18);
             this.lbl_Lastname.TabIndex = 7;
             this.lbl_Lastname.Text = "Unknown";
             // 
@@ -114,18 +122,19 @@
             // 
             this.lbl_PhoneNo.AutoSize = true;
             this.lbl_PhoneNo.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PhoneNo.Location = new System.Drawing.Point(700, 410);
+            this.lbl_PhoneNo.Location = new System.Drawing.Point(467, 266);
+            this.lbl_PhoneNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_PhoneNo.Name = "lbl_PhoneNo";
-            this.lbl_PhoneNo.Size = new System.Drawing.Size(110, 26);
+            this.lbl_PhoneNo.Size = new System.Drawing.Size(76, 18);
             this.lbl_PhoneNo.TabIndex = 9;
             this.lbl_PhoneNo.Text = "Unknown";
             // 
             // AgentProfilePage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.ClientSize = new System.Drawing.Size(1001, 589);
+            this.ClientSize = new System.Drawing.Size(667, 383);
             this.Controls.Add(this.lbl_PhoneNo);
             this.Controls.Add(this.lbl_Lastname);
             this.Controls.Add(this.lbl_Firstname);
@@ -136,6 +145,8 @@
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.Color.Gainsboro;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AgentProfilePage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgentProfilePage";
