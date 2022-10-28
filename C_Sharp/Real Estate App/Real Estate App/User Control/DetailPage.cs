@@ -38,7 +38,6 @@ namespace Real_Estate_App.User_Control
 
             InitializeComponent();
             Editable(false);
-            this.Show();
             Display(r,ph);
             
             if (UserType == null || UserType.Equals("Client"))
@@ -60,7 +59,6 @@ namespace Real_Estate_App.User_Control
 
             InitializeComponent();
             Editable(true);
-            this.Show();
             btn_delete.Hide();
             pic_Edit.Hide();
             btn_save.Show();
@@ -90,7 +88,7 @@ namespace Real_Estate_App.User_Control
         public void Display(Model.Search_Property_By_ID_Result r, List<Model.Search_Property_Photo_By_ID_Result> ph)
         {
             txt_Id.Text = r.ID.ToString();
-            cb_Address.SelectedItem = r.Address;
+            cb_Address.SelectedIndex = cb_Address.FindStringExact(r.Address);
             txt_Price.Text = r.Price.ToString();
             chk_Status.Checked = r.Status;
             if (chk_Status.Checked)
@@ -101,7 +99,7 @@ namespace Real_Estate_App.User_Control
             {
                 chk_Status.Text = "Not Available";
             }
-            cb_Type.SelectedItem = r.Type;
+            cb_Type.SelectedIndex = cb_Type.FindStringExact(r.Type);
             txt_Description.Text = r.Description;
             txt_Area.Text = r.Area.ToString();
             int i = 0;
@@ -308,8 +306,8 @@ namespace Real_Estate_App.User_Control
                     }
                     if (!isDecimal.IsMatch(txt_Area.Text))
                     {
-                        MessageBox.Show("price must be a decimal");
-                        txt_Price.Text = "";
+                        MessageBox.Show("Area must be a decimal");
+                        txt_Area.Text = "";
                         return;
                     }
                 using (Model.RealEstateEDM r = new Model.RealEstateEDM("Admin"))
@@ -340,7 +338,7 @@ namespace Real_Estate_App.User_Control
                     Type = "";   
                 }
             }
-            else
+            if (Type == null || !(Type.ToLower() == "addproperty"))
             {
                 using (Model.RealEstateEDM r = new Model.RealEstateEDM("Admin"))
                 {
@@ -348,13 +346,14 @@ namespace Real_Estate_App.User_Control
                     {
                         r.Update_Property(int.Parse(txt_Id.Text), cb_Address.SelectedItem.ToString(), double.Parse(txt_Price.Text),cb_Type.SelectedItem.ToString() , double.Parse(txt_Area.Text), chk_Status.Checked, txt_Description.Text);
                         pic_Edit_Click(sender, e);
+                            MessageBox.Show("The property was updated succesfully!");
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message + ex.InnerException.Message);
                     }
 
-                    }
+                }
             }
         }
 

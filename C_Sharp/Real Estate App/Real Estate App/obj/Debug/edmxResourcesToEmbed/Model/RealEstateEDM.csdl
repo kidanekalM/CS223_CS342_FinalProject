@@ -257,6 +257,7 @@
       <Parameter Name="Status" Mode="In" Type="Boolean" />
       <Parameter Name="Description" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="Get_All_Buys" IsComposable="true" ReturnType="Collection(RealEstateModel.Get_All_Buys_Result)" />
   </EntityContainer>
   <ComplexType Name="Filter_Property_Result">
     <Property Type="Int32" Name="ID" Nullable="false" />
@@ -475,5 +476,12 @@
     <Property Type="Double" Name="Area" Nullable="false" />
     <Property Type="Boolean" Name="Status" Nullable="false" />
     <Property Type="String" Name="Description" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="Get_All_Buys_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Client" Nullable="false" MaxLength="201" />
+    <Property Type="String" Name="Agent" Nullable="false" MaxLength="201" />
+    <Property Type="Decimal" Name="Comission" Nullable="true" Precision="19" Scale="4" />
+    <Property Type="DateTime" Name="SellDate" Nullable="false" Precision="23" />
   </ComplexType>
 </Schema>

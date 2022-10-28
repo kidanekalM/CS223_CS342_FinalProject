@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeDetail));
             this.pic_BigPicture = new Real_Estate_App.User_Control.CircularPictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.ibl_id = new System.Windows.Forms.Label();
@@ -44,15 +45,14 @@
             this.txt_pNumber = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txt_pwd = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.txt_Type = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_edit = new System.Windows.Forms.Button();
             this.ReplaceImage = new Real_Estate_App.User_Control.CircularPictureBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btn_Exit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pic_BigPicture)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -62,6 +62,7 @@
             // 
             // pic_BigPicture
             // 
+            this.pic_BigPicture.BackColor = System.Drawing.Color.Transparent;
             this.pic_BigPicture.Location = new System.Drawing.Point(145, 60);
             this.pic_BigPicture.Name = "pic_BigPicture";
             this.pic_BigPicture.Size = new System.Drawing.Size(228, 228);
@@ -87,8 +88,8 @@
             this.tableLayoutPanel1.Controls.Add(this.txt_pNumber, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.label9, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.txt_pwd, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.txt_Type, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.dateTimePicker1, 1, 7);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(38, 305);
@@ -104,6 +105,14 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.Size = new System.Drawing.Size(439, 302);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(164, 188);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(268, 33);
+            this.comboBox1.TabIndex = 13;
             // 
             // label8
             // 
@@ -203,21 +212,30 @@
             this.txt_pwd.Size = new System.Drawing.Size(268, 31);
             this.txt_pwd.TabIndex = 13;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 261);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 25);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Date";
-            // 
             // txt_Type
             // 
             this.txt_Type.Location = new System.Drawing.Point(164, 227);
             this.txt_Type.Name = "txt_Type";
             this.txt_Type.Size = new System.Drawing.Size(268, 31);
             this.txt_Type.TabIndex = 15;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.errorProvider1.SetIconAlignment(this.label5, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
+            this.label5.Location = new System.Drawing.Point(3, 261);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(57, 25);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Date";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(164, 263);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(263, 31);
+            this.dateTimePicker1.TabIndex = 16;
             // 
             // btn_save
             // 
@@ -269,24 +287,9 @@
             this.ReplaceImage.TabStop = false;
             this.ReplaceImage.Click += new System.EventHandler(this.ReplaceImage_Click);
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(164, 264);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(268, 31);
-            this.dateTimePicker1.TabIndex = 16;
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(164, 188);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(268, 33);
-            this.comboBox1.TabIndex = 13;
             // 
             // btn_Exit
             // 
@@ -307,9 +310,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Real_Estate_App.Properties.Resources.istockphoto_1324561334_612x612;
+            this.BackgroundImage = global::Real_Estate_App.Properties.Resources.fernando_meloni_j_gnGCDQRew_unsplash;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(542, 676);
+            this.ClientSize = new System.Drawing.Size(542, 678);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.ReplaceImage);
             this.Controls.Add(this.btn_edit);
@@ -353,9 +356,9 @@
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_edit;
         private User_Control.CircularPictureBox ReplaceImage;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button btn_Exit;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
