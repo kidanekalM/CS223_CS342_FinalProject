@@ -15,7 +15,6 @@ namespace Real_Estate_App
 {
     public partial class LoginPage : Form
     {
-        private Regex id = new Regex(@"^[0-9]");
         public LoginPage()
         {
             InitializeComponent();
@@ -116,11 +115,6 @@ namespace Real_Estate_App
             bool hasError = false;
             errorProvider.Clear();
 
-            if (!id.IsMatch(txt_ClientId.Text))
-            {
-                errorProvider.SetError(txt_AdminId, "Id must be a number!");
-                hasError = true;
-            }
             if (txt_AdminId.Text == "Admin Id")
             {
                 errorProvider.SetError(txt_AdminId, "Admin Id must be provided!");
@@ -134,9 +128,28 @@ namespace Real_Estate_App
 
             if (hasError == false)
             {
-                AdminHomePage a = new AdminHomePage();
-                a.Show();
-                this.Hide();
+                try
+                {
+                    using (RealEstateEDM r = new RealEstateEDM("Admin"))
+                    {
+                        var result = r.Login_Admin(Convert.ToInt32(txt_AdminId.Text), txt_AdminPassword.Text).FirstOrDefault();
+
+                        if (result != null && result.ID == int.Parse(txt_AdminId.Text) && result.Password == txt_AdminPassword.Text)
+                        {
+                            MessageBox.Show("Login successfull! \nWelcome " + result.FirstName + " " + result.LastName);
+
+                            AdminHomePage containerPage = new AdminHomePage(result);
+                            containerPage.Show();
+                            this.Hide();
+                        }
+                        else
+                            MessageBox.Show("Wrong username or password. Please try again!");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occured! \n" + ex.Message);
+                }
             }
         }
 
@@ -204,11 +217,6 @@ namespace Real_Estate_App
             bool hasError = false;
             errorProvider.Clear();
 
-            if (!id.IsMatch(txt_ClientId.Text))
-            {
-                errorProvider.SetError(txt_AgentId, "Id must be a number!");
-                hasError = true;
-            }
             if (txt_AgentId.Text == "Agent Id")
             {
                 errorProvider.SetError(txt_AgentId, "Agent Id must be provided!");
@@ -223,6 +231,22 @@ namespace Real_Estate_App
             if (hasError == false)
             {
                 //open agent page
+               // Model.Login_Agent_Result agent;
+                using(Model.RealEstateEDM r = new Model.RealEstateEDM("Agent"))
+                {
+                    var agent = r.Login_Agent(int.Parse(txt_AgentId.Text), txt_AgentPassword.Text).FirstOrDefault();
+                    if(agent != null && agent.ID==int.Parse(txt_AgentId.Text) && agent.Password == txt_AgentPassword.Text)
+                    {
+                        MessageBox.Show("Login successful! \nWelcome " + agent.FirstName + " " + agent.LastName);
+                        Agent_pages.AgentContainor agentPage = new Agent_pages.AgentContainor(agent,this);
+                        agentPage.Show();
+                        this.Hide();
+
+                        
+                    }
+                    else
+                        MessageBox.Show("Wrong username or password. Please try again!");
+                }
             }
         }
 
@@ -297,11 +321,6 @@ namespace Real_Estate_App
             bool hasError = false;
             errorProvider.Clear();
 
-            if (!id.IsMatch(txt_ClientId.Text))
-            {
-                errorProvider.SetError(txt_ClientId, "Id must be a number!");
-                hasError = true;
-            }
             if (txt_ClientId.Text == "Client Id")
             {
                 errorProvider.SetError(txt_ClientId, "Client Id must be provided!");
@@ -319,18 +338,19 @@ namespace Real_Estate_App
                 {
                     using (RealEstateEDM r = new RealEstateEDM("Client"))
                     {
-                        var result = r.Login_Client(Convert.ToInt32(txt_ClientId.Text), txt_ClientPassword.Text).FirstOrDefault();
-
-                        if (result != null && result.ID == int.Parse(txt_ClientId.Text) && result.Password == txt_ClientPassword.Text)
+                        var result = 3; //r.Login_Client(Convert.ToInt32(txt_ClientId.Text), txt_ClientPassword.Text).FirstOrDefault();
+                        if (result != null)
                         {
-                            MessageBox.Show("Login successfull! \nWelcome " + result.FirstName + " " + result.LastName);
+                            //MessageBox.Show("Login successfull! \nWelcome back " + result.FirstName);
+                            MessageBox.Show("Login successfull!");
 
+                            //ClientContainer containerPage = new ClientContainer(result.ID, result.FirstName, result.LastName, result.Photo, result.PhoneNumber, result.Email, result.Password, Convert.ToInt32(result.EmpId));
                             ClientContainer containerPage = new ClientContainer(int.Parse(txt_ClientId.Text));
                             containerPage.Show();
                             this.Hide();
                         }
                         else
-                            MessageBox.Show("Wrong userId or password. Please try again!");
+                            MessageBox.Show("Wrong username or password. Please try again!");
                     }
                 }
                 catch (Exception ex)

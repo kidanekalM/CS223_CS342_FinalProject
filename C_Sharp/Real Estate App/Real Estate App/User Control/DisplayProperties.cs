@@ -67,7 +67,7 @@ namespace Real_Estate_App.User_Control
         public void AddClick(object sender, EventArgs e)
         {
             DetailPage d = new DetailPage("admin", "0", "addproperty");
-            d.Show();
+            d.ShowDialog();
         }
         public void Click(object sender, EventArgs e)
         {
@@ -76,6 +76,7 @@ namespace Real_Estate_App.User_Control
                 var obj = (DisplayProperty)sender;
                 var SearchResult = rdm.Search_Property_By_ID(int.Parse(obj.ID)).FirstOrDefault();
                 DetailPage d = new DetailPage(SearchResult, rdm.Search_Property_Photo_By_ID(SearchResult.ID).ToList<Model.Search_Property_Photo_By_ID_Result>(), UserType, UserID, AppointmentID);
+                d.ShowDialog();
                 d.UserType = UserType;
             }
         }

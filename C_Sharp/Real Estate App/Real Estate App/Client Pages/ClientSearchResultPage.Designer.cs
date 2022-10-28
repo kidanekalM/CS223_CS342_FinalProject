@@ -45,10 +45,10 @@
             this.pnl_TopPanel.Controls.Add(this.lbl_SearchResult);
             this.pnl_TopPanel.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnl_TopPanel.ForeColor = System.Drawing.Color.White;
-            this.pnl_TopPanel.Location = new System.Drawing.Point(0, -2);
-            this.pnl_TopPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnl_TopPanel.Location = new System.Drawing.Point(0, -1);
+            this.pnl_TopPanel.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pnl_TopPanel.Name = "pnl_TopPanel";
-            this.pnl_TopPanel.Size = new System.Drawing.Size(1002, 122);
+            this.pnl_TopPanel.Size = new System.Drawing.Size(668, 79);
             this.pnl_TopPanel.TabIndex = 0;
             // 
             // btn_Back
@@ -58,10 +58,10 @@
             this.btn_Back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Back.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Back.Location = new System.Drawing.Point(923, 35);
-            this.btn_Back.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Back.Location = new System.Drawing.Point(615, 23);
+            this.btn_Back.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btn_Back.Name = "btn_Back";
-            this.btn_Back.Size = new System.Drawing.Size(54, 54);
+            this.btn_Back.Size = new System.Drawing.Size(36, 35);
             this.btn_Back.TabIndex = 1;
             this.btn_Back.UseVisualStyleBackColor = false;
             this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
@@ -70,18 +70,20 @@
             // 
             this.lbl_SearchResult.AutoSize = true;
             this.lbl_SearchResult.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_SearchResult.Location = new System.Drawing.Point(337, 35);
+            this.lbl_SearchResult.Location = new System.Drawing.Point(225, 23);
+            this.lbl_SearchResult.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_SearchResult.Name = "lbl_SearchResult";
-            this.lbl_SearchResult.Size = new System.Drawing.Size(324, 51);
+            this.lbl_SearchResult.Size = new System.Drawing.Size(223, 37);
             this.lbl_SearchResult.TabIndex = 0;
             this.lbl_SearchResult.Text = "Search Results";
             // 
             // flowLayoutPanel
             // 
-            this.flowLayoutPanel.Location = new System.Drawing.Point(274, 145);
-            this.flowLayoutPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel.AutoScroll = true;
+            this.flowLayoutPanel.Location = new System.Drawing.Point(183, 94);
+            this.flowLayoutPanel.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(703, 418);
+            this.flowLayoutPanel.Size = new System.Drawing.Size(469, 272);
             this.flowLayoutPanel.TabIndex = 1;
             // 
             // pnl_LeftPanel
@@ -90,31 +92,32 @@
             this.pnl_LeftPanel.Controls.Add(this.lbl_Result);
             this.pnl_LeftPanel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnl_LeftPanel.ForeColor = System.Drawing.Color.Black;
-            this.pnl_LeftPanel.Location = new System.Drawing.Point(0, 121);
-            this.pnl_LeftPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnl_LeftPanel.Location = new System.Drawing.Point(0, 79);
+            this.pnl_LeftPanel.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pnl_LeftPanel.Name = "pnl_LeftPanel";
-            this.pnl_LeftPanel.Size = new System.Drawing.Size(247, 468);
+            this.pnl_LeftPanel.Size = new System.Drawing.Size(165, 304);
             this.pnl_LeftPanel.TabIndex = 2;
             // 
             // lbl_Result
             // 
             this.lbl_Result.AutoSize = true;
-            this.lbl_Result.Location = new System.Drawing.Point(66, 383);
+            this.lbl_Result.Location = new System.Drawing.Point(44, 249);
+            this.lbl_Result.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Result.Name = "lbl_Result";
-            this.lbl_Result.Size = new System.Drawing.Size(91, 23);
+            this.lbl_Result.Size = new System.Drawing.Size(65, 19);
             this.lbl_Result.TabIndex = 0;
             this.lbl_Result.Text = "Result = ";
             // 
             // ClientSearchResultPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1002, 589);
+            this.ClientSize = new System.Drawing.Size(668, 383);
             this.Controls.Add(this.pnl_LeftPanel);
             this.Controls.Add(this.flowLayoutPanel);
             this.Controls.Add(this.pnl_TopPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "ClientSearchResultPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ClientSearchResultPage";

@@ -52,9 +52,9 @@
             this.pic_BigPicture = new System.Windows.Forms.PictureBox();
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.ReplaceImage = new Real_Estate_App.User_Control.CircularPictureBox();
             this.pic_Edit = new Real_Estate_App.User_Control.CircularPictureBox();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -62,9 +62,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_BigPicture)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReplaceImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Edit)).BeginInit();
-            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -229,7 +229,7 @@
             "Commercial"});
             this.cb_Type.Location = new System.Drawing.Point(173, 145);
             this.cb_Type.Name = "cb_Type";
-            this.cb_Type.Size = new System.Drawing.Size(186, 32);
+            this.cb_Type.Size = new System.Drawing.Size(251, 32);
             this.cb_Type.TabIndex = 15;
             // 
             // cb_Address
@@ -249,7 +249,7 @@
             "Yeka"});
             this.cb_Address.Location = new System.Drawing.Point(173, 38);
             this.cb_Address.Name = "cb_Address";
-            this.cb_Address.Size = new System.Drawing.Size(121, 32);
+            this.cb_Address.Size = new System.Drawing.Size(251, 32);
             this.cb_Address.TabIndex = 16;
             // 
             // pictureBox5
@@ -314,6 +314,7 @@
             // 
             // pic_BigPicture
             // 
+            this.pic_BigPicture.BackColor = System.Drawing.Color.Transparent;
             this.pic_BigPicture.Location = new System.Drawing.Point(94, 7);
             this.pic_BigPicture.Name = "pic_BigPicture";
             this.pic_BigPicture.Size = new System.Drawing.Size(351, 327);
@@ -347,6 +348,27 @@
             this.btn_delete.UseVisualStyleBackColor = false;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.Controls.Add(this.pictureBox1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.pictureBox5, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.pictureBox2, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.pictureBox3, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.pictureBox4, 0, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(43, 106);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 5;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(51, 225);
+            this.tableLayoutPanel2.TabIndex = 10;
+            // 
             // ReplaceImage
             // 
             this.ReplaceImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ReplaceImage.BackgroundImage")));
@@ -370,27 +392,6 @@
             this.pic_Edit.TabIndex = 3;
             this.pic_Edit.TabStop = false;
             this.pic_Edit.Click += new System.EventHandler(this.pic_Edit_Click);
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.Controls.Add(this.pictureBox1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.pictureBox5, 0, 4);
-            this.tableLayoutPanel2.Controls.Add(this.pictureBox2, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.pictureBox3, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.pictureBox4, 0, 3);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(43, 106);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 5;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(51, 225);
-            this.tableLayoutPanel2.TabIndex = 10;
             // 
             // DetailPage
             // 
@@ -416,9 +417,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_BigPicture)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ReplaceImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Edit)).EndInit();
-            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

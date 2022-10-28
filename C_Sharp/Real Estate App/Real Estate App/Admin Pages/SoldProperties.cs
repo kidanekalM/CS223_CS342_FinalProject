@@ -15,7 +15,6 @@ namespace Real_Estate_App.Admin_Pages
         public SoldProperties()
         {
             InitializeComponent();
-            Show();
         }
 
         private void SoldProperties_Load(object sender, EventArgs e)

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PropertyDetail));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -61,9 +62,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(55, 447);
+            this.label1.Location = new System.Drawing.Point(37, 291);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 28);
+            this.label1.Size = new System.Drawing.Size(30, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Id :";
             // 
@@ -71,9 +73,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(55, 483);
+            this.label2.Location = new System.Drawing.Point(37, 314);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 28);
+            this.label2.Size = new System.Drawing.Size(71, 19);
             this.label2.TabIndex = 1;
             this.label2.Text = "Address :";
             // 
@@ -81,9 +84,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(55, 520);
+            this.label3.Location = new System.Drawing.Point(37, 338);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(131, 28);
+            this.label3.Size = new System.Drawing.Size(93, 19);
             this.label3.TabIndex = 2;
             this.label3.Text = "Availability :";
             // 
@@ -91,9 +95,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(55, 556);
+            this.label4.Location = new System.Drawing.Point(37, 361);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 28);
+            this.label4.Size = new System.Drawing.Size(51, 19);
             this.label4.TabIndex = 3;
             this.label4.Text = "Price :";
             // 
@@ -101,9 +106,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(55, 592);
+            this.label5.Location = new System.Drawing.Point(37, 385);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(121, 28);
+            this.label5.Size = new System.Drawing.Size(85, 19);
             this.label5.TabIndex = 4;
             this.label5.Text = "Description";
             // 
@@ -113,9 +119,10 @@
             this.lbl_Id.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.lbl_Id.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Id.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbl_Id.Location = new System.Drawing.Point(100, 447);
+            this.lbl_Id.Location = new System.Drawing.Point(67, 291);
+            this.lbl_Id.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Id.Name = "lbl_Id";
-            this.lbl_Id.Size = new System.Drawing.Size(0, 28);
+            this.lbl_Id.Size = new System.Drawing.Size(0, 19);
             this.lbl_Id.TabIndex = 6;
             // 
             // lbl_Address
@@ -123,9 +130,10 @@
             this.lbl_Address.AutoSize = true;
             this.lbl_Address.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Address.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbl_Address.Location = new System.Drawing.Point(148, 483);
+            this.lbl_Address.Location = new System.Drawing.Point(99, 314);
+            this.lbl_Address.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Address.Name = "lbl_Address";
-            this.lbl_Address.Size = new System.Drawing.Size(0, 28);
+            this.lbl_Address.Size = new System.Drawing.Size(0, 19);
             this.lbl_Address.TabIndex = 7;
             // 
             // lbl_Availability
@@ -133,9 +141,10 @@
             this.lbl_Availability.AutoSize = true;
             this.lbl_Availability.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Availability.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbl_Availability.Location = new System.Drawing.Point(183, 520);
+            this.lbl_Availability.Location = new System.Drawing.Point(122, 338);
+            this.lbl_Availability.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Availability.Name = "lbl_Availability";
-            this.lbl_Availability.Size = new System.Drawing.Size(0, 28);
+            this.lbl_Availability.Size = new System.Drawing.Size(0, 19);
             this.lbl_Availability.TabIndex = 8;
             // 
             // lbl_Price
@@ -143,28 +152,31 @@
             this.lbl_Price.AutoSize = true;
             this.lbl_Price.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Price.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbl_Price.Location = new System.Drawing.Point(120, 556);
+            this.lbl_Price.Location = new System.Drawing.Point(80, 361);
+            this.lbl_Price.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Price.Name = "lbl_Price";
-            this.lbl_Price.Size = new System.Drawing.Size(0, 28);
+            this.lbl_Price.Size = new System.Drawing.Size(0, 19);
             this.lbl_Price.TabIndex = 9;
             // 
             // txt_Descrption
             // 
             this.txt_Descrption.BackColor = System.Drawing.Color.Gainsboro;
             this.txt_Descrption.Enabled = false;
-            this.txt_Descrption.Location = new System.Drawing.Point(60, 636);
+            this.txt_Descrption.Location = new System.Drawing.Point(40, 413);
+            this.txt_Descrption.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_Descrption.Multiline = true;
             this.txt_Descrption.Name = "txt_Descrption";
-            this.txt_Descrption.Size = new System.Drawing.Size(452, 116);
+            this.txt_Descrption.Size = new System.Drawing.Size(303, 77);
             this.txt_Descrption.TabIndex = 10;
             // 
             // pic_BigPicture
             // 
             this.pic_BigPicture.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.pic_BigPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pic_BigPicture.Location = new System.Drawing.Point(47, 115);
+            this.pic_BigPicture.Location = new System.Drawing.Point(31, 75);
+            this.pic_BigPicture.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pic_BigPicture.Name = "pic_BigPicture";
-            this.pic_BigPicture.Size = new System.Drawing.Size(486, 255);
+            this.pic_BigPicture.Size = new System.Drawing.Size(324, 166);
             this.pic_BigPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_BigPicture.TabIndex = 11;
             this.pic_BigPicture.TabStop = false;
@@ -173,10 +185,9 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox4.Location = new System.Drawing.Point(351, 378);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox4.Location = new System.Drawing.Point(234, 246);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(53, 46);
+            this.pictureBox4.Size = new System.Drawing.Size(35, 30);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 16;
             this.pictureBox4.TabStop = false;
@@ -186,10 +197,9 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(263, 378);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox3.Location = new System.Drawing.Point(175, 246);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(53, 46);
+            this.pictureBox3.Size = new System.Drawing.Size(35, 30);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 15;
             this.pictureBox3.TabStop = false;
@@ -199,10 +209,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(98, 378);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(65, 246);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(53, 46);
+            this.pictureBox1.Size = new System.Drawing.Size(35, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
@@ -212,10 +221,9 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(179, 378);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox2.Location = new System.Drawing.Point(119, 246);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(53, 46);
+            this.pictureBox2.Size = new System.Drawing.Size(35, 30);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 14;
             this.pictureBox2.TabStop = false;
@@ -225,10 +233,9 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox5.Location = new System.Drawing.Point(435, 378);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox5.Location = new System.Drawing.Point(290, 246);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(53, 46);
+            this.pictureBox5.Size = new System.Drawing.Size(35, 30);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 13;
             this.pictureBox5.TabStop = false;
@@ -240,9 +247,10 @@
             this.btn_MakeAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_MakeAppointment.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_MakeAppointment.ForeColor = System.Drawing.Color.White;
-            this.btn_MakeAppointment.Location = new System.Drawing.Point(94, 770);
+            this.btn_MakeAppointment.Location = new System.Drawing.Point(63, 500);
+            this.btn_MakeAppointment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_MakeAppointment.Name = "btn_MakeAppointment";
-            this.btn_MakeAppointment.Size = new System.Drawing.Size(211, 42);
+            this.btn_MakeAppointment.Size = new System.Drawing.Size(141, 27);
             this.btn_MakeAppointment.TabIndex = 17;
             this.btn_MakeAppointment.Text = "Make Appointment";
             this.btn_MakeAppointment.UseVisualStyleBackColor = false;
@@ -253,9 +261,10 @@
             this.btn_Done.BackColor = System.Drawing.SystemColors.Control;
             this.btn_Done.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Done.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Done.Location = new System.Drawing.Point(336, 770);
+            this.btn_Done.Location = new System.Drawing.Point(224, 500);
+            this.btn_Done.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Done.Name = "btn_Done";
-            this.btn_Done.Size = new System.Drawing.Size(134, 42);
+            this.btn_Done.Size = new System.Drawing.Size(89, 27);
             this.btn_Done.TabIndex = 18;
             this.btn_Done.Text = "Done";
             this.btn_Done.UseVisualStyleBackColor = false;
@@ -266,8 +275,9 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.panel1.Controls.Add(this.lbl_My);
             this.panel1.Location = new System.Drawing.Point(0, -1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(593, 76);
+            this.panel1.Size = new System.Drawing.Size(395, 49);
             this.panel1.TabIndex = 19;
             // 
             // lbl_My
@@ -275,18 +285,19 @@
             this.lbl_My.AutoSize = true;
             this.lbl_My.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_My.ForeColor = System.Drawing.Color.White;
-            this.lbl_My.Location = new System.Drawing.Point(21, 14);
+            this.lbl_My.Location = new System.Drawing.Point(14, 9);
+            this.lbl_My.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_My.Name = "lbl_My";
-            this.lbl_My.Size = new System.Drawing.Size(181, 47);
+            this.lbl_My.Size = new System.Drawing.Size(123, 32);
             this.lbl_My.TabIndex = 1;
             this.lbl_My.Text = "Property";
             // 
             // PropertyDetail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.ClientSize = new System.Drawing.Size(590, 840);
+            this.ClientSize = new System.Drawing.Size(393, 512);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_Done);
             this.Controls.Add(this.btn_MakeAppointment);
@@ -307,6 +318,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "PropertyDetail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PropertyDetail";
