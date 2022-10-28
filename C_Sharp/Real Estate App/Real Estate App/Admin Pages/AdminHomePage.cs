@@ -155,6 +155,7 @@ namespace MyRealEstate
             EmployeesButton.Hide();
             CustomersButton.Hide();
             BarHideButton.Hide();
+            button1.Hide();
             pictureBox2.Hide();
             BarShowButton.Show();
 
@@ -431,6 +432,8 @@ namespace MyRealEstate
             BarHideButton.Show();
             pictureBox2.Show();
             BarShowButton.Hide();
+            button1.Show();
+
         }
 
         private void btn_Save_Click(object sender, EventArgs e)
