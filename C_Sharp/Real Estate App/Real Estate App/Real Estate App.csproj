@@ -130,12 +130,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin Pages\AdminShowAllEmployees.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin Pages\AdminShowAllEmployees.Designer.cs">
-      <DependentUpon>AdminShowAllEmployees.cs</DependentUpon>
-    </Compile>
     <Compile Include="Admin Pages\AdminHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -398,9 +392,6 @@
     <Compile Include="Client Pages\PropertyDetail.Designer.cs">
       <DependentUpon>PropertyDetail.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Admin Pages\AdminShowAllEmployees.resx">
-      <DependentUpon>AdminShowAllEmployees.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Admin Pages\AdminHomePage.resx">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </EmbeddedResource>
